@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
 import '../styles.css'
 
-import NavLogo from './NavLogo'
+import NavLogo from './navLogo'
 import NavMenu from './NavMenu'
-import Sidebar from './Sidebar'
+import Sidebar from './sidebar'
 import FooterSocial from './FooterSocial'
 import FooterMenu from './FooterMenu'
 
