@@ -1,0 +1,82 @@
+import React, { Component } from 'react'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import moment from 'moment'
+import get from 'lodash/get'
+import map from 'lodash/map'
+
+import gamepad from '../../static/dpad.svg'
+import '../styles.css'
+
+const Sidebar = props => {
+    return (
+        <StaticQuery 
+            query={graphql`
+                query SidebarQuery {
+                    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 10) {
+                        edges {
+                            node {
+                                fields {
+                                    slug
+                                }
+                                frontmatter {
+                                    date(formatString: "dddd, MMM D, YYYY")
+                                    title
+                                    author
+                                }
+                            }
+                        }
+                    }
+                }
+            `}
+            render={data => {
+                const posts = get(data, 'allMarkdownRemark.edges', [])
+                const locationPath = get(props, 'location.pathname', '')
+
+                return (
+                    <div>
+                        <div className="sidebar-post-list-header">
+                            <img src={gamepad} className="sidebar-post-list-header-icon" />
+                            <h5 className="sidebar-post-list-header-text">the latest</h5>
+                        </div>
+                        <div className="sidebar-post-list">
+                            {map(posts, post => {
+                                const postTitle = get(post, 'node.frontmatter.title', '')
+                                let postDate = get(post, 'node.frontmatter.date', '')
+                                const slug = get(post, 'node.fields.slug', '')
+                                
+                                const now = moment()
+                                const hoursDiff = now.diff(moment(postDate), 'hours')
+                                const daysDiff = now.diff(moment(postDate), 'days')
+
+                                if (hoursDiff < 24) {
+                                    postDate = `today`
+                                } else if (daysDiff === 1) {
+                                        postDate = `yesterday`
+                                } else if (daysDiff < 5) {
+                                    postDate = `${daysDiff} day${daysDiff > 1 ? `s` : ``} ago`
+                                } else {
+                                    postDate = ''
+                                }
+
+                                const activePost = (locationPath === slug)
+                                ? 'off-tomato-color'
+                                : ''
+
+                                return (
+                                    <div className="sidebar-post" key={slug}>
+                                        <Link to={slug}>
+                                            <h5 className={`h5-sidebar-post-title ${activePost}`}>{postTitle}</h5> 
+                                        </Link>
+                                        <h5 className="h5-sidebar-post-date">{postDate}</h5>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                )}
+            }
+        />
+    )
+}
+
+export default Sidebar

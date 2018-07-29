@@ -5,14 +5,16 @@
   "homepage": "https://gamepad.news",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve"
   },
   "dependencies": {
     "gatsby": "next",
     "gatsby-image": "^1.0.54",
+    "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-sharp": "next",
     "gatsby-plugin-typography": "next",
     "gatsby-remark-copy-linked-files": "next",
     "gatsby-remark-images": "next",
@@ -24,8 +26,12 @@
     "lodash": "^4.17.5",
     "moment": "^2.22.2",
     "react": "^16.3.2",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.3.2",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.13",
+    "typography": "^0.16.17",
+    "typography-theme-alton": "^0.15.10"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
