@@ -204,7 +204,7 @@ hr {
 }
 
 .before-dot-news {
-    text-shadow: 1.5px 1.5px 0px #939393, 3px 3px 0px #191919;
+    text-shadow: 1.5px 1.5px 0px #939393, 4px 4px 0px #191919;
 }
 
 .dot-news {
@@ -215,7 +215,7 @@ hr {
 
 blockquote {
     padding-bottom: 0.35rem;
-    border-left: 5px solid #ff7157;
+    border-left: 5px solid #ff7157 !important;
     color: gainsboro;
     border-radius: 4px;
 }
@@ -420,6 +420,7 @@ blockquote > p {
     margin: 0 0 0 0.5rem;
     padding: 3px 8px 0 4px;
     border: 1px solid #ababab;
+    border-right-width: 2px;
     border-radius: 4px;
 }
 
@@ -469,7 +470,7 @@ blockquote > p {
 .h5-sidebar-post-title {
     margin-bottom: 0.75rem;
     font-size: 16px;
-    line-height: 1.1rem;
+    line-height: 1.2rem;
     color: #424242;
 }
 
