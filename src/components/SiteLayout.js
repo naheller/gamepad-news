@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { rhythm, scale } from '../utils/typography'
 import '../styles.css'
 
