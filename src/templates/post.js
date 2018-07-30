@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SiteLayout from '../components/SiteLayout'
-import { rhythm, scale } from '../utils/typography'
 import { get, map, kebabCase } from 'lodash'
 
 import facebook from '../../static/svg/facebook-blue.svg'
@@ -15,7 +14,7 @@ class PostTemplate extends Component {
         const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
 
         const post = get(data, 'markdownRemark', {})
-        const { title, date, author, image, tags } = post.frontmatter
+        const { title, date, image, tags } = post.frontmatter
         const { previous, next } = pageContext
         const { slug } = post.fields
 
@@ -34,6 +33,7 @@ class PostTemplate extends Component {
                             >
                                 <img 
                                     src={facebook} 
+                                    alt="facebook"
                                     style={{ width: '13px', margin: '0 4px 4px 1px' }} 
                                 />
                                 <span>share</span>
@@ -44,6 +44,7 @@ class PostTemplate extends Component {
                             >
                                 <img 
                                     src={twitter} 
+                                    alt="twitter"
                                     style={{ width: '13px', margin: '0 6px 4px 4px' }} 
                                 />
                                 <span>tweet</span>

@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import SiteLayout from '../components/SiteLayout'
 import get from 'lodash/get'
 import BlogPosts from '../components/BlogPosts'
 
-class TagTemplate extends Component { 
-    constructor(props) {
-        super(props)
-    }
+const TagTemplate = props => { 
+    const { data, location, pageContext } = props
+    const { tag } = pageContext
 
-    showTagHeader() {
-        const { data, pageContext } = this.props
+    const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
+
+    const showTagHeader = () => {
+        const { data, pageContext } = props
         const { totalCount } = data.allMarkdownRemark
         const { tag } = pageContext
 
@@ -28,29 +29,20 @@ class TagTemplate extends Component {
         )
     }
 
-    showPosts() {
-        const { data, location, pageContext } = this.props
+    const showPosts = () => {
+        const { data } = props
         const { edges } = data.allMarkdownRemark
-        const { tag } = pageContext
 
         return <BlogPosts posts={edges} />
     }
 
-    render() {
-        const { data, location, pageContext } = this.props
-        const { tag } = pageContext
-
-        const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
-        
-        return (
-            <SiteLayout location={location}>
-                    <Helmet title={`${tag} | ${siteTitle}`} />
-                    {this.showTagHeader()}
-                    {this.showPosts()}
-                {/* <div>{this.showMorePostsButton()}</div> */}
-            </SiteLayout>
-        )
-    } 
+    return (
+        <SiteLayout location={location}>
+            <Helmet title={`${tag} | ${siteTitle}`} />
+            {showTagHeader()}
+            {showPosts()}
+        </SiteLayout>
+    )
 }
 
 export default TagTemplate

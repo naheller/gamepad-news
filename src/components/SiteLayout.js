@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { rhythm, scale } from '../utils/typography'
 import '../styles.css'
 
 import NavLogo from './NavLogo'

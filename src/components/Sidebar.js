@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import moment from 'moment'
 import get from 'lodash/get'
@@ -35,7 +35,10 @@ const Sidebar = props => {
                 return (
                     <div>
                         <div className="sidebar-post-list-header">
-                            <img src={gamepad} className="sidebar-post-list-header-icon" />
+                            <img 
+                                src={gamepad} className="sidebar-post-list-header-icon" 
+                                alt="dpad"
+                            />
                             <h5 className="sidebar-post-list-header-text">the latest</h5>
                         </div>
                         <div className="sidebar-post-list">

@@ -1,31 +1,21 @@
-import React, { Component } from 'react'
-import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { get, map, take, kebabCase } from 'lodash'
+import get from 'lodash/get'
+
+import SiteLayout from '../components/SiteLayout'
 import BlogPosts from '../components/BlogPosts'
 
-import _ from 'lodash';
-import SiteLayout from '../components/SiteLayout'
-import { rhythm } from '../utils/typography'
-import arrow from '../../static/svg/arrow.svg'
+const BlogIndex = props => {
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title', 'Gamepad News')
+    const posts = get(this.props, 'data.allMarkdownRemark.edges', [])
 
-class BlogIndex extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
-        const siteTitle = get(this.props, 'data.site.siteMetadata.title', 'Gamepad News')
-        const posts = get(this.props, 'data.allMarkdownRemark.edges', [])
-
-        return (
-            <SiteLayout location={this.props.location}>
-                <Helmet title={siteTitle} />
-                <BlogPosts posts={posts} />
-            </SiteLayout>
-        )
-    }
+    return (
+        <SiteLayout location={this.props.location}>
+            <Helmet title={siteTitle} />
+            <BlogPosts posts={posts} />
+        </SiteLayout>
+    )
 }
 
 export default BlogIndex
