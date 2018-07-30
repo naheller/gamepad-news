@@ -195,12 +195,11 @@ hr {
     color: white;
     font-family: Octarine-Bold;
     font-size: 34px;
-    letter-spacing: 4px;
-    padding-bottom: 4px;
+    letter-spacing: 3px;
 }
 
 .before-dot-news {
-    text-shadow: 3.5px 4px 0px #ff8e7a, 7px 8px 0px #3f0900;
+    text-shadow: 5px 0px 0px #ff9e8c;
 }
 
 .dot-news {
