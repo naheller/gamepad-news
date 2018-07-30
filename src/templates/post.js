@@ -3,12 +3,11 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SiteLayout from '../components/SiteLayout'
-import SocialShare from '../components/socialShare'
 import { rhythm, scale } from '../utils/typography'
 import { get, map, kebabCase } from 'lodash'
 
-import facebook from '../../static/facebook-blue.svg'
-import twitter from '../../static/twitter-blue.svg'
+import facebook from '../../static/svg/facebook-blue.svg'
+import twitter from '../../static/svg/twitter-blue.svg'
 
 class PostTemplate extends Component {
     render() {

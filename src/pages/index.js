@@ -7,9 +7,8 @@ import BlogPosts from '../components/BlogPosts'
 
 import _ from 'lodash';
 import SiteLayout from '../components/SiteLayout'
-import SocialShare from '../components/socialShare'
 import { rhythm } from '../utils/typography'
-import arrow from '../../static/arrow.svg'
+import arrow from '../../static/svg/arrow.svg'
 
 class BlogIndex extends Component {
     constructor(props) {

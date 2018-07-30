@@ -13,11 +13,6 @@
     src: url(../static/Octarine-LightOblique.otf);
 }
 
-/* @font-face {
-    font-family: Nikita;
-    src: url(../static/Nikita.otf);
-} */
-
 h1, h2, h3, h4, h5, h6 {
     font-family: Octarine-Bold !important;
 }
