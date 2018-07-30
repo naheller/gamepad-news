@@ -7,11 +7,11 @@ import SiteLayout from '../components/SiteLayout'
 import BlogPosts from '../components/BlogPosts'
 
 const BlogIndex = props => {
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title', 'Gamepad News')
-    const posts = get(this.props, 'data.allMarkdownRemark.edges', [])
+    const siteTitle = get(props, 'data.site.siteMetadata.title', 'Gamepad News')
+    const posts = get(props, 'data.allMarkdownRemark.edges', [])
 
     return (
-        <SiteLayout location={this.props.location}>
+        <SiteLayout location={props.location}>
             <Helmet title={siteTitle} />
             <BlogPosts posts={posts} />
         </SiteLayout>

@@ -37,6 +37,32 @@ class BlogPosts extends Component {
         } 
     }
 
+    showTagsReadMore(tags, slug) {
+        return (
+            <div className="index-tags-read-more-wrapper">
+                <div className="index-tags-list">
+                    {map(tags, tag => {
+                        return (
+                            <Link 
+                                to={`/${kebabCase(tag)}`}
+                                key={kebabCase(tag)}
+                            >
+                                <div className="tag-item" style={{ fontSize: '13px' }}>
+                                    {tag}
+                                </div>
+                            </Link>
+                        );
+                    })}
+                </div>
+                <Link to={slug}>
+                    <div className="index-read-more-button">
+                        read more{`\xa0\xa0`}
+                    </div>
+                </Link>     
+            </div>
+        )
+    }
+
     render() {
         return (
             <div>
@@ -64,27 +90,7 @@ class BlogPosts extends Component {
                                     className="index-post-excerpt"
                                     dangerouslySetInnerHTML={{ __html: node.excerpt }} 
                                 />
-                                <div className="index-tags-read-more-wrapper">
-                                    <div className="index-tags-list">
-                                        {map(tags, tag => {
-                                            return (
-                                                <Link 
-                                                    to={`/${kebabCase(tag)}`}
-                                                    key={kebabCase(tag)}
-                                                >
-                                                    <div className="tag-item" style={{ fontSize: '13px' }}>
-                                                        {tag}
-                                                    </div>
-                                                </Link>
-                                            );
-                                        })}
-                                    </div>
-                                    <Link to={slug}>
-                                        <div className="index-read-more-button">
-                                            read more{`\xa0\xa0`}
-                                        </div>
-                                    </Link>     
-                                </div>
+                                {this.showTagsReadMore(tags, slug)}
                             </div>
                             { index !== this.state.numPosts - 1 && <hr className="blog-post-divider" />}
                         </div>
