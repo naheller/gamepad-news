@@ -1,6 +1,6 @@
 ---
 title: Steam Summer Sale coming for our wallets with 150 titles on first day
-date: "2018-07-20T27:46:37.121Z"
+date: "2018-07-29T20:46:37.121Z"
 author: "Drew Scanlon"
 image: "./gameboy.png"
 tags: ["xbox", "e3", "god of war", "steam"]
