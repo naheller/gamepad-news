@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles.css'
 
-import facebook from '../../static/facebook-blue.svg'
-import twitter from '../../static/twitter-blue.svg'
-import google from '../../static/google-plus-red.svg'
+import facebook from '../../static/svg/facebook-blue.svg'
+import twitter from '../../static/svg/twitter-blue.svg'
+import google from '../../static/svg/google-plus-red.svg'
 
 const FooterSocial = props => {
     return (

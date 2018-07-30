@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
 import '../styles.css'
 
-import NavLogo from './navLogo'
+import NavLogo from './NavLogo'
 import NavMenu from './NavMenu'
-import Sidebar from './sidebar'
+import Sidebar from './Sidebar'
 import FooterSocial from './FooterSocial'
 import FooterMenu from './FooterMenu'
 

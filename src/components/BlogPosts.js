@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { map, take, kebabCase } from 'lodash'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
-import arrow from '../../static/arrow.svg'
+import arrow from '../../static/svg/arrow.svg'
 import '../styles.css'
 
 class BlogPosts extends Component {
@@ -53,7 +53,6 @@ class BlogPosts extends Component {
                                 </h2>
                                 <div className="index-post-date">
                                     <p style={{ margin: 0 }}>{date}</p>
-                                    {/* <SocialShare slug={slug} /> */}
                                 </div>
                                 <Link to={slug}>
                                     <Img 

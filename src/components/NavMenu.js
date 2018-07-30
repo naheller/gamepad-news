@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'gatsby'
 import '../styles.css'
 
-import ps from '../../static/playstation.svg'
-import xbox from '../../static/xbox.svg'
-import nswitch from '../../static/switch.svg'
-import pc from '../../static/pc.svg'
-import mobile from '../../static/phone.svg'
-import retro from '../../static/invaders.svg'
+import ps from '../../static/svg/playstation.svg'
+import xbox from '../../static/svg/xbox.svg'
+import nswitch from '../../static/svg/switch.svg'
+import pc from '../../static/svg/pc.svg'
+import mobile from '../../static/svg/phone.svg'
+import retro from '../../static/svg/invaders.svg'
 
 const NavMenu = props => {
     return (

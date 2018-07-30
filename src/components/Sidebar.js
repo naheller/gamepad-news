@@ -4,7 +4,7 @@ import moment from 'moment'
 import get from 'lodash/get'
 import map from 'lodash/map'
 
-import gamepad from '../../static/dpad.svg'
+import gamepad from '../../static/svg/dpad.svg'
 import '../styles.css'
 
 const Sidebar = props => {
