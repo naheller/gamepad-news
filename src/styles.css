@@ -681,7 +681,7 @@ blockquote > p {
 .contact-page-header {
     width: max-content;
     margin: 2rem auto;
-    color: #ff7f68;
+    color: #ff8d78;
 }
 
 .contact-page-field {
@@ -694,6 +694,35 @@ blockquote > p {
     outline: 0;
 }
 
+.contact-button {
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px !important;
+    color: #ff7f68;
+    border-bottom-width: 2px;
+}
+
+.contact-button:hover {
+    cursor: pointer;
+    background-color: #fff2ef;
+}
+
+.contact-button:focus {
+    border-color: initial !important;
+    background-color: #fff2ef;
+}
+
 .contact-page-field:focus {
-    border-color: #939393;
+    border-color: #dcdcdc;
+}
+
+.contact-success-header {
+    width: max-content;
+    margin: 1rem auto;
+}
+
+.contact-page-msg {
+    color: #ff7f68;
+    width: max-content;
+    margin: auto;
 }
