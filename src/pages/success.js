@@ -9,10 +9,18 @@ const Success = props => {
 
     return (
         <SiteLayout>
-            <div className="content-wrapper contact-page">
-                <Helmet title={`Contact | ${siteTitle}`} />
-                <h1>Thanks!</h1>
-                <h5 style={{ color: '#ff7f68' }}>We'll get back to you soon.</h5>
+            <Helmet>
+                <title>{`Contact | ${siteTitle}`}</title>
+                <meta name="description" content="Success Page" />
+            </Helmet>
+
+            <div id="main" className="alt">
+                <section id="one">
+                    <div className="inner">
+                        <header className="major"><h1>Thanks!</h1></header>
+                        <h5 style={{ color: '#ff7f68' }}>We'll get back to you soon.</h5>
+                    </div>
+                </section>
             </div>
         </SiteLayout>
     )
