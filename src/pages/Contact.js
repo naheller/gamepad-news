@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import SiteLayout from '../components/SiteLayout'
+import '../styles.css'
 
 const Contact = props => {
     const data = { props }
@@ -9,26 +10,17 @@ const Contact = props => {
 
     return (
         <SiteLayout>
-            <Helmet title={`Contact | ${siteTitle}`} />
-            <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                <input type="hidden" name="bot-field" />
-                <div className="field half first">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" />
-                </div>
-                <div className="field half">
-                    <label htmlFor="email">Email</label>
-                    <input type="text" name="email" id="email" />
-                </div>
-                <div className="field">
-                    <label htmlFor="message">Message</label>
-                    <textarea name="message" id="message" rows="6"></textarea>
-                </div>
-                <ul className="actions">
-                    <li><input type="submit" value="Send Message" className="special" /></li>
-                    <li><input type="reset" value="Clear" /></li>
-                </ul>
-            </form>
+            <div className="content-wrapper contact-page">
+                <Helmet title={`Contact | ${siteTitle}`} />
+                <h1 className="contact-page-header">Hello!</h1>
+                <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <input type="hidden" name="bot-field" className="contact-page-field" />
+                    <div><input type="text" name="name" id="name" placeholder="Name" className="contact-page-field" /></div>
+                    <div><input type="text" name="email" id="email" placeholder="Email" className="contact-page-field" /></div>
+                    <div><textarea name="message" id="message" rows="6" placeholder="Message" className="contact-page-field"></textarea></div>
+                    <div><input type="submit" value="Send Message" className="special" className="contact-page-field" style={{ textTransform: 'uppercase', fontSize: '16px' }} /></div>
+                </form>
+            </div>
         </SiteLayout>
     )
 }

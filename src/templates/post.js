@@ -7,6 +7,7 @@ import { get, map, kebabCase } from 'lodash'
 
 import facebook from '../../static/svg/facebook-blue.svg'
 import twitter from '../../static/svg/twitter-blue.svg'
+import '../styles.css'
 
 const PostTemplate = props => {
     const { data, location, pageContext } = props
@@ -113,7 +114,7 @@ const PostTemplate = props => {
 
     return (
         <SiteLayout location={location}>
-            <div className="blog-post content-wrapper">
+            <div className="blog-post">
                 <Helmet title={`${title} | ${siteTitle}`} />
                 {showHeader()}
                 <Img sizes={image.childImageSharp.sizes} className="featured-image" />

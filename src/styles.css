@@ -677,3 +677,23 @@ blockquote > p {
     letter-spacing: 1px;
     font-family: Octarine-Light;
 }
+
+.contact-page-header {
+    width: max-content;
+    margin: 2rem auto;
+    color: #ff7f68;
+}
+
+.contact-page-field {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ff7f68;
+    color: #ff7f68;
+    padding: 1rem;
+    outline: 0;
+}
+
+.contact-page-field:focus {
+    border-color: #939393;
+}
