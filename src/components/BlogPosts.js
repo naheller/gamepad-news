@@ -73,9 +73,7 @@ class BlogPosts extends Component {
                         <div>
                             <div className="blog-post content-wrapper" key={slug}>
                                 <h2 className="h2-post-title-wrapper">
-                                    <Link to={slug} className="h2-post-title">
-                                        {title}
-                                    </Link>
+                                    <Link to={slug} className="h2-post-title">{title}</Link>
                                 </h2>
                                 <div className="index-post-date">
                                     <p style={{ margin: 0 }}>{date}</p>
@@ -92,7 +90,7 @@ class BlogPosts extends Component {
                                 />
                                 {this.showTagsReadMore(tags, slug)}
                             </div>
-                            { index !== this.state.numPosts - 1 && <hr className="blog-post-divider" />}
+                            {index !== this.state.numPosts - 1 && <hr className="blog-post-divider" />}
                         </div>
                     )
                 })}
