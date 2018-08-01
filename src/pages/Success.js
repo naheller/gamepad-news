@@ -10,8 +10,8 @@ const Success = props => {
     return (
         <SiteLayout>
             <Helmet title={`Contact | ${siteTitle}`} />
-                <h1 className="contact-success-header">Thanks!</h1>
-                <h5 className="contact-page-msg">We'll get back to you soon.</h5>
+            <h1 className="contact-success-header">Thanks!</h1>
+            <h5 className="contact-page-msg">We'll get back to you soon.</h5>
         </SiteLayout>
     )
 }

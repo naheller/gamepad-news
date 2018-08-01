@@ -15,6 +15,7 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: Octarine-Bold !important;
+    color: #2f2f2f;
 }
 
 hr {
@@ -678,9 +679,13 @@ blockquote > p {
     font-family: Octarine-Light;
 }
 
+.contact-page {
+    width: 400px;
+}
+
 .contact-page-header {
     width: max-content;
-    margin: 2rem auto;
+    margin: 2.5rem auto 2rem auto;
     color: #ff8d78;
 }
 

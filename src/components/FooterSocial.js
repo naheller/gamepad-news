@@ -8,7 +8,10 @@ import google from '../../static/svg/google-plus-red.svg'
 const FooterSocial = props => {
     return (
         <div className="footer-social">
-            <div className="footer-social-button">
+            <div 
+                className="footer-social-button"
+                onClick={() => window.open("https://twitter.com/gamepad_news")}
+            >
                 <img 
                     src={twitter} 
                     className="footer-social-icon"
