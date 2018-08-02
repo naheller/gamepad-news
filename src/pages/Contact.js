@@ -10,25 +10,13 @@ const Contact = props => {
 
     return (
         <SiteLayout>
-            {/* <div className="content-wrapper contact-page">
-                <Helmet title={`Contact | ${siteTitle}`} />
-                <h1 className="contact-page-header">What's up?</h1>
-                <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
-                    <input type="hidden" name="bot-field" className="contact-page-field" />
-                    <div><input type="text" name="name" id="name" placeholder="Name" className="contact-page-field" /></div>
-                    <div><input type="text" name="email" id="email" placeholder="Email" className="contact-page-field" /></div>
-                    <div><textarea name="message" id="message" rows="6" placeholder="Message" className="contact-page-field"></textarea></div>
-                    <div><input type="submit" value="Send Message" className="contact-page-field contact-button" /></div>
-                </form>
-            </div> */}
-
             <div className="content-wrapper contact-page">
                 <Helmet title={`Contact | ${siteTitle}`} />
                 <h1 className="contact-page-header">What's up?</h1>
                 <form
                     name="contact"
                     method="post"
-                    action="/success/"
+                    action="/success"
                     data-netlify="true"
                     netlify-honeypot="bot-field"
                 >
