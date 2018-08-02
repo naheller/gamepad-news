@@ -10,7 +10,7 @@ const Contact = props => {
 
     return (
         <SiteLayout>
-            <div className="content-wrapper contact-page">
+            {/* <div className="content-wrapper contact-page">
                 <Helmet title={`Contact | ${siteTitle}`} />
                 <h1 className="contact-page-header">What's up?</h1>
                 <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -19,6 +19,25 @@ const Contact = props => {
                     <div><input type="text" name="email" id="email" placeholder="Email" className="contact-page-field" /></div>
                     <div><textarea name="message" id="message" rows="6" placeholder="Message" className="contact-page-field"></textarea></div>
                     <div><input type="submit" value="Send Message" className="contact-page-field contact-button" /></div>
+                </form>
+            </div> */}
+
+            <div className="content-wrapper contact-page">
+                <Helmet title={`Contact | ${siteTitle}`} />
+                <h1 className="contact-page-header">What's up?</h1>
+                <form
+                    name="contact"
+                    method="post"
+                    action="/success"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                >
+                    <input hidden className="hidden" name="bot-field" />
+                    <input type="text" placeholder="Name" name="name" className="contact-page-field" />
+                    <input type="text" placeholder="Email" name="email" className="contact-page-field" />
+                    <textarea type="text" placeholder="Message" name="message" className="contact-page-field" rows="6" />
+                    <div data-netlify-recaptcha />
+                    <button className="contact-page-field contact-button">Send</button>
                 </form>
             </div>
         </SiteLayout>
