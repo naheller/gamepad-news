@@ -28,7 +28,7 @@ const Contact = props => {
                 <form
                     name="contact"
                     method="post"
-                    action="/success"
+                    action="/success/"
                     data-netlify="true"
                     netlify-honeypot="bot-field"
                 >
@@ -36,8 +36,7 @@ const Contact = props => {
                     <input type="text" placeholder="Name" name="name" className="contact-page-field" />
                     <input type="text" placeholder="Email" name="email" className="contact-page-field" />
                     <textarea type="text" placeholder="Message" name="message" className="contact-page-field" rows="6" />
-                    <div data-netlify-recaptcha />
-                    <button className="contact-page-field contact-button">Send</button>
+                    <button type="submit" className="contact-page-field contact-button">Send</button>
                 </form>
             </div>
         </SiteLayout>
