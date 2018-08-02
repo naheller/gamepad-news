@@ -705,6 +705,7 @@ blockquote > p {
     letter-spacing: 2px !important;
     color: #ff7f68;
     border-bottom-width: 2px;
+    font-family: Octarine-Light;
 }
 
 .contact-button:hover {

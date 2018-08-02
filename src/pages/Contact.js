@@ -33,8 +33,8 @@ const Contact = props => {
                     netlify-honeypot="bot-field"
                 >
                     <input hidden className="hidden" name="bot-field" />
-                    <input type="text" placeholder="Name" name="name" className="contact-page-field" />
                     <input type="text" placeholder="Email" name="email" className="contact-page-field" />
+                    <input type="text" placeholder="Name" name="name" className="contact-page-field" />
                     <textarea type="text" placeholder="Message" name="message" className="contact-page-field" rows="6" />
                     <button type="submit" className="contact-page-field contact-button">Send</button>
                 </form>
