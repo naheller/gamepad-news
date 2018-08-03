@@ -65,7 +65,7 @@ const PostTemplate = props => {
 
     const showTags = () => (
         <div className="tags-container">
-            <h6 className="tags-header">in this story</h6>
+            <h5 className="tags-header">in this story</h5>
             <div className="tags-list">
                 {map(tags, tag => {
                     return (
@@ -83,7 +83,7 @@ const PostTemplate = props => {
 
     const showPrevNext = () => (
         <div className="prev-next-container">
-            <h6 className="prev-next-header">up next...</h6>
+            <h5 className="prev-next-header">up next...</h5>
             <div className="prev-next-buttons">
                 {previous && (
                     <div className="prev-next-button">

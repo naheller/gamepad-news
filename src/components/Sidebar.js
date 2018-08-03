@@ -54,7 +54,7 @@ const Sidebar = props => {
                                 if (hoursDiff < 24) {
                                     postDate = `today`
                                 } else if (daysDiff === 1) {
-                                        postDate = `yesterday`
+                                    postDate = `yesterday`
                                 } else if (daysDiff < 5) {
                                     postDate = `${daysDiff} day${daysDiff > 1 ? `s` : ``} ago`
                                 } else {

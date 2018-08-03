@@ -18,7 +18,10 @@ const FooterSocial = props => {
                     alt="Twitter"
                 />
             </div>
-            <div className="footer-social-button">
+            <div 
+                className="footer-social-button"
+                onClick={() => window.open("https://www.facebook.com/gamepadnews")}
+            >
                 <img 
                     src={facebook} 
                     className="footer-social-icon" 

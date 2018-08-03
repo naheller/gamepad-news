@@ -381,7 +381,7 @@ blockquote > p {
 
 .blog-post-details-divider {
     height: 0;
-    margin-top: 1.75rem;
+    margin: 1.75rem 0 2rem 0;
     border-bottom: 1px solid #dcdcdc;
 }
 
