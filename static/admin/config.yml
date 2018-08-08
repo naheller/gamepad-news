@@ -23,4 +23,4 @@ collections:
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Image file name', name: 'image', widget: 'string' }
