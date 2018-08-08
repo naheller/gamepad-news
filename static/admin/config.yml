@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: naheller/gamepad-news
+  branch: master
+  squash_merges: true
+
+publish_mode: editorial_workflow
+
+media_folder: 'static/img/uploads'
+public_folder: '/img/uploads'
+
+display_url: https://gamepad.news
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    label_singular: 'Post'
+    folder: 'src/pages'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
