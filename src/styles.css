@@ -75,7 +75,6 @@ hr {
 
     .blog-post-header {
         margin: 0 !important;
-        border-radius: 0 !important;
         -webkit-box-shadow: none !important;
            -moz-box-shadow: none !important;
                 box-shadow: none !important;
@@ -87,10 +86,6 @@ hr {
 
     .blog-post-body {
         margin: 2rem !important;
-    }
-
-    .featured-image {
-        border-radius: 0 !important;
     }
 
     .tags-container {
@@ -120,6 +115,7 @@ hr {
 
     .h2-post-title-wrapper {
         margin: 0 1.5rem 1rem 1.25rem !important;
+        
     }
 
     .index-post-date {
@@ -133,7 +129,7 @@ hr {
 
     .tag-page-header-text {
         padding-left: 1.5rem !important;
-        font-size: 16px !important;
+        font-size: 14px !important;
     }
 
     .tags-list {
@@ -178,7 +174,6 @@ hr {
 }
 
 .featured-image {
-    border-radius: 4px;
     -webkit-box-shadow: 8px 8px 20px -6px gainsboro;
        -moz-box-shadow: 8px 8px 20px -6px gainsboro;
             box-shadow: 8px 8px 20px -6px gainsboro;
@@ -186,6 +181,7 @@ hr {
 
 .nav-logo {
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     min-width: 350px;
@@ -194,14 +190,21 @@ hr {
 }
 
 .nav-logo-text {
+    display: flex;
     color: white;
+    align-items: center;
     font-family: Octarine-Bold;
-    font-size: 34px;
+    font-size: 35px;
     letter-spacing: 3px;
 }
 
+.nav-logo-svg {
+    width: 36px;
+    margin: 0 3.5px 0 1px;
+}
+
 .before-dot-news {
-    text-shadow: 5px 0px 0px #ff9e8c;
+    /* text-shadow: 5px 0px 0px #ff9e8c; */
 }
 
 .dot-news {
@@ -215,7 +218,6 @@ blockquote {
     padding-bottom: 0.35rem;
     border-left: 5px solid #ff7f68 !important;
     color: gainsboro;
-    border-radius: 5px;
 }
 
 blockquote > p {
@@ -318,7 +320,6 @@ blockquote > p {
 
 .content-wrapper {
     max-width: 1200px;
-    justify-self: center;
 }
 
 .footer {
@@ -369,9 +370,24 @@ blockquote > p {
     font-family: Octarine-Light;
     border-left: 5px solid #ff7f68;
     background-color: whitesmoke;
-    border-radius: 5px;
-    border-right: 1px solid #dcdcdc;
     border-bottom: 2px solid #dcdcdc;
+}
+
+.blog-post-date-icon-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.blog-post-tag-icons {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.blog-post-tag-icon {
+    width: 16px;
+    height: 16px;
+    margin: 0 18px 1px 0;
 }
 
 .blog-post-divider {
@@ -422,7 +438,6 @@ blockquote > p {
     padding: 3px 8px 0 4px;
     border: 1px solid #ababab;
     border-bottom-width: 2px;
-    border-radius: 5px;
 }
 
 .blog-post-social-button:hover {
@@ -453,6 +468,7 @@ blockquote > p {
 .h2-post-title {
     color: #191919;
     margin: 0;
+    line-height: 1.9rem;
 }
 
 .h2-post-title:hover {
@@ -516,14 +532,13 @@ blockquote > p {
     width: max-content;
     height: max-content;
     color: #626262;
-    margin: 0.75rem 0 1rem 0;
+    margin: 0.75rem 1rem 1rem 0;
     padding: 0.2rem 0.5rem 0.1rem 0.5rem;
     border-left: 5px solid #ff7f68;
     background-color: whitesmoke;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: Octarine-Light;
-    border-radius: 5px;
     border-bottom: 1px solid #dcdcdc;
 }
 
@@ -538,7 +553,6 @@ blockquote > p {
     height: max-content;
     margin: 0 0.5rem 0.5rem 0;
     padding: 0.2rem 0.5rem 0.1rem 0.5rem;
-    border-radius: 5px;
     border-bottom: 1px solid #dcdcdc;
     border-right: 5px solid #ff7f68;
     background-color: whitesmoke;
@@ -553,7 +567,6 @@ blockquote > p {
     justify-content: center;
     margin: 0 auto 1.5rem auto;
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-    border-radius: 5px;
     width: max-content;
     text-transform: uppercase;
     font-size: 13px;
@@ -608,7 +621,6 @@ blockquote > p {
     font-size: 14px;
     letter-spacing: 1px;
     color: #191919;
-    border-radius: 5px;
     border-bottom: 1px solid #dcdcdc;
     font-family: Octarine-Light;
 }
@@ -644,7 +656,6 @@ blockquote > p {
     border-left: 5px solid #ff7f68;
     height: max-content;
     padding: 0.35rem 0.7rem 0.25rem 0.7rem;
-    border-radius: 5px;
     border-bottom: 1px solid #dcdcdc;
 }
 
@@ -681,6 +692,7 @@ blockquote > p {
 
 .contact-page {
     width: 400px;
+    margin: auto;
 }
 
 .contact-page-header {
@@ -690,9 +702,9 @@ blockquote > p {
 }
 
 .contact-page-field {
+    min-width: 71px !important;
     width: 100%;
     margin-bottom: 1rem;
-    border-radius: 5px;
     border: 1px solid #ff7f68;
     color: #ff7f68;
     padding: 1rem;
