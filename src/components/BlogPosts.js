@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
-import { map, take, kebabCase, includes } from 'lodash'
+import { map, take, kebabCase } from 'lodash'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
+import TagIcons from './TagIcons'
 
 import arrow from '../../static/svg/arrow.svg'
-import ps from '../../static/svg/playstation-tomato.svg'
-import xbox from '../../static/svg/xbox-tomato.svg'
-import nSwitch from '../../static/svg/switch-tomato.svg'
-import pc from '../../static/svg/pc-tomato.svg'
-import mobile from '../../static/svg/phone-tomato.svg'
-import retro from '../../static/svg/invaders-tomato.svg'
-
 import '../styles.css'
 
 class BlogPosts extends Component {
@@ -70,106 +64,6 @@ class BlogPosts extends Component {
         )
     }
 
-    showTagIcons(tags) {
-        const tagIcons = {
-            playstation: 'playstation',
-            xbox: 'xbox',
-            // 'switch',
-            pc: 'pc',
-            mobile: 'mobile',
-            retro: 'retro'
-        }
-
-        return (
-            <div className="blog-post-tag-icons">
-                {   
-                    map(tags, tag => {
-                        switch(tag) {
-                            case 'playstation': {
-                                return (
-                                    <Link
-                                        to={`/playstation`}
-                                        key={'ps'}
-                                    >
-                                        <img 
-                                            src ={ps} 
-                                            className="blog-post-tag-icon" 
-                                        />
-                                    </Link>
-                                )
-                            }
-                            case 'xbox': {
-                                return (
-                                    <Link
-                                        to={`/xbox`}
-                                        key={'xbox'}
-                                    >
-                                        <img 
-                                            src ={xbox} 
-                                            className="blog-post-tag-icon" 
-                                        />
-                                    </Link>
-                                )
-                            }
-                            case 'switch': {
-                                return (
-                                    <Link
-                                        to={`/switch`}
-                                        key={'switch'}
-                                    >
-                                        <img 
-                                            src ={nSwitch} 
-                                            className="blog-post-tag-icon" 
-                                        />
-                                    </Link>
-                                )
-                            }
-                            case 'pc': {
-                                return (
-                                    <Link
-                                        to={`/pc`}
-                                        key={'pc'}
-                                    >
-                                        <img 
-                                            src ={pc} 
-                                            className="blog-post-tag-icon" 
-                                        />
-                                    </Link>
-                                )
-                            }
-                            case 'mobile': {
-                                return (
-                                    <Link
-                                        to={`/mobile`}
-                                        key={'mobile'}
-                                    >
-                                        <img 
-                                            src ={mobile} 
-                                            className="blog-post-tag-icon" 
-                                        />
-                                    </Link>
-                                )
-                            }
-                            case 'retro': {
-                                return (
-                                    <Link
-                                        to={`/retro`}
-                                        key={'retro'}
-                                    >
-                                        <img 
-                                            src ={retro} 
-                                            className="blog-post-tag-icon" 
-                                        />
-                                    </Link>
-                                )
-                            }
-                        }
-                    })
-                }
-            </div>
-        )
-    }
-
     render() {
         return (
             <div>
@@ -186,7 +80,7 @@ class BlogPosts extends Component {
                                     <div className="index-post-date">
                                         <p style={{ margin: 0 }}>{date}</p>
                                     </div>
-                                    {this.showTagIcons(tags)}
+                                    <TagIcons tags={tags} />
                                 </div>
                                 <Link to={slug}>
                                     <Img 

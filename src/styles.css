@@ -364,6 +364,11 @@ blockquote > p {
     margin: 2rem;
 }
 
+.blog-post-icons-adjust {
+    margin-top: 2px;
+    margin-left: 1.25rem;
+}
+
 .blog-post-header {
     margin-bottom: 1.75rem;
     padding: 1rem;
@@ -382,6 +387,7 @@ blockquote > p {
 .blog-post-tag-icons {
     display: flex;
     flex-flow: row wrap;
+    margin-right: auto;
 }
 
 .blog-post-tag-icon {

@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import SiteLayout from '../components/SiteLayout'
 import { get, map, kebabCase } from 'lodash'
 
+import TagIcons from '../components/TagIcons'
 import facebook from '../../static/svg/facebook-blue.svg'
 import twitter from '../../static/svg/twitter-blue.svg'
 import '../styles.css'
@@ -23,6 +24,7 @@ const PostTemplate = props => {
             <h1 className="h1-post-title">{title}</h1>
             <div className="blog-post-date-social">
                 <div className="blog-post-date">{date}</div>
+                <TagIcons tags={tags} blogPost />
                 <div className="blog-post-social-buttons-wrapper">
                     {showFbButton()}
                     {showTwitterButton()}
