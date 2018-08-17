@@ -25,6 +25,12 @@ const TagIcons = props => {
                                 <img 
                                     src ={ps} 
                                     className="blog-post-tag-icon" 
+                                    title="Playstation"
+                                    style={{ 
+                                        width: '16px', 
+                                        height: '16px', 
+                                        marginBottom: 0 
+                                    }}
                                 />
                             </Link>
                         )
@@ -37,6 +43,7 @@ const TagIcons = props => {
                                 <img 
                                     src ={xbox} 
                                     className="blog-post-tag-icon" 
+                                    title="Xbox"
                                 />
                             </Link>
                         )
@@ -49,6 +56,7 @@ const TagIcons = props => {
                                 <img 
                                     src ={nSwitch} 
                                     className="blog-post-tag-icon" 
+                                    title="Switch"
                                 />
                             </Link>
                         )
@@ -61,6 +69,7 @@ const TagIcons = props => {
                                 <img 
                                     src ={pc} 
                                     className="blog-post-tag-icon" 
+                                    title="PC"
                                 />
                             </Link>
                         )
@@ -73,6 +82,7 @@ const TagIcons = props => {
                                 <img 
                                     src ={mobile} 
                                     className="blog-post-tag-icon" 
+                                    title="Mobile"
                                 />
                             </Link>
                         )
@@ -85,6 +95,12 @@ const TagIcons = props => {
                                 <img 
                                     src ={retro} 
                                     className="blog-post-tag-icon" 
+                                    title="Retro"
+                                    style={{ 
+                                        width: '16px', 
+                                        height: '16px', 
+                                        marginBottom: 0 
+                                    }}
                                 />
                             </Link>
                         )
