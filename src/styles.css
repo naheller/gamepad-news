@@ -208,10 +208,6 @@ hr {
     margin: 0 3.5px 0 1px;
 }
 
-.before-dot-news {
-    /* text-shadow: 5px 0px 0px #ff9e8c; */
-}
-
 .dot-news {
     color: #191919;
     font-size: 20px;
@@ -489,7 +485,7 @@ blockquote > p {
 .sidebar-post-list {
     display: flex;
     flex-flow: column nowrap;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 .sidebar-post {
