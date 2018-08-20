@@ -23,6 +23,7 @@
     "gatsby-remark-responsive-iframe": "next",
     "gatsby-remark-smartypants": "next",
     "gatsby-source-filesystem": "next",
+    "gatsby-source-s3": "^0.0.0",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
     "lodash": "^4.17.5",

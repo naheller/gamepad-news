@@ -14,6 +14,7 @@ const NavLogo = () => (
             <img 
                 src={gamepad}
                 className="nav-logo-svg"
+                alt="Gamepad News"
             />
             <span className="before-dot-news">epad</span>
         </div>

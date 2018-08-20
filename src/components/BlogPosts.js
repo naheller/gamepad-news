@@ -28,11 +28,11 @@ class BlogPosts extends Component {
                     onClick={() => this.loadMorePosts()}
                     className="index-more-posts-button"
                 >
-                    <div style={{ marginBottom: '2px' }}>more stories</div>
+                    <div style={{ marginBottom: '2px' }}>more posts</div>
                     <img 
                         src={arrow} 
                         className="index-more-posts-button-svg"
-                        alt="more stories"
+                        alt="more posts"
                     />
                 </div>
             )

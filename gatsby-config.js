@@ -1,3 +1,5 @@
+const { aws } = require('./keys.json')
+
 module.exports = {
   siteMetadata: {
     title: 'Gamepad News',
@@ -12,6 +14,16 @@ module.exports = {
         options: {
             path: `${__dirname}/src/pages`,
             name: 'pages',
+        },
+    },
+    {
+        resolve: 'gatsby-source-s3',
+        options: {
+            aws: {
+                accessKeyId: aws.accessKey,
+                secretAccessKey: aws.secret,
+            },
+            buckets: ['gamepad-images'],
         },
     },
     // {

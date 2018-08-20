@@ -1,5 +1,5 @@
 import React from 'react'
-import { map } from 'lodash'
+import { get, map, includes, findIndex, orderBy } from 'lodash'
 import Link from 'gatsby-link'
 
 import ps from '../../static/svg/playstation-tomato.svg'
@@ -9,27 +9,37 @@ import pc from '../../static/svg/pc-tomato.svg'
 import mobile from '../../static/svg/phone-tomato.svg'
 import retro from '../../static/svg/invaders-tomato.svg'
 
+const tagTypes = ['playstation', 'xbox', 'switch', 'pc', 'mobile', 'retro']
+
 const TagIcons = props => {
-    const blogPostAdjustment = props.blogPost ? 'blog-post-icons-adjust' : ''
+    const filteredTags = map(props.tags, tagToMatch => {
+        if (includes(tagTypes, tagToMatch)) {
+            const tagIndex = findIndex(tagTypes, tag => tag === tagToMatch)
+            return { name: tagToMatch, order: tagIndex + 1 }
+        }
+    })
+
+    const orderedTags = orderBy(filteredTags, 'order', 'asc')
 
     return (
-        <div className={`blog-post-tag-icons ${blogPostAdjustment}`}>
-            {map(props.tags, tag => {
-                switch(tag) {
+        <div className={'blog-post-tag-icons'}>
+            {map(orderedTags, tag => {
+                switch(get(tag, 'name', '')) {
                     case 'playstation':
                         return (
                             <Link
                                 to={`/playstation`}
                                 key={'ps'}
+                                className="blog-post-tag-icon-link"
                             >
                                 <img 
                                     src ={ps} 
                                     className="blog-post-tag-icon" 
                                     title="Playstation"
+                                    alt="Playstation"
                                     style={{ 
-                                        width: '16px', 
-                                        height: '16px', 
-                                        marginBottom: 0 
+                                        width: '17px', 
+                                        height: '17px'
                                     }}
                                 />
                             </Link>
@@ -39,11 +49,13 @@ const TagIcons = props => {
                             <Link
                                 to={`/xbox`}
                                 key={'xbox'}
+                                className="blog-post-tag-icon-link"
                             >
                                 <img 
                                     src ={xbox} 
                                     className="blog-post-tag-icon" 
                                     title="Xbox"
+                                    alt="Xbox"
                                 />
                             </Link>
                         )
@@ -52,11 +64,13 @@ const TagIcons = props => {
                             <Link
                                 to={`/switch`}
                                 key={'switch'}
+                                className="blog-post-tag-icon-link"
                             >
                                 <img 
                                     src ={nSwitch} 
                                     className="blog-post-tag-icon" 
                                     title="Switch"
+                                    alt="Switch"
                                 />
                             </Link>
                         )
@@ -65,11 +79,13 @@ const TagIcons = props => {
                             <Link
                                 to={`/pc`}
                                 key={'pc'}
+                                className="blog-post-tag-icon-link"
                             >
                                 <img 
                                     src ={pc} 
                                     className="blog-post-tag-icon" 
                                     title="PC"
+                                    alt="PC"
                                 />
                             </Link>
                         )
@@ -78,11 +94,13 @@ const TagIcons = props => {
                             <Link
                                 to={`/mobile`}
                                 key={'mobile'}
+                                className="blog-post-tag-icon-link"
                             >
                                 <img 
                                     src ={mobile} 
                                     className="blog-post-tag-icon" 
                                     title="Mobile"
+                                    alt="Mobile"
                                 />
                             </Link>
                         )
@@ -91,15 +109,16 @@ const TagIcons = props => {
                             <Link
                                 to={`/retro`}
                                 key={'retro'}
+                                className="blog-post-tag-icon-link"
                             >
                                 <img 
                                     src ={retro} 
                                     className="blog-post-tag-icon" 
                                     title="Retro"
+                                    alt="Retro"
                                     style={{ 
-                                        width: '16px', 
-                                        height: '16px', 
-                                        marginBottom: 0 
+                                        width: '17px', 
+                                        height: '17px'
                                     }}
                                 />
                             </Link>

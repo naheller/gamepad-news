@@ -3,11 +3,11 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <g>
-	<rect x="358.39" y="51.2" style="fill:#c4c4c4;" width="51.21" height="51.2"/>
-	<rect x="102.39" y="51.2" style="fill:#c4c4c4;" width="51.2" height="51.2"/>
-	<rect x="102.39" y="409.6" style="fill:#c4c4c4;" width="51.2" height="51.2"/>
-	<rect x="358.39" y="409.6" style="fill:#c4c4c4;" width="51.21" height="51.2"/>
-	<path style="fill:#c4c4c4;" d="M512,307.19v51.2h-51.2v-51.2h-51.2v51.2h-51.21v51.21h-51.2v-51.21h-51.2h-51.2v51.21h-51.2v-51.21
+	<rect x="358.39" y="51.2" style="fill:#ff8d78;" width="51.21" height="51.2"/>
+	<rect x="102.39" y="51.2" style="fill:#ff8d78;" width="51.2" height="51.2"/>
+	<rect x="102.39" y="409.6" style="fill:#ff8d78;" width="51.2" height="51.2"/>
+	<rect x="358.39" y="409.6" style="fill:#ff8d78;" width="51.21" height="51.2"/>
+	<path style="fill:#ff8d78;" d="M512,307.19v51.2h-51.2v-51.2h-51.2v51.2h-51.21v51.21h-51.2v-51.21h-51.2h-51.2v51.21h-51.2v-51.21
 		h-51.2v-51.2H51.2v51.2H0v-51.2v-51.2h51.2V204.8h51.19v-51.2h51.2v-51.2h51.2v51.2h51.2h51.2v-51.2h51.2v51.2h51.21v51.2h51.2
 		v51.19H512V307.19z M358.39,255.99V204.8h-51.2v51.19H358.39z M204.79,255.99V204.8h-51.2v51.19H204.79z"/>
 </g>

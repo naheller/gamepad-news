@@ -1,13 +1,16 @@
 ---
 title: Full cross-play coming to Halo 6 this October
-date: 2018-08-18T01:53:53.888Z
+date: 2018-08-20T01:53:53.888Z
 author: Nathan Heller
 tags:
+  - xbox
   - sony
-  - ps4
+  - playstation
   - destiny 2
   - bungie
 image: ./halo.jpg
+imageS3: dead-cells.jpg
+description: "Duis eget augue semper nisi pharetra laoreet. Integer elementum suscipit nulla vitae eleifend. Duis a lectus et justo varius consectetur sed in lorem."
 ---
 **Lorem ipsum** dolor sit amet, consectetur adipiscing elit. Nunc quis lorem vitae turpis ullamcorper maximus a sit amet libero. Proin elementum _urna nulla_. Aliquam vel aliquet lacus.
 

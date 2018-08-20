@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import SiteLayout from '../components/SiteLayout'
-import get from 'lodash/get'
+import { get, capitalize } from 'lodash'
 import BlogPosts from '../components/BlogPosts'
 
 const TagTemplate = props => { 
@@ -20,7 +20,7 @@ const TagTemplate = props => {
             <div>
                 <div className="tag-page-header">
                     <p className="tag-page-header-text">
-                        {`${totalCount} ${totalCount === 1 ? 'story' : 'stories'} about\xa0`}
+                        {`${totalCount} ${totalCount === 1 ? 'post' : 'posts'} about\xa0`}
                         <span style={{ fontFamily: 'Octarine-Bold' }}>{tag}</span>
                     </p>
                 </div>
@@ -38,7 +38,17 @@ const TagTemplate = props => {
 
     return (
         <SiteLayout location={location}>
-            <Helmet title={`${tag} | ${siteTitle}`} />
+            <Helmet>
+                <title>{capitalize(tag)}</title>
+                <meta name="description" content={`${capitalize(tag)} posts on ${siteTitle}`} /> 
+                <meta name="keywords" content={tag} />
+                <meta name="robots" content="index,follow" />
+                <meta property="og:url" content={`https://gamepad.news/${location.pathname}`} />
+                <meta property="og:type" content="blog" />
+                <meta property="og:title" content={tag} />
+                <meta property="og:description" content={`${siteTitle} articles about ${tag}`} />
+                {/* <meta property="og:image" content={image} /> */}
+            </Helmet>
             {showTagHeader()}
             {showPosts()}
         </SiteLayout>
