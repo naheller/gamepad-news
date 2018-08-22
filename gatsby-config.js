@@ -20,8 +20,8 @@ module.exports = {
         resolve: 'gatsby-source-s3',
         options: {
             aws: {
-                accessKeyId: $GP_AWS_ACCESS_KEY,
-                secretAccessKey: $GP_AWS_SECRET,
+                accessKeyId: process.env.GP_AWS_ACCESS_KEY,
+                secretAccessKey: process.env.GP_AWS_SECRET,
             },
             buckets: ['gamepad-images'],
         },
