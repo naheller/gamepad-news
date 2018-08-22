@@ -1,4 +1,4 @@
-const { aws } = require('./keys.json')
+// const { aws } = require('./keys.json')
 
 module.exports = {
   siteMetadata: {
