@@ -29,11 +29,14 @@ const PostTemplate = props => {
         <div className="blog-post-header">
             <h1 className="h1-post-title">{title}</h1>
             <div className="blog-post-date-social">
-                <div className="blog-post-date">
-                    <span style={{ color: '#444', fontWeight: '900' }}>{`${dayOfWeek}, `}</span>
-                    <span>{restOfDate}</span>
+                <div style={{ display: 'flex', flexFlow: 'row wrap', alignItems: 'center' }}>
+                    <div className="blog-post-date">
+                        <span style={{ color: '#444', fontWeight: '900' }}>{`${dayOfWeek}, `}</span>
+                        <span>{restOfDate}</span>
+                    </div>
+                    <TagIcons tags={tags} blogPost />
                 </div>
-                <TagIcons tags={tags} blogPost />
+                
                 <div className="blog-post-social-buttons-wrapper blog-post-social-buttons-wrapper-no-mgn">
                     {showFbButton()}
                     {showTwitterButton()}
@@ -50,7 +53,7 @@ const PostTemplate = props => {
             <img 
                 src={facebook} 
                 alt="facebook"
-                style={{ width: '13px', margin: '0 5px 0 0' }} 
+                style={{ width: '13px', margin: '0 6px 0 0' }} 
             />
             <span className="blog-post-social-button-text">share</span>
         </div>
@@ -64,7 +67,7 @@ const PostTemplate = props => {
             <img 
                 src={twitter} 
                 alt="twitter"
-                style={{ width: '13px', margin: '0 6px 0 0' }} 
+                style={{ width: '13px', margin: '0 7px 0 0' }} 
             />
             <span className="blog-post-social-button-text">tweet</span>
         </div>

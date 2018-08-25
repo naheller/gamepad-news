@@ -81,7 +81,6 @@ hr {
     }
 
     .blog-post-date {
-        font-size: 16px !important;
         width: max-content !important;
     }
 
@@ -114,10 +113,6 @@ hr {
         margin-bottom: 1rem;
     }
 
-    .prev-next-button-text {
-        font-size: 13px !important;
-    }
-
     .h2-post-title-wrapper {
         margin: 0 1.5rem 1rem 1.25rem !important;
         
@@ -134,15 +129,11 @@ hr {
 
     .tag-page-header-text {
         padding-left: 1.5rem !important;
-        font-size: 14px !important;
+        font-size: 15px !important;
     }
 
     .tags-list {
         margin: 1rem 1.5rem 0 1rem !important;
-    }
-
-    .tag-item {
-        font-size: 13px !important;
     }
 
     .index-read-more-button {
@@ -209,7 +200,7 @@ hr {
     color: white;
     align-items: center;
     font-family: Octarine-Bold;
-    font-size: 35px;
+    font-size: 33px;
     letter-spacing: 3px;
 }
 
@@ -267,18 +258,18 @@ blockquote > p {
 }
 
 .nav-menu-tag-icon {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     margin: 0;
 }
 
 .nav-menu-tag-text {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 700;
     font-variant: small-caps;
     margin-left: 1rem;
-    padding-top: 2px;
-    height: 36px;
+    /* padding-top: 2px; */
     letter-spacing: 1px;
     font-family: Octarine-Light;
 }
@@ -389,13 +380,12 @@ blockquote > p {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin: 0.75rem 1rem 1rem 0;
+    margin: 1rem 0;
 }
 
 .blog-post-tag-icons {
     display: flex;
     flex-flow: row wrap;
-    margin-right: auto;
     justify-content: flex-start;
     align-items: center;
     height: max-content;
@@ -437,12 +427,13 @@ blockquote > p {
 
 .blog-post-date {
     text-transform: uppercase;
-    font-size: 16px;
-    font-style: italic;
+    font-size: 17px;
+    /* font-style: italic; */
     font-weight: 500;
     color: #626262;
     letter-spacing: 1px;
-    margin: 0.19rem 1.5rem 0 0;
+    margin: 0 1.5rem 0 0.15rem;
+    padding-top: 0.2rem;
 }
 
 .blog-post-social-buttons-wrapper {
@@ -458,7 +449,6 @@ blockquote > p {
     align-items: center;
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: 700;
     color: #7a7a7a;
     background-color: #fdfdfd;
     letter-spacing: 1px;
@@ -471,7 +461,9 @@ blockquote > p {
 
 .blog-post-social-button-text {
     height: 0.85rem;
-    margin-top: 2px;
+    font-family: Octarine-Light;
+    font-weight: 900;
+    /* padding-top: 1px; */
 }
 
 .blog-post-social-button:hover {
@@ -570,7 +562,7 @@ blockquote > p {
 }
 
 .index-post-date {
-    font-size: 13px;
+    font-size: 14px;
     width: max-content;
     height: max-content;
     color: #626262;
@@ -728,7 +720,7 @@ blockquote > p {
 
 .tag-page-header-text {
     margin: 0;
-    padding: 0.25rem 2rem 0 2rem;
+    padding: 0.3rem 2rem 0 2rem;
     color: #626262;
     font-size: 16px;
     align-self: center;
@@ -753,6 +745,7 @@ blockquote > p {
     width: 100%;
     margin-bottom: 1rem;
     border: 1px solid #ff7f68;
+    border-radius: 5px;
     color: #ff7f68;
     padding: 1rem;
     outline: 0;

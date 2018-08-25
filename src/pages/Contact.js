@@ -52,7 +52,7 @@ const Contact = props => {
                             placeholder="Message" 
                             name="message" 
                             className="contact-page-field" 
-                            rows="6" 
+                            rows="8" 
                         />
                     </div>
                     <button 

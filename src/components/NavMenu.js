@@ -32,7 +32,7 @@ const NavMenu = () => (
                 <img 
                     src={xbox} 
                     className="nav-menu-tag-icon" 
-                    style={{ width: '23px', height: '23px' }} 
+                    style={{ width: '20px', height: '20px' }} 
                     alt="Xbox"
                 />
                 <span className="nav-menu-tag-text">xbox</span>
@@ -45,7 +45,7 @@ const NavMenu = () => (
                 <img 
                     src={nswitch} 
                     className="nav-menu-tag-icon" 
-                    style={{ width: '23px', height: '23px' }} 
+                    style={{ width: '20px', height: '20px' }} 
                     alt="Nintendo Switch"
                 />
                 <span className="nav-menu-tag-text">switch</span>
