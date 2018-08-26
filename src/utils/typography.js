@@ -5,7 +5,7 @@ import Alton from 'typography-theme-alton'
 Alton.baseFontSize = '19px'
 Alton.baseLineHeight = 1.666
 // Alton.headerFontFamily = ['Open Sans', 'sans-serif']
-// Alton.bodyFontFamily = ['Georgia', 'serif']
+Alton.bodyFontFamily = ['Noto Sans', 'sans-serif']
 
 Alton.overrideThemeStyles = ({ rhythm }, options) => ({
     'h1': {

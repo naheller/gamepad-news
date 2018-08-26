@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
                                     title
                                     date
                                     author
+                                    description
                                     tags
                                 }
                             }

@@ -102,9 +102,10 @@ const PostTemplate = props => {
                         <Link 
                             rel="prev"
                             to={previous.fields.slug} 
-                            className="prev-next-button-text"
                         >
-                            <div>{previous.frontmatter.title.toLowerCase()}</div>
+                            <div className="prev-next-button-text">
+                                {previous.frontmatter.title.toLowerCase()}
+                            </div>
                         </Link>
                     </div>
                 )}
@@ -114,9 +115,10 @@ const PostTemplate = props => {
                         <Link 
                             rel="next"
                             to={next.fields.slug} 
-                            className="prev-next-button-text"
                         >
-                            <div>{next.frontmatter.title.toLowerCase()}</div>
+                            <div className="prev-next-button-text">
+                                {next.frontmatter.title.toLowerCase()}
+                            </div>
                         </Link>
                     </div>
                 )}
@@ -136,7 +138,7 @@ const PostTemplate = props => {
                     <meta property="og:type" content="article" />
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={description} />
-                    {/* <meta property="og:image" content={image} /> */}
+                    <meta property="og:image" content={image} />
                 </Helmet>
                 {showHeader()}
                 <Img sizes={image.childImageSharp.sizes} className="featured-image" />

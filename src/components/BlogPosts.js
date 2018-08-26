@@ -48,7 +48,7 @@ class BlogPosts extends Component {
                                 to={`/${kebabCase(tag)}`}
                                 key={kebabCase(tag)}
                             >
-                                <div className="tag-item" style={{ fontSize: '13px' }}>
+                                <div className="tag-item">
                                     {tag}
                                 </div>
                             </Link>
@@ -67,7 +67,8 @@ class BlogPosts extends Component {
     render() {
         return (
             <div>
-                {map(take(this.props.posts, this.state.numPosts), ({ node }, index) => {
+                {map(take(this.props.posts, this.state.numPosts), (post, index) => {
+                    const { node } = post
                     const { slug } = node.fields
                     const { title, date, tags, image } = node.frontmatter
                     return (

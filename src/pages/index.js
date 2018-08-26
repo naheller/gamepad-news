@@ -11,6 +11,7 @@ const BlogIndex = props => {
     const siteDesc = get(props, 'data.site.siteMetadata.description', 'Video game news blog')
 
     const posts = get(props, 'data.allMarkdownRemark.edges', [])
+    const s3images = get(props, 'data.allS3Image.edges', [])
 
     return (
         <SiteLayout location={props.location}>
@@ -25,7 +26,7 @@ const BlogIndex = props => {
                 <meta property="og:description" content={siteDesc} />
                 {/* <meta property="og:image" content={image} /> */}
             </Helmet>
-            <BlogPosts posts={posts} />
+            <BlogPosts posts={posts} images={s3images} />
         </SiteLayout>
     )
 }

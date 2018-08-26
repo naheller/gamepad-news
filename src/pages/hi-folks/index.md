@@ -3,6 +3,7 @@ title: Battlerite DLC adds 3 maps and a battle royale mode, available during E3 
 date: "2018-08-23T22:40:32.169Z"
 author: "Dan Ryckert"
 image: "./gameboy.png"
+s3image: "https://s3.amazonaws.com/gamepad-images/dead-cells.jpg"
 tags: ["playstation", "e3", "god of war", "retro", "pc", "dragon age ultimate edition", "switch", "bethesda", "mobile", "the crew 2", "xbox"]
 description: "Suspendisse eget libero et augue ornare mattis vitae sed magna. Donec dolor dui, consectetur a malesuada sed, consequat a ligula. Sed ut tempus neque. Donec dictum nibh sem, et dignissim arcu iaculis eget. Aenean nibh sem, hendrerit eu libero a, semper euismod magna."
 ---
