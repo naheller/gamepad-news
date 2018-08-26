@@ -1,25 +1,34 @@
 import Typography from 'typography'
-import Alton from 'typography-theme-alton'
+// import Alton from 'typography-theme-alton'
 
 
-Alton.baseFontSize = '19px'
-Alton.baseLineHeight = 1.666
-// Alton.headerFontFamily = ['Open Sans', 'sans-serif']
-Alton.bodyFontFamily = ['Noto Sans', 'sans-serif']
+// Alton.baseFontSize = '18px'
+// Alton.baseLineHeight = 1.666
+// Alton.headerFontFamily = 'OctLight'
+// Alton.bodyFontFamily = ['Noto Sans', 'sans-serif']
 
-Alton.overrideThemeStyles = ({ rhythm }, options) => ({
-    'h1': {
+// Alton.overrideThemeStyles = ({ rhythm }, options) => ({
+//     baseFontSize: '18px',
+//     baseLineHeight: 1.666,
+//     'h1': {
+//         color: '#191919',
+//         // letterSpacing: '-1px'
+//     },
+//     'h2,h3': {
+//         color: '#191919',
+//         marginBottom: rhythm(1),
+//         marginTop: rhythm(2),
+//     }
+//   })
+
+const typography = new Typography({
+    baseFontSize: '19px',
+    baseLineHeight: 1.666,
+    'h1,h2,h3,p': {
         color: '#191919',
-        letterSpacing: '-1px'
-    },
-    'h2,h3': {
-        color: '#191919',
-        marginBottom: rhythm(1),
-        marginTop: rhythm(2),
+        // letterSpacing: '-1px'
     }
   })
-
-const typography = new Typography(Alton)
 typography.toString()
 
 // Hot reload typography in development.

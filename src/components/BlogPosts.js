@@ -79,7 +79,7 @@ class BlogPosts extends Component {
                                 </h2>
                                 <div className="blog-post-date-icon-wrapper">
                                     <div className="index-post-date">
-                                        <p style={{ margin: 0 }}>{date}</p>
+                                        {date}
                                     </div>
                                     <TagIcons tags={tags} />
                                 </div>
