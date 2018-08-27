@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-family: Octarine-Light;
     color: #191919;
-    letter-spacing: 0.25px;
+    /* letter-spacing: 0.25px; */
 }
 
 hr {
@@ -595,6 +595,7 @@ blockquote > p {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: Octarine-Light;
+    font-weight: bold;
     border-bottom: 1px solid #dcdcdc;
     border-radius: 1px;
     line-height: 1.5rem;
@@ -618,6 +619,7 @@ blockquote > p {
     letter-spacing: 1px;
     line-height: 1.5rem;
     font-family: Octarine-Light;
+    font-weight: bold;
     border-radius: 1px;
 }
 
@@ -680,6 +682,7 @@ blockquote > p {
     background-color: whitesmoke;
     text-transform: uppercase;
     font-size: 14px;
+    font-weight: bold;
     letter-spacing: 1px;
     color: #626262;
     border-bottom: 1px solid #dcdcdc;
@@ -729,6 +732,7 @@ blockquote > p {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: Octarine-Light;
+    font-weight: bold;
     line-height: 1.25rem;
 }
 

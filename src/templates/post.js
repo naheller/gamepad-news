@@ -134,11 +134,21 @@ const PostTemplate = props => {
                     <meta name="description" content={description} /> 
                     <meta name="keywords" content={join(tags, ',')} />
                     <meta name="robots" content="index,follow" />
+
                     <meta property="og:url" content={`https://gamepad.news${slug}`} />
                     <meta property="og:type" content="article" />
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={description} />
-                    <meta property="og:image" content={image} />
+                    <meta property="og:image" content={`http://gamepad.news${image.publicURL}`} />
+
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta
+                        name="twitter:creator"
+                        content="gamepad_news"
+                    />
+                    <meta name="twitter:title" content={title} />
+                    <meta name="twitter:description" content={description} />
+                    <meta name="twitter:image" content={`http://gamepad.news${image.publicURL}`} />
                 </Helmet>
                 {showHeader()}
                 <Img sizes={image.childImageSharp.sizes} className="featured-image" />
@@ -171,8 +181,10 @@ export const pageQuery = graphql`
                 title
                 date(formatString: "dddd, MMM D, YYYY")
                 author
+                description
                 tags
                 image {
+                    publicURL
                     childImageSharp{
                         sizes(maxWidth: 630) {
                             ...GatsbyImageSharpSizes
