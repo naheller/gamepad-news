@@ -603,7 +603,7 @@ blockquote > p {
 
 .index-post-excerpt {
     margin: 2rem 1rem;
-    font-size: 18px;
+    /* font-size: 18px; */
 }
 
 .index-read-more-button {

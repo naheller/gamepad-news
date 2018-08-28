@@ -17,6 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
                     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 10000) {
                         edges {
                             node {
+                                id
                                 fields {
                                     slug
                                 }
@@ -48,7 +49,13 @@ exports.createPages = ({ graphql, actions }) => {
                     const previous = index === posts.length - 1 ? null : posts[index + 1].node
                     const next = index === 0 ? null : posts[index - 1].node
                     
+                    const postId = _.get(post, 'node.id', '')
                     const slug = _.get(post, 'node.fields.slug', '')
+                    const shortSlug = _.truncate(_.trim(slug, '/'), {
+                        'length': 32,
+                        'omission': ''
+                    })
+                    const slugWithId = `${shortSlug}-${postId.substring(0, 8)}`
                     const postTags = _.get(post, 'node.frontmatter.tags', [])
 
                     if (!_.isEmpty(postTags)) {
@@ -56,7 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
                     }
 
                     createPage({
-                        path: slug,
+                        path: slug, // `/${slugWithId}/`
                         component: postTemplate,
                         context: {
                             slug: slug,

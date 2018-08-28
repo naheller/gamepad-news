@@ -39,14 +39,14 @@ const TagTemplate = props => {
     return (
         <SiteLayout location={location}>
             <Helmet>
-                <title>{capitalize(tag)}</title>
-                <meta name="description" content={`${capitalize(tag)} posts on ${siteTitle}`} /> 
+                <title>{`${capitalize(tag)} articles on ${siteTitle}`}</title>
+                <meta name="description" content={`${capitalize(tag)} articles on ${siteTitle}`} /> 
                 <meta name="keywords" content={tag} />
                 <meta name="robots" content="index,follow" />
                 <meta property="og:url" content={`https://gamepad.news/${location.pathname}`} />
                 <meta property="og:type" content="blog" />
                 <meta property="og:title" content={tag} />
-                <meta property="og:description" content={`${siteTitle} articles about ${tag}`} />
+                <meta property="og:description" content={`${capitalize(tag)} articles on ${siteTitle}`} />
                 {/* <meta property="og:image" content={image} /> */}
             </Helmet>
             {showTagHeader()}

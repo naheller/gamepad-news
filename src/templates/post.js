@@ -142,10 +142,7 @@ const PostTemplate = props => {
                     <meta property="og:image" content={`http://gamepad.news${image.publicURL}`} />
 
                     <meta name="twitter:card" content="summary_large_image" />
-                    <meta
-                        name="twitter:creator"
-                        content="gamepad_news"
-                    />
+                    <meta name="twitter:creator" content="gamepad_news" />
                     <meta name="twitter:title" content={title} />
                     <meta name="twitter:description" content={description} />
                     <meta name="twitter:image" content={`http://gamepad.news${image.publicURL}`} />
