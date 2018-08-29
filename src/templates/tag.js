@@ -7,34 +7,22 @@ import BlogPosts from '../components/BlogPosts'
 
 const TagTemplate = props => { 
     const { data, location, pageContext } = props
+    const { edges, totalCount } = data.allMarkdownRemark
     const { tag } = pageContext
 
     const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
 
-    const showTagHeader = () => {
-        const { data, pageContext } = props
-        const { totalCount } = data.allMarkdownRemark
-        const { tag } = pageContext
-
-        return (
-            <div>
-                <div className="tag-page-header">
-                    <p className="tag-page-header-text">
-                        {`${totalCount} ${totalCount === 1 ? 'post' : 'posts'} about\xa0`}
-                        <span style={{ fontFamily: 'Octarine-Bold' }}>{tag}</span>
-                    </p>
-                </div>
-                <hr className="blog-post-divider" style={{ margin: 0 }} />
+    const showTagHeader = () => (
+        <div>
+            <div className="tag-page-header">
+                <p className="tag-page-header-text">
+                    {`${totalCount} ${totalCount === 1 ? 'post' : 'posts'} about\xa0`}
+                    <span style={{ fontFamily: 'Octarine-Bold' }}>{tag}</span>
+                </p>
             </div>
-        )
-    }
-
-    const showPosts = () => {
-        const { data } = props
-        const { edges } = data.allMarkdownRemark
-
-        return <BlogPosts posts={edges} />
-    }
+            <hr className="blog-post-divider" style={{ margin: 0 }} />
+        </div>
+    )
 
     return (
         <SiteLayout location={location}>
@@ -50,7 +38,7 @@ const TagTemplate = props => {
                 {/* <meta property="og:image" content={image} /> */}
             </Helmet>
             {showTagHeader()}
-            {showPosts()}
+            <BlogPosts posts={edges} />
         </SiteLayout>
     )
 }

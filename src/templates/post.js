@@ -19,7 +19,7 @@ const PostTemplate = props => {
     // const s3ImageUrl = get(data, 's3Image.Url', 'https://www.mariowiki.com/images/4/4d/Yoshi_-_Mario_Party_10.png')
     
     const { title, date, image, tags, description } = post.frontmatter
-    const { previous, next } = pageContext
+    const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields
 
     const dayOfWeek = moment(date).format('dddd')
@@ -131,6 +131,7 @@ const PostTemplate = props => {
             <div className="blog-post">
                 <Helmet>
                     <title>{title}</title>
+                    <meta name="title" content={title} />
                     <meta name="description" content={description} /> 
                     <meta name="keywords" content={join(tags, ',')} />
                     <meta name="robots" content="index,follow" />

@@ -1,6 +1,6 @@
 ---
 title: Battlerite DLC adds 3 maps and a battle royale mode, available during E3 launch event
-date: 2018-08-23T22:40:32.169Z
+date: 2018-08-27T22:40:32.169Z
 author: Dan Ryckert
 image: ./gameboy.png
 s3image: https://s3.amazonaws.com/gamepad-images/dead-cells.jpg

@@ -46,13 +46,18 @@ const Sidebar = props => {
                                 const postTitle = get(post, 'node.frontmatter.title', '')
                                 let postDate = get(post, 'node.frontmatter.date', '')
                                 const slug = get(post, 'node.fields.slug', '')
+                                // alert(postDate)
+                                // alert(moment(postDate).format('hh:mm:ss'))
                                 
                                 const now = moment()
+                                const minsDiff = now.diff(moment(postDate), 'minutes')
                                 const hoursDiff = now.diff(moment(postDate), 'hours')
                                 const daysDiff = now.diff(moment(postDate), 'days')
 
-                                if (hoursDiff < 24) {
-                                    postDate = `today`
+                                if (minsDiff < 60) {
+                                    postDate = `${minsDiff} minute${minsDiff > 1 ? `s` : ``} ago`
+                                } else if (hoursDiff < 24) {
+                                    postDate = `${hoursDiff} hour${hoursDiff > 1 ? `s` : ``} ago`
                                 } else if (daysDiff === 1) {
                                     postDate = `yesterday`
                                 } else if (daysDiff < 5) {

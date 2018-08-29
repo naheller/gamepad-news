@@ -45,7 +45,8 @@ exports.createPages = ({ graphql, actions }) => {
                 const posts = _.get(data, 'allMarkdownRemark.edges', [])
                 let tags = []
 
-                _.each(posts, (post, index) => {
+                _.forEach(posts, (post, index) => {
+                    // console.log('POST-------------------------------\n', post)
                     const previous = index === posts.length - 1 ? null : posts[index + 1].node
                     const next = index === 0 ? null : posts[index - 1].node
                     
@@ -63,7 +64,7 @@ exports.createPages = ({ graphql, actions }) => {
                     }
 
                     createPage({
-                        path: slug, // `/${slugWithId}/`
+                        path: slug, //`/${slugWithId}/`,
                         component: postTemplate,
                         context: {
                             slug: slug,
@@ -75,7 +76,7 @@ exports.createPages = ({ graphql, actions }) => {
 
                 tags = _.uniq(tags)
 
-                _.each(tags, tag => {
+                _.forEach(tags, tag => {
                     createPage({
                         path: `/${_.kebabCase(tag)}/`,
                         component: tagTemplate,
@@ -90,6 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
+    // console.log('NODE-------------------------------\n', node)
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
@@ -97,6 +99,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             node,
             getNode
         })
+        console.log('node----------', node)
+        console.log('value----------', value)
         createNodeField({
             name: `slug`,
             node,
