@@ -46,17 +46,10 @@ exports.createPages = ({ graphql, actions }) => {
                 let tags = []
 
                 _.forEach(posts, (post, index) => {
-                    // console.log('POST-------------------------------\n', post)
                     const previous = index === posts.length - 1 ? null : posts[index + 1].node
                     const next = index === 0 ? null : posts[index - 1].node
-                    
-                    const postId = _.get(post, 'node.id', '')
+
                     const slug = _.get(post, 'node.fields.slug', '')
-                    const shortSlug = _.truncate(_.trim(slug, '/'), {
-                        'length': 32,
-                        'omission': ''
-                    })
-                    const slugWithId = `${shortSlug}-${postId.substring(0, 8)}`
                     const postTags = _.get(post, 'node.frontmatter.tags', [])
 
                     if (!_.isEmpty(postTags)) {
@@ -91,20 +84,24 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-    // console.log('NODE-------------------------------\n', node)
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
-        const value = createFilePath({
-            node,
-            getNode
+        // const value = createFilePath({
+        //     node,
+        //     getNode
+        // })
+
+        const shortId = _.get(node, 'id').substring(0, 8)
+        const shortTitle = _.truncate(_.get(node, 'frontmatter.title', ''), {
+            'length': 50,
+            'omission': ''
         })
-        console.log('node----------', node)
-        console.log('value----------', value)
+
         createNodeField({
-            name: `slug`,
             node,
-            value
+            name: `slug`,
+            value: `${_.kebabCase(shortTitle)}-${shortId}`
         })
     }
 }

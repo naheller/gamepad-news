@@ -13,11 +13,12 @@ import '../styles.css'
 
 const PostTemplate = props => {
     const { data, location, pageContext } = props
+    console.log('post props', props)
     // const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
 
     const post = get(data, 'markdownRemark', {})
     // const s3ImageUrl = get(data, 's3Image.Url', 'https://www.mariowiki.com/images/4/4d/Yoshi_-_Mario_Party_10.png')
-    
+    console.log('post', post)
     const { title, date, image, tags, description } = post.frontmatter
     const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields

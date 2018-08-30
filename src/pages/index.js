@@ -17,6 +17,7 @@ const BlogIndex = props => {
         <SiteLayout location={props.location}>
             <Helmet>
                 <title>{siteTitle}</title>
+                <meta name="title" content={siteTitle} /> 
                 <meta name="description" content={siteDesc} /> 
                 <meta name="keywords" content="video games,videogames,games,gaming,news,playstation,xbox,switch,pc,ios,android,sony,microsoft,nintendo" />
                 <meta name="robots" content="index,follow" />

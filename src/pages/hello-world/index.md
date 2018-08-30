@@ -1,6 +1,6 @@
 ---
 title: Bethesda's new IP called Starfield, will use new in-house graphics engine and precede next Elder Scrolls game in release schedule
-date: 2018-08-28T12:22:03.284Z
+date: 2018-08-29T12:22:03.284Z
 author: Brad Shoemaker
 image: ./mario.jpg
 s3image: https://s3.amazonaws.com/gamepad-images/dead-cells.jpg

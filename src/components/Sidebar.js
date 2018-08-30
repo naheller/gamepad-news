@@ -19,7 +19,7 @@ const Sidebar = props => {
                                     slug
                                 }
                                 frontmatter {
-                                    date(formatString: "dddd, MMM D, YYYY")
+                                    date
                                     title
                                     author
                                 }
@@ -46,8 +46,6 @@ const Sidebar = props => {
                                 const postTitle = get(post, 'node.frontmatter.title', '')
                                 let postDate = get(post, 'node.frontmatter.date', '')
                                 const slug = get(post, 'node.fields.slug', '')
-                                // alert(postDate)
-                                // alert(moment(postDate).format('hh:mm:ss'))
                                 
                                 const now = moment()
                                 const minsDiff = now.diff(moment(postDate), 'minutes')
