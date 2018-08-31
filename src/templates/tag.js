@@ -2,8 +2,10 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import SiteLayout from '../components/SiteLayout'
-import { get, capitalize } from 'lodash'
+import { get, capitalize, includes } from 'lodash'
 import BlogPosts from '../components/BlogPosts'
+
+const tagTypes = ['playstation', 'xbox', 'switch', 'pc', 'mobile', 'retro']
 
 const TagTemplate = props => { 
     const { data, location, pageContext } = props
@@ -11,13 +13,19 @@ const TagTemplate = props => {
     const { tag } = pageContext
 
     const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
+    const isSpecialTag = includes(tagTypes, tag)
 
     const showTagHeader = () => (
         <div>
             <div className="tag-page-header">
                 <p className="tag-page-header-text">
-                    {`${totalCount} ${totalCount === 1 ? 'post' : 'posts'} about\xa0`}
+                    {
+                        isSpecialTag 
+                        ? `News about\xa0`
+                        : `${totalCount} ${totalCount === 1 ? 'post' : 'posts'} about\xa0`
+                    }
                     <span style={{ fontFamily: 'Octarine-Bold' }}>{tag}</span>
+                    {isSpecialTag && <span>&nbsp;games</span>}
                 </p>
             </div>
             <hr className="blog-post-divider" style={{ margin: 0 }} />
@@ -36,7 +44,6 @@ const TagTemplate = props => {
                 <meta property="og:type" content="blog" />
                 <meta property="og:title" content={`${capitalize(tag)} articles on ${siteTitle}`} />
                 <meta property="og:description" content={`${capitalize(tag)} articles on ${siteTitle}`} />
-                {/* <meta property="og:image" content={image} /> */}
             </Helmet>
             {showTagHeader()}
             <BlogPosts posts={edges} />

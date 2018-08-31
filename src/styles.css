@@ -101,6 +101,8 @@ a {
     }
 
     .blog-post-date {
+        padding-top: 0 !important;
+        padding-bottom: 0.2rem !important;
         width: max-content !important;
     }
 
@@ -109,7 +111,7 @@ a {
     }
 
     .blog-post-body {
-        margin: 2rem !important;
+        margin: 1.5rem !important;
     }
 
     .tags-container {
@@ -438,6 +440,7 @@ blockquote > p {
 }
 
 .h1-post-title {
+    font-weight: light;
     margin: 0.25rem 0 0.75rem 0;
 }
 
@@ -450,9 +453,9 @@ blockquote > p {
 
 .blog-post-date {
     text-transform: uppercase;
-    font-size: 17px;
+    font-size: 16px;
     /* font-style: italic; */
-    font-weight: 500;
+    font-weight: bold;
     color: #626262;
     letter-spacing: 1px;
     margin: 0 1.5rem 0 0.15rem;
@@ -468,7 +471,7 @@ blockquote > p {
 
 .blog-post-social-button {
     display: flex;
-    height: 1.75rem;
+    height: 1.65rem;
     align-items: center;
     text-transform: uppercase;
     color: #7a7a7a;
@@ -482,12 +485,12 @@ blockquote > p {
 }
 
 .blog-post-social-button-text {
-    font-size: 14px;
+    font-size: 13px;
     font-family: Octarine-Light;
     font-weight: bold;
     text-align: center;
     line-height: 1.25rem;
-    padding-top: 3px;
+    padding-top: 1px;
 }
 
 .blog-post-social-button:hover {
@@ -586,7 +589,7 @@ blockquote > p {
 }
 
 .index-post-date {
-    font-size: 14px;
+    font-size: 13px;
     color: #626262;
     margin-right: 1rem;
     padding: 0.15rem 0.5rem 0 0.5rem;
@@ -607,7 +610,7 @@ blockquote > p {
 }
 
 .index-read-more-button {
-    font-size: 14px;
+    font-size: 13px;
     color: #ff8d78;
     width: max-content;
     margin: 0 0.5rem 0.5rem 0;
@@ -681,7 +684,7 @@ blockquote > p {
     padding: 0.15rem 0.5rem 0 0.5rem;
     background-color: whitesmoke;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 1px;
     color: #626262;
@@ -728,7 +731,7 @@ blockquote > p {
 
 .prev-next-button-text {
     color: #626262;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: Octarine-Light;
@@ -752,7 +755,7 @@ blockquote > p {
     margin: 0;
     padding: 0.3rem 2rem 0 2rem;
     color: #626262;
-    font-size: 16px;
+    font-size: 15px;
     align-self: center;
     text-transform: uppercase;
     letter-spacing: 1px;

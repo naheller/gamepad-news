@@ -24,7 +24,7 @@ const PostTemplate = props => {
     const { slug } = post.fields
 
     const dayOfWeek = moment(date).format('dddd')
-    const restOfDate = moment(date).format('MMM D, YYYY')
+    const restOfDate = moment(date).format('MMM D, YYYY - h:mm a')
 
     const showHeader = () => (
         <div className="blog-post-header">
@@ -32,8 +32,8 @@ const PostTemplate = props => {
             <div className="blog-post-date-social">
                 <div style={{ display: 'flex', flexFlow: 'row wrap', alignItems: 'center' }}>
                     <div className="blog-post-date">
-                        <span style={{ color: '#444', fontWeight: '900' }}>{`${dayOfWeek}, `}</span>
-                        <span>{restOfDate}</span>
+                        <span>{`${dayOfWeek}, `}</span>
+                        <span style={{ color: '#939393' }}>{restOfDate}</span>
                     </div>
                     <TagIcons tags={tags} blogPost />
                 </div>
@@ -178,7 +178,7 @@ export const pageQuery = graphql`
             }
             frontmatter {
                 title
-                date(formatString: "dddd, MMM D, YYYY")
+                date
                 author
                 description
                 tags

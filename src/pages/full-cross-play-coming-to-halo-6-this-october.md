@@ -1,6 +1,6 @@
 ---
 title: Full cross-play coming to Halo 6 this October
-date: 2018-08-29T02:53:53.888Z
+date: 2018-08-30T21:53:53.888Z
 author: Nathan Heller
 tags:
   - xbox

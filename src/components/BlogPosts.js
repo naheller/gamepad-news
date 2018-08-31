@@ -57,7 +57,7 @@ class BlogPosts extends Component {
                 </div>
                 <Link to={slug}>
                     <div className="index-read-more-button">
-                        read more{`\xa0\xa0`}
+                        read more&nbsp;
                     </div>
                 </Link>     
             </div>
