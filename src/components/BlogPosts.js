@@ -55,9 +55,9 @@ class BlogPosts extends Component {
                         )
                     )}
                 </div>
-                <Link to={slug}>
+                <Link to={slug} style={{ width: 'max-content' }}>
                     <div className="index-read-more-button">
-                        read more&nbsp;
+                        read more{`\xa0`}
                     </div>
                 </Link>     
             </div>

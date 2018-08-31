@@ -119,7 +119,7 @@ a {
     }
 
     .prev-next-container {
-        margin: 0 2rem !important;
+        margin: 0 1.5rem !important;
     }
 
     .prev-next-container {
@@ -154,11 +154,11 @@ a {
     }
 
     .tags-list {
-        margin: 1rem 1.5rem 0 1rem !important;
+        margin: 0.5rem 1.5rem 0 0.5rem !important;
     }
 
     .index-read-more-button {
-        margin: 0.5rem 1.5rem !important;
+        margin: 0 0 0.5rem 1.5rem !important;
     }
 
     .index-tags-read-more-wrapper {
@@ -171,7 +171,7 @@ a {
 
     .blog-post-social-buttons-wrapper {
         margin-top: 0.65rem !important;
-        margin-left: 2rem !important;
+        margin-left: 1.5rem !important;
     }
 
     .blog-post-social-buttons-wrapper-no-mgn {
@@ -186,6 +186,10 @@ a {
     /* .blog-post-social-button-text {
         margin: 0 0 2px 0 !important;
     } */
+
+    .tags-header {
+        margin: 0 0.5rem 1.25rem 0.5rem !important;
+    }
 }
 
 .header {
