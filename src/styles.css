@@ -70,9 +70,18 @@ a {
         'footer';
     }
 
-    .nav-logo {
+    .nav-logo-wrapper {
         width: 100% !important;
         background-color: #ff7f68;
+    }
+
+    .nav-logo-wrapper {
+        justify-content: space-between !important;
+        padding: 0 2rem;
+    }
+
+    .burger-menu {
+        display: inline !important;
     }
 
     .nav-menu, .side-menu, .footer-menu, .sidebar-post {
@@ -87,6 +96,14 @@ a {
 @media (max-width: 550px) {
     p {
         font-size: 17px !important;
+    }
+
+    .h1-post-title {
+        font-size: 36px !important;
+    }
+
+    .nav-logo-wrapper {
+        padding: 0 1.5rem;
     }
 
     .blog-post {
@@ -210,7 +227,13 @@ a {
             box-shadow: 8px 8px 20px -6px gainsboro;
 }
 
-.nav-logo {
+.burger-menu {
+    display: none;
+    width: 25px;
+    margin: 0 0 2px 0;
+}
+
+.nav-logo-wrapper {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
