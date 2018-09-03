@@ -27,7 +27,17 @@ exports.createPages = ({ graphql, actions }) => {
                                     author
                                     description
                                     tags
+                                    s3image
                                 }
+                            }
+                        }
+                    }
+                    allS3Image {
+                        edges {
+                            node {
+                                id
+                                Key
+                                Url
                             }
                         }
                     }
@@ -46,15 +56,15 @@ exports.createPages = ({ graphql, actions }) => {
                 let tags = []
 
                 _.forEach(posts, (post, index) => {
-                    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-                    const next = index === 0 ? null : posts[index - 1].node
-
                     const slug = _.get(post, 'node.fields.slug', '')
                     const postTags = _.get(post, 'node.frontmatter.tags', [])
 
                     if (!_.isEmpty(postTags)) {
                         tags = tags.concat(postTags);
                     }
+
+                    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+                    const next = index === 0 ? null : posts[index - 1].node
 
                     createPage({
                         path: slug, //`/${slugWithId}/`,

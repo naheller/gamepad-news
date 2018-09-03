@@ -38,8 +38,8 @@ const TagIcons = props => {
                                     title="Playstation"
                                     alt="Playstation"
                                     style={{ 
-                                        width: '17px', 
-                                        height: '17px'
+                                        width: '15px', 
+                                        height: '15px'
                                     }}
                                 />
                             </Link>
@@ -117,8 +117,8 @@ const TagIcons = props => {
                                     title="Retro"
                                     alt="Retro"
                                     style={{ 
-                                        width: '17px', 
-                                        height: '17px'
+                                        width: '15px', 
+                                        height: '15px'
                                     }}
                                 />
                             </Link>

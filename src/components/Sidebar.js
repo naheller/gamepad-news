@@ -31,6 +31,7 @@ const Sidebar = props => {
             render={data => {
                 const posts = get(data, 'allMarkdownRemark.edges', [])
                 const locationPath = get(props, 'location.pathname', '')
+                // console.log('locationPath', locationPath)
 
                 return (
                     <div>

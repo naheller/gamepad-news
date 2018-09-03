@@ -444,9 +444,9 @@ blockquote > p {
 }
 
 .blog-post-tag-icon {
-    width: 15px;
-    height: 15px;
-    margin: 0 18px 0 0;
+    width: 13px;
+    height: 13px;
+    margin: 0 1.25rem 0 0;
 }
 
 .blog-post-tag-icon-link {
@@ -486,7 +486,7 @@ blockquote > p {
     color: #626262;
     letter-spacing: 1px;
     margin: 0 1.5rem 0 0.15rem;
-    padding-top: 0.2rem;
+    padding-top: 0.19rem;
 }
 
 .blog-post-social-buttons-wrapper {
