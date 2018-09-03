@@ -15,6 +15,9 @@ const TagTemplate = props => {
     const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
     const isSpecialTag = includes(tagTypes, tag)
 
+    const s3ImageKey = get(data, 's3Image.Key', '')
+    const s3images = get(props, 'data.allS3Image.edges', [])
+
     const showTagHeader = () => (
         <div>
             <div className="tag-page-header">
@@ -46,7 +49,7 @@ const TagTemplate = props => {
                 <meta property="og:description" content={`${capitalize(tag)} articles on ${siteTitle}`} />
             </Helmet>
             {showTagHeader()}
-            <BlogPosts posts={edges} />
+            <BlogPosts posts={edges} images={s3images} />
         </SiteLayout>
     )
 }
@@ -75,9 +78,10 @@ export const pageQuery = graphql`
                     }
                     frontmatter {
                         title
-                        date(formatString: "dddd, MMM D, YYYY")
+                        date
                         author
                         tags
+                        s3image
                         image {
                             childImageSharp{
                                 sizes(maxWidth: 630) {
@@ -86,6 +90,15 @@ export const pageQuery = graphql`
                             }
                         }
                     }
+                }
+            }
+        }
+        allS3Image {
+            edges {
+                node {
+                    id
+                    Key
+                    Url
                 }
             }
         }

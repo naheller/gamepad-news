@@ -3,6 +3,7 @@ import { map, take, kebabCase } from 'lodash'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import TagIcons from './TagIcons'
+import moment from 'moment'
 
 import arrow from '../../static/svg/arrow.svg'
 import '../styles.css'
@@ -64,41 +65,52 @@ class BlogPosts extends Component {
         )
     }
 
+    showPosts() {
+        return (
+            map(take(this.props.posts, this.state.numPosts), (post, index) => {
+                const { node } = post
+                const { slug } = node.fields
+                const { title, date, tags, image, s3image } = node.frontmatter
+
+                return (
+                    <div key={`blog-post-${index}`}>
+                        <div className="blog-post content-wrapper" key={slug}>
+                            <h2 className="h2-post-title-wrapper">
+                                <Link to={slug} className="h2-post-title">{title}</Link>
+                            </h2>
+                            <div className="blog-post-date-icon-wrapper">
+                                <div className="index-post-date">
+                                    {moment(date).format('dddd, MMM D, YYYY')}
+                                </div>
+                                <TagIcons tags={tags} />
+                            </div>
+                            <Link to={slug}>
+                                {/* <Img 
+                                    className="featured-image"
+                                    sizes={image.childImageSharp.sizes} 
+                                /> */}
+                                <img 
+                                    className="featured-image"
+                                    src={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3image}`} 
+                                />
+                            </Link>
+                            <p 
+                                className="index-post-excerpt"
+                                dangerouslySetInnerHTML={{ __html: node.excerpt }} 
+                            />
+                            {this.showTagsReadMore(tags, slug)}
+                        </div>
+                        {index !== this.state.numPosts - 1 && <hr className="blog-post-divider" />}
+                    </div>
+                )
+            })
+        )
+    }
+
     render() {
         return (
             <div>
-                {map(take(this.props.posts, this.state.numPosts), (post, index) => {
-                    const { node } = post
-                    const { slug } = node.fields
-                    const { title, date, tags, image } = node.frontmatter
-                    return (
-                        <div key={`blog-post-${index}`}>
-                            <div className="blog-post content-wrapper" key={slug}>
-                                <h2 className="h2-post-title-wrapper">
-                                    <Link to={slug} className="h2-post-title">{title}</Link>
-                                </h2>
-                                <div className="blog-post-date-icon-wrapper">
-                                    <div className="index-post-date">
-                                        {date}
-                                    </div>
-                                    <TagIcons tags={tags} />
-                                </div>
-                                <Link to={slug}>
-                                    <Img 
-                                        className="featured-image"
-                                        sizes={image.childImageSharp.sizes} 
-                                    />
-                                </Link>
-                                <p 
-                                    className="index-post-excerpt"
-                                    dangerouslySetInnerHTML={{ __html: node.excerpt }} 
-                                />
-                                {this.showTagsReadMore(tags, slug)}
-                            </div>
-                            {index !== this.state.numPosts - 1 && <hr className="blog-post-divider" />}
-                        </div>
-                    )
-                })}
+                {this.showPosts()}
                 {this.showMorePostsButton()}
             </div>
         )

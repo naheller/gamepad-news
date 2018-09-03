@@ -221,6 +221,7 @@ a {
 }
 
 .featured-image {
+    margin: 0;
     border-radius: 1px;
     -webkit-box-shadow: 8px 8px 20px -6px gainsboro;
        -moz-box-shadow: 8px 8px 20px -6px gainsboro;

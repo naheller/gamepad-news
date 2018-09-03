@@ -12,18 +12,14 @@ import twitter from '../../static/svg/twitter-blue.svg'
 import '../styles.css'
 
 const PostTemplate = props => {
+    console.log('PostTemplate props', props)
     const { data, location, pageContext } = props
     // const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
 
     const post = get(data, 'markdownRemark', {})
     const s3ImageKey = get(data, 's3Image.Key', '')
 
-    // const s3ImageUrl = get(data, 's3Image.Url', 'https://www.mariowiki.com/images/4/4d/Yoshi_-_Mario_Party_10.png')
     const { title, date, image, s3image, tags, description } = post.frontmatter
-    console.log('title', title)
-    console.log('image', image)
-    console.log('s3image', s3image)
-    console.log('s3ImageKey', s3ImageKey)
     const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields
 
@@ -145,17 +141,26 @@ const PostTemplate = props => {
                     <meta property="og:type" content="article" />
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={description} />
-                    <meta property="og:image" content={`http://gamepad.news${image.publicURL}`} />
+                    <meta 
+                        property="og:image" 
+                        content={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3ImageKey}`} 
+                    />
 
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:creator" content="gamepad_news" />
                     <meta name="twitter:title" content={title} />
                     <meta name="twitter:description" content={description} />
-                    <meta name="twitter:image" content={`http://gamepad.news${image.publicURL}`} />
+                    <meta 
+                        name="twitter:image" 
+                        content={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3ImageKey}`}
+                    />
                 </Helmet>
                 {showHeader()}
                 {/* <Img sizes={image.childImageSharp.sizes} className="featured-image" /> */}
-                <img src={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3ImageKey}`} />
+                <img 
+                    className="featured-image" 
+                    src={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3ImageKey}`} 
+                />
                 {showBody()}
                 <div className="blog-post-social-buttons-wrapper" style={{ marginLeft: '1rem' }}>
                     {showFbButton()}

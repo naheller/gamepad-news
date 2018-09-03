@@ -50,10 +50,11 @@ export const pageQuery = graphql`
                         slug
                     }
                     frontmatter {
-                        date(formatString: "dddd, MMM D, YYYY")
+                        date
                         title
                         author
                         tags
+                        s3image
                         image {
                             childImageSharp{
                                 sizes(maxWidth: 630) {
@@ -62,6 +63,15 @@ export const pageQuery = graphql`
                             }
                         }
                     }
+                }
+            }
+        }
+        allS3Image {
+            edges {
+                node {
+                    id
+                    Key
+                    Url
                 }
             }
         }
