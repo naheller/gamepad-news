@@ -32,17 +32,17 @@ exports.createPages = ({ graphql, actions }) => {
                             }
                         }
                     }
-                    allS3Image {
-                        edges {
-                            node {
-                                id
-                                Key
-                                Url
-                            }
-                        }
-                    }
                 }
             `
+            // allS3Image {
+            //     edges {
+            //         node {
+            //             id
+            //             Key
+            //             Url
+            //         }
+            //     }
+            // }
             )
             .then(result => {
                 const { data, errors } = result
@@ -94,6 +94,7 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
+    // console.log('node', node)
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {

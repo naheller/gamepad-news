@@ -24,6 +24,7 @@
     "gatsby-remark-smartypants": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-source-s3": "^0.0.0",
+    "gatsby-source-s3-image": "^0.0.4",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
     "lodash": "^4.17.5",

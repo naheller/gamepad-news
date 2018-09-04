@@ -31,7 +31,7 @@ const Sidebar = props => {
             render={data => {
                 const posts = get(data, 'allMarkdownRemark.edges', [])
                 const locationPath = get(props, 'location.pathname', '')
-                // console.log('locationPath', locationPath)
+                console.log('locationPath', locationPath)
 
                 return (
                     <div>
@@ -47,6 +47,7 @@ const Sidebar = props => {
                                 const postTitle = get(post, 'node.frontmatter.title', '')
                                 let postDate = get(post, 'node.frontmatter.date', '')
                                 const slug = get(post, 'node.fields.slug', '')
+                                console.log('slug', slug)
                                 
                                 const now = moment()
                                 const minsDiff = now.diff(moment(postDate), 'minutes')
@@ -65,7 +66,7 @@ const Sidebar = props => {
                                     postDate = ''
                                 }
 
-                                const activePost = (locationPath === slug)
+                                const activePost = (locationPath === `/${slug}`)
                                 ? 'off-tomato-color'
                                 : ''
 

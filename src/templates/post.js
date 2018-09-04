@@ -202,10 +202,10 @@ export const pageQuery = graphql`
                 }
             }
         }
-        s3Image(Key: { eq: "destiny-2-forsaken.jpg" }) {
-            id
-            Key
-            Url
-        }
     }
 `
+// s3Image(Key: { eq: "destiny-2-forsaken.jpg" }) {
+//     id
+//     Key
+//     Url
+// }

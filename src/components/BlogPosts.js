@@ -12,7 +12,7 @@ class BlogPosts extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            numPosts: 1
+            numPosts: 3
         }
     }
 
