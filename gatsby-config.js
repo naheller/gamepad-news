@@ -16,28 +16,28 @@ module.exports = {
             name: 'pages',
         },
     },
-    // {
-    //     resolve: 'gatsby-source-s3',
-    //     options: {
-    //         aws: {
-    //             // accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    //             // secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    //             // region: process.env.AWS_REGION,
-    //             accessKeyId: aws.accessKey,
-    //             secretAccessKey: aws.secret,
-    //             region: aws.region
-    //         },
-    //         buckets: ['gamepad-images'],
-    //     },
-    // },
     {
-        resolve: 'gatsby-source-s3-image',
+        resolve: 'gatsby-source-s3',
         options: {
-            bucketName: 'gamepad-images',
-            domain: null, // defaults to `s3.amazonaws.com` // Oregon 's3-us-west-2.amazonaws.com'
-            protocol: 'https',
+            aws: {
+                // accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+                // secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+                // region: process.env.AWS_REGION,
+                accessKeyId: aws.accessKey,
+                secretAccessKey: aws.secret,
+                region: aws.region
+            },
+            buckets: ['gamepad-images'],
         },
     },
+    // {
+    //     resolve: 'gatsby-source-s3-image',
+    //     options: {
+    //         bucketName: 'gamepad-images',
+    //         domain: null, // defaults to `s3.amazonaws.com` // Oregon 's3-us-west-2.amazonaws.com'
+    //         protocol: 'https',
+    //     },
+    // },
     // {
     //     resolve: `gatsby-source-filesystem`,
     //     options: {

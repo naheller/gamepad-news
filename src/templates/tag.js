@@ -15,7 +15,7 @@ const TagTemplate = props => {
     const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
     const isSpecialTag = includes(tagTypes, tag)
 
-    const s3ImageKey = get(data, 's3Image.Key', '')
+    // const s3ImageKey = get(data, 's3Image.Key', '')
     const s3images = get(props, 'data.allS3Image.edges', [])
 
     const showTagHeader = () => (
@@ -93,14 +93,14 @@ export const pageQuery = graphql`
                 }
             }
         }
+        allS3Image {
+            edges {
+                node {
+                    id
+                    Key
+                    Url
+                }
+            }
+        }
     }
 `
-// allS3Image {
-//     edges {
-//         node {
-//             id
-//             Key
-//             Url
-//         }
-//     }
-// }

@@ -19,7 +19,7 @@ const PostTemplate = props => {
     const post = get(data, 'markdownRemark', {})
     const s3ImageKey = get(data, 's3Image.Key', '')
 
-    const { title, date, image, s3image, tags, description } = post.frontmatter
+    const { title, date, /*image, s3image,*/ tags, description } = post.frontmatter
     const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields
 
@@ -202,10 +202,10 @@ export const pageQuery = graphql`
                 }
             }
         }
+        s3Image(Key: { eq: "destiny-2-forsaken.jpg" }) {
+            id
+            Key
+            Url
+        }
     }
 `
-// s3Image(Key: { eq: "destiny-2-forsaken.jpg" }) {
-//     id
-//     Key
-//     Url
-// }
