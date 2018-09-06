@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { map, take, kebabCase } from 'lodash'
 import Link from 'gatsby-link'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 import TagIcons from './TagIcons'
 import moment from 'moment'
 
@@ -70,7 +70,7 @@ class BlogPosts extends Component {
             map(take(this.props.posts, this.state.numPosts), (post, index) => {
                 const { node } = post
                 const { slug } = node.fields
-                const { title, date, tags, image, s3image } = node.frontmatter
+                const { title, date, tags, /*image,*/ s3image } = node.frontmatter
 
                 return (
                     <div key={`blog-post-${index}`}>
@@ -92,6 +92,7 @@ class BlogPosts extends Component {
                                 <img 
                                     className="featured-image"
                                     src={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3image}`} 
+                                    alt="featured"
                                 />
                             </Link>
                             <p 

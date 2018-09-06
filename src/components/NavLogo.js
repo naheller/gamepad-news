@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { slide as Menu } from 'react-burger-menu'
 import '../styles.css'
+import './NavLogo.css'
 
 import gamepad from '../../static/svg/gamepad.svg'
-import burgerMenu from '../../static/svg/burger-menu.svg'
+import gamepadMenu from '../../static/svg/gamepad-sidemenu.svg'
 
 const NavLogo = () => (
     <div className="nav-logo-wrapper">
@@ -21,11 +23,25 @@ const NavLogo = () => (
                 <span>epad</span>
             </div>
         </Link>
-        <img 
-            className="burger-menu" 
-            src={burgerMenu} 
-            alt="Nav menu" 
-        />
+        <Menu right width="250px">
+            <Link to="/" key="Gamepad" style={{ margin: '0 0 0.5rem 0' }}>
+                <img 
+                    src={gamepadMenu} 
+                    className="burger-menu-gamepad-svg"
+                    alt="Gamepad"
+                />
+            </Link>
+            <hr style={{ borderBottom: '2px solid white' }} />
+            <Link to="/playstation" key="Playstation">Playstation</Link>
+            <Link to="/xbox" key="Xbox">Xbox</Link>
+            <Link to="/switch" key="Switch">Switch</Link>
+            <Link to="/pc" key="PC">PC</Link>
+            <Link to="/mobile" key="Mobile">Mobile</Link>
+            <Link to="/retro" key="Retro">Retro</Link>
+            <hr style={{ borderBottom: '2px solid white' }} />
+            <Link to="/Contact" key="Contact" className="bm-item-white">contact</Link>
+        </Menu>
+        
     </div>
 )
 

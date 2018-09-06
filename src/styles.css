@@ -793,6 +793,7 @@ blockquote > p {
 .contact-page {
     width: 400px;
     margin: auto;
+    padding: 0 1rem;
 }
 
 .contact-page-header {

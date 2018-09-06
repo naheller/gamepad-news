@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 import SiteLayout from '../components/SiteLayout'
 import { get, map, join, kebabCase } from 'lodash'
 import moment from 'moment'
@@ -160,6 +160,7 @@ const PostTemplate = props => {
                 <img 
                     className="featured-image" 
                     src={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3ImageKey}`} 
+                    alt="featured"
                 />
                 {showBody()}
                 <div className="blog-post-social-buttons-wrapper" style={{ marginLeft: '1rem' }}>
