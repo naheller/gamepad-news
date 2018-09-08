@@ -29,6 +29,7 @@ const PostTemplate = props => {
     const showHeader = () => (
         <div className="blog-post-header">
             <h1 className="h1-post-title">{title}</h1>
+            {/* <hr style={{ marginBottom: '0.85rem', background: '#dcdcdc' }} /> */}
             <div className="blog-post-date-social">
                 <div style={{ display: 'flex', flexFlow: 'row wrap', alignItems: 'center' }}>
                     <div className="blog-post-date">

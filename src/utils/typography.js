@@ -22,7 +22,7 @@ import Typography from 'typography'
 //   })
 
 const typography = new Typography({
-    baseFontSize: '19px',
+    baseFontSize: '18px',
     baseLineHeight: 1.666,
     'h1,h2,h3,p': {
         color: '#191919',

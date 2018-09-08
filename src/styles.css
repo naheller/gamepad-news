@@ -14,8 +14,8 @@
 }
 
 @font-face {
-    font-family: Mercury;
-    src: url(../static/Mercury.otf);
+    font-family: LibreBaskerville;
+    src: url(../static/LibreBaskerville-Regular.ttf);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,8 +24,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    font-family: Octarine-Light;
+    font-family: LibreBaskerville;
     color: #191919;
+    line-height: 1.75rem;
     /* letter-spacing: 0.25px; */
 }
 
@@ -119,7 +120,6 @@ a {
 
     .blog-post-date {
         padding-top: 0 !important;
-        padding-bottom: 0.2rem !important;
         width: max-content !important;
     }
 
@@ -277,6 +277,7 @@ blockquote {
 blockquote > p {
     color: #939393;
     font-size: 1.15rem;
+    font-family: Octarine-Light;
 }
 
 .nav-menu {
@@ -487,7 +488,7 @@ blockquote > p {
     color: #626262;
     letter-spacing: 1px;
     margin: 0 1.5rem 0 0.15rem;
-    padding-top: 0.19rem;
+    padding-top: 0.2rem;
 }
 
 .blog-post-social-buttons-wrapper {
@@ -499,7 +500,7 @@ blockquote > p {
 
 .blog-post-social-button {
     display: flex;
-    height: 1.65rem;
+    height: 1.6rem;
     align-items: center;
     text-transform: uppercase;
     color: #7a7a7a;
@@ -513,7 +514,7 @@ blockquote > p {
 }
 
 .blog-post-social-button-text {
-    font-size: 13px;
+    font-size: 12px;
     font-family: Octarine-Light;
     font-weight: bold;
     text-align: center;
