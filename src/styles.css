@@ -443,6 +443,18 @@ blockquote > p {
     justify-content: flex-start;
     align-items: center;
     height: max-content;
+    margin-left: 0.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.index-post-tag-icons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: max-content;
+    margin-left: 0.25rem;
 }
 
 .blog-post-tag-icon {
@@ -470,7 +482,7 @@ blockquote > p {
 
 .h1-post-title {
     font-weight: light;
-    margin: 0.25rem 0 0.75rem 0;
+    margin: 0.25rem 0 0 0;
 }
 
 .blog-post-date-social {
@@ -487,20 +499,21 @@ blockquote > p {
     font-weight: bold;
     color: #626262;
     letter-spacing: 1px;
-    margin: 0 1.5rem 0 0.15rem;
-    padding-top: 0.2rem;
+    margin: 0.6rem 1.5rem 0 0.15rem;
+    /* padding-top: 0.2rem; */
 }
 
 .blog-post-social-buttons-wrapper {
     display: flex;
     flex-flow: row wrap;
     margin-left: 0.15rem;
+    margin-top: 0.75rem;
     font-family: Octarine-Bold;
 }
 
 .blog-post-social-button {
     display: flex;
-    height: 1.6rem;
+    /* height: 1.6rem; */
     align-items: center;
     text-transform: uppercase;
     color: #7a7a7a;
@@ -514,11 +527,11 @@ blockquote > p {
 }
 
 .blog-post-social-button-text {
-    font-size: 12px;
+    font-size: 13px;
     font-family: Octarine-Light;
     font-weight: bold;
     text-align: center;
-    line-height: 1.25rem;
+    line-height: 1.5rem;
     padding-top: 1px;
 }
 

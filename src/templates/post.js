@@ -22,6 +22,7 @@ const PostTemplate = props => {
     const { title, date, /*image, s3image,*/ tags, description } = post.frontmatter
     const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields
+    console.log('slug', slug)
 
     const dayOfWeek = moment(date).format('dddd')
     const restOfDate = moment(date).format('MMM D, YYYY - h:mm a')
@@ -50,7 +51,7 @@ const PostTemplate = props => {
     const showFbButton = () => (
         <div 
             className="blog-post-social-button fb-blue"
-            onClick={() => window.open(`https://www.facebook.com/sharer.php?u=https://gamepad.news${slug}`, '_blank', 'top=250,left=250,width=555,height=326')} 
+            onClick={() => window.open(`https://www.facebook.com/sharer.php?u=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=555,height=326')} 
         >
             <img 
                 src={facebook} 
@@ -64,7 +65,7 @@ const PostTemplate = props => {
     const showTwitterButton = () => (
         <div 
             className="blog-post-social-button twitter-blue"
-            onClick={() => window.open(`https://twitter.com/intent/tweet?url=https://gamepad.news${slug}`, '_blank', 'top=250,left=250,width=500,height=300')}
+            onClick={() => window.open(`https://twitter.com/intent/tweet?url=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=500,height=300')}
         >
             <img 
                 src={twitter} 
@@ -138,7 +139,7 @@ const PostTemplate = props => {
                     <meta name="keywords" content={join(tags, ',')} />
                     <meta name="robots" content="index,follow" />
 
-                    <meta property="og:url" content={`https://gamepad.news${slug}`} />
+                    <meta property="og:url" content={`https://gamepad.news/${slug}`} />
                     <meta property="og:type" content="article" />
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={description} />

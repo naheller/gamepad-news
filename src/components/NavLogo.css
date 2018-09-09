@@ -89,13 +89,13 @@
   
   /* Individual item */
   .bm-item {
-    display: inline-block;
+    /* display: inline-block; */
     color: tomato;
     margin-bottom: 1.25rem;
   }
 
   .bm-item-white {
-    color: white;
+    color: #dcdcdc;
     font-variant: small-caps;
   }
   

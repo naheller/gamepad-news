@@ -31,15 +31,15 @@ const NavLogo = () => (
                     alt="Gamepad"
                 />
             </Link>
-            <hr style={{ borderBottom: '2px solid white' }} />
+            <hr style={{ borderBottom: '1px solid white' }} />
             <Link to="/playstation" key="Playstation">Playstation</Link>
             <Link to="/xbox" key="Xbox">Xbox</Link>
             <Link to="/switch" key="Switch">Switch</Link>
             <Link to="/pc" key="PC">PC</Link>
             <Link to="/mobile" key="Mobile">Mobile</Link>
             <Link to="/retro" key="Retro">Retro</Link>
-            <hr style={{ borderBottom: '2px solid white' }} />
-            <Link to="/Contact" key="Contact" className="bm-item-white">contact</Link>
+            <hr style={{ borderBottom: '1px solid white' }} />
+            <Link to="/contact" key="contact" className="bm-item-white">contact</Link>
         </Menu>
         
     </div>

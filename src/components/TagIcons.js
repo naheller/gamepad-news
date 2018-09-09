@@ -20,9 +20,10 @@ const TagIcons = props => {
     })
 
     const orderedTags = orderBy(filteredTags, 'order', 'asc')
+    const iconsClass = props.blogPost ? 'blog-post-tag-icons' : 'index-post-tag-icons'
 
     return (
-        <div className={'blog-post-tag-icons'}>
+        <div className={iconsClass}>
             {map(orderedTags, tag => {
                 switch(get(tag, 'name', '')) {
                     case 'playstation':
