@@ -13,14 +13,13 @@ import '../styles.css'
 
 const PostTemplate = props => {
     const { data, location, pageContext } = props
-    console.log('props', props)
     // const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
 
     const post = get(data, 'markdownRemark', {})
     const s3ImageUrl = get(data, 's3Image.Url', '')
     const s3ImageSizes = get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
-    const { title, date, image, /*s3image,*/ tags, description } = post.frontmatter
+    const { title, date, /*image,*/ /*s3image,*/ tags, description } = post.frontmatter
     const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields
 

@@ -88,7 +88,6 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
-        // console.log('\n------onCreateNode: MARKDOWN FILE------\n')
         // const value = createFilePath({
         //     node,
         //     getNode
@@ -113,7 +112,5 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
             name: `s3ImageKey`,
             value: s3ImageFrontmatter
         })
-
-        console.log('\n------node------\n', node)
     }
 }
