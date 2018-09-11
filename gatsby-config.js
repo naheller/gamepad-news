@@ -27,7 +27,7 @@ module.exports = {
                 secretAccessKey: aws.secret,
                 region: aws.region
             },
-            buckets: ['gamepad-images'],
+            buckets: ['gamepad-images-east'],
         },
     },
     // {

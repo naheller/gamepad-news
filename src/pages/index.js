@@ -55,23 +55,7 @@ export const pageQuery = graphql`
                         author
                         tags
                         s3image
-                        image {
-                            childImageSharp{
-                                sizes(maxWidth: 630) {
-                                    ...GatsbyImageSharpSizes
-                                }
-                            }
-                        }
                     }
-                }
-            }
-        }
-        allS3Image {
-            edges {
-                node {
-                    id
-                    Key
-                    Url
                 }
             }
         }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-// import Img from 'gatsby-image'
+import Img from 'gatsby-image'
 import SiteLayout from '../components/SiteLayout'
 import { get, map, join, kebabCase } from 'lodash'
 import moment from 'moment'
@@ -12,17 +12,17 @@ import twitter from '../../static/svg/twitter-blue.svg'
 import '../styles.css'
 
 const PostTemplate = props => {
-    console.log('PostTemplate props', props)
     const { data, location, pageContext } = props
+    console.log('props', props)
     // const siteTitle = get(data, 'site.siteMetadata.title', 'Gamepad News')
 
     const post = get(data, 'markdownRemark', {})
-    const s3ImageKey = get(data, 's3Image.Key', '')
+    const s3ImageUrl = get(data, 's3Image.Url', '')
+    const s3ImageSizes = get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
-    const { title, date, /*image, s3image,*/ tags, description } = post.frontmatter
+    const { title, date, image, /*s3image,*/ tags, description } = post.frontmatter
     const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields
-    console.log('slug', slug)
 
     const dayOfWeek = moment(date).format('dddd')
     const restOfDate = moment(date).format('MMM D, YYYY - h:mm a')
@@ -40,7 +40,7 @@ const PostTemplate = props => {
                     <TagIcons tags={tags} blogPost />
                 </div>
                 
-                <div className="blog-post-social-buttons-wrapper blog-post-social-buttons-wrapper-no-mgn">
+                <div className="blog-post-social-buttons-wrapper blog-post-social-buttons-wrapper-no-margin">
                     {showFbButton()}
                     {showTwitterButton()}
                 </div>
@@ -145,7 +145,7 @@ const PostTemplate = props => {
                     <meta property="og:description" content={description} />
                     <meta 
                         property="og:image" 
-                        content={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3ImageKey}`} 
+                        content={s3ImageUrl} 
                     />
 
                     <meta name="twitter:card" content="summary_large_image" />
@@ -154,16 +154,11 @@ const PostTemplate = props => {
                     <meta name="twitter:description" content={description} />
                     <meta 
                         name="twitter:image" 
-                        content={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3ImageKey}`}
+                        content={s3ImageUrl}
                     />
                 </Helmet>
                 {showHeader()}
-                {/* <Img sizes={image.childImageSharp.sizes} className="featured-image" /> */}
-                <img 
-                    className="featured-image" 
-                    src={`https://s3-us-west-2.amazonaws.com/gamepad-images/${s3ImageKey}`} 
-                    alt="featured"
-                />
+                <Img sizes={s3ImageSizes} className="featured-image" />
                 {showBody()}
                 <div className="blog-post-social-buttons-wrapper" style={{ marginLeft: '1rem' }}>
                     {showFbButton()}
@@ -187,6 +182,7 @@ export const pageQuery = graphql`
             html
             fields {
                 slug
+                s3ImageKey
             }
             frontmatter {
                 title
@@ -195,20 +191,19 @@ export const pageQuery = graphql`
                 description
                 tags
                 s3image
-                image {
-                    publicURL
-                    childImageSharp{
-                        sizes(maxWidth: 630) {
-                            ...GatsbyImageSharpSizes
-                        }
-                    }
-                }
             }
         }
-        s3Image(Key: { eq: "destiny-2-forsaken.jpg" }) {
+        s3Image(Key: { eq: "dead-cells.jpg" }) {
             id
             Key
             Url
+            localFile {
+                childImageSharp {
+                    sizes {
+                        ...GatsbyImageSharpSizes
+                    }
+                }
+            }
         }
     }
 `

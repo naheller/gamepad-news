@@ -34,15 +34,6 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             `
-            // allS3Image {
-            //     edges {
-            //         node {
-            //             id
-            //             Key
-            //             Url
-            //         }
-            //     }
-            // }
             )
             .then(result => {
                 const { data, errors } = result
@@ -93,11 +84,11 @@ exports.createPages = ({ graphql, actions }) => {
     })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-    // console.log('node', node)
+exports.onCreateNode = ({ node, actions, getNodes }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
+        // console.log('\n------onCreateNode: MARKDOWN FILE------\n')
         // const value = createFilePath({
         //     node,
         //     getNode
@@ -114,5 +105,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             name: `slug`,
             value: `${_.kebabCase(shortTitle)}-${shortId}`
         })
+
+        const s3ImageFrontmatter = _.get(node, 'frontmatter.s3image', '')
+
+        createNodeField({
+            node,
+            name: `s3ImageKey`,
+            value: s3ImageFrontmatter
+        })
+
+        console.log('\n------node------\n', node)
     }
 }
