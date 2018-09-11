@@ -39,8 +39,9 @@ const TagIcons = props => {
                                     title="Playstation"
                                     alt="Playstation"
                                     style={{ 
-                                        width: '15px', 
-                                        height: '15px'
+                                        width: '16px', 
+                                        height: '16px',
+                                        // marginTop: '2px'
                                     }}
                                 />
                             </Link>

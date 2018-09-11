@@ -9,6 +9,7 @@ import FooterMenu from './FooterMenu'
 
 import gamepad from '../../static/img/favicon-b.png'
 import '../styles.css'
+// import './SiteLayout.css'
 
 const SiteLayout = props => {
     const { location, children } = props

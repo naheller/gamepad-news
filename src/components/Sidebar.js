@@ -33,7 +33,7 @@ const Sidebar = props => {
                 const locationPath = get(props, 'location.pathname', '')
 
                 return (
-                    <div>
+                    <div style={{ marginBottom: '2rem' }}>
                         <div className="sidebar-post-list-header">
                             <img 
                                 src={gamepad} className="sidebar-post-list-header-icon" 

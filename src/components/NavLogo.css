@@ -3,6 +3,11 @@
     src: url(../../static/Octarine-Light.otf);
 }
 
+@font-face {
+    font-family: Octarine-Bold;
+    src: url(../../static/Octarine-Bold.otf);
+}
+
 @media (max-width: 850px) {
     .bm-burger-button {
         display: block !important;
@@ -92,6 +97,9 @@
     /* display: inline-block; */
     color: tomato;
     margin-bottom: 1.25rem;
+    font-family: Octarine-Bold;
+    font-weight: normal;
+    letter-spacing: 2px;
   }
 
   .bm-item-white {

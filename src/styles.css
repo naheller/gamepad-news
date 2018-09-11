@@ -27,7 +27,7 @@ p {
     font-family: LibreBaskerville;
     color: #191919;
     line-height: 1.75rem;
-    /* letter-spacing: 0.25px; */
+    margin-bottom: 2rem;
 }
 
 hr {
@@ -267,7 +267,7 @@ a {
 
 blockquote {
     font-style: italic;
-    padding: 0.5rem 1.25rem !important;
+    padding: 1rem 1.25rem !important;
     margin-left: 0 !important;
     border-left: 5px solid #ff7f68 !important;
     color: gainsboro;
@@ -276,7 +276,7 @@ blockquote {
 
 blockquote > p {
     color: #939393;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-family: Octarine-Light;
 }
 
@@ -396,7 +396,7 @@ blockquote > p {
 }
 
 .footer-menu-copyright {
-    margin: 0.85rem 0 0 3rem;
+    margin: 1rem 0 0 3rem;
     text-transform: uppercase;
     font-size: 14px;
     font-family: Octarine-Light;
@@ -404,7 +404,7 @@ blockquote > p {
 }
 
 .footer-menu-item {
-    margin: 0.85rem 0 0 3rem;
+    margin: 1rem 0 0 3rem;
     text-transform: uppercase;
     font-size: 14px;
     font-family: Octarine-Light;
@@ -491,12 +491,12 @@ blockquote > p {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.1rem;
 }
 
 .blog-post-date {
     text-transform: uppercase;
     font-size: 16px;
-    /* font-style: italic; */
     font-weight: bold;
     color: #626262;
     letter-spacing: 1px;
@@ -514,7 +514,7 @@ blockquote > p {
 
 .blog-post-social-button {
     display: flex;
-    /* height: 1.6rem; */
+    height: 1.7rem;
     align-items: center;
     text-transform: uppercase;
     color: #7a7a7a;
@@ -561,7 +561,7 @@ blockquote > p {
 }
 
 .blog-post-body {
-    margin: 2rem 1rem;
+    margin: 2.5rem 1rem;
 }
 
 .h2-post-title-wrapper {
@@ -648,7 +648,7 @@ blockquote > p {
 }
 
 .index-post-excerpt {
-    margin: 2rem 1rem;
+    margin: 1.75rem 1rem 2rem 1rem;
     /* font-size: 18px; */
 }
 
@@ -767,7 +767,7 @@ blockquote > p {
     background-color: whitesmoke;
     border-left: 5px solid #ff7f68;
     height: max-content;
-    padding: 0.35rem 0.7rem 0.25rem 0.7rem;
+    padding: 0.45rem 0.7rem 0.35rem 0.7rem;
     border-bottom: 1px solid #dcdcdc;
     border-radius: 1px;
 }
