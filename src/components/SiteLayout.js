@@ -1,43 +1,20 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
-import NavLogo from './NavLogo'
-import NavMenu from './NavMenu'
+import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import FooterSocial from './FooterSocial'
-import FooterMenu from './FooterMenu'
+import _ from 'lodash'
 
 import gamepad from '../../static/img/favicon-b.png'
-import '../styles.css'
-// import './SiteLayout.css'
+import '../bulma.scss'
 
 const SiteLayout = props => {
     const { location, children } = props
 
-    return (
-        <div className="wrapper">
-            <Helmet>
-                <link rel="shortcut icon" type="image/svg" href={gamepad} />
-            </Helmet>
-            <div className="header">
-                <NavLogo />
-                <NavMenu />
-            </div>
-
-            <div className="side-menu">
-                <Sidebar location={location} />
-            </div>
-
-            <div className="content">
-                {children}
-            </div>
-            
-            <div className="footer">
-                <FooterSocial />
-                <FooterMenu />
-            </div>
-        </div>
-    )
+    return [
+        <Helmet><link rel="shortcut icon" type="image/svg" href={gamepad} /></Helmet>,
+        <Navbar />,
+        <div>{children}</div>
+    ]
 }
 
 export default SiteLayout

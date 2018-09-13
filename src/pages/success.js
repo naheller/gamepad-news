@@ -19,8 +19,8 @@ const Success = props => {
                 <meta property="og:description" content={`${siteTitle} contact success`} />
                 {/* <meta property="og:image" content={image} /> */}
                 </Helmet>
-            <h1 className="contact-success-header">Thanks!</h1>
-            <h5 className="contact-page-msg">We'll get back to you soon.</h5>
+            <h1>Thanks!</h1>
+            <h5>We'll get back to you soon.</h5>
         </SiteLayout>
     )
 }

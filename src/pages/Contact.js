@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import SiteLayout from '../components/SiteLayout'
-import '../styles.css'
 
 const Contact = props => {
     const data = { props }
@@ -10,7 +9,7 @@ const Contact = props => {
 
     return (
         <SiteLayout>
-            <div className="content-wrapper contact-page">
+            <div>
                 <Helmet>
                     <title>{`Contact ${siteTitle}`}</title>
                     <meta name="description" content={`${siteTitle} contact page`} /> 
@@ -18,10 +17,10 @@ const Contact = props => {
                     <meta name="robots" content="index,follow" />
                     <meta property="og:url" content={`https://gamepad.news/contact`} />
                     <meta property="og:title" content={`Contact ${siteTitle}`} />
-                    <meta property="og:description" content={`${siteTitle} contact page`} />
+                    <meta property="og:description" content={`${siteTitle} Contact page`} />
                     {/* <meta property="og:image" content={image} /> */}
                 </Helmet>
-                <h1 className="contact-page-header">What's up?</h1>
+                <h1>What's up?</h1>
                 <form
                     name="contact"
                     method="post"
@@ -34,30 +33,26 @@ const Contact = props => {
                         <input 
                             type="text" 
                             placeholder="Name" 
-                            name="name" 
-                            className="contact-page-field" 
+                            name="name"  
                         />
                     </div>
                     <div>
                         <input 
                             type="text" 
                             placeholder="Email" 
-                            name="email" 
-                            className="contact-page-field" 
+                            name="email"  
                         />
                     </div>
                     <div>
                         <textarea 
                             type="text" 
                             placeholder="Message" 
-                            name="message" 
-                            className="contact-page-field" 
+                            name="message"  
                             rows="8" 
                         />
                     </div>
                     <button 
                         type="submit" 
-                        className="contact-page-field contact-button"
                     >
                         Send
                     </button>
