@@ -21,6 +21,38 @@ const PostTemplate = props => {
     const dayOfWeek = moment(date).format('dddd')
     const restOfDate = moment(date).format('MMM D, YYYY - h:mm a')
 
+    const renderShareButtons = (withText = false) => (
+        <div className="field is-grouped">
+            <button 
+                className="button control is-link is-outlined"
+                onClick={() => window.open(`https://www.facebook.com/sharer.php?u=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=555,height=326')}
+            >
+                <span class="icon">
+                    <i className="fab fa-facebook-f" />
+                </span>
+                { withText && <span>Share</span> }
+            </button>
+            <button 
+                className="button control is-info is-outlined"
+                onClick={() => window.open(`https://twitter.com/intent/tweet?url=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=500,height=300')}
+            >
+                <span class="icon">
+                    <i className="fab fa-twitter" />
+                </span>
+                { withText && <span>Tweet</span> }
+            </button>
+            <button 
+                className="button control is-danger is-outlined"
+                onClick={() => window.open(`https://www.reddit.com/submit?url=https://gamepad.news/${slug}&title=${_.replace(title, '', '%20')}`, '_blank', 'width=610,height=600')}
+            >
+                <span class="icon">
+                    <i className="fab fa-reddit-alien" />
+                </span>
+                { withText && <span>Post</span> }
+            </button>
+        </div>
+    )
+
     return (
         <SiteLayout location={location}>
             <Helmet>
@@ -48,16 +80,31 @@ const PostTemplate = props => {
                     content={s3ImageUrl}
                 />
             </Helmet>
-            <div className="section">
-                <div className="container">
-                    <h1 className="title is-size-1">{title}</h1>
-                    <hr className="blog-post-header-hr" />
-                    <h2 className="subtitle is-italic">{`${dayOfWeek}, ${restOfDate}`}</h2>
-                    <Img className="blog-post-image" sizes={s3ImageSizes} />
-                    <div 
-                        className="content is-size-5" 
-                        dangerouslySetInnerHTML={{ __html: post.html }} 
-                    />
+            <div className="blog-post">
+                <div className="section">
+                    <div className="container">
+                        <h1 className="title is-size-1">{title}</h1>
+                        <hr className="header-hr" />
+                        <div className="level">
+                            <h2 className="subtitle level-left">{`${dayOfWeek}, ${restOfDate}`}</h2>
+                            <div className="level-right">{renderShareButtons()}</div>
+                        </div>
+                        <Img className="featured-image" sizes={s3ImageSizes} />
+                        <div 
+                            className="content is-size-5" 
+                            dangerouslySetInnerHTML={{ __html: post.html }} 
+                        />
+                        {renderShareButtons(true)}
+                    </div>
+                    <hr />
+                    <div className="tags container">
+                        {_.map(tags, tag => (
+                                <span className="tag is-uppercase has-letter-spacing-1">
+                                    <Link to={`/${_.kebabCase(tag)}`} className="has-text-dark">{tag}</Link>
+                                </span>
+                            )
+                        )}
+                    </div>
                 </div>
             </div>
         </SiteLayout>

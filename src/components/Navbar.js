@@ -29,13 +29,13 @@ const Navbar = props => {
                 </a>
             </div>
             <div class="navbar-menu">
-                <div class="navbar-start">
+                <div class="navbar-start is-uppercase is-size-7 has-text-weight-bold has-letter-spacing-1">
                     <Link to='/playstation' class="navbar-item">Playstation</Link>
-                    <Link to='/playstation' class="navbar-item">Xbox</Link>
-                    <Link to='/playstation' class="navbar-item">Switch</Link>
-                    <Link to='/playstation' class="navbar-item">PC</Link>
-                    <Link to='/playstation' class="navbar-item">Mobile</Link>
-                    <Link to='/playstation' class="navbar-item">Retro</Link>
+                    <Link to='/xbox' class="navbar-item">Xbox</Link>
+                    <Link to='/switch' class="navbar-item">Switch</Link>
+                    <Link to='/pc' class="navbar-item">PC</Link>
+                    <Link to='/mobile' class="navbar-item">Mobile</Link>
+                    <Link to='/retro' class="navbar-item">Retro</Link>
                 </div>
             </div>
         </nav>

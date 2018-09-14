@@ -1,7 +1,38 @@
-.blog-post-header-hr {
-    background-color: $navbar-background-color;
+// .blog-post-header-hr {
+//     background-color: $navbar-background-color;
+// }
+
+// .blog-post-image {
+//     margin-bottom: 1.5rem;
+// }
+
+// .blog-post-tag {
+//     letter-spacing: 1px;
+// }
+
+.blog-post {
+    .header-hr {
+        background-color: $navbar-background-color;
+    }
+    .subtitle {
+        margin-bottom: 0 !important;
+    }
+    .featured-image {
+        margin-bottom: 1.5rem;
+    }
+    .tag {
+        a:hover {
+            color: tomato !important;
+        }
+        
+    }
+    .content {
+        a {
+            color: tomato;
+        }
+    }
 }
 
-.blog-post-image {
-    margin-bottom: 1.5rem;
+.has-letter-spacing-1 {
+    letter-spacing: 1px;
 }
