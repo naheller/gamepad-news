@@ -95,7 +95,7 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
 
         const shortId = _.get(node, 'id').substring(0, 8)
         const shortTitle = _.truncate(_.get(node, 'frontmatter.title', ''), {
-            'length': 50,
+            'length': 40,
             'omission': ''
         })
 

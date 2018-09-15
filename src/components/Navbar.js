@@ -5,37 +5,39 @@ import Link from 'gatsby-link'
 const Navbar = props => {
     return (
         <nav 
-            className="navbar" 
+            className="navbar has-shadow" 
             role="navigation" 
             aria-label="main navigation"
         >
-            <div className="navbar-brand">
-                <Link to='/' className="navbar-item">
-                    <img 
-                        src={gamepad}
-                        alt="Gamepad News"
-                    />
-                </Link>
+            <div className="container">
+                <div className="navbar-brand">
+                    <Link to='/' className="navbar-item">
+                        <img 
+                            src={gamepad}
+                            alt="Gamepad News"
+                        />
+                    </Link>
 
-                <a 
-                    role="button" 
-                    className="navbar-burger" 
-                    aria-label="menu" 
-                    aria-expanded="false"
-                >
-                    <span aria-hidden="true" />
-                    <span aria-hidden="true" />
-                    <span aria-hidden="true" />
-                </a>
-            </div>
-            <div class="navbar-menu">
-                <div class="navbar-start is-uppercase is-size-7 has-text-weight-bold has-letter-spacing-1">
-                    <Link to='/playstation' class="navbar-item">Playstation</Link>
-                    <Link to='/xbox' class="navbar-item">Xbox</Link>
-                    <Link to='/switch' class="navbar-item">Switch</Link>
-                    <Link to='/pc' class="navbar-item">PC</Link>
-                    <Link to='/mobile' class="navbar-item">Mobile</Link>
-                    <Link to='/retro' class="navbar-item">Retro</Link>
+                    <a 
+                        role="button" 
+                        className="navbar-burger" 
+                        aria-label="menu" 
+                        aria-expanded="false"
+                    >
+                        <span aria-hidden="true" />
+                        <span aria-hidden="true" />
+                        <span aria-hidden="true" />
+                    </a>
+                </div>
+                <div className="navbar-menu">
+                    <div className="navbar-start is-uppercase is-size-7 has-text-weight-bold has-letter-spacing-1">
+                        <Link to='/playstation' className="navbar-item">Playstation</Link>
+                        <Link to='/xbox' className="navbar-item">Xbox</Link>
+                        <Link to='/switch' className="navbar-item">Switch</Link>
+                        <Link to='/pc' className="navbar-item">PC</Link>
+                        <Link to='/mobile' className="navbar-item">Mobile</Link>
+                        <Link to='/retro' className="navbar-item">Retro</Link>
+                    </div>
                 </div>
             </div>
         </nav>

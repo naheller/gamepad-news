@@ -17,19 +17,21 @@ const TagTemplate = props => {
 
     // const s3ImageKey = get(data, 's3Image.Key', '')
     const s3images = _.get(props, 'data.allS3Image.edges', [])
+    const capTag = _.capitalize(tag)
 
     return (
         <SiteLayout location={location}>
             <Helmet>
-                <title>{`${_.capitalize(tag)} articles on ${siteTitle}`}</title>
-                <meta name="title" content={`${_.capitalize(tag)} articles on ${siteTitle}`} />
-                <meta name="description" content={`${_.capitalize(tag)} articles on ${siteTitle}`} /> 
+                <title>{`${capTag} articles on ${siteTitle}`}</title>
+                <meta name="title" content={`${capTag} articles on ${siteTitle}`} />
+                <meta name="description" content={`${capTag} articles on ${siteTitle}`} /> 
                 <meta name="keywords" content={tag} />
                 <meta name="robots" content="index,follow" />
+
                 <meta property="og:url" content={`https://gamepad.news/${location.pathname}`} />
                 <meta property="og:type" content="blog" />
-                <meta property="og:title" content={`${_.capitalize(tag)} articles on ${siteTitle}`} />
-                <meta property="og:description" content={`${_.capitalize(tag)} articles on ${siteTitle}`} />
+                <meta property="og:title" content={`${capTag} articles on ${siteTitle}`} />
+                <meta property="og:description" content={`${capTag} articles on ${siteTitle}`} />
             </Helmet>
             <BlogPosts posts={edges} images={s3images} />
         </SiteLayout>

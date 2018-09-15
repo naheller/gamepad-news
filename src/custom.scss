@@ -1,16 +1,24 @@
-// .blog-post-header-hr {
-//     background-color: $navbar-background-color;
-// }
+.field {
+    .button {
+        border-radius: 6px !important;
+    }
+}
 
-// .blog-post-image {
-//     margin-bottom: 1.5rem;
-// }
+.has-letter-spacing-1 {
+    letter-spacing: 1px;
+}
 
-// .blog-post-tag {
-//     letter-spacing: 1px;
-// }
+.navbar {
+    margin-bottom: 2rem;
+    .container {
+        max-width: 1000px;
+    }
+}
 
 .blog-post {
+    .container {
+        margin-bottom: 2rem;
+    }
     .header-hr {
         background-color: $navbar-background-color;
     }
@@ -18,7 +26,12 @@
         margin-bottom: 0 !important;
     }
     .featured-image {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        border-radius: 6px;
+        box-shadow: whitesmoke 0px 2px 0px 0px;
+    }
+    .tags {
+        margin: 2rem 0 !important;
     }
     .tag {
         a:hover {
@@ -27,12 +40,40 @@
         
     }
     .content {
+        margin-bottom: 2rem;
         a {
             color: tomato;
         }
     }
 }
 
-.has-letter-spacing-1 {
-    letter-spacing: 1px;
+.menu {
+    a {
+        padding: 1rem 1.25rem !important;
+        border-radius: 0 !important;
+    }
+    hr {
+        margin: 1rem 0 !important;
+    }
+    .sidebar-post-title {
+        margin-bottom: 0.5rem;
+        line-height: 1.35rem;
+    }
+    .menu-label {
+        padding-left: 1.25rem;
+    }
+    &.box {
+        padding: 1.25rem 0;
+    }
+}
+
+.has-text-tomato {
+    color: tomato !important;
+}
+
+.blog-post-date-author {
+    .by-author {
+        display: flex;
+        // flex-flow: row nowrap;
+    }
 }
