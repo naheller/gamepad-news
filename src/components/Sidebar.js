@@ -26,10 +26,16 @@ const Sidebar = props => {
             `}
             render={data => {
                 const posts = _.get(data, 'allMarkdownRemark.edges', [])
+                // const locationPath = _.get(props, 'location.pathname', '')
 
                 return (
                     <aside className="menu box">
-                        <div className="menu-label">The Latest</div>
+                        <div className="menu-label">
+                            <span className="icon">
+                                <i className="fas fa-bolt" />
+                            </span>
+                            <span className="has-text-weight-bold">The Latest</span>
+                        </div>
                         <hr />
                         <ul className="menu-list">
                             {_.map(posts, post => {
@@ -59,7 +65,7 @@ const Sidebar = props => {
                                 return (
                                     <li key={slug}>
                                         <Link to={`/${slug}`}>
-                                            <div className="sidebar-post-title">{title}</div>
+                                            <div className={`sidebar-post-title has-text-weight-normal`}>{title}</div>
                                             <small className={`is-italic ${textColor}`}>{date}</small>
                                         </Link>
                                     </li>

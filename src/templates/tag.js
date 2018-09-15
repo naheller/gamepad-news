@@ -5,15 +5,15 @@ import SiteLayout from '../components/SiteLayout'
 import BlogPosts from '../components/BlogPosts'
 import _ from 'lodash'
 
-const tagTypes = ['playstation', 'xbox', 'switch', 'pc', 'mobile', 'retro']
+// const tagTypes = ['playstation', 'xbox', 'switch', 'pc', 'mobile', 'retro']
 
 const TagTemplate = props => { 
     const { data, location, pageContext } = props
-    const { edges, totalCount } = data.allMarkdownRemark
+    const { edges, /*totalCount*/ } = data.allMarkdownRemark
     const { tag } = pageContext
 
     const siteTitle = _.get(data, 'site.siteMetadata.title', 'Gamepad News')
-    const isSpecialTag = _.includes(tagTypes, tag)
+    // const isSpecialTag = _.includes(tagTypes, tag)
 
     // const s3ImageKey = get(data, 's3Image.Key', '')
     const s3images = _.get(props, 'data.allS3Image.edges', [])

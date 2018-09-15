@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import _ from 'lodash'
 
 import gamepad from '../../static/img/favicon-b.png'
 import '../bulma.scss'
@@ -40,7 +39,7 @@ const SiteLayout = props => {
             <Navbar />
             <div className="container columns is-variable is-7" style={{ margin: 'auto' }}>
                 <div className="column is-one-third">
-                    <Sidebar />
+                    <Sidebar location={location} />
                 </div>
                 <div className="column">
                     {children}

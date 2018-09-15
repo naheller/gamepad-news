@@ -18,16 +18,16 @@ const Navbar = props => {
                         />
                     </Link>
 
-                    <a 
+                    <div 
                         role="button" 
                         className="navbar-burger" 
-                        aria-label="menu" 
+                        aria-label="mobile menu button" 
                         aria-expanded="false"
                     >
                         <span aria-hidden="true" />
                         <span aria-hidden="true" />
                         <span aria-hidden="true" />
-                    </a>
+                    </div>
                 </div>
                 <div className="navbar-menu">
                     <div className="navbar-start is-uppercase is-size-7 has-text-weight-bold has-letter-spacing-1">

@@ -2,9 +2,10 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import SiteLayout from '../components/SiteLayout'
 import _ from 'lodash'
 import moment from 'moment'
+
+import SiteLayout from '../components/SiteLayout'
 
 const PostTemplate = props => {
     const { data, location, pageContext } = props
@@ -18,8 +19,18 @@ const PostTemplate = props => {
     const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields
 
-    const dayOfWeek = moment(date).format('dddd')
-    const restOfDate = moment(date).format('MMM D, YYYY - h:mm a')
+    let formattedDate = moment(date).format('MMM D, YYYY – h:mm a')
+    const hourMin = moment(date).format('h:mm a')
+
+    const now = moment()
+    const hoursDiff = now.diff(moment(date), 'hours')
+    const daysDiff = now.diff(moment(date), 'days')
+
+    if (hoursDiff < 24) {
+        formattedDate = `Today at ${hourMin}`
+    } else if (daysDiff === 1) {
+        formattedDate = `Yesterday at ${hourMin}`
+    }
 
     const renderShareButtons = (withText = false) => (
         <div className="field is-grouped">
@@ -67,8 +78,8 @@ const PostTemplate = props => {
             <hr className="header-hr" />
             <div className="level">
                 <div className="blog-post-date-author">
-                    <h2 className="subtitle level-left is-uppercase is-6 has-letter-spacing-1">{`${dayOfWeek}, ${restOfDate}`}</h2>
-                    <div className="by-author level-left has-letter-spacing-1">
+                    <h2 className="subtitle level-left is-uppercase is-6 has-letter-spacing-1">{formattedDate}</h2>
+                    <div className="by-author level-left has-letter-spacing-1 is-italic">
                         <p className="subtitle is-7 has-text-grey-light">{`by\xa0`}</p>
                         <p className="subtitle is-uppercase is-7 has-text-grey-light">{author}</p>
                     </div>
@@ -156,19 +167,11 @@ const PostTemplate = props => {
         <SiteLayout location={location}>
             {addHelmet()}
             <div className="blog-post">
-                {/* <div className="container"> */}
-                    {renderArticle()}
-                {/* </div> */}
-                {/* <div className="container"> */}
-                    {renderShareButtons(true)}
-                {/* </div> */}
-                {/* <div className="container"> */}
-                    {renderTags()}
-                {/* </div> */}
-                {/* <hr /> */}
-                {/* <div className="container"> */}
-                    {renderPrevNext()}
-                {/* </div> */}
+                {renderArticle()}
+                {renderShareButtons(true)}
+                {renderTags()}
+                <hr />
+                {renderPrevNext()}
             </div>
         </SiteLayout>
     )
