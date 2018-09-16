@@ -9,16 +9,37 @@
     .blog-post-date-author {
         margin-bottom: 1.25rem;
     }
-    .menu {
-        &.box {
-            box-shadow: none !important;
+    .menu.box {
+        box-shadow: none !important;
 
-            hr {
-                margin: 1rem 0 !important;
-            }
+        hr {
+            margin: 1rem 0 !important;
         }
         .menu-label {
             padding: 0 !important;
+        }
+    }
+    .blog-post {
+        h1 {
+            font-size: 2rem !important;
+        } 
+        .content {
+            h2 {
+                font-size: 1.75rem !important;
+                margin: 2rem 0 !important;
+            }
+            h3 {
+                font-size: 1.5rem !important;
+                margin: 1.5rem 0 !important;
+            }
+            h4 {
+                font-size: 1.25rem !important;
+                margin: 1.25rem 0 !important;
+            }
+            h5, h6 {
+                font-size: 1rem !important;
+                margin: 1.25rem 0 !important;
+            }
         }
     }
 }
