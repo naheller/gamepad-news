@@ -26,10 +26,10 @@ const Sidebar = props => {
             `}
             render={data => {
                 const posts = _.get(data, 'allMarkdownRemark.edges', [])
-                // const locationPath = _.get(props, 'location.pathname', '')
+                const locationPath = _.get(props, 'location.pathname', '')
 
                 return (
-                    <aside className="menu box">
+                    <aside className="menu box has-shadow">
                         <div className="menu-label">
                             <span className="icon">
                                 <i className="fas fa-bolt" />
@@ -59,14 +59,15 @@ const Sidebar = props => {
                                 } else {
                                     date = ''
                                 }
-
-                                const textColor = hoursDiff < 24 ? 'has-text-tomato' : 'has-text-grey-light'
+                                
+                                const titleTextColor = (locationPath === `/${slug}`) ? 'has-text-dark' : 'has-text-grey'
+                                const dateTextColor = hoursDiff < 24 ? 'has-text-tomato' : 'has-text-grey-light'
 
                                 return (
                                     <li key={slug}>
                                         <Link to={`/${slug}`}>
-                                            <div className={`sidebar-post-title has-text-weight-normal`}>{title}</div>
-                                            <small className={`is-italic ${textColor}`}>{date}</small>
+                                            <div className={`sidebar-post-title ${titleTextColor}`}>{title}</div>
+                                            <small className={`is-italic ${dateTextColor}`}>{date}</small>
                                         </Link>
                                     </li>
                                 )

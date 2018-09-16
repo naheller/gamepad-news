@@ -37,7 +37,7 @@ const SiteLayout = props => {
         <div>
             {addHelmet()}
             <Navbar />
-            <div className="container columns is-variable is-7" style={{ margin: 'auto' }}>
+            <div className="container columns is-variable is-7 reverse-column-order" style={{ margin: 'auto' }}>
                 <div className="column is-one-third">
                     <Sidebar location={location} />
                 </div>

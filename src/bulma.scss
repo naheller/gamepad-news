@@ -7,10 +7,15 @@ Taken from https://bulma.io/documentation/overview/customize/
 @import "~bulma/sass/utilities/functions.sass";
 
 // 2. Set your own initial variables
-$navbar-background-color: #ff7f68;
+$off-tomato: #ff7f68;
+
+$navbar-background-color: $off-tomato;
 $navbar-item-color: white;
 $navbar-item-hover-color: white;
 $navbar-item-hover-background-color: #ff8d79;
+
+$menu-item-hover-background-color: #fafafa;
+$menu-label-color: $off-tomato;
 
 // $link: tomato;
 $link-hover: $grey;

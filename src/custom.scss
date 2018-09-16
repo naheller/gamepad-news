@@ -1,3 +1,29 @@
+@media screen and (max-width: $tablet) {
+    .reverse-column-order {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .navbar {
+        margin-bottom: 1rem !important;
+    }
+    .blog-post-date-author {
+        margin-bottom: 1.25rem;
+    }
+    .menu {
+        &.box {
+            box-shadow: none !important;
+
+            hr {
+                margin: 1rem 0 !important;
+            }
+        }
+        .menu-label {
+            padding: 0 !important;
+        }
+    }
+}
+
+
 .field {
     .button {
         border-radius: 6px !important;
@@ -20,7 +46,9 @@
         margin-bottom: 2rem;
     }
     .header-hr {
-        background-color: #ff8d79;
+        height: 1px;
+        background-color: $off-tomato;
+        // box-shadow: 0 7px 0 #ffb8ab
     }
     .subtitle {
         margin-bottom: 0 !important;
@@ -42,18 +70,24 @@
     .content {
         margin-bottom: 2rem;
         a {
-            color: tomato;
+            color: $off-tomato;
         }
     }
 }
 
 .menu {
+    &.box {
+        padding: 1.25rem 0;
+        box-shadow: 0 0 0 1px $off-tomato;
+    }
     a {
         padding: 1rem 1.25rem !important;
         border-radius: 0 !important;
     }
     hr {
-        margin: 1rem 0 !important;
+        height: 1px;
+        margin: 1rem !important;
+        background-color: $off-tomato;
     }
     .sidebar-post-title {
         margin-bottom: 0.5rem;
@@ -62,18 +96,14 @@
     .menu-label {
         padding-left: 1.25rem;
     }
-    &.box {
-        padding: 1.25rem 0;
-    }
 }
 
 .has-text-tomato {
-    color: tomato !important;
+    color: $off-tomato !important;
 }
 
 .blog-post-date-author {
     .by-author {
         display: flex;
-        // flex-flow: row nowrap;
     }
 }
