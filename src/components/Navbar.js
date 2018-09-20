@@ -1,6 +1,6 @@
 import React from 'react'
-import gamepad from '../../static/svg/gamepad.svg'
 import Link from 'gatsby-link'
+import gamepad from '../../static/svg/gamepad.svg'
 
 const Navbar = props => {
     return (

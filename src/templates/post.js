@@ -6,6 +6,7 @@ import _ from 'lodash'
 import moment from 'moment'
 
 import SiteLayout from '../components/SiteLayout'
+import ShareButtons from '../components/ShareButtons'
 
 const PostTemplate = props => {
     const { data, location, pageContext } = props
@@ -32,46 +33,6 @@ const PostTemplate = props => {
         formattedDate = `Yesterday at ${hourMin}`
     }
 
-    const renderShareButtons = (withText = false) => (
-        <div className="field is-grouped">
-            <button 
-                className="button control is-link is-outlined"
-                onClick={() => window.open(
-                    `https://www.facebook.com/sharer.php?u=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=555,height=326'
-                )}
-            >
-                <span 
-                    className="icon"
-                >
-                    <i className="fab fa-facebook-f" />
-                </span>
-                { withText && <span>Share</span> }
-            </button>
-            <button 
-                className="button control is-info is-outlined"
-                onClick={() => window.open(
-                    `https://twitter.com/intent/tweet?url=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=500,height=300'
-                )}
-            >
-                <span className="icon">
-                    <i className="fab fa-twitter" />
-                </span>
-                { withText && <span>Tweet</span> }
-            </button>
-            <button 
-                className="button control is-danger is-outlined"
-                onClick={() => window.open(
-                    `https://www.reddit.com/submit?url=https://gamepad.news/${slug}&title=${_.replace(title, '', '%20')}`, '_blank', 'width=610,height=600'
-                )}
-            >
-                <span className="icon">
-                    <i className="fab fa-reddit-alien" />
-                </span>
-                { withText && <span>Post</span> }
-            </button>
-        </div>
-    )
-
     const renderArticle = () => (
         <div>
             <h1 className="title is-size-2">{title}</h1>
@@ -84,7 +45,9 @@ const PostTemplate = props => {
                         <p className="subtitle is-uppercase is-7 has-text-grey-light">{author}</p>
                     </div>
                 </div>
-                <div className="level-right">{renderShareButtons()}</div>
+                <div className="level-right">
+                    <ShareButtons slug={slug} title={title} showAll={false} />
+                </div>
             </div>
             <Img className="featured-image" sizes={s3ImageSizes} />
             <div 
@@ -168,10 +131,11 @@ const PostTemplate = props => {
             {addHelmet()}
             <div className="blog-post">
                 {renderArticle()}
-                {renderShareButtons(true)}
+                <ShareButtons slug={slug} title={title} showAll />
                 {renderTags()}
                 <hr />
                 {renderPrevNext()}
+                <hr />
             </div>
         </SiteLayout>
     )

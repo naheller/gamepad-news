@@ -8,14 +8,17 @@ Taken from https://bulma.io/documentation/overview/customize/
 
 // 2. Set your own initial variables
 $off-tomato: #ff7f68;
+$light-tomato: #ff8d79;
 
-$navbar-background-color: $off-tomato;
+$navbar-background-color: $light-tomato;
 $navbar-item-color: white;
 $navbar-item-hover-color: white;
-$navbar-item-hover-background-color: #ff8d79;
+$navbar-item-hover-background-color: $light-tomato;
 
 $menu-item-hover-background-color: #fafafa;
 $menu-label-color: $off-tomato;
+
+// $footer-background-color: #ff9b89;
 
 // $link: tomato;
 $link-hover: $grey;

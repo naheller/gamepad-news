@@ -1,4 +1,11 @@
 @media screen and (max-width: $tablet) {
+    // .featured-image, .gatsby-resp-image-background-image {
+    //      border-radius: 0 !important;
+    //      margin: 0 -2rem 1.5rem -2rem !important;
+    // }
+    .resp-social-text {
+        display: none !important;
+    }
     .reverse-column-order {
         display: flex;
         flex-direction: column-reverse;
@@ -11,12 +18,21 @@
     }
     .menu.box {
         box-shadow: none !important;
+        padding-top: 0 !important;
 
         hr {
             margin: 1rem 0 !important;
         }
         .menu-label {
             padding: 0 !important;
+        }
+        .menu-list {
+            a {
+                padding: 1rem !important;
+                // &:hover {
+                //     background-color: white !important;
+                // }
+            }
         }
     }
     .blog-post {
@@ -40,10 +56,17 @@
                 font-size: 1rem !important;
                 margin: 1.25rem 0 !important;
             }
+            // .gatsby-resp-image-background-image {
+            //     border-radius: 6px !important;
+            // }
         }
     }
 }
 
+.is-reddit {
+    color: #FF5700 !important;
+    border-color: #FF5700 !important;
+}
 
 .field {
     .button {
@@ -76,8 +99,8 @@
     }
     .featured-image {
         margin-bottom: 2rem;
-        border-radius: 6px;
         box-shadow: whitesmoke 0px 2px 0px 0px;
+        border-radius: 6px;
     }
     .tags {
         margin: 2rem 0 !important;
@@ -102,7 +125,7 @@
         box-shadow: 0 0 0 1px $off-tomato;
     }
     a {
-        padding: 1rem 1.25rem !important;
+        padding: 1rem 1.5rem !important;
         border-radius: 0 !important;
     }
     hr {
@@ -113,6 +136,7 @@
     .sidebar-post-title {
         margin-bottom: 0.5rem;
         line-height: 1.35rem;
+        font-size: 0.9rem !important;
     }
     .menu-label {
         padding-left: 1.25rem;
@@ -127,4 +151,10 @@
     .by-author {
         display: flex;
     }
+}
+
+.footer {
+    height: 1rem;
+    padding: 0.75rem 1.5rem 2.5rem !important;
+    border-top: 2px solid #ff9b89;
 }

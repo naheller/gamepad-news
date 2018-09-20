@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+import Footer from './Footer'
 
 import gamepad from '../../static/img/favicon-b.png'
 import '../bulma.scss'
@@ -30,6 +31,12 @@ const SiteLayout = props => {
                 integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" 
                 crossorigin="anonymous" 
             />
+            <link 
+                rel="stylesheet" 
+                href="https://use.fontawesome.com/releases/v5.3.1/css/regular.css" 
+                integrity="sha384-ZlNfXjxAqKFWCwMwQFGhmMh3i89dWDnaFU2/VZg9CvsMGA7hXHQsPIqS+JIAmgEq" 
+                crossorigin="anonymous"
+            />
         </Helmet>
     )
 
@@ -45,6 +52,7 @@ const SiteLayout = props => {
                     {children}
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
