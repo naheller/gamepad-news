@@ -1,8 +1,20 @@
+@media print { 
+    .no-print { 
+        display: none !important;
+    }
+    img {
+        display: none !important;
+    }
+}
+
 @media screen and (max-width: $tablet) {
     // .featured-image, .gatsby-resp-image-background-image {
     //      border-radius: 0 !important;
     //      margin: 0 -2rem 1.5rem -2rem !important;
     // }
+    .prev-next-label {
+        display: none;
+    }
     .resp-social-text {
         display: none !important;
     }
@@ -60,8 +72,19 @@
             //     border-radius: 6px !important;
             // }
         }
+        .level-right {
+            .icon {
+                margin: 0 !important;
+                width: 0.75rem;
+            }
+        }
+        
     }
 }
+
+// .button:focus, {
+//     outline: none !important;
+// }
 
 .is-reddit {
     color: #FF5700 !important;
@@ -74,14 +97,22 @@
     }
 }
 
+.has-letter-spacing-05 {
+    letter-spacing: 0.5px;
+}
+
 .has-letter-spacing-1 {
     letter-spacing: 1px;
 }
 
 .navbar {
+    background-image: $navbar-background-color;
     margin-bottom: 2rem;
     .container {
         max-width: 1050px;
+    }
+    .navbar-item {
+        padding: 0.5rem 1rem;
     }
 }
 
@@ -98,7 +129,7 @@
         margin-bottom: 0 !important;
     }
     .featured-image {
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         box-shadow: whitesmoke 0px 2px 0px 0px;
         border-radius: 6px;
     }
@@ -109,13 +140,16 @@
         a:hover {
             color: tomato !important;
         }
-        
     }
     .content {
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        padding: 0 0.25rem;
         a {
             color: $off-tomato;
         }
+    }
+    .level {
+        margin-bottom: 1rem;
     }
 }
 
@@ -139,7 +173,12 @@
         font-size: 0.9rem !important;
     }
     .menu-label {
+        display: flex;
+        align-items: center;
         padding-left: 1.25rem;
+        .icon {
+            margin-right: 0.25rem;
+        }
     }
 }
 
@@ -150,6 +189,7 @@
 .blog-post-date-author {
     .by-author {
         display: flex;
+        margin-top: 1px;
     }
 }
 

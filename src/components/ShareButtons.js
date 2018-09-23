@@ -37,7 +37,7 @@ class ShareButtons extends Component {
         const title = this.props.title
 
         return (
-            <div className="field is-grouped">
+            <div className="field is-grouped no-print">
                 <button 
                     key="fb-share-button"
                     className="button control is-link is-outlined"
@@ -95,14 +95,16 @@ class ShareButtons extends Component {
                                 <i className="fas fa-link" />
                             </span>
                         </button>,
-                        <small 
+                        <div 
                             key="copy-link-text"
+                            className="is-size-7 is-italic"
                             style={{ 
-                                alignSelf: 'center', display: `${this.state.copyLinkDisplay}`
+                                alignSelf: 'center', 
+                                display: `${this.state.copyLinkDisplay}`
                             }}
                         >
                             Copied link
-                        </small>
+                        </div>
                     ]
                 }
             </div>

@@ -5,7 +5,7 @@ import gamepad from '../../static/svg/gamepad.svg'
 const Navbar = props => {
     return (
         <nav 
-            className="navbar has-shadow" 
+            className="navbar" 
             role="navigation" 
             aria-label="main navigation"
         >

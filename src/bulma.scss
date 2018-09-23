@@ -9,19 +9,25 @@ Taken from https://bulma.io/documentation/overview/customize/
 // 2. Set your own initial variables
 $off-tomato: #ff7f68;
 $light-tomato: #ff8d79;
+$tomato-lightest: #ff9b89;
 
-$navbar-background-color: $light-tomato;
+$navbar-background-color: linear-gradient(0.25turn, $light-tomato, $tomato-lightest);
 $navbar-item-color: white;
 $navbar-item-hover-color: white;
-$navbar-item-hover-background-color: $light-tomato;
+$navbar-item-hover-background-color: $tomato-lightest;
+$navbar-bottom-box-shadow-size: 0 -2px 0 0;
 
 $menu-item-hover-background-color: #fafafa;
 $menu-label-color: $off-tomato;
+
+// $body-size: 18px;
+$body-line-height: 1.75;
 
 // $footer-background-color: #ff9b89;
 
 // $link: tomato;
 $link-hover: $grey;
+$size-7: 0.8rem;
 
 // Update blue
 // $blue: #72d0eb;
