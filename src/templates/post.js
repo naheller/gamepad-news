@@ -101,6 +101,14 @@ const PostTemplate = props => {
                     </span>
                     <span>Back to top</span>
                 </button>
+                <Link to="/" className="level-item">
+                    <button className="button is-rounded home-button">
+                        <span className="icon">
+                            <i className="fas fa-home" />
+                        </span>
+                        <span className="prev-next-label">Home</span>
+                    </button>
+                </Link> 
             </div>
             <div className="level-right">
                 {   

@@ -28,7 +28,7 @@ const Sidebar = props => (
             const locationPath = _.get(props, 'location.pathname', '')
 
             return (
-                <div className="menu box has-shadow">
+                <div className="menu box">
                     <div className="menu-label">
                         <span className="icon">
                             <i className="fas fa-bolt is-size-6" />

@@ -29,7 +29,7 @@
         margin-bottom: 1.25rem;
     }
     .menu.box {
-        box-shadow: none !important;
+        border: none !important;
         padding-top: 0 !important;
 
         hr {
@@ -72,7 +72,7 @@
             //     border-radius: 6px !important;
             // }
         }
-        .level-right {
+        .level-right, .home-button {
             .icon {
                 margin: 0 !important;
                 width: 0.75rem;
@@ -81,10 +81,6 @@
         
     }
 }
-
-// .button:focus, {
-//     outline: none !important;
-// }
 
 .is-reddit {
     color: #FF5700 !important;
@@ -156,7 +152,9 @@
 .menu {
     &.box {
         padding: 1.25rem 0;
-        box-shadow: 0 0 0 1px $off-tomato;
+        // box-shadow: 0 0 0 1px $off-tomato;
+        box-shadow: none;
+        border: 1px solid $off-tomato;
     }
     a {
         padding: 1rem 1.5rem !important;

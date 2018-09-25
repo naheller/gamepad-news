@@ -11,7 +11,8 @@ const BlogIndex = props => {
     const siteDesc = get(props, 'data.site.siteMetadata.description', 'Video game news blog')
 
     const posts = get(props, 'data.allMarkdownRemark.edges', [])
-    const s3images = get(props, 'data.allS3Image.edges', [])
+    // const s3images = get(props, 'data.allS3Image.edges', [])
+    const s3imageSize = get(props, 'data.s3Image.localFile.childImageSharp.sizes', {})
 
     return (
         <SiteLayout location={props.location}>
@@ -27,7 +28,7 @@ const BlogIndex = props => {
                 <meta property="og:description" content={siteDesc} />
                 {/* <meta property="og:image" content={image} /> */}
             </Helmet>
-            <BlogPosts posts={posts} images={s3images} />
+            <BlogPosts posts={posts} /*images={s3images}*/ s3imageSize={s3imageSize} />
         </SiteLayout>
     )
 }
@@ -55,6 +56,18 @@ export const pageQuery = graphql`
                         author
                         tags
                         s3image
+                    }
+                }
+            }
+        }
+        s3Image(Key: { eq: "dead-cells.jpg" }) {
+            id
+            Key
+            Url
+            localFile {
+                childImageSharp {
+                    sizes {
+                        ...GatsbyImageSharpSizes
                     }
                 }
             }
