@@ -28,55 +28,45 @@ const Sidebar = props => (
             const locationPath = _.get(props, 'location.pathname', '')
 
             return (
-                <div className="menu box">
-                    <div className="menu-label">
-                        <span className="icon">
-                            <i className="fas fa-bolt is-size-6" />
-                        </span>
-                        <span className="has-text-weight-bold is-size-7">The Latest</span>
-                    </div>
-                    <hr />
-                    <ul className="menu-list">
-                        {_.map(posts, post => {
-                            const title = _.get(post, 'node.frontmatter.title', '')
-                            let date = _.get(post, 'node.frontmatter.date', '')
-                            const slug = _.get(post, 'node.fields.slug', '')
+                <div>
+                    {_.map(posts, post => {
+                        const title = _.get(post, 'node.frontmatter.title', '')
+                        let date = _.get(post, 'node.frontmatter.date', '')
+                        const slug = _.get(post, 'node.fields.slug', '')
 
-                            const now = moment()
-                            const minsDiff = now.diff(moment(date), 'minutes')
-                            const hoursDiff = now.diff(moment(date), 'hours')
-                            const daysDiff = now.diff(moment(date), 'days')
+                        const now = moment()
+                        const minsDiff = now.diff(moment(date), 'minutes')
+                        const hoursDiff = now.diff(moment(date), 'hours')
+                        const daysDiff = now.diff(moment(date), 'days')
 
-                            if (minsDiff < 60) {
-                                date = `${minsDiff} minute${minsDiff > 1 ? `s` : ``} ago`
-                            } else if (hoursDiff < 24) {
-                                date = `${hoursDiff} hour${hoursDiff > 1 ? `s` : ``} ago`
-                            } else if (daysDiff === 1) {
-                                date = `yesterday`
-                            } else if (daysDiff < 5) {
-                                date = `${daysDiff} day${daysDiff > 1 ? `s` : ``} ago`
-                            } else {
-                                date = ''
-                            }
-                            
-                            // const titleTextColor = (locationPath === `/${slug}`) ? 'has-text-dark' : 'has-text-grey'
-                            const titleFontWeight = (locationPath === `/${slug}`) ? 'has-text-weight-semibold' : 'has-text-weight-normal'
-                            const dateTextColor = hoursDiff < 24 ? 'has-text-tomato' : 'has-text-grey-light'
+                        if (minsDiff < 60) {
+                            date = `${minsDiff} minute${minsDiff > 1 ? `s` : ``} ago`
+                        } else if (hoursDiff < 24) {
+                            date = `${hoursDiff} hour${hoursDiff > 1 ? `s` : ``} ago`
+                        } else if (daysDiff === 1) {
+                            date = `yesterday`
+                        } else if (daysDiff < 5) {
+                            date = `${daysDiff} day${daysDiff > 1 ? `s` : ``} ago`
+                        } else {
+                            date = ''
+                        }
+                        
+                        // const titleTextColor = (locationPath === `/${slug}`) ? 'has-text-dark' : 'has-text-grey'
+                        const titleFontWeight = (locationPath === `/${slug}`) ? 'has-text-weight-semibold' : 'has-text-weight-normal'
+                        const dateTextColor = hoursDiff < 24 ? 'has-text-tomato' : 'has-text-grey-light'
 
-                            return (
-                                <li key={slug}>
-                                    <Link to={`/${slug}`}>
-                                        <p className={`sidebar-post-title has-text-dark has-letter-spacing-05 is-size-6 ${titleFontWeight}`}>{title}</p>
-                                        <div className={`is-italic is-size-7 ${dateTextColor}`}>{date}</div>
-                                    </Link>
-                                </li>
-                            )
-                        })}
-                    </ul>
+                        return (
+                            <div key={slug}>
+                                <Link to={`/${slug}`}>
+                                    <div>{title}</div>
+                                    <div>{date}</div>
+                                </Link>
+                            </div>
+                        )
+                    })}
                 </div>
-            )}
-        }
-    />
-)
+            )}}
+        />
+    )
 
 export default Sidebar

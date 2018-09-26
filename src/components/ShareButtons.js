@@ -37,10 +37,10 @@ class ShareButtons extends Component {
         const title = this.props.title
 
         return (
-            <div className="field is-grouped no-print">
+            <div>
                 <button 
+                    className="btn btn-primary"
                     key="fb-share-button"
-                    className="button control is-link is-outlined"
                     onClick={() => window.open(
                         `https://www.facebook.com/sharer.php?u=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=555,height=326'
                     )}
@@ -53,7 +53,6 @@ class ShareButtons extends Component {
                 </button>
                 <button 
                     key="twitter-share-button"
-                    className="button control is-info is-outlined"
                     onClick={() => window.open(
                         `https://twitter.com/intent/tweet?url=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=500,height=300'
                     )}
@@ -64,7 +63,6 @@ class ShareButtons extends Component {
                 </button>
                 <button 
                     key="reddit-share-button"
-                    className="button control is-danger is-outlined"
                     onClick={() => window.open(
                         `https://www.reddit.com/submit?url=https://gamepad.news/${slug}&title=${_.replace(title, '', '%20')}`, '_blank', 'width=610,height=600'
                     )}
@@ -77,7 +75,6 @@ class ShareButtons extends Component {
                     this.props.showAll && [
                         <button 
                             key="icon-mail"
-                            className="button control is-outlined"
                             onClick={() => window.open(
                                 `mailto:?subject=${title}&body=https://gamepad.news/${slug}`
                             )}
@@ -88,7 +85,6 @@ class ShareButtons extends Component {
                         </button>,
                         <button 
                             key="icon-link"
-                            className="button control is-outlined"
                             onClick={() => this.copyToClipboard(`https://gamepad.news/${slug}`)}
                         >
                             <span className="icon">
@@ -97,11 +93,6 @@ class ShareButtons extends Component {
                         </button>,
                         <div 
                             key="copy-link-text"
-                            className="is-size-7 is-italic"
-                            style={{ 
-                                alignSelf: 'center', 
-                                display: `${this.state.copyLinkDisplay}`
-                            }}
                         >
                             Copied link
                         </div>

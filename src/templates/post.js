@@ -35,48 +35,20 @@ const PostTemplate = props => {
 
     const renderArticle = () => (
         <div>
-            <h1 className="title is-size-3 has-letter-spacing-05">
-                {title}
-            </h1>
-            <hr className="header-hr" />
-            <div className="level">
-                <div className="blog-post-date-author">
-                    <div 
-                        className="subtitle level-left is-uppercase has-letter-spacing-1"
-                        style={{ fontSize: '0.95rem' }}
-                    >
-                        {formattedDate}
-                    </div>
-                    <div className="by-author level-left has-letter-spacing-1 is-italic">
-                        <div className="subtitle is-size-7 has-text-grey-light">
-                            {`by ${author}`}
-                        </div>
-                    </div>
-                </div>
-                <div className="level-right">
-                    <ShareButtons slug={slug} title={title} showAll={false} />
-                </div>
-            </div>
-            <Img className="featured-image no-print" sizes={s3ImageSizes} />
-            <div 
-                className="content has-letter-spacing-05"
-                style={{ fontSize: '1.1rem' }}
-                dangerouslySetInnerHTML={{ __html: post.html }} 
-            />
+            <h1>{title}</h1>
+            <div>{formattedDate}</div>
+            <div>{`by ${author}`}</div>
+            <ShareButtons slug={slug} title={title} showAll={false} />
+            <Img sizes={s3ImageSizes} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
     )
 
     const renderTags = () => (
-        <div className="tags no-print">
+        <div>
             {_.map(tags, tag => (
-                    <span 
-                        key={tag}
-                        className="tag is-uppercase has-letter-spacing-1 is-size-7"
-                    >
-                        <Link 
-                            to={`/${_.kebabCase(tag)}`} 
-                            className="has-text-dark"
-                        >
+                    <span key={tag}>
+                        <Link to={`/${_.kebabCase(tag)}`}>
                             {tag}
                         </Link>
                     </span>
@@ -86,10 +58,9 @@ const PostTemplate = props => {
     )
 
     const renderPrevNext = () => (
-        <div className="level is-mobile no-print">
-            <div className="level-left">
+        <div>
+            <div>
                 <button 
-                    className="level-item button is-rounded" 
                     onClick={() => window.scrollTo({
                         top: 0,
                         left: 0,
@@ -101,32 +72,32 @@ const PostTemplate = props => {
                     </span>
                     <span>Back to top</span>
                 </button>
-                <Link to="/" className="level-item">
-                    <button className="button is-rounded home-button">
+                <Link to="/">
+                    <button>
                         <span className="icon">
                             <i className="fas fa-home" />
                         </span>
-                        <span className="prev-next-label">Home</span>
+                        <span>Home</span>
                     </button>
                 </Link> 
             </div>
-            <div className="level-right">
+            <div>
                 {   
                     !_.isNull(previous) &&
-                    <Link to={`/${previous.fields.slug}`} className="level-item">
-                        <button className="button is-rounded">
+                    <Link to={`/${previous.fields.slug}`}>
+                        <button>
                             <span className="icon">
                                 <i className="fas fa-chevron-left" />
                             </span>
-                            <span className="prev-next-label">Older</span>
+                            <span>Older</span>
                         </button>
                     </Link> 
                 }
                 {   
                     !_.isNull(next) &&
-                    <Link to={`/${next.fields.slug}`} className="level-item">
-                        <button className="button is-rounded">
-                            <span className="prev-next-label">Newer</span>
+                    <Link to={`/${next.fields.slug}`}>
+                        <button>
+                            <span>Newer</span>
                             <span className="icon">
                                 <i className="fas fa-chevron-right" />
                             </span>
@@ -168,14 +139,10 @@ const PostTemplate = props => {
     return (
         <SiteLayout location={location}>
             {addHelmet()}
-            <div className="blog-post">
-                {renderArticle()}
-                <ShareButtons slug={slug} title={title} showAll />
-                {renderTags()}
-                <hr />
-                {renderPrevNext()}
-                {/* <hr /> */}
-            </div>
+            {renderArticle()}
+            <ShareButtons slug={slug} title={title} showAll />
+            {renderTags()}
+            {renderPrevNext()}
         </SiteLayout>
     )
 }

@@ -5,7 +5,8 @@ import Sidebar from './Sidebar'
 import Footer from './Footer'
 
 import gamepad from '../../static/img/favicon-b.png'
-import '../bulma.scss'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const SiteLayout = props => {
     const { location, children } = props
@@ -44,11 +45,9 @@ const SiteLayout = props => {
         <div>
             {addHelmet()}
             <Navbar />
-            <div className="container columns is-variable is-7 reverse-column-order" style={{ margin: 'auto' }}>
-                <div className="column no-print" style={{ flex: '0 0 360px' }}>
-                    <Sidebar location={location} />
-                </div>
-                <div className="column">
+            <div>
+                <Sidebar location={location} />
+                <div>
                     {children}
                 </div>
             </div>

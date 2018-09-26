@@ -28,7 +28,6 @@ const BlogIndex = props => {
                 <meta property="og:description" content={siteDesc} />
                 {/* <meta property="og:image" content={image} /> */}
             </Helmet>
-            <BlogPosts posts={posts} /*images={s3images}*/ s3imageSize={s3imageSize} />
         </SiteLayout>
     )
 }
