@@ -1,15 +1,15 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { Layout } from 'antd'
+
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import Footer from './Footer'
-
+import FooterContent from './Footer'
 import gamepad from '../../static/img/favicon-b.png'
-
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const SiteLayout = props => {
     const { location, children } = props
+    const { Header, Footer, Sider, Content } = Layout;
 
     const addHelmet = () => (
         <Helmet>
@@ -42,17 +42,15 @@ const SiteLayout = props => {
     )
 
     return (
-        <div>
+        <Layout>
             {addHelmet()}
-            <Navbar />
-            <div>
-                <Sidebar location={location} />
-                <div>
-                    {children}
-                </div>
-            </div>
-            <Footer />
-        </div>
+            <Header><Navbar /></Header>
+            <Layout>
+                <Sider style={{ width: '300px' }}><Sidebar location={location} /></Sider>
+                <Content style={{ margin: '2.5rem 3.5rem' }}>{children}</Content>
+            </Layout>
+            <Footer style={{ backgroundColor: '#001529' }}><FooterContent /></Footer>
+        </Layout>
     )
 }
 

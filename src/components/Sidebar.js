@@ -28,7 +28,7 @@ const Sidebar = props => (
             const locationPath = _.get(props, 'location.pathname', '')
 
             return (
-                <div>
+                <div style={{ margin: '2.5rem 4rem' }}>
                     {_.map(posts, post => {
                         const title = _.get(post, 'node.frontmatter.title', '')
                         let date = _.get(post, 'node.frontmatter.date', '')

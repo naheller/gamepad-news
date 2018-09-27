@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'antd'
 import _ from 'lodash'
 
 class ShareButtons extends Component {
@@ -19,13 +20,14 @@ class ShareButtons extends Component {
         }
     }
 
-    copyToClipboard(str) {
-        const el = document.createElement('textarea');
-        el.value = str;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
+    copyToClipboard(string) {
+        const textInput = document.createElement('textarea')
+        textInput.value = string
+        document.body.appendChild(textInput)
+
+        textInput.select()
+        document.execCommand('copy')
+        document.body.removeChild(textInput)
 
         this.setState({
             copyLinkDisplay: 'inline'
@@ -37,10 +39,11 @@ class ShareButtons extends Component {
         const title = this.props.title
 
         return (
-            <div>
-                <button 
-                    className="btn btn-primary"
+            <Button.Group style={{ marginBottom: '1.5rem' }}>
+                <Button 
+                    // type="default"
                     key="fb-share-button"
+                    size="large"
                     onClick={() => window.open(
                         `https://www.facebook.com/sharer.php?u=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=555,height=326'
                     )}
@@ -50,9 +53,10 @@ class ShareButtons extends Component {
                     >
                         <i className="fab fa-facebook-f" />
                     </span>
-                </button>
-                <button 
+                </Button>
+                <Button 
                     key="twitter-share-button"
+                    size="large"
                     onClick={() => window.open(
                         `https://twitter.com/intent/tweet?url=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=500,height=300'
                     )}
@@ -60,9 +64,10 @@ class ShareButtons extends Component {
                     <span className="icon">
                         <i className="fab fa-twitter" />
                     </span>
-                </button>
-                <button 
+                </Button>
+                <Button 
                     key="reddit-share-button"
+                    size="large"
                     onClick={() => window.open(
                         `https://www.reddit.com/submit?url=https://gamepad.news/${slug}&title=${_.replace(title, '', '%20')}`, '_blank', 'width=610,height=600'
                     )}
@@ -70,11 +75,12 @@ class ShareButtons extends Component {
                     <span className="icon">
                         <i className="fab fa-reddit-alien" />
                     </span>
-                </button>
+                </Button>
                 {
                     this.props.showAll && [
-                        <button 
+                        <Button 
                             key="icon-mail"
+                            size="large"
                             onClick={() => window.open(
                                 `mailto:?subject=${title}&body=https://gamepad.news/${slug}`
                             )}
@@ -82,23 +88,19 @@ class ShareButtons extends Component {
                             <span className="icon">
                                 <i className="far fa-envelope" />
                             </span>
-                        </button>,
-                        <button 
+                        </Button>,
+                        <Button 
                             key="icon-link"
+                            size="large"
                             onClick={() => this.copyToClipboard(`https://gamepad.news/${slug}`)}
                         >
                             <span className="icon">
                                 <i className="fas fa-link" />
                             </span>
-                        </button>,
-                        <div 
-                            key="copy-link-text"
-                        >
-                            Copied link
-                        </div>
+                        </Button>
                     ]
                 }
-            </div>
+            </Button.Group>
         )
     }
 }
