@@ -58,7 +58,7 @@ const PostTemplate = props => {
 
     const renderTags = () => (
         <div>
-            <h4>In this story...</h4>
+            <h5>In this story...</h5>
             {_.map(tags, tag => (
                 <Tag style={{ marginBottom: '0.25rem' }}>
                     <span key={tag}>

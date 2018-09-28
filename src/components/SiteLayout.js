@@ -45,8 +45,8 @@ const SiteLayout = props => {
         <Layout>
             {addHelmet()}
             <Header><Navbar /></Header>
-            <Layout>
-                <Sider style={{ width: '300px' }}><Sidebar location={location} /></Sider>
+            <Layout style={{ padding: '0 50px' }}>
+                <Sider width={350} style={{ backgroundColor: 'white' }}><Sidebar location={location} /></Sider>
                 <Content style={{ margin: '2.5rem 3.5rem' }}>{children}</Content>
             </Layout>
             <Footer style={{ backgroundColor: '#001529' }}><FooterContent /></Footer>
