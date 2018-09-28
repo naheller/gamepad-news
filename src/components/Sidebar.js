@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { Menu } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
 
@@ -29,7 +28,7 @@ const Sidebar = props => (
             const locationPath = _.get(props, 'location.pathname', '')
 
             return (
-                <Menu mode="inline">
+                <div>
                     {_.map(posts, post => {
                         const title = _.get(post, 'node.frontmatter.title', '')
                         let date = _.get(post, 'node.frontmatter.date', '')
@@ -57,15 +56,15 @@ const Sidebar = props => (
                         const dateTextColor = hoursDiff < 24 ? 'has-text-tomato' : 'has-text-grey-light'
 
                         return (
-                            <Menu.Item key={slug}>
+                            <div key={slug}>
                                 <Link to={`/${slug}`}>
                                     <div>{title}</div>
                                     <div>{date}</div>
                                 </Link>
-                            </Menu.Item>
+                            </div>
                         )
                     })}
-                </Menu>
+                </div>
             )}}
         />
     )

@@ -81,8 +81,7 @@ module.exports = {
         options: {         
             pathToConfigModule: `src/utils/typography.js` 
         }    
-    },
-    `gatsby-plugin-antd`
+    }
     // {
     //   resolve: 'gatsby-plugin-typography',
     //   options: {

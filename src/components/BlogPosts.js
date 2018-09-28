@@ -3,6 +3,7 @@ import moment from 'moment'
 import _ from 'lodash'
 // import Link from 'gatsby-link'
 import Img from 'gatsby-image'
+import Paper from '@material-ui/core/Paper';
 
 class BlogPosts extends Component {
     constructor(props) {
@@ -23,7 +24,9 @@ class BlogPosts extends Component {
             let formattedDate = moment(date).format('MMM D, YYYY – h:mm a')
 
             return (
-                <div>{title}</div>
+                <Paper>
+                    <div>{title}</div>
+                </Paper>
             )
         })
     }

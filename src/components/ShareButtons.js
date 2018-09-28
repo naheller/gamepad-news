@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Button } from 'antd'
 import _ from 'lodash'
+
+import Button from '@material-ui/core/Button'
 
 class ShareButtons extends Component {
     constructor(props) {
@@ -39,11 +40,10 @@ class ShareButtons extends Component {
         const title = this.props.title
 
         return (
-            <Button.Group style={{ marginBottom: '1.5rem' }}>
-                <Button 
-                    // type="default"
+            <div>
+                <Button
                     key="fb-share-button"
-                    size="large"
+                    variant="outlined"
                     onClick={() => window.open(
                         `https://www.facebook.com/sharer.php?u=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=555,height=326'
                     )}
@@ -56,7 +56,7 @@ class ShareButtons extends Component {
                 </Button>
                 <Button 
                     key="twitter-share-button"
-                    size="large"
+                    variant="outlined"
                     onClick={() => window.open(
                         `https://twitter.com/intent/tweet?url=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=500,height=300'
                     )}
@@ -67,7 +67,7 @@ class ShareButtons extends Component {
                 </Button>
                 <Button 
                     key="reddit-share-button"
-                    size="large"
+                    variant="outlined"
                     onClick={() => window.open(
                         `https://www.reddit.com/submit?url=https://gamepad.news/${slug}&title=${_.replace(title, '', '%20')}`, '_blank', 'width=610,height=600'
                     )}
@@ -80,7 +80,7 @@ class ShareButtons extends Component {
                     this.props.showAll && [
                         <Button 
                             key="icon-mail"
-                            size="large"
+                            variant="outlined"
                             onClick={() => window.open(
                                 `mailto:?subject=${title}&body=https://gamepad.news/${slug}`
                             )}
@@ -91,7 +91,7 @@ class ShareButtons extends Component {
                         </Button>,
                         <Button 
                             key="icon-link"
-                            size="large"
+                            variant="outlined"
                             onClick={() => this.copyToClipboard(`https://gamepad.news/${slug}`)}
                         >
                             <span className="icon">
@@ -100,7 +100,7 @@ class ShareButtons extends Component {
                         </Button>
                     ]
                 }
-            </Button.Group>
+            </div>
         )
     }
 }

@@ -4,10 +4,11 @@ import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import _ from 'lodash'
 import moment from 'moment'
-import { Button, Tag, Divider } from 'antd'
 
 import SiteLayout from '../components/SiteLayout'
 import ShareButtons from '../components/ShareButtons'
+import Button from '@material-ui/core/Button'
+import Chip from '@material-ui/core/Chip';
 
 const PostTemplate = props => {
     const { data, location, pageContext } = props
@@ -35,54 +36,37 @@ const PostTemplate = props => {
     }
 
     const renderArticle = () => (
-        <div style={{ marginBottom: '2rem' }}>
+        <div>
             <h1>{title}</h1>
-            <Divider />
-            <div 
-                style={{ 
-                    display: 'flex', 
-                    flexFlow: 'row wrap', 
-                    justifyContent: 'space-between', 
-                }}
-            >
-                <div style={{ marginBottom: '1rem' }}>
-                    <h5>{formattedDate}</h5>
-                    <h6 style={{ fontWeight: 'lighter', color: '#666' }}><i>{`by ${author}`}</i></h6>
+            <hr />
+            <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                <div>
+                    <h5 style={{ marginBottom: '0.3rem' }}>{formattedDate}</h5>
+                    <h6 style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0 }}>{`by ${author}`}</h6>
                 </div>
                 <ShareButtons slug={slug} title={title} showAll={false} />
             </div>
-            <Img sizes={s3ImageSizes} style={{ marginBottom: '2rem', borderRadius: '4px' }} />
-            <div style={{ fontSize: '16px', lineHeight: '1.75' }} dangerouslySetInnerHTML={{ __html: post.html }} />
+            <Img sizes={s3ImageSizes} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
     )
 
     const renderTags = () => (
         <div>
-            <h5>In this story...</h5>
+            <h3>In this story...</h3>
             {_.map(tags, tag => (
-                <Tag style={{ marginBottom: '0.25rem' }}>
-                    <span key={tag}>
-                        <Link to={`/${_.kebabCase(tag)}`}>
-                            {tag}
-                        </Link>
-                    </span>
-                </Tag>
+                <Link key={tag} to={`/${_.kebabCase(tag)}`}>
+                    <Chip clickable label={tag} style={{ backgroundColor: '#f5f5f5', margin: '0 0.5rem 0.5rem 0' }} />
+                </Link>
             ))}
         </div>
     )
 
     const renderPrevNext = () => (
-        <div 
-            style={{ 
-                display: 'flex', 
-                flexFlow: 'row wrap', 
-                justifyContent: 'space-between', 
-                marginBottom: '1rem' 
-            }}
-        >
-            <Button.Group style={{ marginBottom: '1rem' }}>
+        <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between' }}>
+            <div>
                 <Button 
-                    
+                    variant="outlined"
                     onClick={() => window.scrollTo({
                         top: 0,
                         left: 0,
@@ -94,7 +78,7 @@ const PostTemplate = props => {
                     </span>
                     <span>{'\xa0\xa0Back to top'}</span>
                 </Button>
-                <Button >
+                <Button>
                     <Link to="/">
                         <span className="icon">
                             <i className="fas fa-home" />
@@ -102,12 +86,12 @@ const PostTemplate = props => {
                         <span>{'\xa0\xa0Home'}</span>
                     </Link> 
                 </Button>
-            </Button.Group>
+            </div>
             <div>
-                <Button.Group>
+                <div>
                 {   
                     !_.isNull(previous) &&
-                    <Button >
+                    <Button>
                         <Link to={`/${previous.fields.slug}`}>
                             <span className="icon">
                                 <i className="fas fa-chevron-left" />
@@ -118,7 +102,7 @@ const PostTemplate = props => {
                 }
                 {   
                     !_.isNull(next) &&
-                    <Button >
+                    <Button>
                         <Link to={`/${next.fields.slug}`}>
                             <span>{'Newer\xa0\xa0'}</span>
                             <span className="icon">
@@ -127,7 +111,7 @@ const PostTemplate = props => {
                         </Link>
                     </Button>
                 }
-                </Button.Group>
+                </div>
             </div>
         </div>
     )
@@ -165,9 +149,9 @@ const PostTemplate = props => {
             {addHelmet()}
             {renderArticle()}
             <ShareButtons slug={slug} title={title} showAll />
-            <Divider />
+            <hr />
             {renderTags()}
-            <Divider />
+            <hr />
             {renderPrevNext()}
         </SiteLayout>
     )
