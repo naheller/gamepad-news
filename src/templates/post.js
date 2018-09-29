@@ -5,10 +5,12 @@ import Img from 'gatsby-image'
 import _ from 'lodash'
 import moment from 'moment'
 
+import Button from 'react-bootstrap/lib/Button'
+import ButtonGroup from 'react-bootstrap/lib/ButtonGroup'
+import Badge from 'react-bootstrap/lib/Badge'
+
 import SiteLayout from '../components/SiteLayout'
 import ShareButtons from '../components/ShareButtons'
-import Button from '@material-ui/core/Button'
-import Chip from '@material-ui/core/Chip';
 
 const PostTemplate = props => {
     const { data, location, pageContext } = props
@@ -37,26 +39,34 @@ const PostTemplate = props => {
 
     const renderArticle = () => (
         <div>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <hr />
             <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <div>
-                    <h5 style={{ marginBottom: '0.3rem' }}>{formattedDate}</h5>
-                    <h6 style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0 }}>{`by ${author}`}</h6>
+                    <h6 style={{ marginBottom: '0.25rem' }}>{formattedDate}</h6>
+                    <h6 style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: '#666' }}>{`by ${author}`}</h6>
                 </div>
                 <ShareButtons slug={slug} title={title} showAll={false} />
             </div>
             <Img sizes={s3ImageSizes} />
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} style={{ margin: '2rem 0' }} />
         </div>
     )
 
     const renderTags = () => (
         <div>
-            <h3>In this story...</h3>
+            <h4>In this story...</h4>
             {_.map(tags, tag => (
-                <Link key={tag} to={`/${_.kebabCase(tag)}`}>
-                    <Chip clickable label={tag} style={{ backgroundColor: '#f5f5f5', margin: '0 0.5rem 0.5rem 0' }} />
+                <Link 
+                    to={`/${_.kebabCase(tag)}`}
+                    style={{ margin: '0 0.5rem 0.5rem 0' }}
+                >
+                    <Badge 
+                        key={tag} 
+                        variant="secondary"
+                    >
+                        {tag}
+                    </Badge>
                 </Link>
             ))}
         </div>
@@ -64,9 +74,9 @@ const PostTemplate = props => {
 
     const renderPrevNext = () => (
         <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between' }}>
-            <div>
-                <Button 
-                    variant="outlined"
+            <ButtonGroup>
+                <Button
+                    variant="light"
                     onClick={() => window.scrollTo({
                         top: 0,
                         left: 0,
@@ -78,20 +88,19 @@ const PostTemplate = props => {
                     </span>
                     <span>{'\xa0\xa0Back to top'}</span>
                 </Button>
-                <Button>
-                    <Link to="/">
+                <Button variant="outline-light">
+                    <Link to="/">  
                         <span className="icon">
                             <i className="fas fa-home" />
                         </span>
                         <span>{'\xa0\xa0Home'}</span>
                     </Link> 
                 </Button>
-            </div>
-            <div>
-                <div>
+            </ButtonGroup>
+                <ButtonGroup>
                 {   
                     !_.isNull(previous) &&
-                    <Button>
+                    <Button variant="outline-light">
                         <Link to={`/${previous.fields.slug}`}>
                             <span className="icon">
                                 <i className="fas fa-chevron-left" />
@@ -102,7 +111,7 @@ const PostTemplate = props => {
                 }
                 {   
                     !_.isNull(next) &&
-                    <Button>
+                    <Button variant="light">
                         <Link to={`/${next.fields.slug}`}>
                             <span>{'Newer\xa0\xa0'}</span>
                             <span className="icon">
@@ -111,8 +120,7 @@ const PostTemplate = props => {
                         </Link>
                     </Button>
                 }
-                </div>
-            </div>
+                </ButtonGroup>
         </div>
     )
 
@@ -148,7 +156,9 @@ const PostTemplate = props => {
         <SiteLayout location={location}>
             {addHelmet()}
             {renderArticle()}
-            <ShareButtons slug={slug} title={title} showAll />
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <ShareButtons slug={slug} title={title} showAll />
+            </div>
             <hr />
             {renderTags()}
             <hr />

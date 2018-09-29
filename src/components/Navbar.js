@@ -1,41 +1,35 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import gamepad from '../../static/svg/gamepad.svg'
+import gamepad from '../../static/svg/gamepad-tomato.svg'
 
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Nav from 'react-bootstrap/lib/Nav'
+import Navbar from 'react-bootstrap/lib/Navbar'
 
-const Navbar = props => {
+const NavbarWrapper = props => {
     return (
-        <AppBar>
-            <Toolbar variant="dense">
-                <Link to='/' style={{ height: '30px' }}>
-                    <img 
-                        src={gamepad}
-                        alt="Gamepad News"
-                        style={{ width: '30px', height: '30px', margin: '0 1rem 0 0' }}
-                    />
-                </Link>
-                {/* <Typography variant="title" color="inherit">
-                    Gamepad News
-                </Typography> */}
-                <Button key="1"><Link to='/playstation'>Playstation</Link></Button>
-                <Button key="2"><Link to='/xbox'>Xbox</Link></Button>
-                <Button key="3"><Link to='/switch'>Switch</Link></Button>
-                <Button key="4"><Link to='/pc'>PC</Link></Button>
-                <Button key="5"><Link to='/mobile'>Mobile</Link></Button>
-                <Button key="6"><Link to='/retro'>Retro</Link></Button>
-                <IconButton color="inherit" aria-label="Menu">
-                    <MenuIcon />
-                </IconButton>
-            </Toolbar>
-        </AppBar>
+            <Navbar bg="light" variant="light" expand="md">
+                <Navbar.Brand>
+                    <Link to='/' style={{ height: '30px' }}>
+                        <img 
+                            src={gamepad}
+                            alt="Gamepad News"
+                            style={{ width: '40px', height: '40px', margin: 0 }}
+                        />
+                    </Link>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link key="1"><Link to='/playstation'>Playstation</Link></Nav.Link>
+                        <Nav.Link key="2"><Link to='/xbox'>Xbox</Link></Nav.Link>
+                        <Nav.Link key="3"><Link to='/switch'>Switch</Link></Nav.Link>
+                        <Nav.Link key="4"><Link to='/pc'>PC</Link></Nav.Link>
+                        <Nav.Link key="5"><Link to='/mobile'>Mobile</Link></Nav.Link>
+                        <Nav.Link key="6"><Link to='/retro'>Retro</Link></Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
     )
 }
 
-export default Navbar
+export default NavbarWrapper

@@ -3,6 +3,8 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import moment from 'moment'
 import _ from 'lodash'
 
+import Card from 'react-bootstrap/lib/Card'
+
 const Sidebar = props => (
     <StaticQuery 
         query={graphql`
@@ -28,7 +30,8 @@ const Sidebar = props => (
             const locationPath = _.get(props, 'location.pathname', '')
 
             return (
-                <div>
+                <Card>
+                    <Card.Header>The Latest</Card.Header>
                     {_.map(posts, post => {
                         const title = _.get(post, 'node.frontmatter.title', '')
                         let date = _.get(post, 'node.frontmatter.date', '')
@@ -57,14 +60,18 @@ const Sidebar = props => (
 
                         return (
                             <div key={slug}>
-                                <Link to={`/${slug}`}>
-                                    <div>{title}</div>
-                                    <div>{date}</div>
-                                </Link>
+                                <Card.Body>
+                                    <Card.Text>
+                                        <Link to={`/${slug}`}>
+                                            <h6>{title}</h6>
+                                            <p style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: '#666', fontSize: '16px' }}>{date}</p>
+                                        </Link>
+                                    </Card.Text>
+                                </Card.Body>
                             </div>
                         )
                     })}
-                </div>
+                </Card>
             )}}
         />
     )

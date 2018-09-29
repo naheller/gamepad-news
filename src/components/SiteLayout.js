@@ -4,8 +4,14 @@ import Helmet from 'react-helmet'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import FooterContent from './Footer'
-import gamepad from '../../static/img/favicon-b.png'
 
+import Container from 'react-bootstrap/lib/Container'
+import Row from 'react-bootstrap/lib/Row'
+import Col from 'react-bootstrap/lib/Col'
+
+import gamepad from '../../static/img/favicon-b.png'
+import 'bootstrap/dist/css/bootstrap.min.css'
+// import '../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
 import '../styles.scss'
 
 const SiteLayout = props => {
@@ -13,6 +19,10 @@ const SiteLayout = props => {
 
     const addHelmet = () => (
         <Helmet>
+            <meta
+                name="viewport"
+                content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+            />
             <link rel="shortcut icon" type="image/svg" href={gamepad} />
             <link 
                 rel="stylesheet" 
@@ -38,10 +48,6 @@ const SiteLayout = props => {
                 integrity="sha384-ZlNfXjxAqKFWCwMwQFGhmMh3i89dWDnaFU2/VZg9CvsMGA7hXHQsPIqS+JIAmgEq" 
                 crossorigin="anonymous"
             />
-            <meta
-                name="viewport"
-                content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-            />
         </Helmet>
     )
 
@@ -49,11 +55,13 @@ const SiteLayout = props => {
         <div>
             {addHelmet()}
             <Navbar />
-            <div style={{ padding: '4rem 2rem' }}>
-                <Sidebar location={location} />
-                {children}
-            </div>
-            <FooterContent />
+            <Container>
+                <Row>
+                    <Col lg={4} style={{ padding: '2rem 1rem' }}><Sidebar location={location} /></Col>
+                    <Col style={{ padding: '2rem 1rem' }}>{children}</Col>
+                </Row>
+                <Row><FooterContent /></Row>
+            </Container>
         </div>
     )
 }
