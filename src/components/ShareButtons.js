@@ -49,6 +49,7 @@ class ShareButtons extends Component {
                 <Button
                     key="fb-share-button"
                     variant="light"
+                    style={{ color: '#ff8d79' }}
                     aria-label="Share on facebook"
                     onClick={() => window.open(
                         `https://www.facebook.com/sharer.php?u=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=555,height=326'
@@ -61,6 +62,7 @@ class ShareButtons extends Component {
                 <Button 
                     key="twitter-share-button"
                     variant="light"
+                    style={{ color: '#ff8d79' }}
                     aria-label="Share on twitter"
                     onClick={() => window.open(
                         `https://twitter.com/intent/tweet?url=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=500,height=300'
@@ -73,6 +75,7 @@ class ShareButtons extends Component {
                 <Button 
                     key="reddit-share-button"
                     variant="light"
+                    style={{ color: '#ff8d79' }}
                     aria-label="Share on reddit"
                     onClick={() => window.open(
                         `https://www.reddit.com/submit?url=https://gamepad.news/${slug}&title=${_.replace(title, '', '%20')}`, '_blank', 'width=610,height=600'
@@ -87,6 +90,7 @@ class ShareButtons extends Component {
                         <Button 
                             key="icon-mail"
                             variant="light"
+                            style={{ color: '#ff8d79' }}
                             aria-label="Share via email"
                             onClick={() => window.open(
                                 `mailto:?subject=${title}&body=https://gamepad.news/${slug}`
@@ -103,6 +107,7 @@ class ShareButtons extends Component {
                         <Button 
                             key="icon-link"
                             variant="light"
+                            style={{ color: '#ff8d79' }}
                             aria-label="Copy page link"
                             ref={this.attachRef}
                             onClick={() => this.copyToClipboard(`https://gamepad.news/${slug}`)}

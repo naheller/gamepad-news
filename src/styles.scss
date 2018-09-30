@@ -1,5 +1,9 @@
 a {
     color: #212529;
+
+    h6:hover {
+        text-decoration: underline;
+    }
 }
 
 a:hover {
@@ -7,11 +11,16 @@ a:hover {
     color: inherit
 }
 
-hr {
-    border-top: 1px solid whitesmoke;
-    margin: 1.75rem 0 !important;
+.nav-link {
+    a {
+        color: #666;
+        margin-right: 0.5rem;
+        &:hover {
+            color: #ff8d79;
+        }
+    }
 }
 
-// button {
-//     margin: 0 0.5rem 0.5rem 0 !important;
-// }
+hr {
+    border-top: 1px solid whitesmoke;
+}

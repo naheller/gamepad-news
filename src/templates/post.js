@@ -40,15 +40,15 @@ const PostTemplate = props => {
     const renderArticle = () => (
         <div>
             <h2>{title}</h2>
-            <hr />
+            <hr style={{ margin: '1.4rem 0' }} />
             <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <div>
-                    <h6 style={{ marginBottom: '0.25rem' }}>{formattedDate}</h6>
-                    <h6 style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: '#666' }}>{`by ${author}`}</h6>
+                    <h6 style={{ marginBottom: '0.2rem' }}>{formattedDate}</h6>
+                    <p style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: '#666', fontSize: '0.85rem' }}>{`by ${author}`}</p>
                 </div>
                 <ShareButtons slug={slug} title={title} showAll={false} />
             </div>
-            <Img sizes={s3ImageSizes} />
+            <Img sizes={s3ImageSizes} style={{ borderRadius: '0.25rem' }} />
             <div dangerouslySetInnerHTML={{ __html: post.html }} style={{ margin: '2rem 0' }} />
         </div>
     )
@@ -74,7 +74,7 @@ const PostTemplate = props => {
 
     const renderPrevNext = () => (
         <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between' }}>
-            <ButtonGroup>
+            <ButtonGroup style={{ marginBottom: '1rem' }}>
                 <Button
                     variant="light"
                     onClick={() => window.scrollTo({
@@ -88,7 +88,7 @@ const PostTemplate = props => {
                     </span>
                     <span>{'\xa0\xa0Back to top'}</span>
                 </Button>
-                <Button variant="outline-light">
+                <Button variant="light">
                     <Link to="/">  
                         <span className="icon">
                             <i className="fas fa-home" />
@@ -97,30 +97,30 @@ const PostTemplate = props => {
                     </Link> 
                 </Button>
             </ButtonGroup>
-                <ButtonGroup>
-                {   
-                    !_.isNull(previous) &&
-                    <Button variant="outline-light">
-                        <Link to={`/${previous.fields.slug}`}>
-                            <span className="icon">
-                                <i className="fas fa-chevron-left" />
-                            </span>
-                            <span>{'\xa0\xa0Older'}</span>
-                        </Link>
-                    </Button> 
-                }
-                {   
-                    !_.isNull(next) &&
-                    <Button variant="light">
-                        <Link to={`/${next.fields.slug}`}>
-                            <span>{'Newer\xa0\xa0'}</span>
-                            <span className="icon">
-                                <i className="fas fa-chevron-right" />
-                            </span>
-                        </Link>
-                    </Button>
-                }
-                </ButtonGroup>
+            <ButtonGroup style={{ marginBottom: '1rem' }}>
+            {   
+                !_.isNull(previous) &&
+                <Button variant="outline-light">
+                    <Link to={`/${previous.fields.slug}`}>
+                        <span className="icon">
+                            <i className="fas fa-chevron-left" />
+                        </span>
+                        <span>{'\xa0\xa0Older'}</span>
+                    </Link>
+                </Button> 
+            }
+            {   
+                !_.isNull(next) &&
+                <Button variant="outline-light">
+                    <Link to={`/${next.fields.slug}`}>
+                        <span>{'Newer\xa0\xa0'}</span>
+                        <span className="icon">
+                            <i className="fas fa-chevron-right" />
+                        </span>
+                    </Link>
+                </Button>
+            }
+            </ButtonGroup>
         </div>
     )
 
@@ -159,9 +159,9 @@ const PostTemplate = props => {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <ShareButtons slug={slug} title={title} showAll />
             </div>
-            <hr />
+            <hr style={{ margin: '2rem 0' }} />
             {renderTags()}
-            <hr />
+            <hr style={{ margin: '2rem 0' }} />
             {renderPrevNext()}
         </SiteLayout>
     )

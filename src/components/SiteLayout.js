@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import FooterContent from './Footer'
+import Footer from './Footer'
 
 import Container from 'react-bootstrap/lib/Container'
 import Row from 'react-bootstrap/lib/Row'
@@ -56,12 +56,12 @@ const SiteLayout = props => {
             {addHelmet()}
             <Navbar />
             <Container>
-                <Row>
+                <Row >
                     <Col lg={4} style={{ padding: '2rem 1rem' }}><Sidebar location={location} /></Col>
-                    <Col style={{ padding: '2rem 1rem' }}>{children}</Col>
+                    <Col style={{ padding: '2.25rem 1.25rem' }} md={{ order: 1 }}>{children}</Col>
                 </Row>
-                <Row><FooterContent /></Row>
             </Container>
+            <Footer />
         </div>
     )
 }
