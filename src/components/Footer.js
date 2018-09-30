@@ -8,14 +8,14 @@ import Container from 'react-bootstrap/lib/Container'
 
 const Footer = props => {
     return (
-        <Navbar bg="light" variant="light" expand="md" style={{ borderTop: '2px solid #ff8d79' }}>
+        <Navbar bg="light" variant="light" expand="md" style={{ borderTop: '2px solid #ff8d79', background: 'linear-gradient(to right, whitesmoke, #fafafa)' }}>
             <Container>
                 <Navbar.Brand>
                     <Link to='/' style={{ height: '30px' }}>
                         <img 
                             src={gamepad}
                             alt="Gamepad News"
-                            style={{ width: '35px', height: '35px', margin: 0 }}
+                            style={{ width: '1.85rem', height: '2rem', margin: '0 0 0 0.5rem' }}
                         />
                     </Link>
                 </Navbar.Brand>

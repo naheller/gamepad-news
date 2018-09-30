@@ -8,20 +8,20 @@ import Container from 'react-bootstrap/lib/Container'
 
 const NavbarWrapper = props => {
     return (
-        <Navbar bg="light" variant="light" expand="md" style={{ borderBottom: '2px solid #ff8d79' }}>
+        <Navbar variant="light" expand="md" style={{ borderBottom: '2px solid #ff8d79', background: 'linear-gradient(to right, whitesmoke, #fafafa)' }}>
             <Container>
                 <Navbar.Brand>
-                    <Link to='/' style={{ height: '30px' }}>
+                    <Link to='/'>
                         <img 
                             src={gamepad}
                             alt="Gamepad News"
-                            style={{ width: '35px', height: '35px', margin: 0 }}
+                            style={{ width: '1.85rem', height: '2rem', margin: '0 0 0 0.5rem' }}
                         />
                     </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto" style={{ textTransform: 'uppercase',  letterSpacing: '1px', fontWeight: 'bold', fontSize: '0.75rem' }}>
+                    <Nav className="mr-auto" style={{ textTransform: 'uppercase',  letterSpacing: '1.5px', fontSize: '0.75rem' }}>
                         <Nav.Link key="1"><Link to='/playstation'>Playstation</Link></Nav.Link>
                         <Nav.Link key="2"><Link to='/xbox'>Xbox</Link></Nav.Link>
                         <Nav.Link key="3"><Link to='/switch'>Switch</Link></Nav.Link>

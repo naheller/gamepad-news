@@ -32,12 +32,12 @@ const Sidebar = props => (
 
             return (
                 <Card>
-                    <Card.Header>
+                    <Card.Header style={{ background: 'linear-gradient(to right, whitesmoke, #fafafa)' }}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <span className="icon">
                                 <i className="fa fa-bolt" aria-hidden="true" style={{ color: '#ff8d79' }}></i>
                             </span>
-                            <span style={{ textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '1px', marginLeft: '1rem' }}>The Latest</span>
+                            <span style={{ textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '1.5px', marginLeft: '1rem', color: '#666' }}>The Latest</span>
                         </div>
                     </Card.Header>
                     <div style={{ margin: '0.5rem 0' }}>
@@ -69,15 +69,15 @@ const Sidebar = props => (
                             
                             // const titleTextColor = (locationPath === `/${slug}`) ? 'has-text-dark' : 'has-text-grey'
                             const titleFontWeight = (locationPath === `/${slug}`) ? 'bold' : 'normal'
-                            const dateColor = (hoursDiff < 24) ? '#ff8d79' : '#666'
+                            const dateColor = (hoursDiff < 24) ? '#ff8d79' : '#aaa'
 
                             return [
                                 <div key={slug}>
                                     <Card.Body>
                                         <Card.Text>
                                             <Link to={`/${slug}`}>
-                                                <h6 style={{ lineHeight: '1.35rem', fontWeight: titleFontWeight }}>{title}</h6>
-                                                <p style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: dateColor, fontSize: '0.85rem' }}>{date}</p>
+                                                <h6 style={{ lineHeight: '1.35rem', fontWeight: titleFontWeight, color: '#666', fontSize: '0.95rem' }}>{title}</h6>
+                                                <p style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: dateColor, fontSize: '0.8rem' }}>{date}</p>
                                             </Link>
                                         </Card.Text>
                                     </Card.Body>

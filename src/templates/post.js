@@ -44,12 +44,12 @@ const PostTemplate = props => {
             <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <div>
                     <h6 style={{ marginBottom: '0.2rem' }}>{formattedDate}</h6>
-                    <p style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: '#666', fontSize: '0.85rem' }}>{`by ${author}`}</p>
+                    <p style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: '#999', fontSize: '0.85rem' }}>{`by ${author}`}</p>
                 </div>
                 <ShareButtons slug={slug} title={title} showAll={false} />
             </div>
             <Img sizes={s3ImageSizes} style={{ borderRadius: '0.25rem' }} />
-            <div dangerouslySetInnerHTML={{ __html: post.html }} style={{ margin: '2rem 0' }} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} style={{ margin: '2rem 0', lineHeight: '1.75rem', letterSpacing: '0.5px' }} />
         </div>
     )
 
@@ -77,6 +77,7 @@ const PostTemplate = props => {
             <ButtonGroup style={{ marginBottom: '1rem' }}>
                 <Button
                     variant="light"
+                    style={{ color: '#666' }}
                     onClick={() => window.scrollTo({
                         top: 0,
                         left: 0,
@@ -89,7 +90,7 @@ const PostTemplate = props => {
                     <span>{'\xa0\xa0Back to top'}</span>
                 </Button>
                 <Button variant="light">
-                    <Link to="/">  
+                    <Link to="/" style={{ color: '#666' }}>  
                         <span className="icon">
                             <i className="fas fa-home" />
                         </span>
@@ -101,7 +102,7 @@ const PostTemplate = props => {
             {   
                 !_.isNull(previous) &&
                 <Button variant="outline-light">
-                    <Link to={`/${previous.fields.slug}`}>
+                    <Link to={`/${previous.fields.slug}`} style={{ color: '#666' }}>
                         <span className="icon">
                             <i className="fas fa-chevron-left" />
                         </span>
@@ -112,7 +113,7 @@ const PostTemplate = props => {
             {   
                 !_.isNull(next) &&
                 <Button variant="outline-light">
-                    <Link to={`/${next.fields.slug}`}>
+                    <Link to={`/${next.fields.slug}`} style={{ color: '#666' }}>
                         <span>{'Newer\xa0\xa0'}</span>
                         <span className="icon">
                             <i className="fas fa-chevron-right" />
