@@ -46,11 +46,14 @@ const SiteLayout = props => {
     )
 
     return (
-        <div>
+        <div className="site-wrapper">
             {addHelmet()}
             <Navbar />
-            <Sidebar location={location} />
-            {children}
+            <div className="sidebar-main">
+                <Sidebar location={location} />
+                <div className="main">{children}</div>
+            </div>
+            
             <Footer />
         </div>
     )

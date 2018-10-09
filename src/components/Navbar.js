@@ -2,9 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 import gamepad from '../../static/svg/gamepad-tomato.svg'
 
-const NavbarWrapper = props => {
+const Navbar = props => {
+    console.log('navbar props', props)
     return (
-        <div>
+        <div className="navbar">
             <Link to='/'>
                 <img 
                     src={gamepad}
@@ -22,4 +23,4 @@ const NavbarWrapper = props => {
     )
 }
 
-export default NavbarWrapper
+export default Navbar

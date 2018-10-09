@@ -29,8 +29,8 @@ const Sidebar = props => (
             const locationPath = _.get(props, 'location.pathname', '')
 
             return (
-                <div>
-                    <div>
+                <div className="sidebar">
+                    <div className="latest-posts-header">
                         <span className="icon">
                             <i className="fa fa-bolt" aria-hidden="true"></i>
                         </span>
@@ -68,14 +68,15 @@ const Sidebar = props => (
                             const dateColor = (hoursDiff < 24) ? '#ff8d79' : '#aaa'
 
                             return [
+                                <hr />,
                                 <div key={slug}>
                                     <Link to={`/${slug}`}>
                                         <p>{title}</p>
                                         <p>{date}</p>
                                     </Link>
-                                </div>,
-                                (currentIndex !== posts.length - 1)
-                                && <hr />
+                                </div>
+                                // (currentIndex !== posts.length - 1)
+                                // && <hr />
                             ]
                         })}
                     </div>

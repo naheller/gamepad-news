@@ -37,10 +37,10 @@ const PostTemplate = props => {
         <div>
             <h1>{title}</h1>
             <hr />
-            <div>
+            <div className="date-author-share">
                 <div>
-                    <p>{formattedDate}</p>
-                    <p>{`by ${author}`}</p>
+                    <p className="date">{formattedDate}</p>
+                    <p className="author">{`by ${author}`}</p>
                 </div>
                 <ShareButtons slug={slug} title={title} showAll={false} />
             </div>
@@ -54,7 +54,7 @@ const PostTemplate = props => {
             <h4>In this story...</h4>
             {_.map(tags, tag => (
                 <Link to={`/${_.kebabCase(tag)}`}>
-                    <span key={tag} variant="secondary">
+                    <span key={tag}>
                         {tag}
                     </span>
                 </Link>
@@ -143,13 +143,15 @@ const PostTemplate = props => {
 
     return (
         <SiteLayout location={location}>
-            {addHelmet()}
-            {renderArticle()}
-            <ShareButtons slug={slug} title={title} showAll />
-            <hr />
-            {renderTags()}
-            <hr />
-            {renderPrevNext()}
+                {addHelmet()}
+            <div className="blog-post">
+                {renderArticle()}
+                <ShareButtons slug={slug} title={title} showAll />
+                <hr />
+                {renderTags()}
+                <hr />
+                {renderPrevNext()}
+            </div>
         </SiteLayout>
     )
 }
