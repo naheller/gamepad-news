@@ -5,13 +5,7 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import Footer from './Footer'
 
-import Container from 'react-bootstrap/lib/Container'
-import Row from 'react-bootstrap/lib/Row'
-import Col from 'react-bootstrap/lib/Col'
-
 import gamepad from '../../static/img/favicon-b.png'
-import 'bootstrap/dist/css/bootstrap.min.css'
-// import '../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
 import '../styles.scss'
 
 const SiteLayout = props => {
@@ -55,12 +49,8 @@ const SiteLayout = props => {
         <div>
             {addHelmet()}
             <Navbar />
-            <Container>
-                <Row >
-                    <Col lg={4} style={{ padding: '2rem 1rem' }}><Sidebar location={location} /></Col>
-                    <Col style={{ padding: '2.25rem 1.25rem' }} md={{ order: 1 }}>{children}</Col>
-                </Row>
-            </Container>
+            <Sidebar location={location} />
+            {children}
             <Footer />
         </div>
     )

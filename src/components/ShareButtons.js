@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 
-import Button from 'react-bootstrap/lib/Button'
-import ButtonGroup from 'react-bootstrap/lib/ButtonGroup'
-import Overlay from 'react-bootstrap/lib/Overlay'
-import Tooltip from 'react-bootstrap/lib/Tooltip'
-
 class ShareButtons extends Component {
     constructor(props) {
         super(props)
@@ -45,11 +40,9 @@ class ShareButtons extends Component {
         const title = this.props.title
 
         return (
-            <ButtonGroup>
-                <Button
+            <div>
+                <button
                     key="fb-share-button"
-                    variant="light"
-                    style={{ color: '#ff8d79' }}
                     aria-label="Share on facebook"
                     onClick={() => window.open(
                         `https://www.facebook.com/sharer.php?u=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=555,height=326'
@@ -58,11 +51,9 @@ class ShareButtons extends Component {
                     <span className="icon">
                         <i className="fab fa-facebook-f" />
                     </span>
-                </Button>
-                <Button 
+                </button>
+                <button 
                     key="twitter-share-button"
-                    variant="light"
-                    style={{ color: '#ff8d79' }}
                     aria-label="Share on twitter"
                     onClick={() => window.open(
                         `https://twitter.com/intent/tweet?url=https://gamepad.news/${slug}`, '_blank', 'top=250,left=250,width=500,height=300'
@@ -71,11 +62,9 @@ class ShareButtons extends Component {
                     <span className="icon">
                         <i className="fab fa-twitter" />
                     </span>
-                </Button>
-                <Button 
+                </button>
+                <button 
                     key="reddit-share-button"
-                    variant="light"
-                    style={{ color: '#ff8d79' }}
                     aria-label="Share on reddit"
                     onClick={() => window.open(
                         `https://www.reddit.com/submit?url=https://gamepad.news/${slug}&title=${_.replace(title, '', '%20')}`, '_blank', 'width=610,height=600'
@@ -84,13 +73,11 @@ class ShareButtons extends Component {
                     <span className="icon">
                         <i className="fab fa-reddit-alien" />
                     </span>
-                </Button>
+                </button>
                 {
                     this.props.showAll && (
-                        <Button 
+                        <button 
                             key="icon-mail"
-                            variant="light"
-                            style={{ color: '#ff8d79' }}
                             aria-label="Share via email"
                             onClick={() => window.open(
                                 `mailto:?subject=${title}&body=https://gamepad.news/${slug}`
@@ -99,15 +86,13 @@ class ShareButtons extends Component {
                             <span className="icon">
                                 <i className="far fa-envelope" />
                             </span>
-                        </Button>
+                        </button>
                     )
                 }
                 {
-                    this.props.showAll && [
-                        <Button 
+                    this.props.showAll && (
+                        <button 
                             key="icon-link"
-                            variant="light"
-                            style={{ color: '#ff8d79' }}
                             aria-label="Copy page link"
                             ref={this.attachRef}
                             onClick={() => this.copyToClipboard(`https://gamepad.news/${slug}`)}
@@ -115,13 +100,10 @@ class ShareButtons extends Component {
                             <span className="icon">
                                 <i className="fas fa-link" />
                             </span>
-                        </Button>,
-                        <Overlay target={target} show={showCopyLinkOverlay} placement="bottom">
-                            {props => <Tooltip {...props}>Copied link</Tooltip>}
-                        </Overlay>
-                    ]
+                        </button>
+                    )
                 }
-            </ButtonGroup>
+            </div>
         )
     }
 }

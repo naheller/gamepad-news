@@ -3,8 +3,6 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import moment from 'moment'
 import _ from 'lodash'
 
-import Card from 'react-bootstrap/lib/Card'
-
 const Sidebar = props => (
     <StaticQuery 
         query={graphql`
@@ -31,16 +29,14 @@ const Sidebar = props => (
             const locationPath = _.get(props, 'location.pathname', '')
 
             return (
-                <Card>
-                    <Card.Header style={{ background: 'linear-gradient(to right, whitesmoke, #fafafa)' }}>
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <span className="icon">
-                                <i className="fa fa-bolt" aria-hidden="true" style={{ color: '#ff8d79' }}></i>
-                            </span>
-                            <span style={{ textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '1.5px', marginLeft: '1rem', color: '#666' }}>The Latest</span>
-                        </div>
-                    </Card.Header>
-                    <div style={{ margin: '0.5rem 0' }}>
+                <div>
+                    <div>
+                        <span className="icon">
+                            <i className="fa fa-bolt" aria-hidden="true"></i>
+                        </span>
+                        <span>The Latest</span>
+                    </div>
+                    <div >
                         {_.map(posts, post => {
                             const title = _.get(post, 'node.frontmatter.title', '')
                             let date = _.get(post, 'node.frontmatter.date', '')
@@ -73,21 +69,17 @@ const Sidebar = props => (
 
                             return [
                                 <div key={slug}>
-                                    <Card.Body>
-                                        <Card.Text>
-                                            <Link to={`/${slug}`}>
-                                                <h6 style={{ lineHeight: '1.35rem', fontWeight: titleFontWeight, color: '#666', fontSize: '0.95rem' }}>{title}</h6>
-                                                <p style={{ fontWeight: 'normal', fontStyle: 'italic', marginBottom: 0, color: dateColor, fontSize: '0.8rem' }}>{date}</p>
-                                            </Link>
-                                        </Card.Text>
-                                    </Card.Body>
+                                    <Link to={`/${slug}`}>
+                                        <p>{title}</p>
+                                        <p>{date}</p>
+                                    </Link>
                                 </div>,
                                 (currentIndex !== posts.length - 1)
-                                && <hr style={{ margin: '0 1rem' }} />
+                                && <hr />
                             ]
                         })}
                     </div>
-                </Card>
+                </div>
             )}}
         />
     )
