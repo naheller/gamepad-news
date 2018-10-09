@@ -68,15 +68,14 @@ const Sidebar = props => (
                             const dateColor = (hoursDiff < 24) ? '#ff8d79' : '#aaa'
 
                             return [
-                                <hr />,
                                 <div key={slug}>
                                     <Link to={`/${slug}`}>
                                         <p>{title}</p>
                                         <p>{date}</p>
                                     </Link>
-                                </div>
-                                // (currentIndex !== posts.length - 1)
-                                // && <hr />
+                                </div>,
+                                (currentIndex !== posts.length - 1)
+                                && <hr />
                             ]
                         })}
                     </div>

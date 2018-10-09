@@ -36,7 +36,7 @@ const PostTemplate = props => {
     const renderArticle = () => (
         <div>
             <h1>{title}</h1>
-            <hr />
+            {/* <hr /> */}
             <div className="date-author-share">
                 <div>
                     <p className="date">{formattedDate}</p>
@@ -143,13 +143,13 @@ const PostTemplate = props => {
 
     return (
         <SiteLayout location={location}>
-                {addHelmet()}
+            {addHelmet()}
             <div className="blog-post">
                 {renderArticle()}
                 <ShareButtons slug={slug} title={title} showAll />
-                <hr />
+                {/* <hr /> */}
                 {renderTags()}
-                <hr />
+                {/* <hr /> */}
                 {renderPrevNext()}
             </div>
         </SiteLayout>

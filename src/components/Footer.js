@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import gamepad from '../../static/svg/gamepad-tomato.svg'
+import gamepad from '../../static/svg/gamepad.svg'
 
 const Footer = props => {
     return (
-        <div>
+        <div className="footer">
             <Link to='/'>
                 <img 
                     src={gamepad}
