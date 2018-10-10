@@ -12,7 +12,7 @@ const Footer = props => {
                     style={{ width: '1.5rem', height: '1.5rem', margin: 0 }}
                 />
             </Link>
-            <p>© 2018 Gamepad News</p>
+            <p>Gamepad News</p>
         </div>
     )
 }

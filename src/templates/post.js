@@ -35,7 +35,7 @@ const PostTemplate = props => {
 
     const renderArticle = () => (
         <div>
-            <h1>{title}</h1>
+            <h1 className="headline">{title}</h1>
             {/* <hr /> */}
             <div className="date-author-share">
                 <div>
@@ -45,69 +45,78 @@ const PostTemplate = props => {
                 <ShareButtons slug={slug} title={title} showAll={false} />
             </div>
             <Img sizes={s3ImageSizes} />
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
     )
 
     const renderTags = () => (
-        <div>
-            <h4>In this story...</h4>
+        <div className="tags">
+            <h4 className="header">In this story...&nbsp;&nbsp;</h4>
             {_.map(tags, tag => (
-                <Link to={`/${_.kebabCase(tag)}`}>
-                    <span key={tag}>
-                        {tag}
-                    </span>
-                </Link>
+                <span>
+                    <Link to={`/${_.kebabCase(tag)}`}>
+                        <span key={tag}>
+                            {tag}
+                        </span>
+                    </Link>,&nbsp;&nbsp;
+                </span>
             ))}
         </div>
     )
 
     const renderPrevNext = () => (
-        <div>
+        <div className="prev-next">
             <div>
-                <button
+                <span className="icon">
+                    <i className="fas fa-chevron-up" />
+                </span>
+                {`\xa0\xa0`}
+                <span
+                    className="back-to-top"
                     onClick={() => window.scrollTo({
                         top: 0,
                         left: 0,
                         behavior: 'smooth'
                     })}
                 >
+                    Back to top
+                </span>
+                {`\xa0\xa0\xa0\xa0\xa0`}
+                <span>
                     <span className="icon">
-                        <i className="fas fa-chevron-up" />
+                        <i className="fas fa-home" />
                     </span>
-                    <span>{'\xa0\xa0Back to top'}</span>
-                </button>
-                <button>
+                    {`\xa0\xa0`}
                     <Link to="/">  
-                        <span className="icon">
-                            <i className="fas fa-home" />
-                        </span>
-                        <span>{'\xa0\xa0Home'}</span>
+                        <span>Home</span>
                     </Link> 
-                </button>
+                </span>
             </div>
             <div>
             {   
                 !_.isNull(previous) &&
-                <button>
+                <span>
+                    <span className="icon">
+                        <i className="fas fa-chevron-left" />
+                    </span>
+                    {`\xa0\xa0`}
                     <Link to={`/${previous.fields.slug}`}>
-                        <span className="icon">
-                            <i className="fas fa-chevron-left" />
-                        </span>
-                        <span>{'\xa0\xa0Older'}</span>
+                        <span>Older</span>
                     </Link>
-                </button> 
+                </span> 
             }
+            {`\xa0\xa0\xa0\xa0\xa0`}
             {   
                 !_.isNull(next) &&
-                <button>
+                <span>
                     <Link to={`/${next.fields.slug}`}>
-                        <span>{'Newer\xa0\xa0'}</span>
-                        <span className="icon">
-                            <i className="fas fa-chevron-right" />
-                        </span>
+                        <span>Newer</span>
                     </Link>
-                </button>
+                    {`\xa0\xa0`}
+                    <span className="icon">
+                        <i className="fas fa-chevron-right" />
+                    </span>
+                </span>
             }
             </div>
         </div>

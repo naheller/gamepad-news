@@ -3,6 +3,10 @@ a {
     box-shadow: none;
 }
 
+p {
+    color: #222;
+}
+
 hr {
     background-color: #666;
 }
@@ -25,7 +29,11 @@ hr {
 
     a {
         height: 1.5rem;
+        font-size: 16px;
         line-height: 1.5rem;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -38,11 +46,42 @@ hr {
         width: 300px;
         min-width: 300px;
 
-        .latest-posts-header {
-            margin-bottom: 2rem;
+        p {
+            font-size: 16px;
+        }
 
-            .icon {
-                margin-right: 1rem;
+        hr {
+            margin: 2rem 0;
+        }
+
+        .latest-posts {
+            .header {
+                display: flex;
+                flex-flow: row nowrap;
+                margin-bottom: 2rem;
+
+                .icon {
+                    margin-right: 1rem;
+                }
+
+                .title {
+                    margin: 0;
+                    line-height: 1.75rem;
+                }
+            }
+
+            .post {
+                .title {
+                    margin-bottom: 0.5rem;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .date {
+                    font-size: 15px;
+                    font-style: italic;
+                    color: #888;
+                }
             }
         }
     }
@@ -71,12 +110,60 @@ hr {
     display: flex;
     flex-flow: column nowrap;
 
-    h1 {
+    .headline {
         margin-top: 0;
+    }
+
+    .author {
+        color: #888;
+        font-size: 15px;
+        font-style: italic;
+    }
+
+    .body {
+        line-height: 2rem;
+
+        a {
+            text-decoration: underline;
+        }
     }
 
     .gatsby-image-outer-wrapper {
         margin: 2rem 0;
+    }
+
+    .share-button-group {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+
+        div {
+            margin-left: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    .tags {
+        margin: 3rem 0;
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            display: inline;
+        }
+    }
+
+    .prev-next {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        a:hover, .back-to-top:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
     }
 }
 
@@ -90,12 +177,14 @@ hr {
     border-top: 1px solid black;
 
     a {
+        font-size: 16px;
         margin-right: 1rem;
         height: 1.5rem;
     }
 
     p {
         margin: 0;
+        font-size: 16px;
         line-height: 1.5rem;
     }
 }

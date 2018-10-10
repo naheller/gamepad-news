@@ -40,8 +40,8 @@ class ShareButtons extends Component {
         const title = this.props.title
 
         return (
-            <div>
-                <button
+            <div className="share-button-group">
+                <div
                     key="fb-share-button"
                     aria-label="Share on facebook"
                     onClick={() => window.open(
@@ -51,8 +51,8 @@ class ShareButtons extends Component {
                     <span className="icon">
                         <i className="fab fa-facebook-f" />
                     </span>
-                </button>
-                <button 
+                </div>
+                <div 
                     key="twitter-share-button"
                     aria-label="Share on twitter"
                     onClick={() => window.open(
@@ -62,8 +62,8 @@ class ShareButtons extends Component {
                     <span className="icon">
                         <i className="fab fa-twitter" />
                     </span>
-                </button>
-                <button 
+                </div>
+                <div 
                     key="reddit-share-button"
                     aria-label="Share on reddit"
                     onClick={() => window.open(
@@ -73,10 +73,10 @@ class ShareButtons extends Component {
                     <span className="icon">
                         <i className="fab fa-reddit-alien" />
                     </span>
-                </button>
+                </div>
                 {
                     this.props.showAll && (
-                        <button 
+                        <div 
                             key="icon-mail"
                             aria-label="Share via email"
                             onClick={() => window.open(
@@ -86,12 +86,12 @@ class ShareButtons extends Component {
                             <span className="icon">
                                 <i className="far fa-envelope" />
                             </span>
-                        </button>
+                        </div>
                     )
                 }
                 {
                     this.props.showAll && (
-                        <button 
+                        <div 
                             key="icon-link"
                             aria-label="Copy page link"
                             ref={this.attachRef}
@@ -100,7 +100,7 @@ class ShareButtons extends Component {
                             <span className="icon">
                                 <i className="fas fa-link" />
                             </span>
-                        </button>
+                        </div>
                     )
                 }
             </div>
