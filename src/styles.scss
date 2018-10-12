@@ -1,3 +1,7 @@
+* {
+    background-color: #fafafa;
+}
+
 a {
     color: black;
     box-shadow: none;
@@ -8,13 +12,13 @@ p {
 }
 
 hr {
-    background-color: #666;
+    background-color: #999;
 }
 
 .site-wrapper {
     display: flex;
     margin: auto;
-    max-width: 1100px;
+    max-width: 1200px;
     flex-flow: column nowrap;
 }
 
@@ -25,11 +29,11 @@ hr {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #999;
 
     a {
         height: 1.5rem;
-        font-size: 16px;
+        font-size: 0.85rem;
         line-height: 1.5rem;
         &:hover {
             text-decoration: underline;
@@ -45,10 +49,6 @@ hr {
     .sidebar {
         width: 300px;
         min-width: 300px;
-
-        p {
-            font-size: 16px;
-        }
 
         hr {
             margin: 2rem 0;
@@ -67,20 +67,22 @@ hr {
                 .title {
                     margin: 0;
                     line-height: 1.75rem;
+                    font-size: 0.9rem;
                 }
             }
 
             .post {
                 .title {
                     margin-bottom: 0.5rem;
+                    font-size: 0.85rem;
                     &:hover {
                         text-decoration: underline;
                     }
                 }
                 .date {
-                    font-size: 15px;
+                    font-size: 0.8rem;
                     font-style: italic;
-                    color: #888;
+                    color: #999;
                 }
             }
         }
@@ -89,21 +91,6 @@ hr {
     .main {
         max-width: 650px;
     }
-}
-
-.date-author-share {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.date {
-    margin: 0;
-}
-
-.author {
-    margin: 0;
 }
 
 .blog-post {
@@ -115,8 +102,8 @@ hr {
     }
 
     .author {
-        color: #888;
-        font-size: 15px;
+        color: #999;
+        font-size: 0.85rem;
         font-style: italic;
     }
 
@@ -136,6 +123,11 @@ hr {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-end;
+        margin-top: 0.5rem;
+
+        &.center {
+            justify-content: center;
+        }
 
         div {
             margin-left: 2rem;
@@ -167,6 +159,21 @@ hr {
     }
 }
 
+.date-author-share {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    margin: 0;
+}
+
+.author {
+    margin: 0;
+}
+
 .footer {
     display: flex;
     padding: 1rem 0;
@@ -174,7 +181,7 @@ hr {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid black;
+    border-top: 1px solid #999;
 
     a {
         font-size: 16px;

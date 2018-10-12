@@ -40,10 +40,11 @@ const Sidebar = props => (
                         <div >
                             {_.map(posts, post => {
                                 const title = _.get(post, 'node.frontmatter.title', '')
-                                let date = _.get(post, 'node.frontmatter.date', '')
                                 const slug = _.get(post, 'node.fields.slug', '')
-
+                                
+                                let date = _.get(post, 'node.frontmatter.date', '')
                                 const now = moment()
+                                
                                 const minsDiff = now.diff(moment(date), 'minutes')
                                 const hoursDiff = now.diff(moment(date), 'hours')
                                 const daysDiff = now.diff(moment(date), 'days')

@@ -6,7 +6,7 @@ import _ from 'lodash'
 import moment from 'moment'
 
 import SiteLayout from '../components/SiteLayout'
-import ShareButtons from '../components/ShareButtons'
+import ShareButton from '../components/ShareButton'
 
 const PostTemplate = props => {
     const { data, location, pageContext } = props
@@ -42,7 +42,11 @@ const PostTemplate = props => {
                     <p className="date">{formattedDate}</p>
                     <p className="author">{`by ${author}`}</p>
                 </div>
-                <ShareButtons slug={slug} title={title} showAll={false} />
+                <div className="share-button-group">
+                    <ShareButton slug={slug} title={title} facebook />
+                    <ShareButton slug={slug} title={title} twitter />
+                    <ShareButton slug={slug} title={title} reddit />
+                </div>
             </div>
             <Img sizes={s3ImageSizes} />
             <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -51,7 +55,7 @@ const PostTemplate = props => {
 
     const renderTags = () => (
         <div className="tags">
-            <h4 className="header">In this story...&nbsp;&nbsp;</h4>
+            <h3 className="header">In this story...&nbsp;&nbsp;</h3>
             {_.map(tags, tag => (
                 <span>
                     <Link to={`/${_.kebabCase(tag)}`}>
@@ -155,7 +159,13 @@ const PostTemplate = props => {
             {addHelmet()}
             <div className="blog-post">
                 {renderArticle()}
-                <ShareButtons slug={slug} title={title} showAll />
+                <div className="share-button-group center">
+                    <ShareButton slug={slug} title={title} facebook />
+                    <ShareButton slug={slug} title={title} twitter />
+                    <ShareButton slug={slug} title={title} reddit />
+                    <ShareButton slug={slug} title={title} mail />
+                    <ShareButton slug={slug} title={title} link />
+                </div>
                 {/* <hr /> */}
                 {renderTags()}
                 {/* <hr /> */}
