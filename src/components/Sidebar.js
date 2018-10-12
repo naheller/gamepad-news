@@ -66,13 +66,13 @@ const Sidebar = props => (
                                 }
                                 
                                 // const titleTextColor = (locationPath === `/${slug}`) ? 'has-text-dark' : 'has-text-grey'
-                                const titleFontWeight = (locationPath === `/${slug}`) ? 'bold' : 'normal'
+                                const boldIfSelected = (locationPath === `/${slug}`) ? 'bold' : ''
                                 const dateColor = (hoursDiff < 24) ? '#ff8d79' : '#aaa'
 
                                 return [
                                     <div key={slug} className="post">
                                         <Link to={`/${slug}`}>
-                                            <p className="title">{title}</p>
+                                            <p className={`title ${boldIfSelected}`}>{title}</p>
                                         </Link>
                                         <p className="date">{date}</p>
                                     </div>,

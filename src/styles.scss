@@ -78,6 +78,9 @@ hr {
                     &:hover {
                         text-decoration: underline;
                     }
+                    &.bold {
+                        font-weight: bold;
+                    }
                 }
                 .date {
                     font-size: 0.8rem;
