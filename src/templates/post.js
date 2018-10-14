@@ -57,10 +57,8 @@ const PostTemplate = props => {
             <h3 className="header">In this story</h3>
             <div className="items">
                 {_.map(tags, tag => (
-                    <Link to={`/${_.kebabCase(tag)}`} className="button-link">
-                        <span key={tag}>
-                            {tag}
-                        </span>
+                    <Link to={`/${_.kebabCase(tag)}`} className="button-link" key={tag}>
+                        {tag}
                     </Link>
                 ))}
             </div>

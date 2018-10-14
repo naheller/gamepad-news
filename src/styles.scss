@@ -180,8 +180,14 @@ hr {
             border-radius: 100%;
             cursor: pointer;
 
-            &:hover {
+            &:hover, &:focus, &:active {
                 border-color: #51C987;
+                background-color: #FDFEFE;
+                outline: none;
+
+                .icon, i {
+                    background-color: #FDFEFE;
+                }
             }
 
             .icon {
@@ -216,8 +222,10 @@ hr {
                 border: 1px solid $divider-color;
                 font-size: 0.9rem;
 
-                &:hover {
+                &:hover, &:focus, &:active {
                     border-color: #51C987;
+                    background-color: #FDFEFE;
+                    outline: none;
                 }
             }
         }
