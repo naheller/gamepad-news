@@ -36,7 +36,6 @@ const PostTemplate = props => {
     const renderArticle = () => (
         <div>
             <h1 className="headline">{title}</h1>
-            {/* <hr /> */}
             <div className="date-author-share">
                 <div>
                     <p className="date">{formattedDate}</p>
@@ -55,14 +54,14 @@ const PostTemplate = props => {
 
     const renderTags = () => (
         <div className="tags">
-            <h3 className="header">In this story...&nbsp;&nbsp;</h3>
+            <h4 className="header">{`In this story...\xa0\xa0`}</h4>
             {_.map(tags, tag => (
                 <span>
                     <Link to={`/${_.kebabCase(tag)}`}>
                         <span key={tag}>
                             {tag}
                         </span>
-                    </Link>,&nbsp;&nbsp;
+                    </Link>{tag !== _.last(tags) && `,\xa0\xa0`}
                 </span>
             ))}
         </div>
