@@ -1,11 +1,13 @@
 $divider-color: #ddd;
+$divider-color-green: #8BDBAF;
+$navbar-border-color: linear-gradient(0.25turn, #34C174, #9198e5);
 
 * {
     background-color: #fafafa;
 }
 
 a {
-    color: black;
+    color: #666;
     box-shadow: none;
 }
 
@@ -31,15 +33,21 @@ hr {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 1px solid $divider-color;
+    border-bottom: 2px solid $divider-color-green;
 
     a {
+        display: flex;
+        align-content: center;
         height: 1.5rem;
         font-size: 0.85rem;
         line-height: 1.5rem;
         &:hover {
             text-decoration: underline;
         }
+    }
+
+    h6 {
+        margin: auto;
     }
 }
 
@@ -77,6 +85,8 @@ hr {
                 .title {
                     margin-bottom: 0.5rem;
                     font-size: 0.85rem;
+                    color: #666;
+
                     &:hover {
                         text-decoration: underline;
                     }
@@ -102,8 +112,21 @@ hr {
     display: flex;
     flex-flow: column nowrap;
 
+    h1, h2, h3 {
+        line-height: 2rem;
+    }
+
+    h4, h5, h6 {
+        line-height: 1.5rem;
+    }
+
+    hr {
+        margin: 3rem 0;
+    }
+
     .headline {
         margin-top: 0;
+        line-height: 2.75rem;
     }
 
     .author {
@@ -117,6 +140,18 @@ hr {
 
         a {
             text-decoration: underline;
+        }
+    }
+
+    blockquote {
+        padding: 1rem 2rem;
+        font-size: 1.15rem;
+        font-style: italic;
+        letter-spacing: 0.25px;
+        border-color: $divider-color-green; 
+
+        p {
+            color: #999;
         }
     }
 
@@ -135,8 +170,23 @@ hr {
         }
 
         div {
-            margin-left: 2rem;
+            height: 2.5rem;
+            width: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0.5rem;
+            border: 1px solid $divider-color;
+            border-radius: 100%;
             cursor: pointer;
+
+            &:hover {
+                border-color: #51C987;
+            }
+
+            .icon {
+                color: #51C987;
+            }
         }
     }
 
@@ -145,26 +195,48 @@ hr {
     }
 
     .tags {
-        margin: 3rem 0;
-
-        a:hover {
-            text-decoration: underline;
-        }
+        margin: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
 
         .header {
-            display: inline;
+            color: #666;
+            margin: 0 0 2rem 0;
+        }
+
+        .items {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+
+            .button-link {
+                padding: 0.5rem 1rem;
+                margin: 0.5rem;
+                border: 1px solid $divider-color;
+                font-size: 0.9rem;
+
+                &:hover {
+                    border-color: #51C987;
+                }
+            }
         }
     }
 
     .detailed-prev-next {
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        border-top: 1px solid $divider-color;
-        border-bottom: 1px solid $divider-color;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        margin-bottom: 2.5rem;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        .header {
+            color: #666;
+            margin: 0 0 2rem 0;
+        }
+
+        .posts {
+            display: flex;
+            flex-flow: row nowrap;
+        }
 
         .prev, .next {
             flex: 1;
@@ -227,7 +299,7 @@ hr {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid $divider-color;
+    border-top: 2px solid $divider-color-green;
 
     a {
         font-size: 16px;

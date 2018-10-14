@@ -54,43 +54,46 @@ const PostTemplate = props => {
 
     const renderTags = () => (
         <div className="tags">
-            <h4 className="header">{`In this story...\xa0\xa0`}</h4>
-            {_.map(tags, tag => (
-                <span>
-                    <Link to={`/${_.kebabCase(tag)}`}>
+            <h3 className="header">In this story</h3>
+            <div className="items">
+                {_.map(tags, tag => (
+                    <Link to={`/${_.kebabCase(tag)}`} className="button-link">
                         <span key={tag}>
                             {tag}
                         </span>
-                    </Link>{tag !== _.last(tags) && `,\xa0\xa0`}
-                </span>
-            ))}
+                    </Link>
+                ))}
+            </div>
         </div>
     )
 
     const renderDetailedPrevNext = () => {
         return (
             <div className="detailed-prev-next">
-                {!_.isNull(previous) &&
-                    <div className="prev">
-                        <Link to={`/${previous.fields.slug}`}>
-                            {previous.frontmatter.title}
-                        </Link>
-                        <span className="date">
-                            {formatDate(previous.frontmatter.date)}
-                        </span>
-                    </div>
-                }
-                {!_.isNull(previous) && !_.isNull(next) && <div className="divider" />}
-                {!_.isNull(next) &&
-                    <div className="next">
-                        <Link to={`/${next.fields.slug}`}>
-                            {next.frontmatter.title}
-                        </Link>
-                        <span className="date">
-                            {formatDate(next.frontmatter.date)}
-                        </span>
-                    </div>
-                }
+                <h3 className="header">In other news</h3>
+                <div className="posts">
+                    {!_.isNull(previous) &&
+                        <div className="prev">
+                            <Link to={`/${previous.fields.slug}`}>
+                                {previous.frontmatter.title}
+                            </Link>
+                            <span className="date">
+                                {formatDate(previous.frontmatter.date)}
+                            </span>
+                        </div>
+                    }
+                    {!_.isNull(previous) && !_.isNull(next) && <div className="divider" />}
+                    {!_.isNull(next) &&
+                        <div className="next">
+                            <Link to={`/${next.fields.slug}`}>
+                                {next.frontmatter.title}
+                            </Link>
+                            <span className="date">
+                                {formatDate(next.frontmatter.date)}
+                            </span>
+                        </div>
+                    }
+                </div>
             </div>
         )
     }
@@ -212,10 +215,11 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={title} mail />
                     <ShareButton slug={slug} title={title} link />
                 </div>
-                <hr className="share-tags-hr" />
+                <hr />
                 {renderTags()}
-                {/* <hr /> */}
+                <hr />
                 {renderDetailedPrevNext()}
+                <hr />
                 {renderPrevNext()}
             </div>
         </SiteLayout>
