@@ -68,6 +68,53 @@ const PostTemplate = props => {
         </div>
     )
 
+    const renderDetailedPrevNext = () => {
+        return (
+            <div className="detailed-prev-next">
+                {!_.isNull(previous) &&
+                    <div className="prev">
+                        <Link to={`/${previous.fields.slug}`}>
+                            {previous.frontmatter.title}
+                        </Link>
+                        <span className="date">
+                            {formatDate(previous.frontmatter.date)}
+                        </span>
+                    </div>
+                }
+                {!_.isNull(previous) && !_.isNull(next) && <div className="divider" />}
+                {!_.isNull(next) &&
+                    <div className="next">
+                        <Link to={`/${next.fields.slug}`}>
+                            {next.frontmatter.title}
+                        </Link>
+                        <span className="date">
+                            {formatDate(next.frontmatter.date)}
+                        </span>
+                    </div>
+                }
+            </div>
+        )
+    }
+
+    const formatDate = date => {
+        const now = moment()
+        const minsDiff = now.diff(moment(date), 'minutes')
+        const hoursDiff = now.diff(moment(date), 'hours')
+        const daysDiff = now.diff(moment(date), 'days')
+
+        if (minsDiff < 60) {
+            return `${minsDiff} minute${minsDiff > 1 ? `s` : ``} ago`
+        } else if (hoursDiff < 24) {
+            return `${hoursDiff} hour${hoursDiff > 1 ? `s` : ``} ago`
+        } else if (daysDiff === 1) {
+            return `yesterday`
+        } else if (daysDiff < 3) {
+            return `${daysDiff} day${daysDiff > 1 ? `s` : ``} ago`
+        } else {
+            return moment(date).format('MMM D, YYYY')
+        }
+    }
+
     const renderPrevNext = () => (
         <div className="prev-next">
             <div>
@@ -166,9 +213,10 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={title} mail />
                     <ShareButton slug={slug} title={title} link />
                 </div>
-                {/* <hr /> */}
+                <hr className="share-tags-hr" />
                 {renderTags()}
                 {/* <hr /> */}
+                {renderDetailedPrevNext()}
                 {renderPrevNext()}
             </div>
         </SiteLayout>

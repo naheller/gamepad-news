@@ -138,6 +138,10 @@ hr {
         }
     }
 
+    .share-tags-hr {
+        margin: 3rem 0 0 0;
+    }
+
     .tags {
         margin: 3rem 0;
 
@@ -147,6 +151,43 @@ hr {
 
         .header {
             display: inline;
+        }
+    }
+
+    .detailed-prev-next {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        border-top: 1px solid #999;
+        border-bottom: 1px solid #999;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+
+        .prev, .next {
+            flex: 1;
+            display: flex;
+            flex-flow: column nowrap;
+            line-height: 1.75rem;
+            font-size: 0.9rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .date {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #999;
+        }
+
+        .divider {
+            width: 1px;
+            background-color: #999;
+            margin: 0 2rem;
         }
     }
 
