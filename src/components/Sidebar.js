@@ -67,14 +67,14 @@ const Sidebar = props => (
                                 
                                 // const titleTextColor = (locationPath === `/${slug}`) ? 'has-text-dark' : 'has-text-grey'
                                 const boldIfSelected = (locationPath === `/${slug}`) ? 'bold' : ''
-                                const dateColor = (hoursDiff < 24) ? '#ff8d79' : '#aaa'
+                                const greenIfNew = (hoursDiff < 24) ? 'green' : ''
 
                                 return [
                                     <div key={slug} className="post">
-                                        <Link to={`/${slug}`}>
-                                            <p className={`title ${boldIfSelected}`}>{title}</p>
+                                        <Link to={`/${slug}`} className={`title ${boldIfSelected}`}>
+                                            {title}
                                         </Link>
-                                        <p className="date">{date}</p>
+                                        <span className={`date ${greenIfNew}`}>{date}</span>
                                     </div>,
                                     (currentIndex !== posts.length - 1)
                                     && <hr />

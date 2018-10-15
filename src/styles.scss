@@ -1,22 +1,25 @@
-$divider-color: #ddd;
-$divider-color-green: #8BDBAF;
-$navbar-border-color: linear-gradient(0.25turn, #34C174, #9198e5);
+$green-dark: #34C174;
+$green-mid: #51C987;
+$green-light: #8BDBAF;
+
+$text-dark: #222;
+$text-mid: #444;
+$text-light: #666;
+$text-lighter: #888;
+
+$button-bg-grey: #FDFEFE;
+$divider-grey: #ddd;
+$nav-shadow: #eee;
+
+$blockquote-bg: #f5f5f5;
+$blockquote-text: #888;
 
 * {
     background-color: #fafafa;
 }
 
 a {
-    color: #666;
     box-shadow: none;
-}
-
-p {
-    color: #222;
-}
-
-hr {
-    background-color: $divider-color;
 }
 
 .site-wrapper {
@@ -33,7 +36,8 @@ hr {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 2px solid $divider-color-green;
+    border-bottom: 2px solid $green-light;
+    // box-shadow: 0px 15px 20px -15px $nav-shadow; 
 
     a {
         display: flex;
@@ -41,13 +45,17 @@ hr {
         height: 1.5rem;
         font-size: 0.85rem;
         line-height: 1.5rem;
-        &:hover {
-            text-decoration: underline;
+        &:hover, &:focus, &:active {
+            outline: none;
+            h6 {
+                color: $green-mid;
+            }
         }
     }
 
     h6 {
         margin: auto;
+        color: $text-mid;
     }
 }
 
@@ -82,14 +90,19 @@ hr {
             }
 
             .post {
+                display: flex;
+                flex-flow: column nowrap;
+
                 .title {
                     margin-bottom: 0.5rem;
                     font-size: 0.85rem;
-                    color: #666;
+                    color: $text-mid;
 
-                    &:hover {
-                        text-decoration: underline;
+                    &:hover, &:focus, &:active {
+                        color: $green-dark;
+                        outline: none;
                     }
+
                     &.bold {
                         font-weight: bold;
                     }
@@ -97,7 +110,11 @@ hr {
                 .date {
                     font-size: 0.8rem;
                     font-style: italic;
-                    color: #999;
+                    color: $text-lighter;
+
+                    &.green {
+                        color: $green-mid;
+                    }
                 }
             }
         }
@@ -111,6 +128,16 @@ hr {
 .blog-post {
     display: flex;
     flex-flow: column nowrap;
+    color: $text-mid;
+
+    a {
+        color: $text-mid;
+
+        &:hover, &:focus, &:active {
+            color: $green-dark;
+            outline: none;
+        }
+    }
 
     h1, h2, h3 {
         line-height: 2rem;
@@ -122,15 +149,17 @@ hr {
 
     hr {
         margin: 3rem 0;
+        background-color: $divider-grey;
     }
 
     .headline {
         margin-top: 0;
         line-height: 2.75rem;
+        font-size: 2rem;
     }
 
     .author {
-        color: #999;
+        color: $text-lighter;
         font-size: 0.85rem;
         font-style: italic;
     }
@@ -139,19 +168,25 @@ hr {
         line-height: 2rem;
 
         a {
-            text-decoration: underline;
+            box-shadow: 0 2px 0 0 $green-light;
         }
-    }
-
-    blockquote {
-        padding: 1rem 2rem;
-        font-size: 1.15rem;
-        font-style: italic;
-        letter-spacing: 0.25px;
-        border-color: $divider-color-green; 
 
         p {
-            color: #999;
+            color: $text-dark;
+        }
+
+        blockquote {
+            padding: 1.25rem 1.75rem;
+            font-size: 1.15rem;
+            font-style: italic;
+            letter-spacing: 0.25px;
+            border-color: $green-light; 
+            background-color: $blockquote-bg;
+    
+            p {
+                color: $blockquote-text;
+                background-color: $blockquote-bg;
+            }
         }
     }
 
@@ -176,22 +211,28 @@ hr {
             justify-content: center;
             align-items: center;
             margin: 0 0.5rem;
-            border: 1px solid $divider-color;
+            border: 1px solid $divider-grey;
             border-radius: 100%;
             cursor: pointer;
+            user-select: none;
 
-            &:hover, &:focus, &:active {
-                border-color: #51C987;
-                background-color: #FDFEFE;
+            &:hover, &:focus {
+                border-color: $green-mid;
+                background-color: $button-bg-grey;
+                box-shadow: 0px 10px 50px -10px $divider-grey; 
                 outline: none;
 
                 .icon, i {
-                    background-color: #FDFEFE;
+                    background-color: $button-bg-grey;
                 }
             }
 
+            &:active {
+                box-shadow: none;
+            }
+
             .icon {
-                color: #51C987;
+                color: $green-mid;
             }
         }
     }
@@ -207,7 +248,7 @@ hr {
         align-items: center;
 
         .header {
-            color: #666;
+            color: $text-mid;
             margin: 0 0 2rem 0;
         }
 
@@ -219,13 +260,19 @@ hr {
             .button-link {
                 padding: 0.5rem 1rem;
                 margin: 0.5rem;
-                border: 1px solid $divider-color;
+                border: 1px solid $divider-grey;
                 font-size: 0.9rem;
+                user-select: none;
 
-                &:hover, &:focus, &:active {
-                    border-color: #51C987;
-                    background-color: #FDFEFE;
+                &:hover, &:focus {
+                    border-color: $green-mid;
+                    background-color: $button-bg-grey;
+                    box-shadow: 0px 10px 50px -15px $divider-grey;
                     outline: none;
+                }
+
+                &:active {
+                    box-shadow: none;
                 }
             }
         }
@@ -237,7 +284,7 @@ hr {
         align-items: center;
 
         .header {
-            color: #666;
+            color: $text-mid;
             margin: 0 0 2rem 0;
         }
 
@@ -250,25 +297,24 @@ hr {
             flex: 1;
             display: flex;
             flex-flow: column nowrap;
-            line-height: 1.75rem;
             font-size: 0.9rem;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
 
-            a:hover {
-                text-decoration: underline;
+            .title {
+                margin-bottom: 0.5rem;
             }
-        }
 
-        .date {
-            font-size: 0.8rem;
-            font-style: italic;
-            color: #999;
+            .date {
+                font-size: 0.8rem;
+                font-style: italic;
+                color: $text-lighter;
+            }
         }
 
         .divider {
             width: 1px;
-            background-color: $divider-color;
+            background-color: $divider-grey;
             margin: 0 2rem;
         }
     }
@@ -276,11 +322,30 @@ hr {
     .prev-next {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: center;
 
-        a:hover, .back-to-top:hover {
-            cursor: pointer;
-            text-decoration: underline;
+        .button {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border: 1px solid $divider-grey;
+            font-size: 0.9rem;
+            user-select: none;
+
+            &:hover, &:focus {
+                border-color: $green-mid;
+                background-color: $button-bg-grey;
+                box-shadow: 0px 10px 50px -15px $divider-grey;
+                cursor: pointer;
+                outline: none;
+
+                a, i, span {
+                    color: $green-mid;
+                }
+            }
+
+            &:active {
+                box-shadow: none;
+            }
         }
     }
 }
@@ -307,7 +372,8 @@ hr {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid $divider-color-green;
+    border-top: 2px solid $green-light;
+    // box-shadow: 0px -15px 20px -15px $nav-shadow; 
 
     a {
         font-size: 16px;

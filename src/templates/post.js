@@ -72,7 +72,7 @@ const PostTemplate = props => {
                 <div className="posts">
                     {!_.isNull(previous) &&
                         <div className="prev">
-                            <Link to={`/${previous.fields.slug}`}>
+                            <Link to={`/${previous.fields.slug}`} className="title">
                                 {previous.frontmatter.title}
                             </Link>
                             <span className="date">
@@ -83,7 +83,7 @@ const PostTemplate = props => {
                     {!_.isNull(previous) && !_.isNull(next) && <div className="divider" />}
                     {!_.isNull(next) &&
                         <div className="next">
-                            <Link to={`/${next.fields.slug}`}>
+                            <Link to={`/${next.fields.slug}`} className="title">
                                 {next.frontmatter.title}
                             </Link>
                             <span className="date">
@@ -117,58 +117,30 @@ const PostTemplate = props => {
 
     const renderPrevNext = () => (
         <div className="prev-next">
-            <div>
+            <div 
+                className="button"
+                onClick={() => window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                })}
+            >
                 <span className="icon">
                     <i className="fas fa-chevron-up" />
                 </span>
-                {`\xa0\xa0`}
-                <span
-                    className="back-to-top"
-                    onClick={() => window.scrollTo({
-                        top: 0,
-                        left: 0,
-                        behavior: 'smooth'
-                    })}
-                >
+                {`\xa0\xa0\xa0`}
+                <span className="back-to-top">
                     Back to top
                 </span>
-                {`\xa0\xa0\xa0\xa0\xa0`}
-                <span>
+            </div>
+            <div className="button">
+                <Link to="/">
                     <span className="icon">
                         <i className="fas fa-home" />
                     </span>
-                    {`\xa0\xa0`}
-                    <Link to="/">  
-                        <span>Home</span>
-                    </Link> 
-                </span>
-            </div>
-            <div>
-            {   
-                !_.isNull(previous) &&
-                <span>
-                    <span className="icon">
-                        <i className="fas fa-chevron-left" />
-                    </span>
-                    {`\xa0\xa0`}
-                    <Link to={`/${previous.fields.slug}`}>
-                        <span>Older</span>
-                    </Link>
-                </span> 
-            }
-            {`\xa0\xa0\xa0\xa0\xa0`}
-            {   
-                !_.isNull(next) &&
-                <span>
-                    <Link to={`/${next.fields.slug}`}>
-                        <span>Newer</span>
-                    </Link>
-                    {`\xa0\xa0`}
-                    <span className="icon">
-                        <i className="fas fa-chevron-right" />
-                    </span>
-                </span>
-            }
+                    {`\xa0\xa0\xa0`}
+                    <span>Home</span>
+                </Link> 
             </div>
         </div>
     )
