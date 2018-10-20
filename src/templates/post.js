@@ -65,9 +65,9 @@ const PostTemplate = props => {
         </div>
     )
 
-    const renderDetailedPrevNext = () => {
+    const renderPrevNext = () => {
         return (
-            <div className="detailed-prev-next">
+            <div className="prev-next">
                 <h3 className="header">In other news</h3>
                 <div className="posts">
                     {!_.isNull(previous) &&
@@ -115,8 +115,8 @@ const PostTemplate = props => {
         }
     }
 
-    const renderPrevNext = () => (
-        <div className="prev-next">
+    const renderBottomNav = () => (
+        <div className="bottom-nav">
             <div 
                 className="button"
                 onClick={() => window.scrollTo({
@@ -188,9 +188,9 @@ const PostTemplate = props => {
                 <hr />
                 {renderTags()}
                 <hr />
-                {renderDetailedPrevNext()}
-                <hr />
                 {renderPrevNext()}
+                <hr />
+                {renderBottomNav()}
             </div>
         </SiteLayout>
     )
