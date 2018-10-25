@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import _ from 'lodash'
 
-class ShareButton extends Component {
+class ShareButton extends PureComponent {
     constructor(props) {
         super(props)
         this.attachRef = target => this.setState({ target });
@@ -40,7 +40,8 @@ class ShareButton extends Component {
     showFb = () => (
         <div
             key="fb-share-button"
-            aria-label="Share on facebook"
+            className="share-button"
+            aria-label="share on facebook"
             onClick={() => window.open(
                 `https://www.facebook.com/sharer.php?u=https://gamepad.news/${this.slug}`, '_blank', 'top=250,left=250,width=555,height=326'
             )}
@@ -54,7 +55,8 @@ class ShareButton extends Component {
     showFacebook = () => (
         <div
             key="fb-share-button"
-            aria-label="Share on facebook"
+            className="share-button"
+            aria-label="share on facebook"
             onClick={() => window.open(
                 `https://www.facebook.com/sharer.php?u=https://gamepad.news/${this.slug}`, '_blank', 'top=250,left=250,width=555,height=326'
             )}
@@ -68,7 +70,8 @@ class ShareButton extends Component {
     showTwitter = () => (
         <div 
             key="twitter-share-button"
-            aria-label="Share on twitter"
+            className="share-button"
+            aria-label="share on twitter"
             onClick={() => window.open(
                 `https://twitter.com/intent/tweet?url=https://gamepad.news/${this.slug}`, '_blank', 'top=250,left=250,width=500,height=300'
             )}
@@ -82,7 +85,8 @@ class ShareButton extends Component {
     showReddit = () => (
         <div 
             key="reddit-share-button"
-            aria-label="Share on reddit"
+            className="share-button"
+            aria-label="share on reddit"
             onClick={() => window.open(
                 `https://www.reddit.com/submit?url=https://gamepad.news/${this.slug}&title=${_.replace(this.title, '', '%20')}`, '_blank', 'width=610,height=600'
             )}
@@ -95,8 +99,9 @@ class ShareButton extends Component {
 
     showMail = () => (
         <div 
-            key="icon-mail"
-            aria-label="Share via email"
+            key="mail-share-button"
+            className="share-button"
+            aria-label="share via email"
             onClick={() => window.open(
                 `mailto:?subject=${this.title}&body=https://gamepad.news/${this.slug}`
             )}
@@ -109,8 +114,9 @@ class ShareButton extends Component {
 
     showCopyLink = () => (
         <div 
-            key="icon-link"
-            aria-label="Copy page link"
+            key="copy-link-button"
+            className="share-button"
+            aria-label="copy page link"
             ref={this.attachRef}
             onClick={() => this.copyToClipboard(`https://gamepad.news/${this.slug}`)}
         >

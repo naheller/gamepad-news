@@ -9,7 +9,7 @@ import SiteLayout from '../components/SiteLayout'
 import ShareButton from '../components/ShareButton'
 
 const PostTemplate = props => {
-    const { data, location, pageContext } = props
+    const { data, location, /*pageContext*/ } = props
     // const siteTitle = _.get(data, 'site.siteMetadata.title', 'Gamepad News')
 
     const post = _.get(data, 'markdownRemark', {})
@@ -17,7 +17,7 @@ const PostTemplate = props => {
     const s3ImageSizes = _.get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
     const { title, date, /*image,*/ /*s3image,*/ tags, description, author } = post.frontmatter
-    const { previous, next, /*slug*/ } = pageContext
+    // const { previous, next, /*slug*/ } = pageContext
     const { slug } = post.fields
 
     let formattedDate = moment(date).format('MMM D, YYYY – h:mm a')
@@ -37,11 +37,11 @@ const PostTemplate = props => {
         <div>
             <h1 className="headline">{title}</h1>
             <div className="date-author-share">
-                <div>
-                    <p className="date">{formattedDate}</p>
+                <div className="date-author">
+                    <h4 className="date">{formattedDate}</h4>
                     <p className="author">{`by ${author}`}</p>
                 </div>
-                <div className="share-button-group">
+                <div className="share-button-group top">
                     <ShareButton slug={slug} title={title} facebook />
                     <ShareButton slug={slug} title={title} twitter />
                     <ShareButton slug={slug} title={title} reddit />
@@ -54,7 +54,7 @@ const PostTemplate = props => {
 
     const renderTags = () => (
         <div className="tags">
-            <h3 className="header">In this story</h3>
+            <h3 className="header">In this story...</h3>
             <div className="items">
                 {_.map(tags, tag => (
                     <Link to={`/${_.kebabCase(tag)}`} className="button-link" key={tag}>
@@ -65,55 +65,55 @@ const PostTemplate = props => {
         </div>
     )
 
-    const renderPrevNext = () => {
-        return (
-            <div className="prev-next">
-                <h3 className="header">In other news</h3>
-                <div className="posts">
-                    {!_.isNull(previous) &&
-                        <div className="prev">
-                            <Link to={`/${previous.fields.slug}`} className="title">
-                                {previous.frontmatter.title}
-                            </Link>
-                            <span className="date">
-                                {formatDate(previous.frontmatter.date)}
-                            </span>
-                        </div>
-                    }
-                    {!_.isNull(previous) && !_.isNull(next) && <div className="divider" />}
-                    {!_.isNull(next) &&
-                        <div className="next">
-                            <Link to={`/${next.fields.slug}`} className="title">
-                                {next.frontmatter.title}
-                            </Link>
-                            <span className="date">
-                                {formatDate(next.frontmatter.date)}
-                            </span>
-                        </div>
-                    }
-                </div>
-            </div>
-        )
-    }
+    // const renderPrevNext = () => {
+    //     return (
+    //         <div className="prev-next">
+    //             <h3 className="header">In other news</h3>
+    //             <div className="posts">
+    //                 {!_.isNull(previous) &&
+    //                     <div className="prev">
+    //                         <Link to={`/${previous.fields.slug}`} className="title">
+    //                             {previous.frontmatter.title}
+    //                         </Link>
+    //                         <span className="date">
+    //                             {formatDate(previous.frontmatter.date)}
+    //                         </span>
+    //                     </div>
+    //                 }
+    //                 {!_.isNull(previous) && !_.isNull(next) && <div className="divider" />}
+    //                 {!_.isNull(next) &&
+    //                     <div className="next">
+    //                         <Link to={`/${next.fields.slug}`} className="title">
+    //                             {next.frontmatter.title}
+    //                         </Link>
+    //                         <span className="date">
+    //                             {formatDate(next.frontmatter.date)}
+    //                         </span>
+    //                     </div>
+    //                 }
+    //             </div>
+    //         </div>
+    //     )
+    // }
 
-    const formatDate = date => {
-        const now = moment()
-        const minsDiff = now.diff(moment(date), 'minutes')
-        const hoursDiff = now.diff(moment(date), 'hours')
-        const daysDiff = now.diff(moment(date), 'days')
+    // const formatDate = date => {
+    //     const now = moment()
+    //     const minsDiff = now.diff(moment(date), 'minutes')
+    //     const hoursDiff = now.diff(moment(date), 'hours')
+    //     const daysDiff = now.diff(moment(date), 'days')
 
-        if (minsDiff < 60) {
-            return `${minsDiff} minute${minsDiff > 1 ? `s` : ``} ago`
-        } else if (hoursDiff < 24) {
-            return `${hoursDiff} hour${hoursDiff > 1 ? `s` : ``} ago`
-        } else if (daysDiff === 1) {
-            return `yesterday`
-        } else if (daysDiff < 3) {
-            return `${daysDiff} day${daysDiff > 1 ? `s` : ``} ago`
-        } else {
-            return moment(date).format('MMM D, YYYY')
-        }
-    }
+    //     if (minsDiff < 60) {
+    //         return `${minsDiff} minute${minsDiff > 1 ? `s` : ``} ago`
+    //     } else if (hoursDiff < 24) {
+    //         return `${hoursDiff} hour${hoursDiff > 1 ? `s` : ``} ago`
+    //     } else if (daysDiff === 1) {
+    //         return `yesterday`
+    //     } else if (daysDiff < 3) {
+    //         return `${daysDiff} day${daysDiff > 1 ? `s` : ``} ago`
+    //     } else {
+    //         return moment(date).format('MMM D, YYYY')
+    //     }
+    // }
 
     const renderBottomNav = () => (
         <div className="bottom-nav">
@@ -178,7 +178,7 @@ const PostTemplate = props => {
             {addHelmet()}
             <div className="blog-post">
                 {renderArticle()}
-                <div className="share-button-group center">
+                <div className="share-button-group bottom">
                     <ShareButton slug={slug} title={title} facebook />
                     <ShareButton slug={slug} title={title} twitter />
                     <ShareButton slug={slug} title={title} reddit />
@@ -187,10 +187,11 @@ const PostTemplate = props => {
                 </div>
                 <hr />
                 {renderTags()}
-                <hr />
-                {renderPrevNext()}
+                {/* <hr /> */}
+                {/* {renderPrevNext()} */}
                 <hr />
                 {renderBottomNav()}
+                <hr />
             </div>
         </SiteLayout>
     )
@@ -223,7 +224,7 @@ export const pageQuery = graphql`
             localFile {
                 childImageSharp {
                     sizes {
-                        ...GatsbyImageSharpSizes
+                        ...GatsbyImageSharpSizes_withWebp
                     }
                 }
             }

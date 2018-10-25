@@ -32,23 +32,26 @@ a {
 .navbar {
     display: flex;
     padding: 1rem 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
     border-bottom: 2px solid $green-light;
     // box-shadow: 0px 15px 20px -15px $nav-shadow; 
 
+    @media (max-width: 1024px) {
+        margin-bottom: 0;
+    }
+
     a {
         display: flex;
         align-content: center;
         height: 1.5rem;
-        font-size: 0.85rem;
         line-height: 1.5rem;
         &:hover, &:focus, &:active {
             outline: none;
             h6 {
-                color: $green-mid;
+                color: $green-light;
             }
         }
     }
@@ -61,14 +64,23 @@ a {
 
 .sidebar-main {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-evenly;
 
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .sidebar {
-        order: 2;
-        display: flex;
-        flex: 1 250px;
+        min-width: 300px;
+        max-width: 300px;
         margin: 1.5rem;
+
+        @media (max-width: 1024px) {
+            max-width: 700px;
+            margin-top: 0;
+        }
 
         hr {
             margin: 2rem 0;
@@ -80,37 +92,98 @@ a {
                 flex-flow: row nowrap;
                 margin-bottom: 2rem;
 
+                @media (max-width: 1024px) {
+                    justify-content: center;
+                    margin-bottom: 2.5rem;
+                }
+
                 .icon {
                     margin-right: 1rem;
+                    color: $text-mid;
+
+                    @media (max-width: 1024px) {
+                        font-size: 1.25rem;
+                    }
                 }
 
                 .title {
                     margin: 0;
                     line-height: 1.75rem;
-                    font-size: 0.9rem;
+                    color: $text-mid;
+
+                    @media (max-width: 1024px) {
+                        font-size: 1.38rem;
+                    }
                 }
             }
 
             .post {
                 display: flex;
                 flex-flow: column nowrap;
+                margin-bottom: 2.5rem;
 
-                .title {
-                    margin-bottom: 0.5rem;
-                    font-size: 0.85rem;
-                    color: $text-mid;
+                @media (max-width: 1024px) {
+                    align-items: center;
+                }
+
+                .link {
+                    width: 100%;
+
+                    @media (max-width: 1024px) {
+                        opacity: 1;
+                    }
 
                     &:hover, &:focus, &:active {
-                        color: $green-dark;
                         outline: none;
+
+                        .title {
+                            color: $text-dark;
+                        }
+
+                        .gatsby-image-outer-wrapper {
+                            opacity: 1;
+                        }
                     }
 
-                    &.bold {
-                        font-weight: bold;
+                    .title {
+                        margin: 0 0 0.5rem 0;
+                        line-height: 1.15rem;
+                        color: $text-light;
+
+                        transition: color 0.25s ease-out;
+                        -moz-transition: color 0.25s ease-out;
+                        -webkit-transition: color 0.25s ease-out;
+                        -o-transition: color 0.25s ease-out;
+
+                        @media (max-width: 1024px) {
+                            text-align: center;
+                        }
+
+                        &.bold {
+                            font-weight: bold;
+                        }
+                    }
+
+                    .gatsby-image-outer-wrapper {
+                        margin-bottom: 1rem;
+                        opacity: 0.5;
+                        transition: opacity 0.25s ease-out;
+                        -moz-transition: opacity 0.25s ease-out;
+                        -webkit-transition: opacity 0.25s ease-out;
+                        -o-transition: opacity 0.25s ease-out;
+
+                        @media (max-width: 1024px) {
+                            opacity: 0.9;
+                        }
+    
+                        .gatsby-image-wrapper {
+                            border-radius: 2px;
+                        }
                     }
                 }
+
                 .date {
-                    font-size: 0.8rem;
+                    font-size: 0.75rem;
                     font-style: italic;
                     color: $text-lighter;
 
@@ -122,9 +195,18 @@ a {
         }
     }
 
+    .divider {
+        width: 1px;
+        min-height: 100%;
+        background: $divider-grey;
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+
     .main {
-        display: flex;
-        flex: 2 500px;
+        max-width: 700px;
         margin: 1.5rem;
     }
 }
@@ -134,11 +216,21 @@ a {
     flex-flow: column nowrap;
     color: $text-mid;
 
+    hr:last-child {
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+        hr:last-child {
+            display: flex;
+        }
+    }
+
     a {
         color: $text-mid;
 
         &:hover, &:focus, &:active {
-            color: $green-dark;
+            color: $green-mid;
             outline: none;
         }
     }
@@ -162,10 +254,32 @@ a {
         font-size: 2rem;
     }
 
-    .author {
-        color: $text-lighter;
-        font-size: 0.85rem;
-        font-style: italic;
+    .date-author-share {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 375px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .date-author {
+            .date {
+                margin: 0;
+                color: $text-mid;
+                background-color: inherit;
+            }
+            
+            .author {
+                margin: 0;
+                color: $text-lighter;
+                font-size: 0.85rem;
+                font-style: italic;
+                background-color: inherit;
+            }
+        }
     }
 
     .body {
@@ -183,8 +297,9 @@ a {
             padding: 1.25rem 1.75rem;
             font-size: 1.15rem;
             font-style: italic;
+            line-height: 2rem;
             letter-spacing: 0.25px;
-            border-color: $green-light; 
+            border-left: 6px solid $green-light;
             background-color: $blockquote-bg;
     
             p {
@@ -196,27 +311,73 @@ a {
 
     .gatsby-image-outer-wrapper {
         margin: 2rem 0;
+
+        @media (max-width: 375px) {
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+            border-radius: 0;
+        }
+
+        .gatsby-image-wrapper {
+            border-radius: 2px;
+        }
+
+
     }
 
     .share-button-group {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-end;
-        // margin-top: 0.5rem;
 
-        &.center {
-            justify-content: center;
+        &.top {
+            @media (max-width: 375px) {
+                padding-top: 0.5rem;
+            }
+
+            .share-button {
+                border: 1px solid transparent;
+
+                @media (max-width: 375px) {
+                    border-color: $divider-grey;
+                }
+            }
+            
         }
 
-        div {
+        &.bottom {
+            justify-content: center;
+            padding-top: 0.5rem;
+
+            .share-button {
+                border-color: $divider-grey;
+            }
+        }
+
+        .share-button:first-child {
+            margin-right: 0.25rem;
+            // border-top-left-radius: 2px;
+            // border-bottom-left-radius: 2px;
+        }
+
+        .share-button:last-child {
+            margin-left: 0.25rem;
+            // border-top-right-radius: 2px;
+            // border-bottom-right-radius: 2px;
+        }
+
+        .share-button:not(:first-child):not(:last-child) {
+            margin: 0 0.25rem;
+        }
+
+        .share-button {
             height: 2.5rem;
             width: 2.5rem;
             display: flex;
             justify-content: center;
+            border: 1px solid transparent;
             align-items: center;
-            margin: 0 0.5rem;
-            border: 1px solid $divider-grey;
-            border-radius: 100%;
+            border-radius: 2px;
             cursor: pointer;
             user-select: none;
 
@@ -263,8 +424,9 @@ a {
 
             .button-link {
                 padding: 0.5rem 1rem;
-                margin: 0.5rem;
+                margin: 0.25rem;
                 border: 1px solid $divider-grey;
+                border-radius: 2px;
                 font-size: 0.9rem;
                 user-select: none;
 
@@ -330,8 +492,9 @@ a {
 
         .button {
             padding: 0.5rem 1rem;
-            margin: 0.5rem;
+            margin: 0.25rem;
             border: 1px solid $divider-grey;
+            border-radius: 2px;
             font-size: 0.9rem;
             user-select: none;
 
@@ -355,30 +518,19 @@ a {
     }
 }
 
-.date-author-share {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.date {
-    margin: 0;
-}
-
-.author {
-    margin: 0;
-}
-
 .footer {
     display: flex;
     padding: 1rem 0;
-    margin-top: 3rem;
+    margin-top: 2rem;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     border-top: 2px solid $green-light;
     // box-shadow: 0px -15px 20px -15px $nav-shadow; 
+
+    @media (max-width: 1024px) {
+        margin-top: 0;
+    }
 
     a {
         font-size: 16px;

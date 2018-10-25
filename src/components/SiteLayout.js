@@ -50,8 +50,9 @@ const SiteLayout = props => {
             {addHelmet()}
             <Navbar />
             <div className="sidebar-main">
-                <Sidebar location={location} />
                 <div className="main">{children}</div>
+                <div className="divider" />
+                <Sidebar location={location} />
             </div>
             
             <Footer />

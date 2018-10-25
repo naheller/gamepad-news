@@ -4,15 +4,15 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
 import SiteLayout from '../components/SiteLayout'
-import BlogPosts from '../components/BlogPosts'
+// import BlogPosts from '../components/BlogPosts'
 
 const BlogIndex = props => {
     const siteTitle = get(props, 'data.site.siteMetadata.title', 'Gamepad News')
     const siteDesc = get(props, 'data.site.siteMetadata.description', 'Video game news blog')
 
-    const posts = get(props, 'data.allMarkdownRemark.edges', [])
+    // const posts = get(props, 'data.allMarkdownRemark.edges', [])
     // const s3images = get(props, 'data.allS3Image.edges', [])
-    const s3imageSize = get(props, 'data.s3Image.localFile.childImageSharp.sizes', {})
+    // const s3imageSize = get(props, 'data.s3Image.localFile.childImageSharp.sizes', {})
 
     return (
         <SiteLayout location={props.location}>
