@@ -65,10 +65,10 @@ exports.createPages = ({ graphql, actions }) => {
 
                     const previous = index === posts.length - 1 ? null : posts[index + 1].node
                     const next = index === 0 ? null : posts[index - 1].node
-                    // const slugWithDate = `${formattedDate}-${slugPartial}`
+                    const slugWithDate = `${formattedDate}-${slugPartial}`
 
                     createPage({
-                        path: slug,
+                        path: slugWithDate,
                         component: postTemplate,
                         context: {
                             slug,
@@ -95,7 +95,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 }
 
-exports.onCreateNode = ({ node, actions, getNodes }) => {
+exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
@@ -111,10 +111,18 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
         //     'omission': ''
         // })
 
+        const relativeFilePath = createFilePath({
+            node,
+            getNode,
+            basePath: "posts/",
+            trailingSlash: false
+        })
+
         createNodeField({
             node,
             name: `slug`,
-            value: `${_.kebabCase(slugPartial)}-${truncId}`
+            // value: `${_.kebabCase(slugPartial)}-${truncId}`
+            value: relativeFilePath
         })
 
         const s3Image = _.get(node, 'frontmatter.s3Image', '')

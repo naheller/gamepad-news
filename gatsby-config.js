@@ -1,4 +1,4 @@
-const { aws } = require('./keys.json')
+// const { aws } = require('./keys.json')
 
 module.exports = {
   siteMetadata: {
@@ -21,12 +21,12 @@ module.exports = {
         resolve: 'gatsby-source-s3',
         options: {
             aws: {
-                // accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-                // secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-                // region: process.env.AWS_REGION,
-                accessKeyId: aws.accessKey,
-                secretAccessKey: aws.secret,
-                region: aws.region
+                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+                region: process.env.AWS_REGION,
+                // accessKeyId: aws.accessKey,
+                // secretAccessKey: aws.secret,
+                // region: aws.region
             },
             buckets: ['gamepad-images-east'],
         },
@@ -53,7 +53,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 700,
             },
           },
           {
@@ -82,11 +82,5 @@ module.exports = {
             pathToConfigModule: `src/utils/typography.js` 
         }    
     }
-    // {
-    //   resolve: 'gatsby-plugin-typography',
-    //   options: {
-    //     pathToConfigModule: 'src/utils/typography',
-    //   },
-    // },
   ]
 }

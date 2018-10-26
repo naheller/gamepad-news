@@ -15,7 +15,7 @@ collections:
   - name: 'blog'
     label: 'Blog'
     label_singular: 'Post'
-    folder: 'src/pages'
+    folder: 'src/pages/posts'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
