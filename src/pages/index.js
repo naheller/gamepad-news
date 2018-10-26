@@ -11,8 +11,8 @@ const BlogIndex = props => {
     const siteDesc = get(props, 'data.site.siteMetadata.description', 'Video game news blog')
 
     // const posts = get(props, 'data.allMarkdownRemark.edges', [])
-    // const s3images = get(props, 'data.allS3Image.edges', [])
-    // const s3imageSize = get(props, 'data.s3Image.localFile.childImageSharp.sizes', {})
+    // const s3Images = get(props, 'data.allS3Image.edges', [])
+    // const s3ImageSize = get(props, 'data.s3Image.localFile.childImageSharp.sizes', {})
 
     return (
         <SiteLayout location={props.location}>
@@ -54,7 +54,7 @@ export const pageQuery = graphql`
                         title
                         author
                         tags
-                        s3image
+                        s3Image
                     }
                 }
             }

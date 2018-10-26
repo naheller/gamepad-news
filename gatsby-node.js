@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
+const moment = require('moment')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = ({ graphql, actions }) => {
@@ -27,7 +28,8 @@ exports.createPages = ({ graphql, actions }) => {
                                     author
                                     description
                                     tags
-                                    s3image
+                                    s3Image
+                                    slugPartial
                                 }
                             }
                         }
@@ -47,7 +49,14 @@ exports.createPages = ({ graphql, actions }) => {
                 let tags = []
 
                 _.forEach(posts, (post, index) => {
+                    const date = _.get(post, 'node.frontmatter.date', '')
+                    const formattedDate = moment(date).format('YYYY-MM-DD')
+
                     const slug = _.get(post, 'node.fields.slug', '')
+                    console.log('slug', slug)
+                    const s3Image = _.get(post, 'node.frontmatter.s3Image', '')
+                    const slugPartial = _.get(post, 'node.frontmatter.slugPartial', '')
+
                     const postTags = _.get(post, 'node.frontmatter.tags', [])
 
                     if (!_.isEmpty(postTags)) {
@@ -56,12 +65,14 @@ exports.createPages = ({ graphql, actions }) => {
 
                     const previous = index === posts.length - 1 ? null : posts[index + 1].node
                     const next = index === 0 ? null : posts[index - 1].node
+                    // const slugWithDate = `${formattedDate}-${slugPartial}`
 
                     createPage({
-                        path: slug, //`/${slugWithId}/`,
+                        path: slug,
                         component: postTemplate,
                         context: {
-                            slug: slug,
+                            slug,
+                            s3Image,
                             previous,
                             next,
                         },
@@ -93,24 +104,27 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
         //     getNode
         // })
 
-        const shortId = _.get(node, 'id').substring(0, 8)
-        const shortTitle = _.truncate(_.get(node, 'frontmatter.title', ''), {
-            'length': 40,
-            'omission': ''
-        })
+        const truncId = _.get(node, 'id').substring(0, 8)
+        const slugPartial = _.get(node, 'frontmatter.slugPartial', '')
+        // const truncTitle = _.truncate(_.get(node, 'frontmatter.title', ''), {
+        //     'length': 40,
+        //     'omission': ''
+        // })
 
         createNodeField({
             node,
             name: `slug`,
-            value: `${_.kebabCase(shortTitle)}-${shortId}`
+            value: `${_.kebabCase(slugPartial)}-${truncId}`
         })
 
-        const s3ImageFrontmatter = _.get(node, 'frontmatter.s3image', '')
+        const s3Image = _.get(node, 'frontmatter.s3Image', '')
 
         createNodeField({
             node,
-            name: `s3ImageKey`,
-            value: s3ImageFrontmatter
+            name: `s3Image`,
+            value: s3Image
         })
+
+        // console.log('NODE', node)
     }
 }

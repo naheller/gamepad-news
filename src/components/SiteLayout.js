@@ -51,8 +51,8 @@ const SiteLayout = props => {
             <Navbar />
             <div className="sidebar-main">
                 <div className="main">{children}</div>
-                <div className="divider" />
-                <Sidebar location={location} />
+                {/* <div className="divider" /> */}
+                {/* <Sidebar location={location} /> */}
             </div>
             
             <Footer />

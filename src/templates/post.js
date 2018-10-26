@@ -16,8 +16,8 @@ const PostTemplate = props => {
     const s3ImageUrl = _.get(data, 's3Image.Url', '')
     const s3ImageSizes = _.get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
-    const { title, date, /*image,*/ /*s3image,*/ tags, description, author } = post.frontmatter
-    // const { previous, next, /*slug*/ } = pageContext
+    const { title, date, tags, description, author } = post.frontmatter
+    // const { previous, next } = pageContext
     const { slug } = post.fields
 
     let formattedDate = moment(date).format('MMM D, YYYY – h:mm a')
@@ -57,8 +57,12 @@ const PostTemplate = props => {
             <h3 className="header">In this story...</h3>
             <div className="items">
                 {_.map(tags, tag => (
-                    <Link to={`/${_.kebabCase(tag)}`} className="button-link" key={tag}>
-                        {tag}
+                    <Link 
+                        key={tag}
+                        to={`/${_.kebabCase(tag)}`} 
+                        className="button-link" 
+                    >
+                        <h6 className="text">{tag}</h6>
                     </Link>
                 ))}
             </div>
@@ -129,9 +133,9 @@ const PostTemplate = props => {
                     <i className="fas fa-chevron-up" />
                 </span>
                 {`\xa0\xa0\xa0`}
-                <span className="back-to-top">
+                <h6 className="text">
                     Back to top
-                </span>
+                </h6>
             </div>
             <div className="button">
                 <Link to="/">
@@ -139,7 +143,7 @@ const PostTemplate = props => {
                         <i className="fas fa-home" />
                     </span>
                     {`\xa0\xa0\xa0`}
-                    <span>Home</span>
+                    <h6 className="text">Home</h6>
                 </Link> 
             </div>
         </div>
@@ -191,7 +195,7 @@ const PostTemplate = props => {
                 {/* {renderPrevNext()} */}
                 <hr />
                 {renderBottomNav()}
-                <hr />
+                {/* <hr /> */}
             </div>
         </SiteLayout>
     )
@@ -200,13 +204,12 @@ const PostTemplate = props => {
 export default PostTemplate
 
 export const pageQuery = graphql`
-    query BlogPostBySlug($slug: String!) {
+    query BlogPostBySlug($slug: String!, $s3Image: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             id
             html
             fields {
                 slug
-                s3ImageKey
             }
             frontmatter {
                 title
@@ -214,10 +217,9 @@ export const pageQuery = graphql`
                 author
                 description
                 tags
-                s3image
             }
         }
-        s3Image(Key: { eq: "dead-cells.jpg" }) {
+        s3Image(Key: { eq: $s3Image }) {
             id
             Key
             Url

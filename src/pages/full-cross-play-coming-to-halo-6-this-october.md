@@ -9,8 +9,9 @@ tags:
   - destiny 2
   - bungie
 image: ./halo.jpg
-s3image: destiny-2-forsaken.jpg
+s3Image: destiny-2-forsaken.jpg
 description: Duis eget augue semper nisi pharetra laoreet. Integer elementum suscipit nulla vitae eleifend. Duis a lectus et justo varius consectetur sed in lorem.
+slugPartial: full-cross-play-halo-6
 ---
 **Lorem ipsum** dolor sit amet, consectetur adipiscing elit. Nunc quis lorem vitae turpis ullamcorper maximus a sit amet libero. Proin elementum _urna nulla_. Aliquam vel aliquet lacus.
 

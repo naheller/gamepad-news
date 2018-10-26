@@ -11,11 +11,10 @@ $button-bg-grey: #FDFEFE;
 $divider-grey: #ddd;
 $nav-shadow: #eee;
 
-$blockquote-bg: #f5f5f5;
 $blockquote-text: #888;
 
 * {
-    background-color: #fafafa;
+    background-color: #f5f5f5;
 }
 
 a {
@@ -48,17 +47,20 @@ a {
         align-content: center;
         height: 1.5rem;
         line-height: 1.5rem;
+
+        h6 {
+            margin: auto;
+            color: $text-mid;
+        }
+
         &:hover, &:focus, &:active {
             outline: none;
+
             h6 {
-                color: $green-light;
+                color: $green-mid;
+                // box-shadow: 0 2px 0 0 $green-mid;
             }
         }
-    }
-
-    h6 {
-        margin: auto;
-        color: $text-mid;
     }
 }
 
@@ -121,6 +123,18 @@ a {
                 display: flex;
                 flex-flow: column nowrap;
                 margin-bottom: 2.5rem;
+                background-color: white;
+                border-bottom: 2px solid $divider-grey;
+                border-radius: 4px;
+
+                transition: border-color 0.25s ease-out;
+                -moz-transition: border-color 0.25s ease-out;
+                -webkit-transition: border-color 0.25s ease-out;
+                -o-transition: border-color 0.25s ease-out;
+
+                &:hover, &:focus, &:active {
+                    border-color: $green-mid;
+                }
 
                 @media (max-width: 1024px) {
                     align-items: center;
@@ -128,6 +142,7 @@ a {
 
                 .link {
                     width: 100%;
+                    border-radius: 4px;
 
                     @media (max-width: 1024px) {
                         opacity: 1;
@@ -145,8 +160,14 @@ a {
                         }
                     }
 
+                    img {
+                        border-top-left-radius: 3px;
+                        border-top-right-radius: 3px; 
+                    }
+
                     .title {
-                        margin: 0 0 0.5rem 0;
+                        background-color: white;
+                        margin: 0.75rem 0.75rem 0 0.75rem;
                         line-height: 1.15rem;
                         color: $text-light;
 
@@ -165,7 +186,9 @@ a {
                     }
 
                     .gatsby-image-outer-wrapper {
-                        margin-bottom: 1rem;
+                        margin-bottom: 0.5rem;
+                        border-top-left-radius: 3px;
+                        border-top-right-radius: 3px;
                         opacity: 0.5;
                         transition: opacity 0.25s ease-out;
                         -moz-transition: opacity 0.25s ease-out;
@@ -177,15 +200,18 @@ a {
                         }
     
                         .gatsby-image-wrapper {
-                            border-radius: 2px;
+                            border-top-left-radius: 3px;
+                            border-top-right-radius: 3px;
                         }
                     }
                 }
 
                 .date {
-                    font-size: 0.75rem;
+                    background-color: white;
+                    font-size: 0.7rem;
                     font-style: italic;
                     color: $text-lighter;
+                    margin: 0.75rem;
 
                     &.green {
                         color: $green-mid;
@@ -223,15 +249,6 @@ a {
     @media (max-width: 1024px) {
         hr:last-child {
             display: flex;
-        }
-    }
-
-    a {
-        color: $text-mid;
-
-        &:hover, &:focus, &:active {
-            color: $green-mid;
-            outline: none;
         }
     }
 
@@ -286,7 +303,12 @@ a {
         line-height: 2rem;
 
         a {
-            box-shadow: 0 2px 0 0 $green-light;
+            color: $text-mid;
+            box-shadow: 0 2px 0 0 $green-mid;
+
+            &:hover {
+                color: $green-mid;
+            }
         }
 
         p {
@@ -299,12 +321,15 @@ a {
             font-style: italic;
             line-height: 2rem;
             letter-spacing: 0.25px;
+            border-bottom: 1px solid $divider-grey;
+            // border-bottom-width: 2px;
             border-left: 6px solid $green-light;
-            background-color: $blockquote-bg;
+            border-radius: 4px;
+            background-color: $button-bg-grey;
     
             p {
                 color: $blockquote-text;
-                background-color: $blockquote-bg;
+                background-color: $button-bg-grey;
             }
         }
     }
@@ -319,7 +344,7 @@ a {
         }
 
         .gatsby-image-wrapper {
-            border-radius: 2px;
+            border-radius: 4px;
         }
 
 
@@ -335,13 +360,13 @@ a {
                 padding-top: 0.5rem;
             }
 
-            .share-button {
-                border: 1px solid transparent;
+            // .share-button {
+            //     border-color: transparent;
 
-                @media (max-width: 375px) {
-                    border-color: $divider-grey;
-                }
-            }
+            //     @media (max-width: 375px) {
+            //         border-color: $divider-grey;
+            //     }
+            // }
             
         }
 
@@ -349,9 +374,9 @@ a {
             justify-content: center;
             padding-top: 0.5rem;
 
-            .share-button {
-                border-color: $divider-grey;
-            }
+            // .share-button {
+            //     border-color: $divider-grey;
+            // }
         }
 
         .share-button:first-child {
@@ -375,11 +400,18 @@ a {
             width: 2.5rem;
             display: flex;
             justify-content: center;
-            border: 1px solid transparent;
+            border-bottom: 2px solid $divider-grey;
+            background-color: white;
+            // border-bottom-width: 2px;
+            // border-color: $divider-grey;
             align-items: center;
-            border-radius: 2px;
+            border-radius: 100%;
             cursor: pointer;
             user-select: none;
+
+            .icon, i {
+                background-color: white;
+            }
 
             &:hover, &:focus {
                 border-color: $green-mid;
@@ -387,9 +419,9 @@ a {
                 box-shadow: 0px 10px 50px -10px $divider-grey; 
                 outline: none;
 
-                .icon, i {
-                    background-color: $button-bg-grey;
-                }
+                // .icon, i {
+                //     background-color: $button-bg-grey;
+                // }
             }
 
             &:active {
@@ -425,16 +457,29 @@ a {
             .button-link {
                 padding: 0.5rem 1rem;
                 margin: 0.25rem;
-                border: 1px solid $divider-grey;
-                border-radius: 2px;
+                border-bottom: 2px solid $divider-grey;
+                background-color: white;
+                // border-bottom-width: 2px;
+                border-radius: 4px;
                 font-size: 0.9rem;
                 user-select: none;
+
+                .text {
+                    color: $text-light;
+                    background-color: white;
+                    margin: 0;
+                }
 
                 &:hover, &:focus {
                     border-color: $green-mid;
                     background-color: $button-bg-grey;
                     box-shadow: 0px 10px 50px -15px $divider-grey;
                     outline: none;
+
+                    .text, .icon, i {
+                        color: $green-dark;
+                        background-color: $button-bg-grey;
+                    }
                 }
 
                 &:active {
@@ -494,9 +539,16 @@ a {
             padding: 0.5rem 1rem;
             margin: 0.25rem;
             border: 1px solid $divider-grey;
-            border-radius: 2px;
+            border-bottom-width: 2px;
+            border-radius: 4px;
             font-size: 0.9rem;
             user-select: none;
+
+            .text, .icon {
+                display: inline;
+                color: $text-light;
+                margin: 0;
+            }
 
             &:hover, &:focus {
                 border-color: $green-mid;
@@ -505,9 +557,11 @@ a {
                 cursor: pointer;
                 outline: none;
 
-                a, i, span {
-                    color: $green-mid;
+                .text, .icon, i {
+                    display: inline;
+                    color: $green-dark;
                     background-color: $button-bg-grey;
+                    margin: 0;
                 }
             }
 
@@ -528,9 +582,9 @@ a {
     border-top: 2px solid $green-light;
     // box-shadow: 0px -15px 20px -15px $nav-shadow; 
 
-    @media (max-width: 1024px) {
-        margin-top: 0;
-    }
+    // @media (max-width: 1024px) {
+    //     margin-top: 0;
+    // }
 
     a {
         font-size: 16px;

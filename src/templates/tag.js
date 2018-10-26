@@ -16,7 +16,7 @@ const TagTemplate = props => {
     // const isSpecialTag = _.includes(tagTypes, tag)
 
     // const s3ImageKey = get(data, 's3Image.Key', '')
-    const s3images = _.get(props, 'data.allS3Image.edges', [])
+    const s3Images = _.get(props, 'data.allS3Image.edges', [])
     const capTag = _.capitalize(tag)
 
     return (
@@ -33,7 +33,7 @@ const TagTemplate = props => {
                 <meta property="og:title" content={`${capTag} articles on ${siteTitle}`} />
                 <meta property="og:description" content={`${capTag} articles on ${siteTitle}`} />
             </Helmet>
-            <BlogPosts posts={edges} images={s3images} />
+            <BlogPosts posts={edges} images={s3Images} />
         </SiteLayout>
     )
 }
@@ -65,7 +65,7 @@ export const pageQuery = graphql`
                         date
                         author
                         tags
-                        s3image
+                        s3Image
                     }
                 }
             }
