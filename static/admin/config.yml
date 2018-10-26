@@ -6,8 +6,8 @@ backend:
 
 publish_mode: editorial_workflow
 
-# media_folder: 'static/img/uploads'
-# public_folder: '/img/uploads'
+media_folder: 'static/img/uploads'
+public_folder: '/img/uploads'
 
 display_url: https://gamepad.news
 
