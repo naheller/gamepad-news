@@ -55,7 +55,7 @@ exports.createPages = ({ graphql, actions }) => {
                     const slug = _.get(post, 'node.fields.slug', '')
                     console.log('slug', slug)
                     const s3Image = _.get(post, 'node.frontmatter.s3Image', '')
-                    const slugPartial = _.get(post, 'node.frontmatter.slugPartial', '')
+                    // const slugPartial = _.get(post, 'node.frontmatter.slugPartial', '')
 
                     const postTags = _.get(post, 'node.frontmatter.tags', [])
 
@@ -65,10 +65,10 @@ exports.createPages = ({ graphql, actions }) => {
 
                     const previous = index === posts.length - 1 ? null : posts[index + 1].node
                     const next = index === 0 ? null : posts[index - 1].node
-                    const slugWithDate = `${formattedDate}-${slugPartial}`
+                    // const slugWithDate = `${formattedDate}-${slugPartial}`
 
                     createPage({
-                        path: slugWithDate,
+                        path: slug,
                         component: postTemplate,
                         context: {
                             slug,
@@ -122,7 +122,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             node,
             name: `slug`,
             // value: `${_.kebabCase(slugPartial)}-${truncId}`
-            value: relativeFilePath
+            value: `${relativeFilePath}-${truncId}`
         })
 
         const s3Image = _.get(node, 'frontmatter.s3Image', '')

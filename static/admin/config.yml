@@ -14,8 +14,10 @@ display_url: https://gamepad.news
 collections:
   - name: 'blog'
     label: 'Blog'
+    title: 'Blog'
     label_singular: 'Post'
     folder: 'src/pages/posts'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
