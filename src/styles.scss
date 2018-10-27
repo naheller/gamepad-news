@@ -232,7 +232,7 @@ a {
     }
 
     .main {
-        max-width: 700px;
+        max-width: 800px;
         margin: 1.5rem;
     }
 }
@@ -269,6 +269,10 @@ a {
         margin-top: 0;
         line-height: 2.75rem;
         font-size: 2rem;
+    }
+
+    .subtitle {
+        font-style: italic;
     }
 
     .date-author-share {
@@ -556,6 +560,7 @@ a {
 
             &:hover, &:focus {
                 border-color: $green-mid;
+                background-image: none;
                 background-color: $button-bg-grey;
                 box-shadow: 0px 10px 50px -15px $divider-grey;
                 cursor: pointer;

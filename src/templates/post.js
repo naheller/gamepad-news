@@ -16,7 +16,8 @@ const PostTemplate = props => {
     const s3ImageUrl = _.get(data, 's3Image.Url', '')
     const s3ImageSizes = _.get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
-    const { title, date, tags, description, author } = post.frontmatter
+    console.log('post', post)
+    const { title, subtitle, date, author, tags, description } = post.frontmatter
     // const { previous, next } = pageContext
     const { slug } = post.fields
 
@@ -36,6 +37,7 @@ const PostTemplate = props => {
     const renderArticle = () => (
         <div>
             <h1 className="headline">{title}</h1>
+            <p className="subtitle">{subtitle}</p>
             <div className="date-author-share">
                 <div className="date-author">
                     <h4 className="date">{formattedDate}</h4>
