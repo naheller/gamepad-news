@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
                                 }
                                 frontmatter {
                                     title
+                                    subtitle
                                     date
                                     author
                                     description
@@ -111,18 +112,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         //     'omission': ''
         // })
 
-        const relativeFilePath = createFilePath({
-            node,
-            getNode,
-            basePath: "posts/",
-            trailingSlash: false
-        })
+        // const relativeFilePath = createFilePath({
+        //     node,
+        //     getNode,
+        //     basePath: "posts/",
+        //     trailingSlash: false
+        // })
 
         createNodeField({
             node,
             name: `slug`,
             // value: `${_.kebabCase(slugPartial)}-${truncId}`
-            value: `${relativeFilePath}-${truncId}`
+            value: `${slugPartial}-${truncId}`
         })
 
         const s3Image = _.get(node, 'frontmatter.s3Image', '')

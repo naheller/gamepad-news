@@ -6,6 +6,7 @@ s3Image: dead-cells.jpg
 tags: ["switch", "e3", "pokemon", "xbox", "teesbst1", "test2", "tebgbs fgerst3", "test4", "tererger st5", "test6"]
 description: Maecenas dignissim dolor et mi scelerisque, in molestie purus faucibus. Ut a lacus dui. Quisque ornare, nisl in semper luctus, dui nulla lacinia neque, non porttitor massa ante a nunc.
 slugPartial: bethesda-new-ip-starfield
+subtitle: A Bethesda subtitle
 ---
 
 This is my first post on my new fake blog! How exciting!

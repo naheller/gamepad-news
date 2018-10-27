@@ -6,6 +6,7 @@ s3Image: destiny-2-forsaken.jpg
 tags: ["retro", "e3", "god of war", "pc", "steam", "mobile"]
 description: Duis eget augue semper nisi pharetra laoreet. Integer elementum suscipit nulla vitae eleifend. Duis a lectus et justo varius consectetur sed in lorem.
 slugPartial: steam-summer-sale-150-titles-first-day
+subtitle: A Steam subtitle
 ---
 
 Wow! I love blogging so much already.

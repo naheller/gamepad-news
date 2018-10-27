@@ -213,6 +213,7 @@ export const pageQuery = graphql`
             }
             frontmatter {
                 title
+                subtitle
                 date
                 author
                 description
