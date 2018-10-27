@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import gamepad from '../../static/svg/gamepad.svg'
 
 const Navbar = props => {
-    console.log('navbar props', props)
     return (
         <div className="navbar">
             <Link to='/'>

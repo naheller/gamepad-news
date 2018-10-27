@@ -54,7 +54,6 @@ exports.createPages = ({ graphql, actions }) => {
                     const formattedDate = moment(date).format('YYYY-MM-DD')
 
                     const slug = _.get(post, 'node.fields.slug', '')
-                    console.log('slug', slug)
                     const s3Image = _.get(post, 'node.frontmatter.s3Image', '')
                     // const slugPartial = _.get(post, 'node.frontmatter.slugPartial', '')
 
@@ -133,7 +132,5 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             name: `s3Image`,
             value: s3Image
         })
-
-        // console.log('NODE', node)
     }
 }

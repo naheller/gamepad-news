@@ -17,7 +17,7 @@ collections:
     title: 'Gamepad News'
     label_singular: 'Post'
     folder: 'src/pages/posts'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}-x'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }

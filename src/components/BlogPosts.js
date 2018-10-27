@@ -13,7 +13,6 @@ class BlogPosts extends PureComponent {
     }
 
     render() {
-        console.log('this.props', this.props)
         const posts = _.get(this.props, 'posts', [])
 
         return _.map(posts, post => {

@@ -7,7 +7,6 @@ import _ from 'lodash'
 const Sidebar = props => {
     const currentLocation = _.get(props, 'location.pathname', '')
     const pathNoSlash = _.replace(currentLocation, '/', '')
-    console.log('pathNoSlash', pathNoSlash)
 
     return (
         <StaticQuery 

@@ -5,6 +5,8 @@ author: Nathan Heller
 tags:
   - red alert 3
   - giant bomb
+  - pc
+  - retro
 s3Image: red-alert-3.jpg
 slugPartial: red-alert-3-giant-bomb-infinite
 description: A description for this article about Red Alert 3

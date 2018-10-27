@@ -16,7 +16,6 @@ const PostTemplate = props => {
     const s3ImageUrl = _.get(data, 's3Image.Url', '')
     const s3ImageSizes = _.get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
-    console.log('post', post)
     const { title, subtitle, date, author, tags, description } = post.frontmatter
     // const { previous, next } = pageContext
     const { slug } = post.fields
