@@ -189,11 +189,11 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={title} mail />
                     <ShareButton slug={slug} title={title} link />
                 </div>
-                <hr />
+                {/* <hr /> */}
                 {renderTags()}
                 {/* <hr /> */}
                 {/* {renderPrevNext()} */}
-                <hr />
+                {/* <hr /> */}
                 {renderBottomNav()}
                 {/* <hr /> */}
             </div>

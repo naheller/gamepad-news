@@ -439,10 +439,14 @@ a {
     }
 
     .tags {
-        margin: 0;
+        margin: 3rem 0;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
+        padding: 2rem 1rem;
+        border: 1px solid $divider-grey;
+        border-bottom-width: 2px;
+        border-radius: 4px;
 
         .header {
             color: $text-mid;

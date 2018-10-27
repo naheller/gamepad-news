@@ -25,7 +25,7 @@ collections:
       - { label: 'Date', name: 'date', widget: 'date' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Description (150 chars max)', name: 'description', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: [] }
       - { label: 'Image file', name: 's3Image', widget: 'string' }
       - { label: 'Slug (do not change)', name: 'slugPartial', widget: 'string' }
