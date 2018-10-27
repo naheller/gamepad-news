@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 // import moment from 'moment'
 import _ from 'lodash'
-// import Link from 'gatsby-link'
+import Link from 'gatsby-link'
 // import Img from 'gatsby-image'
 
 class BlogPosts extends PureComponent {
@@ -23,7 +23,7 @@ class BlogPosts extends PureComponent {
             // let formattedDate = moment(date).format('MMM D, YYYY – h:mm a')
 
             return (
-                <div>{title}</div>
+                <Link to={post.node.fields.slug}>{title}</Link>
             )
         })
     }
