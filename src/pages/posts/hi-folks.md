@@ -1,12 +1,13 @@
 ---
-title: Battlerite DLC adds 3 maps and a battle royale mode, available during E3 launch event
+headline: Battlerite DLC adds 3 maps and a battle royale mode, available during E3 launch event
 date: 2018-10-24T22:40:32.169Z
 author: Dan Ryckert
 s3Image: dead-cells.jpg
 tags: ["playstation", "e3", "god of war", "retro", "pc", "dragon age ultimate edition", "switch", "bethesda", "mobile", "the crew 2", "xbox"]
-description: Suspendisse eget libero et augue ornare mattis vitae sed magna. Donec dolor dui, consectetur a malesuada sed, consequat a ligula. Sed ut tempus neque. Donec dictum nibh sem, et dignissim arcu iaculis eget. Aenean nibh sem, hendrerit eu libero a, semper euismod magna.
+metaDescription: Suspendisse eget libero et augue ornare mattis vitae sed magna. Donec dolor dui, consectetur a malesuada sed, consequat a ligula. Sed ut tempus neque. Donec dictum nibh sem, et dignissim arcu iaculis eget. Aenean nibh sem, hendrerit eu libero a, semper euismod magna.
 slugPartial: battlerite-dlc-adds-maps-battle-royale
 subtitle: A Battlerite subtitle that is a bit longer than the others in order to test the UI
+metaTitle: Battlerite gets new mode and maps during E3
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

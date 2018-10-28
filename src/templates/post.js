@@ -16,7 +16,7 @@ const PostTemplate = props => {
     const s3ImageUrl = _.get(data, 's3Image.Url', '')
     const s3ImageSizes = _.get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
-    const { title, subtitle, date, author, tags, description } = post.frontmatter
+    const { headline, subtitle, date, author, tags, metaTitle, metaDescription } = post.frontmatter
     // const { previous, next } = pageContext
     const { slug } = post.fields
 
@@ -35,17 +35,17 @@ const PostTemplate = props => {
 
     const renderArticle = () => (
         <div>
-            <h1 className="headline">{title}</h1>
-            <p className="subtitle">{subtitle}</p>
+            <h1 className="headline">{headline}</h1>
+            {subtitle !== '' && <p className="subtitle">{subtitle}</p>}
             <div className="date-author-share">
                 <div className="date-author">
                     <h4 className="date">{formattedDate}</h4>
                     <p className="author">{`by ${author}`}</p>
                 </div>
                 <div className="share-button-group top">
-                    <ShareButton slug={slug} title={title} facebook />
-                    <ShareButton slug={slug} title={title} twitter />
-                    <ShareButton slug={slug} title={title} reddit />
+                    <ShareButton slug={slug} title={metaTitle} facebook />
+                    <ShareButton slug={slug} title={metaTitle} twitter />
+                    <ShareButton slug={slug} title={metaTitle} reddit />
                 </div>
             </div>
             <Img sizes={s3ImageSizes} />
@@ -152,16 +152,16 @@ const PostTemplate = props => {
 
     const addHelmet = () => (
         <Helmet>
-            <title>{title}</title>
-            <meta name="title" content={title} />
-            <meta name="description" content={description} /> 
+            <title>{metaTitle}</title>
+            <meta name="title" content={metaTitle} />
+            <meta name="description" content={metaDescription} /> 
             <meta name="keywords" content={_.join(tags, ',')} />
             <meta name="robots" content="index,follow" />
 
             <meta property="og:url" content={`https://gamepad.news/${slug}`} />
             <meta property="og:type" content="article" />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
+            <meta property="og:title" content={metaTitle} />
+            <meta property="og:description" content={metaDescription} />
             <meta 
                 property="og:image" 
                 content={s3ImageUrl} 
@@ -169,8 +169,8 @@ const PostTemplate = props => {
 
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:creator" content="gamepad_news" />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
+            <meta name="twitter:title" content={metaTitle} />
+            <meta name="twitter:description" content={metaDescription} />
             <meta 
                 name="twitter:image" 
                 content={s3ImageUrl}
@@ -184,11 +184,11 @@ const PostTemplate = props => {
             <div className="blog-post">
                 {renderArticle()}
                 <div className="share-button-group bottom">
-                    <ShareButton slug={slug} title={title} facebook />
-                    <ShareButton slug={slug} title={title} twitter />
-                    <ShareButton slug={slug} title={title} reddit />
-                    <ShareButton slug={slug} title={title} mail />
-                    <ShareButton slug={slug} title={title} link />
+                    <ShareButton slug={slug} title={metaTitle} facebook />
+                    <ShareButton slug={slug} title={metaTitle} twitter />
+                    <ShareButton slug={slug} title={metaTitle} reddit />
+                    <ShareButton slug={slug} title={metaTitle} mail />
+                    <ShareButton slug={slug} title={metaTitle} link />
                 </div>
                 {/* <hr /> */}
                 {renderTags()}
@@ -213,11 +213,12 @@ export const pageQuery = graphql`
                 slug
             }
             frontmatter {
-                title
+                headline
                 subtitle
                 date
                 author
-                description
+                metaTitle
+                metaDescription
                 tags
             }
         }

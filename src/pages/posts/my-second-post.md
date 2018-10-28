@@ -1,12 +1,13 @@
 ---
-title: Steam Summer Sale coming for our wallets with 150 titles on first day
+headline: Steam Summer Sale coming for our wallets with 150 titles on first day
 date: 2018-10-22T18:46:37.121Z
 author: Drew Scanlon
 s3Image: destiny-2-forsaken.jpg
 tags: ["retro", "e3", "god of war", "pc", "steam", "mobile"]
-description: Duis eget augue semper nisi pharetra laoreet. Integer elementum suscipit nulla vitae eleifend. Duis a lectus et justo varius consectetur sed in lorem.
+metaDescription: Duis eget augue semper nisi pharetra laoreet. Integer elementum suscipit nulla vitae eleifend. Duis a lectus et justo varius consectetur sed in lorem.
 slugPartial: steam-summer-sale-150-titles-first-day
 subtitle: A Steam subtitle
+metaTitle: Steam summer sale offering 150 title on first day
 ---
 
 Wow! I love blogging so much already.

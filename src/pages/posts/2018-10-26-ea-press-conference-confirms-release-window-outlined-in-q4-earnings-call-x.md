@@ -1,9 +1,9 @@
 ---
-title: EA press conference confirms release window outlined in Q4 earnings call
+headline: EA press conference confirms release window outlined in Q4 earnings call
 subtitle: The mega-publisher is building hype ahead of Gamescom
 date: 2018-10-27T04:45:45.592Z
 author: Nathan Heller
-description: >-
+metaDescription: >-
   This is the meta description that will be used for SEO. The quick brown fox
   jumped.
 tags:
@@ -15,6 +15,7 @@ tags:
   - star wars
 s3Image: star-wars-battlefront-2.jpg
 slugPartial: ea-star-wars-battlefront-gamescom
+metaTitle: EA's latest earnings call confirms Q4 release window
 ---
 # H1 header font
 

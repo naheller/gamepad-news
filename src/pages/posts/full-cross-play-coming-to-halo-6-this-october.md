@@ -1,5 +1,5 @@
 ---
-title: Full cross-play coming to Halo 6 this October
+headline: Full cross-play coming to Halo 6 this October
 date: 2018-10-21T15:53:53.888Z
 author: Nathan Heller
 tags:
@@ -10,9 +10,10 @@ tags:
   - bungie
 image: ./halo.jpg
 s3Image: destiny-2-forsaken.jpg
-description: Duis eget augue semper nisi pharetra laoreet. Integer elementum suscipit nulla vitae eleifend. Duis a lectus et justo varius consectetur sed in lorem.
+metaDescription: Duis eget augue semper nisi pharetra laoreet. Integer elementum suscipit nulla vitae eleifend. Duis a lectus et justo varius consectetur sed in lorem.
 slugPartial: full-cross-play-halo-6
 subtitle: Halo 6 subtitle
+metaTitle: Halo 6 cross-play this October
 ---
 **Lorem ipsum** dolor sit amet, consectetur adipiscing elit. Nunc quis lorem vitae turpis ullamcorper maximus a sit amet libero. Proin elementum _urna nulla_. Aliquam vel aliquet lacus.
 

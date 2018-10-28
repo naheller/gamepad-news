@@ -23,11 +23,12 @@ exports.createPages = ({ graphql, actions }) => {
                                     slug
                                 }
                                 frontmatter {
-                                    title
+                                    headline
                                     subtitle
                                     date
                                     author
-                                    description
+                                    metaTitle
+                                    metaDescription
                                     tags
                                     s3Image
                                     slugPartial
@@ -104,7 +105,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         //     getNode
         // })
 
-        const truncId = _.get(node, 'id').substring(0, 8)
+        // const truncId = _.get(node, 'id').substring(0, 8)
+        const date = _.get(node, 'frontmatter.date', '')
+        const shortDate = moment(date).format('YYMMDD')
         const slugPartial = _.get(node, 'frontmatter.slugPartial', '')
         // const truncTitle = _.truncate(_.get(node, 'frontmatter.title', ''), {
         //     'length': 40,
@@ -122,7 +125,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             node,
             name: `slug`,
             // value: `${_.kebabCase(slugPartial)}-${truncId}`
-            value: `${slugPartial}-${truncId}`
+            value: `${slugPartial}-${shortDate}`
         })
 
         const s3Image = _.get(node, 'frontmatter.s3Image', '')
