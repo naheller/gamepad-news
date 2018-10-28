@@ -22,7 +22,7 @@ collections:
     fields:
       - { label: 'Headline', name: 'headline', widget: 'string' }
       - { label: 'Subtitle (optional)', name: 'subtitle', widget: 'string', default: '', required: false }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Date', name: 'date', widget: 'date' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Meta Title (60 chars max)', name: 'metaTitle', widget: 'string' }
