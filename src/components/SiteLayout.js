@@ -47,15 +47,17 @@ const SiteLayout = props => {
 
     return (
         <div className="site-wrapper">
-            {addHelmet()}
-            <Navbar />
-            <div className="sidebar-main">
-                <div className="main">{children}</div>
-                {/* <div className="divider" /> */}
-                {/* <Sidebar location={location} /> */}
+            <div className="site-content">
+                {addHelmet()}
+                <Navbar />
+                <div className="sidebar-main">
+                    <div className="main">{children}</div>
+                    {/* <div className="divider" /> */}
+                    {/* <Sidebar location={location} /> */}
+                </div>
+                
+                <Footer />
             </div>
-            
-            <Footer />
         </div>
     )
 }

@@ -36,12 +36,22 @@ const PostTemplate = props => {
     const renderArticle = () => (
         <div>
             <h1 className="headline">{title}</h1>
-            {subtitle !== '' && <p className="subtitle">{subtitle}</p>}
+            {subtitle !== '' && (
+                <div className="subtitle">
+                    <span className="icon">
+                        <i className="fas fa-caret-right" />
+                    </span>
+                    <p className="text">{subtitle}</p>
+                </div>
+            )}
             <hr style={{ margin: '2rem 0' }} />
             <div className="date-author-share">
                 <div className="date-author">
                     <h4 className="date">{formattedDate}</h4>
-                    <p className="author">{`by ${author}`}</p>
+                    <p className="author">
+                        <span>{`by `}</span>
+                        <a href="#">{author}</a>
+                    </p>
                 </div>
                 <div className="share-button-group top">
                     <ShareButton slug={slug} title={metaTitle} facebook />
