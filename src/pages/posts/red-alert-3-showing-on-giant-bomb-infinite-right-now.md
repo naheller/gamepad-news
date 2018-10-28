@@ -1,5 +1,5 @@
 ---
-headline: Red Alert 3 showing on Giant Bomb Infinite right now
+title: Red Alert 3 showing on Giant Bomb Infinite right now
 date: 2018-10-26T22:20:47.278Z
 author: Nathan Heller
 tags:

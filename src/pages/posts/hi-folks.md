@@ -1,5 +1,5 @@
 ---
-headline: Battlerite DLC adds 3 maps and a battle royale mode, available during E3 launch event
+title: Battlerite DLC adds 3 maps and a battle royale mode, available during E3 launch event
 date: 2018-10-24T22:40:32.169Z
 author: Dan Ryckert
 s3Image: dead-cells.jpg

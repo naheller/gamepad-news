@@ -16,7 +16,7 @@ const PostTemplate = props => {
     const s3ImageUrl = _.get(data, 's3Image.Url', '')
     const s3ImageSizes = _.get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
-    const { headline, subtitle, date, author, tags, metaTitle, metaDescription } = post.frontmatter
+    const { title, subtitle, date, author, tags, metaTitle, metaDescription } = post.frontmatter
     // const { previous, next } = pageContext
     const { slug } = post.fields
 
@@ -35,7 +35,7 @@ const PostTemplate = props => {
 
     const renderArticle = () => (
         <div>
-            <h1 className="headline">{headline}</h1>
+            <h1 className="headline">{title}</h1>
             {subtitle !== '' && <p className="subtitle">{subtitle}</p>}
             <div className="date-author-share">
                 <div className="date-author">
@@ -213,7 +213,7 @@ export const pageQuery = graphql`
                 slug
             }
             frontmatter {
-                headline
+                title
                 subtitle
                 date
                 author

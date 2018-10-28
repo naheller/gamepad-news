@@ -1,5 +1,5 @@
 ---
-headline: Steam Summer Sale coming for our wallets with 150 titles on first day
+title: Steam Summer Sale coming for our wallets with 150 titles on first day
 date: 2018-10-22T18:46:37.121Z
 author: Drew Scanlon
 s3Image: destiny-2-forsaken.jpg

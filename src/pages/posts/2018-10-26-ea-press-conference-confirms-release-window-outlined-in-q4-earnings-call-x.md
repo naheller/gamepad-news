@@ -1,5 +1,5 @@
 ---
-headline: EA press conference confirms release window outlined in Q4 earnings call
+title: EA press conference confirms release window outlined in Q4 earnings call
 subtitle: The mega-publisher is building hype ahead of Gamescom
 date: 2018-10-27T04:45:45.592Z
 author: Nathan Heller

@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
                                     slug
                                 }
                                 frontmatter {
-                                    headline
+                                    title
                                     subtitle
                                     date
                                     author

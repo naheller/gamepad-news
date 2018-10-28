@@ -10,7 +10,7 @@ class ShareButton extends PureComponent {
         }
 
         this.slug = props.slug
-        this.title = props.headline
+        this.title = props.title
     }
 
     componentDidUpdate() {

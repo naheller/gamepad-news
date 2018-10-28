@@ -25,7 +25,7 @@ const Sidebar = props => {
                                 }
                                 frontmatter {
                                     date
-                                    headline
+                                    title
                                     author
                                 }
                             }
@@ -66,7 +66,7 @@ const Sidebar = props => {
                             </div>
                             <div >
                                 {_.map(posts, post => {
-                                    const title = _.get(post, 'node.frontmatter.headline', '')
+                                    const title = _.get(post, 'node.frontmatter.title', '')
                                     const slug = _.get(post, 'node.fields.slug', '')
                                     
                                     let date = _.get(post, 'node.frontmatter.date', '')
