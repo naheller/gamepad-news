@@ -37,6 +37,7 @@ const PostTemplate = props => {
         <div>
             <h1 className="headline">{title}</h1>
             {subtitle !== '' && <p className="subtitle">{subtitle}</p>}
+            <hr style={{ margin: '2rem 0' }} />
             <div className="date-author-share">
                 <div className="date-author">
                     <h4 className="date">{formattedDate}</h4>
@@ -190,9 +191,9 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={metaTitle} mail />
                     <ShareButton slug={slug} title={metaTitle} link />
                 </div>
-                {/* <hr /> */}
+                <hr />
                 {renderTags()}
-                {/* <hr /> */}
+                <hr />
                 {/* {renderPrevNext()} */}
                 {/* <hr /> */}
                 {renderBottomNav()}

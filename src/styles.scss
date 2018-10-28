@@ -1,6 +1,9 @@
-$green-dark: #34C174;
-$green-mid: #51C987;
-$green-light: #8BDBAF;
+$mint-green: #4cb69f;
+$pastel-purple: #877bb6;
+
+$smoke: #f1f1f1;
+$light-smoke: #f5f5f5;
+$lighter-smoke: #fafafa;
 
 $text-dark: #222;
 $text-mid: #444;
@@ -14,7 +17,7 @@ $nav-shadow: #eee;
 $blockquote-text: #888;
 
 * {
-    background-color: #f5f5f5;
+    background-color: $light-smoke;
 }
 
 a {
@@ -35,7 +38,7 @@ a {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 2px solid $green-light;
+    border-bottom: 2px solid $mint-green;
     // box-shadow: 0px 15px 20px -15px $nav-shadow; 
 
     @media (max-width: 1024px) {
@@ -57,7 +60,7 @@ a {
             outline: none;
 
             h6 {
-                color: $green-mid;
+                color: $mint-green;
                 // box-shadow: 0 2px 0 0 $green-mid;
             }
         }
@@ -133,7 +136,7 @@ a {
                 -o-transition: border-color 0.25s ease-out;
 
                 &:hover, &:focus, &:active {
-                    border-color: $green-mid;
+                    border-color: $mint-green;
                 }
 
                 @media (max-width: 1024px) {
@@ -214,7 +217,7 @@ a {
                     margin: 0.75rem;
 
                     &.green {
-                        color: $green-mid;
+                        color: $mint-green;
                     }
                 }
             }
@@ -246,11 +249,11 @@ a {
         display: none;
     }
 
-    @media (max-width: 1024px) {
-        hr:last-child {
-            display: flex;
-        }
-    }
+    // @media (max-width: 1024px) {
+    //     hr:last-child {
+    //         display: flex;
+    //     }
+    // }
 
     h1, h2, h3 {
         line-height: 2rem;
@@ -261,7 +264,7 @@ a {
     }
 
     hr {
-        margin: 3rem 0;
+        margin: 2.5rem 0;
         background-color: $divider-grey;
     }
 
@@ -269,11 +272,18 @@ a {
         margin: 0 0 1rem 0;
         line-height: 2.75rem;
         font-size: 2rem;
+
+        @media (max-width: 375px) {
+            font-size: 1.75rem;
+        }
     }
 
     .subtitle {
         font-style: italic;
-        color: $text-light;
+        font-size: 1.1rem;
+        color: $mint-green;
+        margin: 0;
+        letter-spacing: 0.25px;
     }
 
     .date-author-share {
@@ -309,10 +319,10 @@ a {
 
         a {
             color: $text-mid;
-            box-shadow: 0 2px 0 0 $green-mid;
+            box-shadow: 0 2px 0 0 $mint-green !important;
 
             &:hover {
-                color: $green-mid;
+                color: $mint-green;
             }
         }
 
@@ -328,13 +338,13 @@ a {
             letter-spacing: 0.25px;
             border-bottom: 1px solid $divider-grey;
             // border-bottom-width: 2px;
-            border-left: 6px solid $green-light;
+            border-left: 6px solid $mint-green;
             border-radius: 4px;
-            background-color: $button-bg-grey;
+            background-color: $smoke;
     
             p {
                 color: $blockquote-text;
-                background-color: $button-bg-grey;
+                background-color: $smoke;
             }
         }
     }
@@ -351,6 +361,10 @@ a {
 
         .gatsby-image-wrapper {
             border-radius: 4px;
+
+            @media (max-width: 375px) {
+                border-radius: 0;
+            }
         }
 
 
@@ -363,7 +377,7 @@ a {
 
         &.top {
             @media (max-width: 375px) {
-                padding-top: 0.5rem;
+                padding-top: 1rem;
             }
 
             // .share-button {
@@ -378,7 +392,7 @@ a {
 
         &.bottom {
             justify-content: center;
-            padding-top: 0.5rem;
+            padding: 1rem;;
 
             // .share-button {
             //     border-color: $divider-grey;
@@ -406,7 +420,8 @@ a {
             width: 2.5rem;
             display: flex;
             justify-content: center;
-            border-bottom: 2px solid $divider-grey;
+            border: 1px solid $divider-grey;
+            border-bottom-width: 2px;
             background-color: white;
             // border-bottom-width: 2px;
             // border-color: $divider-grey;
@@ -420,7 +435,7 @@ a {
             }
 
             &:hover, &:focus {
-                border-color: $green-mid;
+                border-color: $mint-green;
                 background-color: $button-bg-grey;
                 box-shadow: 0px 10px 50px -10px $divider-grey; 
                 outline: none;
@@ -435,7 +450,7 @@ a {
             }
 
             .icon {
-                color: $green-mid;
+                color: $mint-green;
             }
         }
     }
@@ -445,14 +460,14 @@ a {
     }
 
     .tags {
-        margin: 3rem auto;
+        margin: 0 auto;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        padding: 2rem 1.5rem;
-        border: 1px solid $divider-grey;
-        border-bottom-width: 2px;
-        border-radius: 4px;
+        padding: 1rem;
+        // border: 1px solid $divider-grey;
+        // border-bottom-width: 2px;
+        // border-radius: 4px;
         width: max-content;
         max-width: 800px;
 
@@ -473,7 +488,9 @@ a {
             .button-link {
                 padding: 0.5rem 1rem;
                 margin: 0.25rem;
-                border-bottom: 2px solid $divider-grey;
+                // border-bottom: 2px solid $divider-grey;
+                border: 1px solid $divider-grey;
+                border-bottom-width: 2px;
                 background-color: white;
                 // border-bottom-width: 2px;
                 border-radius: 4px;
@@ -487,13 +504,13 @@ a {
                 }
 
                 &:hover, &:focus {
-                    border-color: $green-mid;
+                    border-color: $mint-green;
                     background-color: $button-bg-grey;
                     box-shadow: 0px 10px 50px -15px $divider-grey;
                     outline: none;
 
                     .text, .icon, i {
-                        color: $green-dark;
+                        color: $mint-green;
                         background-color: $button-bg-grey;
                     }
                 }
@@ -550,6 +567,7 @@ a {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
+        padding: 1rem;
 
         .button {
             padding: 0.5rem 1rem;
@@ -567,7 +585,7 @@ a {
             }
 
             &:hover, &:focus {
-                border-color: $green-mid;
+                border-color: $mint-green;
                 background-image: none;
                 background-color: $button-bg-grey;
                 box-shadow: 0px 10px 50px -15px $divider-grey;
@@ -576,7 +594,7 @@ a {
 
                 .text, .icon, i {
                     display: inline;
-                    color: $green-dark;
+                    color: $mint-green;
                     background-color: $button-bg-grey;
                     margin: 0;
                 }
@@ -596,7 +614,7 @@ a {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid $green-light;
+    border-top: 2px solid $mint-green;
     // box-shadow: 0px -15px 20px -15px $nav-shadow; 
 
     // @media (max-width: 1024px) {
