@@ -7,7 +7,13 @@ module.exports = {
   },
   pathPrefix: '/',
   plugins: [
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-sass',
+    {
+        resolve: 'gatsby-plugin-favicon',
+        options: {
+            logo: './static/img/favicon.png'
+        }
+    },
     {
         resolve: `gatsby-source-filesystem`,
         options: {

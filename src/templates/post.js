@@ -7,6 +7,7 @@ import moment from 'moment'
 
 import SiteLayout from '../components/SiteLayout'
 import ShareButton from '../components/ShareButton'
+import '../../static/styles/fontello/css/fontello.css'
 
 const PostTemplate = props => {
     const { data, location, /*pageContext*/ } = props
@@ -36,7 +37,7 @@ const PostTemplate = props => {
             {subtitle !== '' && (
                 <div className="subtitle">
                     <span className="icon">
-                        <i className="fas fa-caret-right" />
+                        <i className="icon-right-dir" />
                     </span>
                     <p className="text">{subtitle}</p>
                 </div>
@@ -55,7 +56,7 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={metaTitle} reddit />
                 </div>
             </div>
-            <img src={`${image}-/format/auto/-/progressive/yes/`} />
+            <img src={`${image}-/format/auto/-/progressive/yes/`} alt="Featured image" />
             
             <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
@@ -139,7 +140,7 @@ const PostTemplate = props => {
                 })}
             >
                 <span className="icon">
-                    <i className="fas fa-chevron-up" />
+                    <i className="icon-up-open" />
                 </span>
                 {`\xa0\xa0\xa0`}
                 <h6 className="text">
@@ -149,7 +150,7 @@ const PostTemplate = props => {
             <div className="button">
                 <Link to="/">
                     <span className="icon">
-                        <i className="fas fa-home" />
+                        <i className="icon-home" />
                     </span>
                     {`\xa0\xa0\xa0`}
                     <h6 className="text">Home</h6>

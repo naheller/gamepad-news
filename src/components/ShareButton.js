@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import _ from 'lodash'
+import '../../static/styles/fontello/css/fontello.css'
 
 class ShareButton extends PureComponent {
     constructor(props) {
@@ -37,21 +38,6 @@ class ShareButton extends PureComponent {
         })
     };
 
-    showFb = () => (
-        <div
-            key="fb-share-button"
-            className="share-button"
-            aria-label="share on facebook"
-            onClick={() => window.open(
-                `https://www.facebook.com/sharer.php?u=https://gamepad.news/${this.slug}`, '_blank', 'top=250,left=250,width=555,height=326'
-            )}
-        >
-            <span className="icon">
-                <i className="fab fa-facebook-f" />
-            </span>
-        </div>
-    )
-
     showFacebook = () => (
         <div
             key="fb-share-button"
@@ -62,7 +48,7 @@ class ShareButton extends PureComponent {
             )}
         >
             <span className="icon">
-                <i className="fab fa-facebook-f" />
+                <i className="icon-facebook" />
             </span>
         </div>
     )
@@ -77,7 +63,7 @@ class ShareButton extends PureComponent {
             )}
         >
             <span className="icon">
-                <i className="fab fa-twitter" />
+                <i className="icon-twitter" />
             </span>
         </div>
     )
@@ -92,7 +78,7 @@ class ShareButton extends PureComponent {
             )}
         >
             <span className="icon">
-                <i className="fab fa-reddit-alien" />
+                <i className="icon-reddit-alien" />
             </span>
         </div>
     )
@@ -107,7 +93,7 @@ class ShareButton extends PureComponent {
             )}
         >
             <span className="icon">
-                <i className="far fa-envelope" />
+                <i className="icon-mail" />
             </span>
         </div>
     )
@@ -121,7 +107,7 @@ class ShareButton extends PureComponent {
             onClick={() => this.copyToClipboard(`https://gamepad.news/${this.slug}`)}
         >
             <span className="icon">
-                <i className="fas fa-link" />
+                <i className="icon-link-1" />
             </span>
         </div>
     )
