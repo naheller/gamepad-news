@@ -229,15 +229,15 @@ a {
         }
     }
 
-    .divider {
-        width: 1px;
-        min-height: 100%;
-        background: $divider-grey;
+    // .divider {
+    //     width: 1px;
+    //     min-height: 100%;
+    //     background: $divider-grey;
 
-        @media (max-width: 1024px) {
-            display: none;
-        }
-    }
+    //     @media (max-width: 1024px) {
+    //         display: none;
+    //     }
+    // }
 
     .main {
         max-width: 800px;
@@ -250,9 +250,9 @@ a {
     flex-flow: column nowrap;
     color: $text-mid;
 
-    hr:last-child {
-        display: none;
-    }
+    // hr:last-child {
+    //     display: none;
+    // }
 
     // @media (max-width: 1024px) {
     //     hr:last-child {
@@ -283,19 +283,28 @@ a {
         }
     }
 
-    .subtitle {
-        display: flex;
-        flex-flow: row nowrap;
-        color: $mint-green;
+    .subtitle-and-divider {
+        .subtitle {
+            display: flex;
+            flex-flow: row nowrap;
 
-        .icon {
-            margin: 0 0.6rem 0 0;
+            .icon {
+                margin: 0 0.6rem 0 0;
+                color: $mint-green;
+            }
+
+            .text {
+                font-style: italic;
+                margin: 0;
+                letter-spacing: 0.25px;
+                color: $mint-green;
+                line-height: 1.75rem;
+            }
         }
 
-        .text {
-            font-style: italic;
-            margin: 0;
-            letter-spacing: 0.25px;
+        .divider {
+            width: 100%;
+            margin: 2rem 0 0 0;
         }
     }
 
@@ -304,6 +313,7 @@ a {
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
+        margin: 2rem 0 0 0;
 
         @media (max-width: 375px) {
             flex-direction: column;
