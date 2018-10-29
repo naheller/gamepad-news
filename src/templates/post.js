@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 import _ from 'lodash'
 import moment from 'moment'
 
@@ -10,13 +10,10 @@ import ShareButton from '../components/ShareButton'
 
 const PostTemplate = props => {
     const { data, location, /*pageContext*/ } = props
-    // const siteTitle = _.get(data, 'site.siteMetadata.title', 'Gamepad News')
-
+    const siteTitle = _.get(data, 'site.siteMetadata.title', 'Gamepad News')
     const post = _.get(data, 'markdownRemark', {})
-    const s3ImageUrl = _.get(data, 's3Image.Url', '')
-    const s3ImageSizes = _.get(data, 's3Image.localFile.childImageSharp.sizes', {})
 
-    const { title, subtitle, date, author, tags, metaTitle, metaDescription } = post.frontmatter
+    const { title, subtitle, date, author, image, tags, metaTitle, metaDescription } = post.frontmatter
     // const { previous, next } = pageContext
     const { slug } = post.fields
 
@@ -58,7 +55,8 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={metaTitle} reddit />
                 </div>
             </div>
-            <Img sizes={s3ImageSizes} />
+            <img src={`${image}-/format/auto/-/progressive/yes/`} />
+            
             <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
     )
@@ -162,8 +160,8 @@ const PostTemplate = props => {
 
     const addHelmet = () => (
         <Helmet>
-            <title>{metaTitle}</title>
-            <meta name="title" content={metaTitle} />
+            <title>{`${metaTitle} | ${siteTitle}`}</title>
+            <meta name="title" content={`${metaTitle} | ${siteTitle}`} />
             <meta name="description" content={metaDescription} /> 
             <meta name="keywords" content={_.join(tags, ',')} />
             <meta name="robots" content="index,follow" />
@@ -174,7 +172,7 @@ const PostTemplate = props => {
             <meta property="og:description" content={metaDescription} />
             <meta 
                 property="og:image" 
-                content={s3ImageUrl} 
+                content={`${image}-/format/auto/`} 
             />
 
             <meta name="twitter:card" content="summary_large_image" />
@@ -183,7 +181,7 @@ const PostTemplate = props => {
             <meta name="twitter:description" content={metaDescription} />
             <meta 
                 name="twitter:image" 
-                content={s3ImageUrl}
+                content={`${image}-/format/auto/`}
             />
         </Helmet>
     )
@@ -215,7 +213,7 @@ const PostTemplate = props => {
 export default PostTemplate
 
 export const pageQuery = graphql`
-    query BlogPostBySlug($slug: String!, $s3Image: String!) {
+    query BlogPostBySlug($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             id
             html
@@ -230,18 +228,7 @@ export const pageQuery = graphql`
                 metaTitle
                 metaDescription
                 tags
-            }
-        }
-        s3Image(Key: { eq: $s3Image }) {
-            id
-            Key
-            Url
-            localFile {
-                childImageSharp {
-                    sizes {
-                        ...GatsbyImageSharpSizes_withWebp
-                    }
-                }
+                image
             }
         }
     }

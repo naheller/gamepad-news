@@ -11,7 +11,6 @@ tags:
   - xbox
   - playstation
   - rockstar
-s3Image: dead-cells.jpg
 slugPartial: red-dead-redemption-2-review
 ---
 Aenean dui arcu, consectetur semper sagittis sed, pulvinar vel nibh. Curabitur tristique velit sed ligula eleifend, nec vulputate purus tempus. Nullam [ullamcorper](https://google.com), eros imperdiet tincidunt finibus, nisi magna pellentesque libero, sed dapibus lacus turpis eu diam. 

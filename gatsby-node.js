@@ -30,7 +30,6 @@ exports.createPages = ({ graphql, actions }) => {
                                     metaTitle
                                     metaDescription
                                     tags
-                                    s3Image
                                     slugPartial
                                 }
                             }
@@ -51,13 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
                 let tags = []
 
                 _.forEach(posts, (post, index) => {
-                    const date = _.get(post, 'node.frontmatter.date', '')
-                    const formattedDate = moment(date).format('YYYY-MM-DD')
-
                     const slug = _.get(post, 'node.fields.slug', '')
-                    const s3Image = _.get(post, 'node.frontmatter.s3Image', '')
-                    // const slugPartial = _.get(post, 'node.frontmatter.slugPartial', '')
-
                     const postTags = _.get(post, 'node.frontmatter.tags', [])
 
                     if (!_.isEmpty(postTags)) {
@@ -66,14 +59,12 @@ exports.createPages = ({ graphql, actions }) => {
 
                     const previous = index === posts.length - 1 ? null : posts[index + 1].node
                     const next = index === 0 ? null : posts[index - 1].node
-                    // const slugWithDate = `${formattedDate}-${slugPartial}`
 
                     createPage({
                         path: slug,
                         component: postTemplate,
                         context: {
                             slug,
-                            s3Image,
                             previous,
                             next,
                         },
@@ -100,40 +91,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
-        // const value = createFilePath({
-        //     node,
-        //     getNode
-        // })
-
-        // const truncId = _.get(node, 'id').substring(0, 8)
         const date = _.get(node, 'frontmatter.date', '')
         const shortDate = moment(date).format('YYMMDD')
         const slugPartial = _.get(node, 'frontmatter.slugPartial', '')
-        // const truncTitle = _.truncate(_.get(node, 'frontmatter.title', ''), {
-        //     'length': 40,
-        //     'omission': ''
-        // })
-
-        // const relativeFilePath = createFilePath({
-        //     node,
-        //     getNode,
-        //     basePath: "posts/",
-        //     trailingSlash: false
-        // })
 
         createNodeField({
             node,
             name: `slug`,
-            // value: `${_.kebabCase(slugPartial)}-${truncId}`
             value: `${slugPartial}-${shortDate}`
-        })
-
-        const s3Image = _.get(node, 'frontmatter.s3Image', '')
-
-        createNodeField({
-            node,
-            name: `s3Image`,
-            value: s3Image
         })
     }
 }

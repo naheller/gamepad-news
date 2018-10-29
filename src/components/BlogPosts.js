@@ -17,8 +17,7 @@ class BlogPosts extends PureComponent {
 
         return _.map(posts, post => {
             // const title = _.get(post, 'node.frontmatter.title', '')
-            const { title, /*date, image, s3Image, tags, description, author*/ } = post.node.frontmatter
-            // const sizes = _.get(this.props, 's3ImageSize', {})
+            const { title, /*date, image, tags, description, author*/ } = post.node.frontmatter
             // let formattedDate = moment(date).format('MMM D, YYYY – h:mm a')
 
             return (
