@@ -29,11 +29,11 @@ collections:
           label: 'Image',
           name: 'image',
           widget: 'image',
-          required: false,
-          options:
-            media_library:
-              config:
-                publicKey: 'dafe69442ae284f9a25b'
+          required: true,
+          # options:
+          #   media_library:
+          #     config:
+          #       publicKey: 'dafe69442ae284f9a25b'
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Meta Title (60 chars max)', name: 'metaTitle', widget: 'string' }

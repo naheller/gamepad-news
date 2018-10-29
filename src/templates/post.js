@@ -37,14 +37,11 @@ const PostTemplate = props => {
         <div>
             <h1 className="headline">{title}</h1>
             {subtitle !== '' && (
-                <div className="subtitle-and-divider">
-                    <div className="subtitle">
-                        <span className="icon">
-                            <i className="fas fa-caret-right" />
-                        </span>
-                        <h4 className="text">{subtitle}</h4>
-                    </div>
-                    <hr className="divider" />
+                <div className="subtitle">
+                    <span className="icon">
+                        <i className="fas fa-caret-right" />
+                    </span>
+                    <p className="text">{subtitle}</p>
                 </div>
             )}
             <div className="date-author-share">
