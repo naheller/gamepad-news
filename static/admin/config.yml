@@ -27,7 +27,7 @@ collections:
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Meta Title (60 chars max)', name: 'metaTitle', widget: 'string', pattern: [".{,12}", "Must have at most 12 characters"] }
-      - { label: 'Meta Description (150 chars max)', name: 'metaDescription', widget: 'string', pattern: ['.{0,150}', '150 chars max'] }
+      - { label: 'Meta Title (60 chars max)', name: 'metaTitle', widget: 'string', pattern: [".{,12}$", "Must have at most 12 characters"] }
+      - { label: 'Meta Description (150 chars max)', name: 'metaDescription', widget: 'string', pattern: ['.{,150}$', '150 chars max'] }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Slug (do not change)', name: 'slugPartial', widget: 'string' }
