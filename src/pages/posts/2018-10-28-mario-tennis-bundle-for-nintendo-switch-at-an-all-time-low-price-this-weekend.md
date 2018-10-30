@@ -4,7 +4,7 @@ subtitle: The classic series' fifth installment was well-received
 date: 2018-10-29T05:10:37.830Z
 author: Dan Ryckert
 image: >-
-  https://ucarecdn.com/25fe1e94-8843-4877-820a-16828d5b2437/-/preview/-/grayscale/
+  https://ucarecdn.com/25fe1e94-8843-4877-820a-16828d5b2437/
 metaTitle: Mario tennis meta title
 metaDescription: Mario tennis meta description
 tags:
