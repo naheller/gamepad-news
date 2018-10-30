@@ -32,19 +32,19 @@ class MobileMenu extends Component {
                         <Link to='/playstation' key="shortcut-playstation">
                             <h3>Playstation</h3>
                         </Link>
-                        <Link to='/xbox' key="shortcut-xbox">>
+                        <Link to='/xbox' key="shortcut-xbox">
                             <h3>Xbox</h3>
                         </Link>
-                        <Link to='/switch' key="shortcut-switch">>
+                        <Link to='/switch' key="shortcut-switch">
                             <h3>Switch</h3>
                         </Link>
-                        <Link to='/pc' key="shortcut-pc">>
+                        <Link to='/pc' key="shortcut-pc">
                             <h3>PC</h3>
                         </Link>
-                        <Link to='/mobile' key="shortcut-mobile">>
+                        <Link to='/mobile' key="shortcut-mobile">
                             <h3>Mobile</h3>
                         </Link>
-                        <Link to='/retro' key="shortcut-retro">>
+                        <Link to='/retro' key="shortcut-retro">
                             <h3>Retro</h3>
                         </Link>
                     </div>
