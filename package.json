@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote"
   },
   "dependencies": {
     "gatsby": "next",
@@ -29,7 +30,6 @@
     "moment": "^2.22.2",
     "node-sass": "^4.9.3",
     "react": "^16.4.2",
-    "react-burger-menu": "^2.5.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",

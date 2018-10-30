@@ -38,7 +38,7 @@ a {
 
 .navbar {
     display: flex;
-    padding: 1rem 0;
+    padding: 1rem 1.5rem;
     margin-bottom: 2rem;
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -48,25 +48,85 @@ a {
 
     @media (max-width: 1024px) {
         margin-bottom: 0;
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
     }
 
-    a {
-        display: flex;
-        align-content: center;
+    .gamepad-icon-link {
         height: 1.5rem;
-        line-height: 1.5rem;
+    }
 
-        h6 {
-            margin: auto;
-            color: $text-mid;
+    .links {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        @media (max-width: 1024px) {
+            display: none;
         }
 
-        &:hover, &:focus, &:active {
-            outline: none;
-
+        a {
             h6 {
-                color: $mint-green;
-                // box-shadow: 0 2px 0 0 $green-mid;
+                margin: auto;
+                color: $text-mid;
+            }
+
+            &:hover, &:focus, &:active {
+                outline: none;
+
+                h6 {
+                    color: $mint-green;
+                    // box-shadow: 0 2px 0 0 $green-mid;
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+        z-index: 2;
+
+        @media (max-width: 1024px) {
+            display: initial;
+        }
+
+        .white {
+            color: $light-smoke;
+            text-shadow: 2px 2px $text-dark;
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100vw;
+        height: 100vh;
+        background-color: $mint-green;
+        opacity: 0.9;
+
+        @media (max-width: 1024px) {
+            display: flex;
+            justify-content: center;
+        }
+
+        .links {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 0;
+            align-items: center;
+            justify-content: space-evenly;
+
+            h3 {
+                color: white;
+                text-shadow: 2px 2px $text-dark;
+                margin: 0;
             }
         }
     }
@@ -278,8 +338,8 @@ a {
         line-height: 2.75rem;
         font-size: 2rem;
 
-        @media (max-width: 375px) {
-            font-size: 1.75rem;
+        @media (max-width: 425px) {
+            font-size: 1.65rem;
             line-height: 2.5rem;
         }
     }
@@ -289,7 +349,7 @@ a {
         flex-flow: row nowrap;
 
         .icon {
-            margin: 0 0.6rem 0 0;
+            margin: 0 0.25rem 0 0;
             color: $mint-green;
         }
 
