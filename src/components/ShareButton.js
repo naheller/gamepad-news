@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import _ from 'lodash'
+
 import '../../static/styles/fontello/css/fontello.css'
 
-class ShareButton extends PureComponent {
+class ShareButton extends Component {
     constructor(props) {
         super(props)
         this.attachRef = target => this.setState({ target });
@@ -34,7 +35,7 @@ class ShareButton extends PureComponent {
         document.body.removeChild(textInput)
 
         this.setState({ 
-            showCopyLinkOverlay: !this.state.showCopyLinkOverlay 
+            showCopyLinkOverlay: true
         })
     };
 
@@ -98,19 +99,26 @@ class ShareButton extends PureComponent {
         </div>
     )
 
-    showCopyLink = () => (
-        <div 
-            key="copy-link-button"
-            className="share-button"
-            aria-label="copy page link"
-            ref={this.attachRef}
-            onClick={() => this.copyToClipboard(`https://gamepad.news/${this.slug}`)}
-        >
-            <span className="icon">
-                <i className="icon-link-1" />
-            </span>
-        </div>
-    )
+    showCopyLink = () => {
+        const opacity = this.state.showCopyLinkOverlay ? 'show' : ''
+
+        return (
+            <div 
+                key="copy-link-button"
+                className="share-button"
+                aria-label="copy page link"
+                ref={this.attachRef}
+                onClick={() => this.copyToClipboard(`https://gamepad.news/${this.slug}`)}
+            >
+                <span className="icon">
+                    <i className="icon-link-1" />
+                </span>
+                <h6 className={`link-tooltip ${opacity}`}>
+                    Link copied
+                </h6>
+            </div>
+        )
+    }
 
     render() {
         // const { showCopyLinkOverlay, target } = this.state;

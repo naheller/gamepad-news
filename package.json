@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote"
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "gatsby": "next",
