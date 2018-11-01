@@ -22,9 +22,9 @@ class BlogPosts extends PureComponent {
                 _.map(posts, post => {
                     // const title = _.get(post, 'node.frontmatter.title', '')
                     const { title, subtitle, date, image, tags, description, author } = post.node.frontmatter
-                    const resizedImage = `${image}-/format/auto/-/progressive/yes/-/scale_crop/200x200/center/`
+                    const resizedImage = `${image}-/format/auto/-/progressive/yes/-/scale_crop/300x200/center/`
                     
-                    let formattedDate = moment(date).format('MMM D, YYYY – h:mm a')
+                    let formattedDate = moment.utc(date).format('MMM D, YYYY – h:mm a')
                     const hourMin = moment(date).format('h:mm a')
                     const now = moment()
 
