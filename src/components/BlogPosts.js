@@ -21,8 +21,8 @@ class BlogPosts extends PureComponent {
             {
                 _.map(posts, post => {
                     // const title = _.get(post, 'node.frontmatter.title', '')
-                    const { title, subtitle, date, image, tags, description, author } = post.node.frontmatter
-                    const resizedImage = `${image}-/format/auto/-/progressive/yes/-/scale_crop/300x200/center/`
+                    const { title, subtitle, date, image, /*tags, description, author*/ } = post.node.frontmatter
+                    const resizedImage = `${image}-/scale_crop/300x200/center/-/format/auto/-/progressive/yes/`
                     
                     let formattedDate = moment.utc(date).format('MMM D, YYYY – h:mm a')
                     const hourMin = moment(date).format('h:mm a')
@@ -41,12 +41,14 @@ class BlogPosts extends PureComponent {
                         <Link to={post.node.fields.slug} className="post">
                             <img className="image" src={resizedImage} />
                             <div className="words">
-                                <h3 className="title">{title}</h3>
-                                <div className="subtitle">
-                                    <span className="icon">
-                                        <i className="icon-right-dir" />
-                                    </span>
-                                    <p className="text">{subtitle}</p>
+                                <div>
+                                    <h3 className="title">{title}</h3>
+                                    <div className="subtitle">
+                                        <span className="icon">
+                                            <i className="icon-right-dir" />
+                                        </span>
+                                        <p className="text">{subtitle}</p>
+                                    </div>
                                 </div>
                                 <h6 className="date">{formattedDate}</h6>
                             </div>

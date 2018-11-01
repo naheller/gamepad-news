@@ -58,10 +58,12 @@ export const pageQuery = graphql`
                         slug
                     }
                     frontmatter {
-                        title
                         date
+                        title
+                        subtitle
                         author
                         tags
+                        image
                     }
                 }
             }
