@@ -334,6 +334,7 @@ a {
     .tag-name {
         margin: 0 1rem 1rem 1rem;
         line-height: 1.85rem;
+        text-align: center;
 
         @media (max-width: 1024px) {
             margin: 1rem;
@@ -574,6 +575,7 @@ a {
         margin: 2rem 0;
         box-shadow: 0px 10px 50px -15px $divider-grey;
         border-radius: 4px;
+        width: 100%;
 
         // @media (max-width: 375px) {
         //     margin-left: -1.5rem;
