@@ -5,7 +5,7 @@ import gamepad from '../../static/svg/gamepad-green.svg'
 const Footer = props => {
     return (
         <div className="footer">
-            <Link to='/'>
+            <Link to='/' title="Gamepad News">
                 <img 
                     src={gamepad}
                     alt="Gamepad News"

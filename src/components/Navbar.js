@@ -6,7 +6,7 @@ import gamepad from '../../static/svg/gamepad.svg'
 const Navbar = props => {
     return (
         <div className="navbar">
-            <Link to='/' className="gamepad-icon-link" key="gamepad-icon">
+            <Link to='/' className="gamepad-icon-link" key="gamepad-icon" title="Gamepad News">
                 <img 
                     src={gamepad}
                     alt="Gamepad News"

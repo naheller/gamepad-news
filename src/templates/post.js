@@ -47,7 +47,7 @@ const PostTemplate = props => {
                     <h4 className="date">{formattedDate}</h4>
                     <p className="author">
                         <span>{`by `}</span>
-                        <a href="https://gamepad.news">{author}</a>
+                        <a href="https://gamepad.news" title={`Posts by ${author}`}>{author}</a>
                     </p>
                 </div>
                 <div className="share-button-group top">
@@ -71,6 +71,7 @@ const PostTemplate = props => {
                         key={tag}
                         to={`/${_.kebabCase(tag)}`} 
                         className="button-link" 
+                        title={tag}
                     >
                         <h6 className="text">{tag}</h6>
                     </Link>
@@ -147,7 +148,7 @@ const PostTemplate = props => {
                     Back to top
                 </h6>
             </div>
-            <Link to="/" className="button">
+            <Link to="/" className="button" title="Gamepad News">
                 <span className="icon">
                     <i className="icon-home" />
                 </span>

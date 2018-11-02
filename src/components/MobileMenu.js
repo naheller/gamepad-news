@@ -29,22 +29,22 @@ class MobileMenu extends PureComponent {
             this.state.open && (
                 <div className="mobile-menu" key="mobile-menu">
                     <div className="links" key="shortcut-links">
-                        <Link to='/playstation' key="shortcut-playstation">
+                        <Link to='/playstation' key="shortcut-playstation" title="shortcut-playstation">
                             <h3>Playstation</h3>
                         </Link>
-                        <Link to='/xbox' key="shortcut-xbox">
+                        <Link to='/xbox' key="shortcut-xbox" title="shortcut-xbox">
                             <h3>Xbox</h3>
                         </Link>
-                        <Link to='/switch' key="shortcut-switch">
+                        <Link to='/switch' key="shortcut-switch" title="shortcut-switch">
                             <h3>Switch</h3>
                         </Link>
-                        <Link to='/pc' key="shortcut-pc">
+                        <Link to='/pc' key="shortcut-pc" title="shortcut-pc">
                             <h3>PC</h3>
                         </Link>
-                        <Link to='/mobile' key="shortcut-mobile">
+                        <Link to='/mobile' key="shortcut-mobile" title="shortcut-mobile">
                             <h3>Mobile</h3>
                         </Link>
-                        <Link to='/retro' key="shortcut-retro">
+                        <Link to='/retro' key="shortcut-retro" title="shortcut-retro">
                             <h3>Retro</h3>
                         </Link>
                     </div>
