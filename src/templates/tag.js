@@ -30,7 +30,7 @@ const TagTemplate = props => {
                 <meta property="og:title" content={`${capTag} articles on ${siteTitle}`} />
                 <meta property="og:description" content={`${capTag} articles on ${siteTitle}`} />
             </Helmet>
-            <BlogPosts posts={edges} />
+            <BlogPosts posts={edges} tagName={tag} />
         </SiteLayout>
     )
 }

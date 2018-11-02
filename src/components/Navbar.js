@@ -13,7 +13,7 @@ const Navbar = props => {
                     style={{ width: '1.5rem', height: '1.5rem', margin: 0 }}
                 />
             </Link>
-            <div className="links">
+            {/* <div className="links">
                 <Link to='/playstation' key="nav-playstation">
                     <h6>Playstation</h6>
                 </Link>
@@ -32,8 +32,8 @@ const Navbar = props => {
                 <Link to='/retro' key="nav-retro">
                     <h6>Retro</h6>
                 </Link>
-            </div>
-            <MobileMenu />
+            </div> */}
+            {/* <MobileMenu /> */}
         </div>
     )
 }

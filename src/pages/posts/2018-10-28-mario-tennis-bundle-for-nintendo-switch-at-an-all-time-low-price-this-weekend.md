@@ -11,6 +11,7 @@ tags:
   - mario tennis
   - switch
   - nintendo
+  - xbox
 slugPartial: mario-tennis-switch-bundle-deal
 ---
 Integer elit nisl, tempus [sagittis tristique](https://google.com) eu, efficitur hendrerit erat. Integer in ante felis. 

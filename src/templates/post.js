@@ -147,15 +147,13 @@ const PostTemplate = props => {
                     Back to top
                 </h6>
             </div>
-            <div className="button">
-                <Link to="/">
-                    <span className="icon">
-                        <i className="icon-home" />
-                    </span>
-                    {`\xa0\xa0\xa0`}
-                    <h6 className="text">Home</h6>
-                </Link> 
-            </div>
+            <Link to="/" className="button">
+                <span className="icon">
+                    <i className="icon-home" />
+                </span>
+                {`\xa0\xa0\xa0`}
+                <h6 className="text">Home</h6>
+            </Link> 
         </div>
     )
 
