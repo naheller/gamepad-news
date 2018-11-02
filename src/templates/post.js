@@ -47,7 +47,7 @@ const PostTemplate = props => {
                     <h4 className="date">{formattedDate}</h4>
                     <p className="author">
                         <span>{`by `}</span>
-                        <a href="#">{author}</a>
+                        <a href="https://gamepad.news">{author}</a>
                     </p>
                 </div>
                 <div className="share-button-group top">
@@ -56,7 +56,7 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={metaTitle} reddit />
                 </div>
             </div>
-            <img src={`${image}-/format/auto/-/progressive/yes/`} alt="Featured image" />
+            <img src={`${image}-/format/auto/-/progressive/yes/`} alt={metaTitle} />
             
             <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
@@ -169,19 +169,14 @@ const PostTemplate = props => {
             <meta property="og:type" content="article" />
             <meta property="og:title" content={metaTitle} />
             <meta property="og:description" content={metaDescription} />
-            <meta 
-                property="og:image" 
-                content={`${image}-/format/auto/`} 
-            />
+            <meta property="og:image" content={image} />
 
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:creator" content="gamepad_news" />
+            <meta name="twitter:site" content="@gamepad_news" />
+            <meta name="twitter:creator" content="@gamepad_news" />
             <meta name="twitter:title" content={metaTitle} />
             <meta name="twitter:description" content={metaDescription} />
-            <meta 
-                name="twitter:image" 
-                content={`${image}-/format/auto/`}
-            />
+            <meta name="twitter:image" content={image} />
         </Helmet>
     )
 

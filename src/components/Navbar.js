@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import MobileMenu from './MobileMenu'
+// import MobileMenu from './MobileMenu'
 import gamepad from '../../static/svg/gamepad.svg'
 
 const Navbar = props => {

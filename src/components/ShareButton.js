@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import _ from 'lodash'
 
 import '../../static/styles/fontello/css/fontello.css'
 
-class ShareButton extends Component {
+class ShareButton extends PureComponent {
     constructor(props) {
         super(props)
         this.attachRef = target => this.setState({ target });
+
         this.state = {
             showCopyLinkOverlay: false
         }

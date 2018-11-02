@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Gamepad News',
-    author: 'Nathan Heller',
-    description: 'Video game news blog',
+    tagline: 'Know your loadout',
+    description: 'Byte-sized news pixels for the busy gamer.',
     siteUrl: 'https://gamepad.news',
   },
   pathPrefix: '/',

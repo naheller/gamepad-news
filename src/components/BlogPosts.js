@@ -16,21 +16,16 @@ class BlogPosts extends PureComponent {
     render() {
         const posts = _.get(this.props, 'posts', [])
 
-        let tagName
-        if (this.props.tagName) {
-            tagName = _.startCase(_.camelCase(this.props.tagName))
-        }
-
         return (
             <div className="post-list-wrapper">
                 {
-                    tagName && <h3 className="tag-name">{tagName}</h3>
+                    this.props.tagName && <h3 className="tag-name">{this.props.tagName}</h3>
                 }
                 <div className="post-list">
                 {
                     _.map(posts, post => {
                         // const title = _.get(post, 'node.frontmatter.title', '')
-                        const { title, subtitle, date, image, /*tags, description, author*/ } = post.node.frontmatter
+                        const { title, subtitle, date, image, metaTitle /*tags, description, author*/ } = post.node.frontmatter
                         const resizedImage = `${image}-/scale_crop/350x250/center/-/format/auto/-/progressive/yes/`
 
                         let formattedDate = moment(date).format('MMM D, YYYY – h:mm a')
@@ -50,7 +45,7 @@ class BlogPosts extends PureComponent {
 
                         return (
                             <Link to={post.node.fields.slug} className="post">
-                                <img className="image" src={resizedImage} />
+                                <img className="image" src={resizedImage} alt={metaTitle} />
                                 <div className="words">
                                     <div>
                                         <h3 className="title">{title}</h3>
