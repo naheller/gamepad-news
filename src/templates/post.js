@@ -37,7 +37,8 @@ const PostTemplate = props => {
             {subtitle !== '' && (
                 <div className="subtitle">
                     <span className="icon">
-                        <i className="icon-right-dir" />
+                        {/* <i className="icon-right-dir" /> */}
+                        ▸
                     </span>
                     <p className="text">{subtitle}</p>
                 </div>

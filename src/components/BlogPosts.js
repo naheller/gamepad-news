@@ -19,7 +19,10 @@ class BlogPosts extends PureComponent {
         return (
             <div className="post-list-wrapper">
                 {
-                    this.props.tagName && <h3 className="tag-name">{this.props.tagName}</h3>
+                    this.props.tagName && [
+                        <p className="tag-header">stories about</p>,
+                        <h3 className="tag-name">{this.props.tagName}</h3>
+                    ]
                 }
                 <div className="post-list">
                 {
@@ -49,12 +52,21 @@ class BlogPosts extends PureComponent {
                                 <div className="words">
                                     <div>
                                         <h3 className="title">{title}</h3>
-                                        <div className="subtitle">
+                                        {/* <div className="subtitle">
                                             <span className="icon">
                                                 <i className="icon-right-dir" />
                                             </span>
                                             <p className="text">{subtitle}</p>
-                                        </div>
+                                        </div> */}
+                                        {subtitle && (
+                                            <div className="subtitle">
+                                                <span className="icon">
+                                                    {/* <i className="icon-right-dir" /> */}
+                                                    ▸
+                                                </span>
+                                                <p className="text">{subtitle}</p>
+                                            </div>
+                                        )}
                                     </div>
                                     <h6 className="date">{formattedDate}</h6>
                                 </div>
