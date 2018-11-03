@@ -8,6 +8,7 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     'gatsby-plugin-sass',
+    'gatsby-plugin-sitemap',
     {
         resolve: 'gatsby-plugin-favicon',
         options: {
