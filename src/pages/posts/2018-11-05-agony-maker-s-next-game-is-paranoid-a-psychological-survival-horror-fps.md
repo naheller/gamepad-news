@@ -3,7 +3,7 @@ title: 'Agony maker''s next game is Paranoid, a psychological survival-horror FP
 subtitle: >-
   The Polish developer earned strong criticism for its objectification of women
   in Agony
-date: 2018-11-05T16:48:12.397Z
+date: 2018-11-05T16:48:00.000Z
 author: Nathan Heller
 image: 'https://ucarecdn.com/54cf6c50-b04a-446d-94c3-562e853d0420/'
 metaTitle: Madmind Studio's next game is Paranoid
