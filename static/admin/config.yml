@@ -21,8 +21,8 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Subtitle (optional)', name: 'subtitle', widget: 'string', default: '', required: false }
+      - { label: 'Title', name: 'title', widget: 'string', pattern: ['^.{0,75}$', '75 chars max'] }
+      - { label: 'Subtitle (optional)', name: 'subtitle', widget: 'string', default: '', required: false, pattern: ['^.{0,85}$', '85 chars max'] }
       - { label: 'Date (do not change)', name: 'date', widget: 'datetime' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
