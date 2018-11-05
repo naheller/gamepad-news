@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Gamepad News',
-    tagline: 'Know your loadout',
+    tagline: 'Your daily news \'em up',
     description: 'Byte-sized news pixels for the busy gamer.',
     siteUrl: 'https://gamepad.news',
   },

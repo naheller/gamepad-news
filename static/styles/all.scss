@@ -330,6 +330,49 @@ a {
     flex-flow: column nowrap;
     align-items: center;
     max-width: 800px;
+
+    .alert {
+        border: 2px solid $divider-grey;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        padding: 1.5rem 2rem;
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        text-align: center;
+        color: $text-light;
+
+        @media (max-width: 1024px) {
+            max-width: 300px;
+        }
+
+        a, .icon {
+            color: $mint-green;
+        }
+
+        .header {
+            font-family: 'Merriweather Sans', sans-serif;
+            margin-bottom: 1rem;
+            line-height: 1.5rem;
+        }
+
+        .mid {
+            font-size: 0.9rem;
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.25rem;
+        }
+
+        .bottom {
+            font-size: 0.7rem;
+            font-family: 'Merriweather Sans', sans-serif;
+            color: $text-lighter;
+            line-height: 1rem;
+        }
+    }
     
     .tag-header {
         margin: 0;
@@ -459,6 +502,10 @@ a {
                     margin: 0;
                     color: $text-light;
                     font-size: 0.75rem;
+
+                    .icon {
+                        margin-right: 0.25rem;
+                    }
                 } 
             }
         }

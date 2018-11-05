@@ -5,9 +5,10 @@
 .icon-up-open:before { content: '\e803'; } /* '' */
 .icon-cancel:before { content: '\e804'; } /* '' */
 .icon-cancel-1:before { content: '\e805'; } /* '' */
+.icon-clock:before { content: '\e806'; } /* '' */
+.icon-clock-1:before { content: '\e807'; } /* '' */
 .icon-link-1:before { content: '\f07b'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-menu:before { content: '\f0c9'; } /* '' */
-.icon-mail-alt:before { content: '\f0e0'; } /* '' */
 .icon-reddit-alien:before { content: '\f281'; } /* '' */

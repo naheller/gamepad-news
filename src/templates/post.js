@@ -161,8 +161,8 @@ const PostTemplate = props => {
 
     const addHelmet = () => (
         <Helmet>
-            <title>{`${metaTitle} - ${siteTitle}`}</title>
-            <meta name="title" content={`${metaTitle} - ${siteTitle}`} />
+            <title>{metaTitle}</title>
+            <meta name="title" content={siteTitle} />
             <meta name="description" content={metaDescription} /> 
             <meta name="keywords" content={_.join(tags, ',')} />
             <meta name="robots" content="index,follow" />
