@@ -47,33 +47,46 @@ class BlogPosts extends PureComponent {
                         }
 
                         return (
-                            <Link to={post.node.fields.slug} className="post" title={metaTitle}>
+                            <Link to={post.node.fields.slug} className="post" title={metaTitle} key={post.node.fields.slug}>
                                 <img className="image" src={resizedImage} alt={`${metaTitle} - Gamepad News`} />
                                 <div className="words">
                                     <div>
                                         <h3 className="title">{title}</h3>
-                                        {/* <div className="subtitle">
-                                            <span className="icon">
-                                                <i className="icon-right-dir" />
-                                            </span>
-                                            <p className="text">{subtitle}</p>
-                                        </div> */}
                                         {subtitle && (
                                             <div className="subtitle">
-                                                <span className="icon">
-                                                    {/* <i className="icon-right-dir" /> */}
+                                                {/* <span className="icon">
                                                     ▸
-                                                </span>
+                                                </span> */}
                                                 <p className="text">{subtitle}</p>
                                             </div>
                                         )}
                                     </div>
-                                    <h6 className="date">{formattedDate}</h6>
+                                    <h6 className="date">
+                                        <span className="icon">
+                                            <i className="icon-clock-1" />
+                                        </span>
+                                        {formattedDate}
+                                    </h6>
                                 </div>
                             </Link>
                         )
                     })
                 }
+                <div className="alert">
+                    <span className="header">Gamepad is brand new!</span>
+                    <div className="mid">
+                        Pardon our pixels while we continue working on the site.
+                    </div>
+                    <div className="bottom">
+                        <span>Say hello</span>&nbsp;
+                        <a href="https://twitter.com/gamepad_news" target="_blank" title="Gamepad News Twitter page" rel="noopener noreferrer">
+                            <span>@gamepad_news</span>
+                            <span className="icon">
+                                <i className="icon-twitter" />
+                            </span>
+                        </a>
+                    </div>
+                </div>
                 </div>
             </div>
         )

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Gamepad News',
-    tagline: 'Know your loadout',
-    description: 'Byte-sized news pixels for the busy gamer.',
+    tagline: 'Your daily news \'em up',
+    description: 'Byte-sized news pixels for the busy gamer. Check in for the latest stories on Playstation, Xbox, Switch, PC, and more.',
     siteUrl: 'https://gamepad.news',
   },
   pathPrefix: '/',
