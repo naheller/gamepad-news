@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: naheller/gamepad-news
-  branch: style-v4
+  branch: master
   squash_merges: true
 
 publish_mode: editorial_workflow
