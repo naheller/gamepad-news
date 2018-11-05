@@ -27,7 +27,5 @@ Paranoid follows the story of Patrick Calman, a 31-year old man who lost his fam
 
 To learn the truth, he must venture out into the world and contend with paranoia, drug abuse, and a blurred line between paranoia and reality. Let's hope the line between entertainment and objectification isn't so blurry this time around.
 
-Links:
-
 * [Press release](http://www.gamasutra.com/view/pressreleases/329979/Paranoid_Announcement_and_Agony_UNRATED_premiere.php)
 * [Gameplay video](https://youtu.be/qvHqGZ5GFqE)
