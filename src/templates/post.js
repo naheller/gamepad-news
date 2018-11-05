@@ -11,7 +11,7 @@ import '../../static/styles/fontello/css/fontello.css'
 
 const PostTemplate = props => {
     const { data, location, /*pageContext*/ } = props
-    const siteTitle = _.get(data, 'site.siteMetadata.title', 'Gamepad News')
+    const siteTitle = _.get(data, 'site.siteMetadata.title')
     const post = _.get(data, 'markdownRemark', {})
 
     const { title, subtitle, date, author, image, tags, metaTitle, metaDescription } = post.frontmatter
@@ -57,7 +57,7 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={metaTitle} reddit />
                 </div>
             </div>
-            <img src={`${image}-/format/auto/-/progressive/yes/`} alt={metaTitle} />
+            <img src={`${image}-/format/auto/-/progressive/yes/`} alt={`${metaTitle} - ${siteTitle}`} />
             
             <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
@@ -210,6 +210,13 @@ export default PostTemplate
 
 export const pageQuery = graphql`
     query BlogPostBySlug($slug: String!) {
+        site {
+            siteMetadata {
+                title
+                tagline
+                description
+            }
+        }
         markdownRemark(fields: { slug: { eq: $slug } }) {
             id
             html
