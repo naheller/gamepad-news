@@ -15,7 +15,7 @@ slugPartial: path-of-exile-ps4-launch-december
 ---
 New Zealand developer Grinding Gear Games announced today that its free-to-play action RPG _Path of Exile_ will come to PlayStation 4 next month, December 2018. The title is currently available on PC and Xbox One.
 
-Also coming next month is _Path of Exile_'s newest expansion, version 3.5.0, on Friday, December 7 for PC. No specific date has been set for console versions of the expansion, however we can expect it to drop in December as well.
+Also coming next month is _Path of Exile_'s newest expansion, version 3.5.0, on December 7 for PC. No specific date has been set for console versions of the expansion, however we can expect it to drop within the month.
 
 _Path of Exile_ originally launched back in 2013, and has since gained a loyal following for its constant updates and reasonable free-to-play practices. It's frequently been referred to as the [real sequel](https://www.gamesradar.com/path-exile-diablo-ii-sequel-youve-always-wanted/) to _Diablo 2_ - a sentiment this writer has no argument with.
 
