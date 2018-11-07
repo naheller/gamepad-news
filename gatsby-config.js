@@ -12,7 +12,8 @@ module.exports = {
     {
         resolve: 'gatsby-plugin-favicon',
         options: {
-            logo: './static/img/favicon.png'
+            logo: './static/img/favicon.png',
+            appName: 'Gamepad News'
         }
     },
     {
@@ -55,7 +56,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: 'UA-41975483-6',
+        head: true
       },
     },
     `gatsby-plugin-react-helmet`,
