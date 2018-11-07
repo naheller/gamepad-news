@@ -1,5 +1,4 @@
 $mint-green: #4cb69f;
-// $mint-green-dark: #44a38f;
 $pastel-purple: #877bb6;
 
 $smoke: #f1f1f1;
@@ -21,21 +20,9 @@ $blockquote-text: #888;
     background-color: transparent;
 }
 
-// html, body {
-//     height: 100%;
-// }
-
 a {
     box-shadow: none !important;
 }
-
-// #___gatsby {
-//     min-height: 100%;
-
-//     &:first-child {
-//         min-height: 100%;
-//     }
-// }
 
 .site-wrapper {
     // min-height: 100%;
@@ -333,6 +320,7 @@ a {
 
     .alert {
         border: 2px solid $divider-grey;
+        // border-bottom-width: 2px;
         border-radius: 8px;
         margin: 1.5rem 0;
         padding: 1.5rem 2rem;
@@ -412,6 +400,7 @@ a {
             flex-flow: row nowrap;
             margin: 1.5rem 0;
             border: 2px solid $divider-grey;
+            // border-bottom-width: 2px;
             border-radius: 8px;
             background-color: $lighter-smoke;
             justify-content: space-between;
@@ -517,16 +506,6 @@ a {
     flex-flow: column nowrap;
     color: $text-mid;
 
-    // hr:last-child {
-    //     display: none;
-    // }
-
-    // @media (max-width: 1024px) {
-    //     hr:last-child {
-    //         display: flex;
-    //     }
-    // }
-
     h1, h2, h3 {
         line-height: 2rem;
     }
@@ -535,8 +514,13 @@ a {
         line-height: 1.5rem;
     }
 
-    hr {
-        margin: 2.5rem 0;
+    .divider {
+        background-color: $divider-grey;
+        margin: 2rem 0;
+    }
+
+    .bottom-divider {
+        margin: 2rem 0;
         background-color: $divider-grey;
     }
 
@@ -547,7 +531,7 @@ a {
     }
 
     .headline {
-        margin: 0 0 1rem 0;
+        margin: 0;
         line-height: 2.75rem;
         font-size: 2rem;
 
@@ -562,6 +546,7 @@ a {
         flex-flow: row nowrap;
         color: $mint-green;
         line-height: 1.5rem;
+        margin-top: 1.5rem;
 
         .icon {
             margin: 0 0.7rem 0 0;
@@ -583,7 +568,7 @@ a {
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
-        margin: 2rem 0 0 0;
+        margin: 0;
 
         @media (max-width: 375px) {
             flex-direction: column;
@@ -619,6 +604,7 @@ a {
 
     .body {
         line-height: 1.75rem;
+        margin: 0 0.5rem;
 
         a {
             color: $text-dark;
@@ -653,7 +639,7 @@ a {
     }
 
     .gatsby-image-outer-wrapper, img {
-        margin: 2rem 0;
+        margin: 2rem 0 1.75rem 0;
         box-shadow: 0px 10px 50px -15px $divider-grey;
         border-radius: 6px;
         width: 100%;
@@ -727,7 +713,7 @@ a {
             display: flex;
             justify-content: center;
             border: 2px solid $divider-grey;
-            // border-bottom-width: 3px;
+            // border-bottom-width: 2px;
             background-color: white;
             // border-bottom-width: 2px;
             // border-color: $divider-grey;
@@ -765,16 +751,16 @@ a {
             top: -0.9rem;
             z-index: 1;
             margin: 0;
-            background-color: $text-light;
+            background-color: transparent;
             opacity: 0;
-            color: white;
+            color: $text-mid;
             border-radius: 3px;
             padding: 0.3rem 0.4rem 0.25rem 0.4rem;
             line-height: 0.75rem;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
 
-            -webkit-transition: opacity 0.25s;
-            transition: opacity 0.25s;
+            -webkit-transition: opacity 0.15s;
+            transition: opacity 0.15s;
 
             &.show {
                 opacity: 0.9;
@@ -825,7 +811,7 @@ a {
                 margin: 0.25rem;
                 // border-bottom: 2px solid $divider-grey;
                 border: 2px solid $divider-grey;
-                // border-bottom-width: 3px;
+                // border-bottom-width: 2px;
                 background-color: white;
                 // border-bottom-width: 2px;
                 border-radius: 6px;
@@ -908,6 +894,7 @@ a {
             padding: 0.5rem 1rem;
             margin: 0.25rem;
             border: 2px solid $divider-grey;
+            // border-bottom-width: 2px;
             border-radius: 6px;
             font-size: 0.9rem;
             user-select: none;

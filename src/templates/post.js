@@ -36,13 +36,10 @@ const PostTemplate = props => {
             <h1 className="headline">{title}</h1>
             {subtitle !== '' && (
                 <div className="subtitle">
-                    <span className="icon">
-                        {/* <i className="icon-right-dir" /> */}
-                        ▸
-                    </span>
                     <p className="text">{subtitle}</p>
                 </div>
             )}
+            <hr className="divider" />
             <div className="date-author-share">
                 <div className="date-author">
                     <h4 className="date">{formattedDate}</h4>
@@ -58,7 +55,6 @@ const PostTemplate = props => {
                 </div>
             </div>
             <img src={`${image}-/format/auto/-/progressive/yes/`} alt={`${metaTitle} - ${siteTitle}`} />
-            
             <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
     )
@@ -194,9 +190,9 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={metaTitle} mail />
                     <ShareButton slug={slug} title={metaTitle} link />
                 </div>
-                <hr />
+                <hr className="bottom-divider" />
                 {renderTags()}
-                <hr />
+                <hr className="bottom-divider" />
                 {/* {renderPrevNext()} */}
                 {/* <hr /> */}
                 {renderBottomNav()}
