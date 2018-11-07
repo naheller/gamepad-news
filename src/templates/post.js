@@ -58,7 +58,11 @@ const PostTemplate = props => {
                     <ShareButton slug={slug} title={metaTitle} reddit />
                 </div>
             </div>
-            <img src={`${image}-/format/auto/-/progressive/yes/`} alt={`${metaTitle} - ${siteTitle}`} />
+            <img 
+                src={`${image}-/format/auto/-/progressive/yes/`} 
+                alt={`${metaTitle} - ${siteTitle}`} 
+                title={`${metaTitle} - ${siteTitle}`} 
+            />
             <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
     )

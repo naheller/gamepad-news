@@ -48,7 +48,12 @@ class BlogPosts extends PureComponent {
 
                         return (
                             <Link to={post.node.fields.slug} className="post" title={metaTitle} key={post.node.fields.slug}>
-                                <img className="image" src={resizedImage} alt={`${metaTitle} - Gamepad News`} />
+                                <img 
+                                    className="image" 
+                                    src={resizedImage} 
+                                    alt={`${metaTitle} - Gamepad News`} 
+                                    title={`${metaTitle} - Gamepad News`} 
+                                />
                                 <div className="words">
                                     <div>
                                         <h3 className="title">{title}</h3>
