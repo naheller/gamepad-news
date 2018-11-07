@@ -4,11 +4,16 @@ subtitle: Return to Earth in the survival RPG's third expansion
 date: 2018-11-07T16:21:28.380Z
 author: Nathan Heller
 image: 'https://ucarecdn.com/87850b6f-9ad5-4384-aa99-287988084bb8/'
-metaTitle: 'Ark: Survival Evolved''s third expansion, Extinction, is live'
+metaTitle: 'Ark: Survival Evolved''s new expansion Extinction hits Steam'
 metaDescription: >-
-  Studio Wildcard releases Ark: Survival Evolved Extinction expansion on PC.
-  Consoles to follow later.
-tags: []
+  Studio Wildcard released Ark: Survival Evolved's third expansion, Extinction,
+  on PC today. Console versions will follow later this month.
+tags:
+  - 'ark: survival evolved'
+  - extinction
+  - studio wildcard
+  - steam
+  - pc
 slugPartial: ark-survival-evolved-extinction-launch-steam
 ---
 Look for _Ark: Survival Evolved_'s latest expansion, _Extinction_, on [Steam](https://store.steampowered.com/app/887380/ARK_Extinction__Expansion_Pack/) today as it goes live for $20. The game's third expansion takes players back to a ruined Earth where they'll contend with dungeon dwelling creatures called Titans.
