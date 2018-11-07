@@ -43,7 +43,7 @@ const PostTemplate = props => {
                     <p className="text">{subtitle}</p>
                 </div>
             )}
-            <hr className="divider" />
+            {/* <hr className="divider" /> */}
             <div className="date-author-share">
                 <div className="date-author">
                     <h4 className="date">{formattedDate}</h4>
