@@ -36,6 +36,10 @@ const PostTemplate = props => {
             <h1 className="headline">{title}</h1>
             {subtitle !== '' && (
                 <div className="subtitle">
+                    <span className="icon">
+                        {/* <i className="icon-right-dir" /> */}
+                        ▸
+                    </span>
                     <p className="text">{subtitle}</p>
                 </div>
             )}

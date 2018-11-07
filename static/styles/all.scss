@@ -531,7 +531,7 @@ a {
     }
 
     .headline {
-        margin: 0;
+        margin: 0.5rem 0 0 0;
         line-height: 2.75rem;
         font-size: 2rem;
 
@@ -640,25 +640,12 @@ a {
 
     .gatsby-image-outer-wrapper, img {
         margin: 2rem 0 1.75rem 0;
-        box-shadow: 0px 10px 50px -15px $divider-grey;
         border-radius: 6px;
         width: 100%;
 
-        // @media (max-width: 375px) {
-        //     margin-left: -1.5rem;
-        //     margin-right: -1.5rem;
-        //     border-radius: 0;
-        // }
-
-        // .gatsby-image-wrapper, img {
-        //     border-radius: 4px;
-
-        //     @media (max-width: 375px) {
-        //         border-radius: 0;
-        //     }
-        // }
-
-
+        -webkit-box-shadow: 0px 2px 0px 0px $divider-grey;
+        -moz-box-shadow: 0px 2px 0px 0px $divider-grey;
+        box-shadow: 0px 2px 0px 0px $divider-grey;
     }
 
     .share-button-group {
