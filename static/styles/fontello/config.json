@@ -73,15 +73,21 @@
       "src": "mfglabs"
     },
     {
-      "uid": "8663320a860b00f26e94d3d15c9ba99a",
-      "css": "clock",
-      "code": 59398,
-      "src": "entypo"
-    },
-    {
       "uid": "598a5f2bcf3521d1615de8e1881ccd17",
       "css": "clock-1",
       "code": 59399,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4743b088aa95d6f3b6b990e770d3b647",
+      "css": "facebook-squared",
+      "code": 62216,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "906348dc798a0d42715cc97c875e3ac6",
+      "css": "twitter-squared",
+      "code": 62212,
       "src": "fontawesome"
     }
   ]
