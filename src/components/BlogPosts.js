@@ -86,9 +86,9 @@ class BlogPosts extends PureComponent {
                         <span>Say hello</span>&nbsp;
                         <a href="https://twitter.com/gamepad_news" target="_blank" title="Gamepad News Twitter page" rel="noopener noreferrer">
                             <span>@gamepad_news</span>
-                            <span className="icon">
+                            {/* <span className="icon">
                                 <i className="icon-twitter" />
-                            </span>
+                            </span> */}
                         </a>
                     </div>
                 </div>
