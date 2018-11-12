@@ -9,7 +9,7 @@ const Footer = props => {
         <div className="footer">
             <a 
                 href="https://twitter.com/gamepad_news" 
-                className="social-icon"
+                className="social-icon twitter"
                 target="_blank" 
                 title="Gamepad News Twitter page" 
                 rel="noopener noreferrer"
@@ -25,7 +25,7 @@ const Footer = props => {
             </Link>
             <a 
                 href="https://www.facebook.com/gamepadnews" 
-                className="social-icon"
+                className="social-icon facebook"
                 target="_blank" 
                 title="Gamepad News Facebook page" 
                 rel="noopener noreferrer"
