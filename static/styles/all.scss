@@ -39,7 +39,7 @@ a {
 
 .navbar {
     display: flex;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 0;
     margin-bottom: 2rem;
     flex-flow: row nowrap;
     justify-content: center;
@@ -47,9 +47,9 @@ a {
     border-bottom: 2px solid $mint-green;
     // box-shadow: 0px 15px 20px -15px $nav-shadow; 
 
-    -webkit-box-shadow: $divider-grey 0px 10px 10px -10px;
-    -moz-box-shadow: $divider-grey 0px 10px 10px -10px;
-    box-shadow: $divider-grey 0px 10px 10px -10px;
+    // -webkit-box-shadow: $divider-grey 0px 10px 10px -10px;
+    // -moz-box-shadow: $divider-grey 0px 10px 10px -10px;
+    // box-shadow: $divider-grey 0px 10px 10px -10px;
 
     @media (max-width: 1024px) {
         margin-bottom: 0;
@@ -58,9 +58,20 @@ a {
     }
 
     .gamepad-icon-link {
-        height: 1.5rem;
-        width: 1.5rem;
-        margin: 0 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.5rem;
+        width: 2.5rem;
+        // margin: 0 4rem;
+        padding: 5px;
+        background: linear-gradient(to bottom right, white, $smoke);
+        border: 2px solid #4cb69f;
+        border-radius: 100%;
+
+        &:hover {
+            border-color: $divider-grey;
+        }
     }
 
     .text {
@@ -318,11 +329,11 @@ a {
     // }
 
     .main {
-        max-width: 800px;
+        max-width: 900px;
         margin: 1.5rem;
 
         // @media (max-width: 1024px) {
-        //     max-width: 100%;
+        //     max-width: 1000px;
         // }
     }
 }
@@ -331,7 +342,6 @@ a {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    max-width: 800px;
 
     .alert {
         border: 2px solid $divider-grey;
@@ -348,8 +358,12 @@ a {
         color: $text-light;
 
         @media (max-width: 1024px) {
-            max-width: 300px;
-            margin: 1.5rem;
+            max-width: 350px;
+            margin: 3rem 1.5rem 0 1.5rem;
+        }
+
+        @media (max-width: 425px) {
+            margin: 1.5rem 1rem 1rem 1rem;
         }
 
         a, .icon {
@@ -418,7 +432,7 @@ a {
             border: 2px solid $divider-grey;
             // border-bottom-width: 2px;
             border-radius: 8px;
-            background-color: $lighter-smoke;
+            background: linear-gradient(to bottom right, white, $light-smoke);
             justify-content: space-between;
 
             &:hover {
@@ -429,8 +443,13 @@ a {
                 flex-direction: column;
                 justify-content: flex-start;
                 max-width: 300px;
-                margin: 1.5rem;
+                margin: 3rem 1.5rem 0 1.5rem;
                 height: 100%;
+            }
+
+            @media (max-width: 425px) {
+                margin: 1.5rem 1rem 1rem 1rem;
+                max-width: none;
             }
 
             &:nth-child(even) {
@@ -656,12 +675,13 @@ a {
 
     .gatsby-image-outer-wrapper, img {
         margin: 2rem 0 1.75rem 0;
+        border: 2px solid $divider-grey;
         border-radius: 6px;
         width: 100%;
 
-        -webkit-box-shadow: 0px 2px 0px 0px $divider-grey;
-        -moz-box-shadow: 0px 2px 0px 0px $divider-grey;
-        box-shadow: 0px 2px 0px 0px $divider-grey;
+        // -webkit-box-shadow: 0px 2px 0px 0px $divider-grey;
+        // -moz-box-shadow: 0px 2px 0px 0px $divider-grey;
+        // box-shadow: 0px 2px 0px 0px $divider-grey;
     }
 
     .share-button-group {
@@ -674,36 +694,19 @@ a {
             @media (max-width: 375px) {
                 padding-top: 1rem;
             }
-
-            // .share-button {
-            //     border-color: transparent;
-
-            //     @media (max-width: 375px) {
-            //         border-color: $divider-grey;
-            //     }
-            // }
-            
         }
 
         &.bottom {
             justify-content: center;
             padding: 1rem 0;
-
-            // .share-button {
-            //     border-color: $divider-grey;
-            // }
         }
 
         .share-button:first-child {
             margin-right: 0.25rem;
-            // border-top-left-radius: 2px;
-            // border-bottom-left-radius: 2px;
         }
 
         .share-button:last-child {
             margin-left: 0.25rem;
-            // border-top-right-radius: 2px;
-            // border-bottom-right-radius: 2px;
         }
 
         .share-button:not(:first-child):not(:last-child) {
@@ -716,17 +719,15 @@ a {
             display: flex;
             justify-content: center;
             border: 2px solid $divider-grey;
-            // border-bottom-width: 2px;
-            background-color: white;
-            // border-bottom-width: 2px;
-            // border-color: $divider-grey;
+            background: linear-gradient(to bottom right, white, $light-smoke);
             align-items: center;
             border-radius: 100%;
             cursor: pointer;
             user-select: none;
 
             .icon, i {
-                background-color: white;
+                color: $mint-green;
+                background-color: transparent;
             }
 
             &:hover, &:focus {
@@ -734,18 +735,10 @@ a {
                 background-color: $button-bg-grey;
                 box-shadow: 0px 10px 50px -10px $divider-grey; 
                 outline: none;
-
-                // .icon, i {
-                //     background-color: $button-bg-grey;
-                // }
             }
 
             &:active {
                 box-shadow: none;
-            }
-
-            .icon {
-                color: $mint-green;
             }
         }
 
@@ -812,30 +805,25 @@ a {
             .button-link {
                 padding: 0.5rem 1rem;
                 margin: 0.25rem;
-                // border-bottom: 2px solid $divider-grey;
                 border: 2px solid $divider-grey;
-                // border-bottom-width: 2px;
-                background-color: white;
-                // border-bottom-width: 2px;
+                background: linear-gradient(to bottom right, white, $light-smoke);
                 border-radius: 6px;
                 font-size: 0.9rem;
                 user-select: none;
 
                 .text {
                     color: $text-light;
-                    background-color: white;
+                    background-color: transparent;
                     margin: 0;
                 }
 
                 &:hover, &:focus {
                     border-color: $mint-green;
-                    background-color: $button-bg-grey;
                     box-shadow: 0px 10px 50px -15px $divider-grey;
                     outline: none;
 
                     .text, .icon, i {
                         color: $mint-green;
-                        background-color: $button-bg-grey;
                     }
                 }
 
@@ -912,7 +900,7 @@ a {
             &:hover, &:focus {
                 border-color: $mint-green;
                 background-image: none;
-                background-color: $button-bg-grey;
+                background: linear-gradient(to bottom right, white, $light-smoke);
                 box-shadow: 0px 10px 50px -15px $divider-grey;
                 cursor: pointer;
                 outline: none;
@@ -920,7 +908,7 @@ a {
                 .text, .icon, i {
                     display: inline;
                     color: $mint-green;
-                    background-color: $button-bg-grey;
+                    background-color: transparent;
                     margin: 0;
                 }
             }
@@ -934,7 +922,7 @@ a {
 
 .footer {
     display: flex;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 0;
     margin-top: 2rem;
     flex-flow: row nowrap;
     justify-content: center;
@@ -963,8 +951,19 @@ a {
     }
 
     .gamepad-icon-link {
-        height: 1.5rem;
-        width: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.5rem;
+        width: 2.5rem;
         margin: 0 4rem;
+        padding: 5px;
+        background: linear-gradient(to bottom right, white, $smoke);
+        border: 2px solid #4cb69f;
+        border-radius: 100%;
+
+        &:hover {
+            border-color: $divider-grey;
+        }
     }
 }

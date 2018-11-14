@@ -49,7 +49,7 @@ const PostTemplate = props => {
                     <h4 className="date">{formattedDate}</h4>
                     <p className="author">
                         <span>{`by `}</span>
-                        <a href="https://gamepad.news" title={`Posts by ${author}`}>{author}</a>
+                        <a href="#" title={`Posts by ${author}`}>{author}</a>
                     </p>
                 </div>
                 <div className="share-button-group top">
