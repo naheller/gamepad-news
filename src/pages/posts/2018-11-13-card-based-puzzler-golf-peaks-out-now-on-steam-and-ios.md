@@ -1,6 +1,6 @@
 ---
 title: Card-based puzzler Golf Peaks out now on Steam and iOS
-subtitle: The small team project won 1st place at The Big Indie Pitch 2018
+subtitle: The small team project won 1st place at 2018's Big Indie Pitch in Poznań
 date: 2018-11-13T16:27:43.048Z
 author: Nathan Heller
 image: 'https://ucarecdn.com/fe1b7dab-3df0-463c-af0c-68e17eb366b6/'
