@@ -3,7 +3,7 @@ title: Couch co-op Shakes on a Plane takes the Overcooked formula aloft
 subtitle: Animera Games' debut title will hit Steam in late 2019
 date: 2018-11-15T16:55:05.293Z
 author: Nathan Heller
-image: 'https://ucarecdn.com/80d44cde-3288-49b6-980b-de2c90279b7d/'
+image: 'https://ucarecdn.com/c4bda4e1-97ed-4606-a034-d98a43850114/'
 metaTitle: Shakes on a Plane takes the Overcooked formula aloft
 metaDescription: >-
   Animera Games' debut title, Shakes on a Plane, is a physics-based time
