@@ -3,6 +3,7 @@ import moment from 'moment'
 import _ from 'lodash'
 import Link from 'gatsby-link'
 // import Img from 'gatsby-image'
+import gamepad from '../../static/svg/joystick.svg'
 import '../../static/styles/fontello/css/fontello.css'
 
 class BlogPosts extends PureComponent {
@@ -79,6 +80,7 @@ class BlogPosts extends PureComponent {
                 }
                 <div className="alert">
                     <span className="header">Gamepad is brand new!</span>
+                    <img className="gamepad" src={gamepad} />
                     <div className="mid">
                         Pardon our pixels while we continue working on the site.
                     </div>
