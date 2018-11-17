@@ -452,7 +452,7 @@ a {
                 max-width: none;
             }
 
-            &:nth-child(even) {
+            &:nth-child(odd) {
                 flex-direction: row-reverse;
 
                 @media (max-width: 1024px) {
