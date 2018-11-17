@@ -16,7 +16,7 @@ tags:
   - pc
 slugPartial: kenshi-samurai-rpg-steam-release
 ---
-_Kenshi_, the post-apocalyptic samurai RPG from Lo-Fi Games, will release on [Steam](https://store.steampowered.com/app/233860/Kenshi/) next month, December 6, after 12 years of development.
+_Kenshi_, the post-apocalyptic samurai RPG from Lo-Fi Games, will release on Steam next month, December 6, after 12 years of development.
 
 Chris Hunt founded Lo-Fi Games as a one-man team in 2008, funding his passion project by working as a security guard at night. After getting _Kenshi_ onto Steam Greenlight in 2014, he was able to put together a larger group and start building momentum in earnest. 
 
@@ -28,7 +28,7 @@ Hunt makes it abundantly clear that you are _not_ the chosen one: "What I really
 
 Beyond the player, the options seem to expand out infinitely: base-building, squad-based gameplay, a realistic medical system, factions, mods, and the "largest RPG world since Daggerfall."
 
-This all sounds like a tall order for such a small team, but patience and persistence may have paid out, with over 5,000 Steam reviews averaging "Very Positive" during _Kenshi_'s early access period.
+This all sounds like a tall order for such a small team, but patience and persistence may have paid out, with over 5,000 [Steam reviews](https://store.steampowered.com/app/233860/Kenshi/#app_reviews_hash) averaging "Very Positive" during _Kenshi_'s early access period.
 
 _Kenshi_ will release on Steam for all countries for $30 (£23 / €27 / ¥3500) on Thursday, December 6, 2018.
 
