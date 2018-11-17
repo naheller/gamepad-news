@@ -59,7 +59,7 @@ const PostTemplate = props => {
                 </div>
             </div>
             <img 
-                src={`${image}-/format/jpeg/-/progressive/yes/`} 
+                src={`${image}-/format/auto/-/quality/lighter/`} 
                 alt={`${metaTitle} - ${siteTitle}`} 
                 title={`${metaTitle} - ${siteTitle}`} 
             />
