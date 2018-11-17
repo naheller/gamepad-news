@@ -18,11 +18,9 @@ slugPartial: kenshi-samurai-rpg-steam-release
 ---
 _Kenshi_, the post-apocalyptic samurai RPG from Lo-Fi Games, will release on Steam next month, December 6, after 12 years of development.
 
-Chris Hunt founded Lo-Fi Games as a one-man team in 2008, funding his passion project by working as a security guard at night. After getting _Kenshi_ onto Steam Greenlight in 2014, he was able to put together a larger group and start building momentum in earnest. 
+Chris Hunt founded Lo-Fi Games as a one-man team in 2008, funding his passion project by working as a security guard at night. After getting _Kenshi_ onto Steam Greenlight in 2014, he was able to put together a larger group and start building more ambitious features. 
 
-Today, Lo-Fi has finally entered the home stretch, with four full-timers and over 30 freelancers and volunteers contributing.
-
-_Kenshi_ is an esoteric mix of RPG elements, squad-based control, and city-building features. It features a post-apocalyptic world of cannibals, bandits, slavers, beasts, and you, the player. 
+Today, Lo-Fi has entered the home stretch, with four full-timers and over 30 freelancers and volunteers contributing. _Kenshi_ is an esoteric mix of RPG elements, squad-based control, and city-building features. It features a post-apocalyptic world of cannibals, bandits, slavers, beasts, and you, a "nameless, weak character." 
 
 Hunt makes it abundantly clear that you are _not_ the chosen one: "What I really love in a game is when you can take a nameless, weak character under your wing and train them up until they’re the strongest character you have," he says. 
 
