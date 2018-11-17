@@ -22,7 +22,7 @@ Chris Hunt founded Lo-Fi Games as a one-man team in 2008, funding his passion pr
 
 Today, Lo-Fi has finally entered the home stretch, with four full-timers and over 30 freelancers and volunteers contributing.
 
-_Kenshi_ is an esoteric mix of RPG elements, squad-based control, and city-building features. It features a post-apocalyptic world of cannibals, bandits, slavers, beasts, and you, the player. 
+_Kenshi_ is an esoteric mix of RPG elements, squad-based control, and city-building features. It features a post-apocalyptic world of cannibals, bandits, slavers, beasts, and you, a "nameless, weak character." 
 
 Hunt makes it abundantly clear that you are _not_ the chosen one: "What I really love in a game is when you can take a nameless, weak character under your wing and train them up until they’re the strongest character you have," he says. 
 
