@@ -69,12 +69,12 @@ a {
         border: 2px solid #4cb69f;
         border-radius: 100%;
 
-        // &:hover {
-        //     border-color: $divider-grey;
-        //     .gamepad-tooltip {
-        //         opacity: 1;
-        //     }
-        // }
+        &:hover {
+            border-color: $divider-grey;
+            // .gamepad-tooltip {
+            //     opacity: 1;
+            // }
+        }
 
         .icon-wrapper {
             display: flex;
