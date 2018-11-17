@@ -40,7 +40,7 @@ const PostTemplate = props => {
                         {/* <i className="icon-right-dir" /> */}
                         ▸
                     </span>
-                    <p className="text">{subtitle}</p>
+                    <h2 className="text">{subtitle}</h2>
                 </div>
             )}
             {/* <hr className="divider" /> */}

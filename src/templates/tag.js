@@ -1,9 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import _ from 'lodash'
+
 import SiteLayout from '../components/SiteLayout'
 import BlogPosts from '../components/BlogPosts'
-import _ from 'lodash'
+import gamepads from '../../static/img/gamepads.jpg'
 
 // const tagTypes = ['playstation', 'xbox', 'switch', 'pc', 'mobile', 'retro']
 
@@ -29,12 +31,14 @@ const TagTemplate = props => {
                 <meta property="og:type" content="blog" />
                 <meta property="og:title" content={`${capTag} - ${siteTitle}`} />
                 <meta property="og:description" content={`Read the latest about ${capTag} on ${siteTitle}.`} />
+                <meta property="og:image" content={gamepads} />
 
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@gamepad_news" />
                 <meta name="twitter:creator" content="@gamepad_news" />
                 <meta name="twitter:title" content={`${capTag} - ${siteTitle}`} />
                 <meta name="twitter:description" content={`Read the latest about ${capTag} on ${siteTitle}.`} />
+                <meta name="twitter:image" content={gamepads} />
             </Helmet>
             <BlogPosts posts={edges} tagName={capTag} />
         </SiteLayout>

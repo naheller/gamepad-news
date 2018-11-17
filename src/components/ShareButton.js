@@ -22,7 +22,7 @@ class ShareButton extends PureComponent {
                 this.setState({
                     showCopyLinkOverlay: false
                 })
-            }, 1500);
+            }, 2000);
         }
     }
 
@@ -44,6 +44,7 @@ class ShareButton extends PureComponent {
         <div
             key="fb-share-button"
             className="share-button"
+            title="Share on Facebook"
             aria-label="share on facebook"
             onClick={() => window.open(
                 `https://www.facebook.com/sharer.php?u=https://gamepad.news/${this.slug}`, '_blank', 'top=250,left=250,width=555,height=326'
@@ -59,6 +60,7 @@ class ShareButton extends PureComponent {
         <div 
             key="twitter-share-button"
             className="share-button"
+            title="Share on Twitter"
             aria-label="share on twitter"
             onClick={() => window.open(
                 `https://twitter.com/intent/tweet?url=https://gamepad.news/${this.slug}`, '_blank', 'top=250,left=250,width=500,height=300'
@@ -74,6 +76,7 @@ class ShareButton extends PureComponent {
         <div 
             key="reddit-share-button"
             className="share-button"
+            title="Share on reddit"
             aria-label="share on reddit"
             onClick={() => window.open(
                 `https://www.reddit.com/submit?url=https://gamepad.news/${this.slug}&title=${_.replace(this.title, '', '%20')}`, '_blank', 'width=610,height=600'
@@ -89,6 +92,7 @@ class ShareButton extends PureComponent {
         <div 
             key="mail-share-button"
             className="share-button"
+            title="Share via email"
             aria-label="share via email"
             onClick={() => window.open(
                 `mailto:?subject=${this.title}&body=https://gamepad.news/${this.slug}`
@@ -107,6 +111,7 @@ class ShareButton extends PureComponent {
             <div 
                 key="copy-link-button"
                 className="share-button"
+                title="Copy page link"
                 aria-label="copy page link"
                 ref={this.attachRef}
                 onClick={() => this.copyToClipboard(`https://gamepad.news/${this.slug}`)}

@@ -7,15 +7,19 @@ const Navbar = props => {
     return (
         <div className="navbar">
             <Link to='/' className="gamepad-icon-link" key="gamepad-icon" title="Gamepad News">
-                <img 
-                    src={gamepad}
-                    alt="Gamepad News"
-                    style={{ 
-                        width: '1.5rem', 
-                        height: '1.5rem',
-                        margin: 0
-                    }}
-                />
+                <div className="icon-wrapper">
+                    <img 
+                        src={gamepad}
+                        alt="Gamepad News"
+                        style={{ 
+                            width: '1.5rem', 
+                            height: '1.5rem',
+                        }}
+                    />
+                </div>
+                <h6 className="gamepad-tooltip">
+                    <div className="tooltip-text"><div className="inner-text">Gamepad News</div></div>   
+                </h6>
             </Link>
             {/* <div className="text">news</div> */}
             {/* <div className="links">

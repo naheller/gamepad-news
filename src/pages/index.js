@@ -5,6 +5,7 @@ import get from 'lodash/get'
 
 import SiteLayout from '../components/SiteLayout'
 import BlogPosts from '../components/BlogPosts'
+import gamepads from '../../static/img/gamepads.jpg'
 
 const BlogIndex = props => {
     const siteTitle = get(props, 'data.site.siteMetadata.title')
@@ -25,13 +26,14 @@ const BlogIndex = props => {
                 <meta property="og:type" content="blog" />
                 <meta property="og:title" content={`${siteTitle} - ${siteTagline}`} />
                 <meta property="og:description" content={siteDesc} />
-                {/* <meta property="og:image" content={image} /> */}
+                <meta property="og:image" content={gamepads} />
 
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@gamepad_news" />
                 <meta name="twitter:creator" content="@gamepad_news" />
                 <meta name="twitter:title" content={`${siteTitle} - ${siteTagline}`} />
                 <meta name="twitter:description" content={siteDesc} />
+                <meta name="twitter:image" content={gamepads} />
             </Helmet>
             <BlogPosts posts={posts} />
         </SiteLayout>
