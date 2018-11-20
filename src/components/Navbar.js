@@ -17,9 +17,9 @@ const Navbar = props => {
                         }}
                     />
                 </div>
-                <h6 className="gamepad-tooltip">
+                {/* <h6 className="gamepad-tooltip">
                     <div className="tooltip-text"><div className="inner-text">Gamepad News</div></div>   
-                </h6>
+                </h6> */}
             </Link>
             {/* <div className="text">news</div> */}
             {/* <div className="links">
