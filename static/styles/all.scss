@@ -779,6 +779,18 @@ a {
         border-radius: 6px;
         width: 100%;
 
+        @media (max-width: 425px) {
+            width: 100vw;
+            max-width: none;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            border: none;
+            border-radius: 0;
+        }
+
         // -webkit-box-shadow: 0px 2px 0px 0px $divider-grey;
         // -moz-box-shadow: 0px 2px 0px 0px $divider-grey;
         // box-shadow: 0px 2px 0px 0px $divider-grey;
