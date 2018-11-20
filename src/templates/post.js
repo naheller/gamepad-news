@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import _ from 'lodash'
 import moment from 'moment'
 
+// import Comments from '../components/Comments'
 import SiteLayout from '../components/SiteLayout'
 import ShareButton from '../components/ShareButton'
 import '../../static/styles/fontello/css/fontello.css'
@@ -203,6 +204,7 @@ const PostTemplate = props => {
                 <hr className="bottom-divider" />
                 {/* {renderPrevNext()} */}
                 {/* <hr /> */}
+                {/* <Comments /> */}
                 {renderBottomNav()}
                 {/* <hr /> */}
             </div>
