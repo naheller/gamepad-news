@@ -10,9 +10,10 @@ $serif: athelas,georgia,serif;
         flex-flow: row wrap;
         font-family: $sans-serif;
         font-size: 1.25rem;
+        margin: 0 0 2rem 0;
         
         .label, .name {
-            margin: 0 0 2rem 0;
+            margin: 0;
         }
 
         .label {
@@ -27,21 +28,19 @@ $serif: athelas,georgia,serif;
         margin-bottom: 4rem;
         text-decoration: none;
 
-        // &:nth-child(even) {
-        //     flex-direction: row-reverse;
+        @media (max-width: 768px) {
+            flex-flow: column-reverse nowrap;
 
-        //     .words {
-        //         padding: 0;
-        //         padding-left: 1rem;
-        //     }
+            .image {
+                margin: 0 0 1.75rem 0 !important;
+            }
 
-        //     .image {
-        //         margin: 0;
-        //         margin-right: 1rem;
-        //     }
-        // }
+            .words {
+                margin: 0 !important;
+            }
+        }
 
-        &:hover,&:active,&:focus {
+        &:hover, &:active, &:focus {
             .words {
                 .title-subtitle {
                     .title {
@@ -78,6 +77,7 @@ $serif: athelas,georgia,serif;
 
                 .subtitle {
                     font-family: $serif;
+                    font-weight: lighter;
                     color: #4cb69f;
                     font-size: 1.25rem;
                     line-height: 1.75rem;
@@ -100,7 +100,6 @@ $serif: athelas,georgia,serif;
 
         .image {
             margin-left: 1rem;
-            border-radius: 1px;
             transition: opacity 0.25s;
 
             -webkit-box-shadow: 0.5rem 0.5rem 0 0 #f5f5f5;
