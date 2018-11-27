@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import gamepad from '../../static/svg/gamepad.svg'
 
-import '../../static/styles/fontello/css/fontello.css'
+import '../../static/fontello/css/fontello.css'
 
 const Footer = props => {
     return (

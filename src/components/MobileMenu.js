@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import Link from 'gatsby-link'
-import '../../static/styles/fontello/css/fontello.css'
+import '../../static/fontello/css/fontello.css'
 
 class MobileMenu extends PureComponent {
     constructor(props) {

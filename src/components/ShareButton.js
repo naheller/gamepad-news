@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import _ from 'lodash'
 
-import '../../static/styles/fontello/css/fontello.css'
+import '../../static/fontello/css/fontello.css'
 
 class ShareButton extends PureComponent {
     constructor(props) {

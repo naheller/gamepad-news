@@ -6,7 +6,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 
 // import gamepad from '../../static/img/favicon-b.png'
-import '../../static/styles/all.scss'
+import './SiteLayout.scss'
 
 const SiteLayout = props => {
     const { /*location,*/ children } = props

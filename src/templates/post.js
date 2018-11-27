@@ -8,7 +8,7 @@ import moment from 'moment'
 // import Comments from '../components/Comments'
 import SiteLayout from '../components/SiteLayout'
 import ShareButton from '../components/ShareButton'
-import '../../static/styles/fontello/css/fontello.css'
+import '../../static/fontello/css/fontello.css'
 
 const PostTemplate = props => {
     const { data, location, /*pageContext*/ } = props

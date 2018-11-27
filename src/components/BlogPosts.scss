@@ -1,0 +1,111 @@
+$sans-serif: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+$serif: athelas,georgia,serif;
+
+.post-list {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .tag-header {
+        display: flex;
+        flex-flow: row wrap;
+        font-family: $sans-serif;
+        font-size: 1.25rem;
+        
+        .label, .name {
+            margin: 0 0 2rem 0;
+        }
+
+        .label {
+            color: #aaa;
+        }
+    }
+
+    .post {
+        display: inherit;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+        text-decoration: none;
+
+        // &:nth-child(even) {
+        //     flex-direction: row-reverse;
+
+        //     .words {
+        //         padding: 0;
+        //         padding-left: 1rem;
+        //     }
+
+        //     .image {
+        //         margin: 0;
+        //         margin-right: 1rem;
+        //     }
+        // }
+
+        &:hover,&:active,&:focus {
+            .words {
+                .title-subtitle {
+                    .title {
+                        color: #777;
+                    }
+                }
+            }
+
+            .image {
+                opacity: 0.75;
+            }
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+        
+        .words {
+            display: inherit;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            font-family: $sans-serif;
+            padding-right: 1rem;
+
+            .title-subtitle {
+                .title {
+                    transition: color 0.25s;
+                }
+
+                .title {
+                    color: black;
+                    font-size: 1.75rem;
+                }
+
+                .subtitle {
+                    font-family: $serif;
+                    color: #4cb69f;
+                    font-size: 1.25rem;
+                    line-height: 1.75rem;
+                }
+            }
+
+            .date-author {
+                font-size: 0.75rem;
+                color: #aaa;
+
+                .author {
+                    margin-bottom: 0.25rem;
+                    
+                    .name {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        .image {
+            margin-left: 1rem;
+            border-radius: 1px;
+            transition: opacity 0.25s;
+
+            -webkit-box-shadow: 0.5rem 0.5rem 0 0 #f5f5f5;
+            -moz-box-shadow: 0.5rem 0.5rem 0 0 #f5f5f5;
+            box-shadow: 0.5rem 0.5rem 0 0 #f5f5f5;
+        }
+    }
+}
