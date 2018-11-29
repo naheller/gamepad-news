@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import _ from 'lodash'
 
 import '../../static/fontello/css/fontello.css'
+import './ShareButton.scss'
 
 class ShareButton extends PureComponent {
     constructor(props) {
@@ -51,8 +52,9 @@ class ShareButton extends PureComponent {
             )}
         >
             <span className="icon">
-                <i className="icon-facebook" />
+                <i className="icon-facebook-squared" />
             </span>
+            {this.props.text && <p className="text">Share</p>}
         </div>
     )
 
@@ -67,8 +69,9 @@ class ShareButton extends PureComponent {
             )}
         >
             <span className="icon">
-                <i className="icon-twitter" />
+                <i className="icon-twitter-squared" />
             </span>
+            {this.props.text && <p className="text">Tweet</p>}
         </div>
     )
 
@@ -85,6 +88,7 @@ class ShareButton extends PureComponent {
             <span className="icon">
                 <i className="icon-reddit-alien" />
             </span>
+            {this.props.text && <p className="text">Post</p>}
         </div>
     )
 
@@ -101,6 +105,7 @@ class ShareButton extends PureComponent {
             <span className="icon">
                 <i className="icon-mail" />
             </span>
+            {this.props.text && <p className="text">Email</p>}
         </div>
     )
 
@@ -119,9 +124,10 @@ class ShareButton extends PureComponent {
                 <span className="icon">
                     <i className="icon-link-1" />
                 </span>
-                <h6 className={`link-tooltip ${opacity}`}>
+                {this.props.text && <p className="text">Copy link</p>}
+                {/* <h6 className={`link-tooltip ${opacity}`}>
                     Link copied
-                </h6>
+                </h6> */}
             </div>
         )
     }

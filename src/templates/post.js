@@ -9,6 +9,7 @@ import moment from 'moment'
 import SiteLayout from '../components/SiteLayout'
 import ShareButton from '../components/ShareButton'
 import '../../static/fontello/css/fontello.css'
+import './post.scss'
 
 const PostTemplate = props => {
     const { data, location, /*pageContext*/ } = props
@@ -37,21 +38,17 @@ const PostTemplate = props => {
             <h1 className="headline">{title}</h1>
             {subtitle !== '' && (
                 <div className="subtitle">
-                    <span className="icon">
+                    {/* <span className="icon"> */}
                         {/* <i className="icon-right-dir" /> */}
-                        ▸
-                    </span>
+                        {/* > */}
+                    {/* </span> */}
                     <h2 className="text">{subtitle}</h2>
                 </div>
             )}
-            {/* <hr className="divider" /> */}
             <div className="date-author-share">
                 <div className="date-author">
-                    <h4 className="date">{formattedDate}</h4>
-                    <p className="author">
-                        <span>{`by `}</span>
-                        <a href="#" title={`Posts by ${author}`}>{author}</a>
-                    </p>
+                    <p className="author">by <span className="name">{author}</span></p>
+                    <time className="date">{formattedDate}</time>
                 </div>
                 <div className="share-button-group top">
                     <ShareButton slug={slug} title={metaTitle} facebook />
@@ -61,10 +58,24 @@ const PostTemplate = props => {
             </div>
             <img 
                 src={`${image}-/format/auto/-/quality/lightest/`} 
+                className="image"
                 alt={`${metaTitle} - ${siteTitle}`} 
                 title={`${metaTitle} - ${siteTitle}`} 
             />
-            <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="share-body">
+                <div className="share">
+                    <p className="header">Share this article</p>
+                    <div className="share-button-group">
+                        <ShareButton slug={slug} title={metaTitle} facebook text />
+                        <ShareButton slug={slug} title={metaTitle} twitter text />
+                        <ShareButton slug={slug} title={metaTitle} reddit text />
+                        <ShareButton slug={slug} title={metaTitle} mail text />
+                        <ShareButton slug={slug} title={metaTitle} link text />
+                    </div>
+                </div>
+                <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
+            </div>
+            
         </div>
     )
 
