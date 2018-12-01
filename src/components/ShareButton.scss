@@ -8,8 +8,8 @@ $sans-serif: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,
     width: max-content;
 
     &:hover, &:active, &:focus {
-        .text {
-            color: #777;
+        .text, .icon {
+            opacity: 0.75;
         }
     }
 

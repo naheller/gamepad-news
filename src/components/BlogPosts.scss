@@ -41,15 +41,7 @@ $serif: athelas,georgia,serif;
         }
 
         &:hover, &:active, &:focus {
-            .words {
-                .title-subtitle {
-                    .title {
-                        color: #777;
-                    }
-                }
-            }
-
-            .image {
+            .words, .image {
                 opacity: 0.75;
             }
         }
@@ -64,12 +56,9 @@ $serif: athelas,georgia,serif;
             justify-content: space-between;
             font-family: $sans-serif;
             padding-right: 1rem;
+            transition: opacity 0.25s;
 
             .title-subtitle {
-                .title {
-                    transition: color 0.25s;
-                }
-
                 .title {
                     color: black;
                     font-size: 1.75rem;

@@ -8,6 +8,7 @@ import moment from 'moment'
 // import Comments from '../components/Comments'
 import SiteLayout from '../components/SiteLayout'
 import ShareButton from '../components/ShareButton'
+import TagButton from '../components/TagButton'
 import '../../static/fontello/css/fontello.css'
 import './post.scss'
 
@@ -62,17 +63,21 @@ const PostTemplate = props => {
                 alt={`${metaTitle} - ${siteTitle}`} 
                 title={`${metaTitle} - ${siteTitle}`} 
             />
-            <div className="share-body">
-                <div className="share">
-                    <p className="header">Share this article</p>
-                    <div className="share-button-group">
-                        <ShareButton slug={slug} title={metaTitle} facebook text />
-                        <ShareButton slug={slug} title={metaTitle} twitter text />
-                        <ShareButton slug={slug} title={metaTitle} reddit text />
-                        <ShareButton slug={slug} title={metaTitle} mail text />
-                        <ShareButton slug={slug} title={metaTitle} link text />
+            <div className="share-tags-body">
+                <div className="share-tags">
+                    <div className="share">
+                        <p className="header">Share this article</p>
+                        <div className="share-button-group">
+                            <ShareButton slug={slug} title={metaTitle} facebook text />
+                            <ShareButton slug={slug} title={metaTitle} twitter text />
+                            <ShareButton slug={slug} title={metaTitle} reddit text />
+                            <ShareButton slug={slug} title={metaTitle} mail text />
+                            <ShareButton slug={slug} title={metaTitle} link text />
+                        </div>
                     </div>
+                    {renderTags()}
                 </div>
+                
                 <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
             
@@ -81,18 +86,9 @@ const PostTemplate = props => {
 
     const renderTags = () => (
         <div className="tags">
-            <h3 className="header">In this story...</h3>
+            <p className="header">Explore the topics</p>
             <div className="items">
-                {_.map(tags, tag => (
-                    <Link 
-                        key={tag}
-                        to={`/${_.kebabCase(tag)}`} 
-                        className="button-link" 
-                        title={tag}
-                    >
-                        <h6 className="text">{tag}</h6>
-                    </Link>
-                ))}
+                {_.map(tags, tag => <TagButton key={tag} tag={tag} />)}
             </div>
         </div>
     )
@@ -203,15 +199,6 @@ const PostTemplate = props => {
             {addHelmet()}
             <div className="blog-post">
                 {renderArticle()}
-                <div className="share-button-group bottom">
-                    <ShareButton slug={slug} title={metaTitle} facebook />
-                    <ShareButton slug={slug} title={metaTitle} twitter />
-                    <ShareButton slug={slug} title={metaTitle} reddit />
-                    <ShareButton slug={slug} title={metaTitle} mail />
-                    <ShareButton slug={slug} title={metaTitle} link />
-                </div>
-                <hr className="bottom-divider" />
-                {renderTags()}
                 <hr className="bottom-divider" />
                 {/* {renderPrevNext()} */}
                 {/* <hr /> */}
