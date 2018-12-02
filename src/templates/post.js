@@ -7,6 +7,7 @@ import moment from 'moment'
 
 // import Comments from '../components/Comments'
 import SiteLayout from '../components/SiteLayout'
+import Button from '../components/Button'
 import ShareButton from '../components/ShareButton'
 import TagButton from '../components/TagButton'
 import '../../static/fontello/css/fontello.css'
@@ -35,27 +36,19 @@ const PostTemplate = props => {
     }
 
     const renderArticle = () => (
-        <div>
+        <>
             <h1 className="headline">{title}</h1>
             {subtitle !== '' && (
                 <div className="subtitle">
-                    {/* <span className="icon"> */}
-                        {/* <i className="icon-right-dir" /> */}
-                        {/* > */}
-                    {/* </span> */}
                     <h2 className="text">{subtitle}</h2>
                 </div>
             )}
             <div className="date-author-share">
                 <div className="date-author">
+                    <div className="date">{formattedDate}</div>
                     <p className="author">by <span className="name">{author}</span></p>
-                    <time className="date">{formattedDate}</time>
                 </div>
-                <div className="share-button-group top">
-                    <ShareButton slug={slug} title={metaTitle} facebook />
-                    <ShareButton slug={slug} title={metaTitle} twitter />
-                    <ShareButton slug={slug} title={metaTitle} reddit />
-                </div>
+                {renderTopShare()}
             </div>
             <img 
                 src={`${image}-/format/auto/-/quality/lightest/`} 
@@ -65,22 +58,63 @@ const PostTemplate = props => {
             />
             <div className="share-tags-body">
                 <div className="share-tags">
-                    <div className="share">
-                        <p className="header">Share this article</p>
-                        <div className="share-button-group">
-                            <ShareButton slug={slug} title={metaTitle} facebook text />
-                            <ShareButton slug={slug} title={metaTitle} twitter text />
-                            <ShareButton slug={slug} title={metaTitle} reddit text />
-                            <ShareButton slug={slug} title={metaTitle} mail text />
-                            <ShareButton slug={slug} title={metaTitle} link text />
-                        </div>
-                    </div>
+                    {renderBottomShare()}
                     {renderTags()}
                 </div>
                 
-                <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
+                <div className="body-and-below">
+                    <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <div className="button-row">
+                        <Button 
+                            onClick={() => window.scrollTo({
+                                top: 0,
+                                left: 0,
+                                behavior: 'smooth'
+                            })}
+                        >
+                            <span className="icon">
+                                <i className="icon-up-open" />
+                            </span>
+                            {`\xa0\xa0\xa0`}
+                            <div className="text">
+                                Back to top
+                            </div>
+                        </Button>
+                        <Button internalLink slug ='/'>
+                            <span className="icon">
+                                <i className="icon-home" />
+                            </span>
+                            {`\xa0\xa0\xa0`}
+                            <div className="text">
+                                Home
+                            </div>
+                        </Button>
+                    </div>
+                </div>
+                
             </div>
             
+        </>
+    )
+
+    const renderTopShare = () => (
+        <div className="share-button-group top">
+            <ShareButton slug={slug} title={metaTitle} facebook />
+            <ShareButton slug={slug} title={metaTitle} twitter />
+            <ShareButton slug={slug} title={metaTitle} reddit />
+        </div>
+    )
+    
+    const renderBottomShare = () => (
+        <div className="share">
+            <p className="header">Share this article</p>
+            <div className="share-button-group">
+                <ShareButton slug={slug} title={metaTitle} facebook text />
+                <ShareButton slug={slug} title={metaTitle} twitter text />
+                <ShareButton slug={slug} title={metaTitle} reddit text />
+                <ShareButton slug={slug} title={metaTitle} mail text />
+                <ShareButton slug={slug} title={metaTitle} link text />
+            </div>
         </div>
     )
 
@@ -145,8 +179,7 @@ const PostTemplate = props => {
 
     const renderBottomNav = () => (
         <div className="bottom-nav">
-            <div 
-                className="button"
+            <Button 
                 onClick={() => window.scrollTo({
                     top: 0,
                     left: 0,
@@ -157,16 +190,16 @@ const PostTemplate = props => {
                     <i className="icon-up-open" />
                 </span>
                 {`\xa0\xa0\xa0`}
-                <h6 className="text">
+                <div className="text">
                     Back to top
-                </h6>
-            </div>
-            <Link to="/" className="button" title="Gamepad News">
+                </div>
+            </Button>
+            <Link to="/" title="Gamepad News">
                 <span className="icon">
                     <i className="icon-home" />
                 </span>
                 {`\xa0\xa0\xa0`}
-                <h6 className="text">Home</h6>
+                <div className="text">Home</div>
             </Link> 
         </div>
     )
@@ -199,12 +232,8 @@ const PostTemplate = props => {
             {addHelmet()}
             <div className="blog-post">
                 {renderArticle()}
-                <hr className="bottom-divider" />
                 {/* {renderPrevNext()} */}
-                {/* <hr /> */}
                 {/* <Comments /> */}
-                {renderBottomNav()}
-                {/* <hr /> */}
             </div>
         </SiteLayout>
     )

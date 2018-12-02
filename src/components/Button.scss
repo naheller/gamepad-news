@@ -1,0 +1,32 @@
+$sans-serif: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+$serif: athelas,georgia,serif;
+
+.button {
+    display: flex;
+    flex-flow: row nowrap;
+    width: max-content;
+    height: max-content;
+    border: 1px solid #4CB69F;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: $sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase; 
+    color: #4CB69F;
+    cursor: pointer;
+
+    a {
+        width: 200px;
+    }
+
+    &:hover, &:active, &:focus {
+        color: #555;
+        border-color: #999;
+        // background: linear-gradient(to bottom right, transparent, #EDF7F5)
+    }
+}

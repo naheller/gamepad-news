@@ -25,14 +25,22 @@ $serif: athelas,georgia,serif;
         display: inherit;
         flex-flow: row nowrap;
         justify-content: space-between;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
         text-decoration: none;
+
+        // &:nth-child(odd) {
+        //     background: #f9f9f9;
+        // }
+
+        // &:nth-child(odd) {
+        //     border: 2px solid #f9f9f9;
+        // }
 
         @media (max-width: 768px) {
             flex-flow: column-reverse nowrap;
 
             .image {
-                margin: 0 0 1.75rem 0 !important;
+                margin: 0 !important;
             }
 
             .words {
@@ -57,6 +65,7 @@ $serif: athelas,georgia,serif;
             font-family: $sans-serif;
             padding-right: 1rem;
             transition: opacity 0.25s;
+            padding: 1rem;
 
             .title-subtitle {
                 .title {
@@ -70,6 +79,7 @@ $serif: athelas,georgia,serif;
                     color: #4cb69f;
                     font-size: 1.25rem;
                     line-height: 1.75rem;
+                    letter-spacing: 0.025rem;
                 }
             }
 
@@ -77,8 +87,12 @@ $serif: athelas,georgia,serif;
                 font-size: 0.75rem;
                 color: #aaa;
 
+                .date {
+                    margin-bottom: 0.15rem;
+                }
+
                 .author {
-                    margin-bottom: 0.25rem;
+                    margin: 0;
                     
                     .name {
                         text-transform: uppercase;
@@ -90,6 +104,7 @@ $serif: athelas,georgia,serif;
         .image {
             margin-left: 1rem;
             transition: opacity 0.25s;
+            border-radius: 1px;
 
             -webkit-box-shadow: 0.5rem 0.5rem 0 0 #f5f5f5;
             -moz-box-shadow: 0.5rem 0.5rem 0 0 #f5f5f5;

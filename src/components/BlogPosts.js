@@ -60,8 +60,8 @@ class BlogPosts extends PureComponent {
                                         {subtitle && <p className="subtitle">{subtitle}</p>}
                                     </div>
                                     <div className="date-author">
-                                        <p className="author">by <span className="name">{author}</span></p>
-                                        <time>{formattedDate}</time>
+                                        <div className="date">{formattedDate}</div>
+                                        <div className="author">by <span className="name">{author}</span></div>
                                     </div>
                                 </div>
                                 <img 
