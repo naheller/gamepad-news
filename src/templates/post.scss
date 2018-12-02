@@ -32,7 +32,7 @@ $serif: athelas,georgia,serif;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
 
         .date-author {
             height: max-content;
@@ -130,6 +130,10 @@ $serif: athelas,georgia,serif;
                 .items {
                     display: flex;
                     flex-flow: column nowrap;
+
+                    .button {
+                        margin: 0 0 0.5rem 0;
+                    }
                 }
             } 
         }
