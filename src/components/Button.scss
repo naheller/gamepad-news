@@ -9,7 +9,7 @@ $serif: athelas,georgia,serif;
     border: 1px solid #4CB69F;
     border-radius: 1rem;
     padding: 0.5rem 1rem;
-    margin-right: 1rem;
+    margin: 0.25rem 1rem 0.25rem 0;
     text-align: center;
     text-decoration: none;
     font-family: $sans-serif;
@@ -17,6 +17,7 @@ $serif: athelas,georgia,serif;
     font-weight: 700;
     letter-spacing: 0.025rem;
     text-transform: uppercase; 
+    transition: background-color 0.25s;
     color: #4CB69F;
     cursor: pointer;
 
@@ -25,8 +26,24 @@ $serif: athelas,georgia,serif;
     }
 
     &:hover, &:active, &:focus {
-        color: #555;
-        border-color: #999;
-        // background: linear-gradient(to bottom right, transparent, #EDF7F5)
+        background-color: #EDF7F5;
+    }
+
+    &.fb {
+        color: #3b5998;
+        border-color: #3b5998;
+
+        &:hover, &:active, &:focus {
+            background-color: #EBEEF4;
+        }
+    }
+
+    &.twitter {
+        color: #00aced;
+        border-color: #00aced;
+
+        &:hover, &:active, &:focus {
+            background: #E5F6FD;
+        }
     }
 }

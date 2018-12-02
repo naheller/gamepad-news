@@ -26,8 +26,8 @@ const Footer = () => {
             <div className="social">
                 <Button
                     link
+                    twitter
                     url="https://twitter.com/gamepad_news" 
-                    color="#00aced"
                     target="_blank" 
                     title="Gamepad News Twitter page" 
                     rel="noopener noreferrer"
@@ -37,8 +37,8 @@ const Footer = () => {
                 </Button>
                 <Button 
                     link
+                    fb
                     url="https://www.facebook.com/gamepadnews" 
-                    color="#3b5998"
                     target="_blank" 
                     title="Gamepad News Facebook page" 
                     rel="noopener noreferrer"

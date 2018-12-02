@@ -110,7 +110,7 @@ class ShareButton extends PureComponent {
     )
 
     showCopyLink = () => {
-        const opacity = this.state.showCopyLinkOverlay ? 'show' : ''
+        // const opacity = this.state.showCopyLinkOverlay ? 'show' : ''
 
         return (
             <div 

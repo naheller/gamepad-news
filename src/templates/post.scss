@@ -88,6 +88,15 @@ $serif: athelas,georgia,serif;
         display: flex;
         flex-flow: row nowrap;
         align-content: flex-start;
+
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+
+            .share-tags {
+                margin: 0 0 2.5rem 0 !important;
+            }
+        }
+
         .share-tags {
             flex: 0 200px;
             margin: 1rem 2rem 0 0;
@@ -158,8 +167,8 @@ $serif: athelas,georgia,serif;
 
             .button-row {
                 display: inherit;
-                flex-flow: row nowrap;
-                margin: 2rem 0;
+                flex-flow: row wrap;
+                margin: 2.5rem 0;
             }
         }
 

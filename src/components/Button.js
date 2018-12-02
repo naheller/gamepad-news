@@ -1,43 +1,71 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 import './Button.scss'
 
 const Button = ({ 
         children, 
         onClick,
-        color,
+        tag,
         internalLink, 
         slug,  
         link, 
         url,
         target,
         title,
-        rel
+        rel,
+        fb,
+        twitter
     }) => {
 
     let linkBehavior, clickBehavior
-    const colorStyle = color ? { color, borderColor: color } : {}
+    let socialStyle = ''
 
+    if (fb) socialStyle = 'fb'
+    if (twitter) socialStyle = 'twitter'
     if (link) {
         linkBehavior = (
             <a 
                 href={url} 
-                className="button" 
-                style={colorStyle}
+                className={`button ${socialStyle}`}
                 target={target} 
-                title={title} 
+                title={title}
                 rel={rel}
             >
                 {children}
             </a>
         )
     } else if (internalLink) {
-        linkBehavior = <Link to={slug} className="button" style={colorStyle}>{children}</Link>
+        linkBehavior = (
+            <Link 
+                to={slug} 
+                className={`button ${socialStyle}`}
+            >
+                {children}
+            </Link>
+        )
+    } else if (tag) {
+        linkBehavior = (
+            <Link 
+                to={`/${kebabCase(tag)}`} 
+                className={`button ${socialStyle}`}
+                title={tag}
+            >
+                {tag}
+            </Link>
+        )
     } else {
-        clickBehavior = <div className="button" onClick={onClick} style={colorStyle}>{children}</div>
+        clickBehavior = (
+            <div 
+                className={`button ${socialStyle}`} 
+                onClick={onClick}
+            >
+                {children}
+            </div>
+        )
     }
 
-    return link || internalLink ? linkBehavior : clickBehavior
+    return (link || internalLink || tag) ? linkBehavior : clickBehavior
 }
 
 export default Button

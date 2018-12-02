@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import { /*Link,*/ graphql } from 'gatsby'
 // import Img from 'gatsby-image'
 import _ from 'lodash'
 import moment from 'moment'
@@ -9,7 +9,6 @@ import moment from 'moment'
 import SiteLayout from '../components/SiteLayout'
 import Button from '../components/Button'
 import ShareButton from '../components/ShareButton'
-import TagButton from '../components/TagButton'
 import '../../static/fontello/css/fontello.css'
 import './post.scss'
 
@@ -64,32 +63,7 @@ const PostTemplate = props => {
                 
                 <div className="body-and-below">
                     <div className="body" dangerouslySetInnerHTML={{ __html: post.html }} />
-                    <div className="button-row">
-                        <Button 
-                            onClick={() => window.scrollTo({
-                                top: 0,
-                                left: 0,
-                                behavior: 'smooth'
-                            })}
-                        >
-                            <span className="icon">
-                                <i className="icon-up-open" />
-                            </span>
-                            {`\xa0\xa0\xa0`}
-                            <div className="text">
-                                Back to top
-                            </div>
-                        </Button>
-                        <Button internalLink slug ='/'>
-                            <span className="icon">
-                                <i className="icon-home" />
-                            </span>
-                            {`\xa0\xa0\xa0`}
-                            <div className="text">
-                                Home
-                            </div>
-                        </Button>
-                    </div>
+                    {renderBottomNav()}
                 </div>
                 
             </div>
@@ -122,7 +96,7 @@ const PostTemplate = props => {
         <div className="tags">
             <p className="header">Explore the topics</p>
             <div className="items">
-                {_.map(tags, tag => <TagButton key={tag} tag={tag} />)}
+                {_.map(tags, tag => <Button key={tag} tag={tag} />)}
             </div>
         </div>
     )
@@ -178,7 +152,7 @@ const PostTemplate = props => {
     // }
 
     const renderBottomNav = () => (
-        <div className="bottom-nav">
+        <div className="button-row">
             <Button 
                 onClick={() => window.scrollTo({
                     top: 0,
@@ -194,13 +168,15 @@ const PostTemplate = props => {
                     Back to top
                 </div>
             </Button>
-            <Link to="/" title="Gamepad News">
+            <Button internalLink slug ='/'>
                 <span className="icon">
                     <i className="icon-home" />
                 </span>
                 {`\xa0\xa0\xa0`}
-                <div className="text">Home</div>
-            </Link> 
+                <div className="text">
+                    Home
+                </div>
+            </Button>
         </div>
     )
 
