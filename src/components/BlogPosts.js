@@ -10,24 +10,55 @@ import './BlogPosts.scss'
 class BlogPosts extends PureComponent {
     constructor(props) {
         super(props)
+        this.posts = _.get(props, 'posts', [])
         this.state = {
-            numPosts: 10
+            numPosts: 10,
+            lastUpdate: moment('1970-01-01')
         }
     }
 
+    componentDidMount() {
+        const latestPost = _.first(this.posts)
+        const { date } = latestPost.node.frontmatter
+        this.setState({
+            lastUpdate: moment(date)
+        })
+    }
+
     render() {
-        const posts = _.get(this.props, 'posts', [])
+        let formattedDate
+        const dayDiff = moment().diff(this.state.lastUpdate, 'days')
+
+        switch(dayDiff) {
+            case 0: {
+                formattedDate = `today at ${moment(this.state.lastUpdate).format('h:mm a')}`
+                break
+            }
+            case 1: {
+                formattedDate = `yesterday at ${moment(this.state.lastUpdate).format('h:mm a')}`
+                break
+            }
+            default: {
+                formattedDate = moment(this.state.lastUpdate).format('dddd, MMMM D')
+                break
+            }
+        }
 
         return (
             <section className="post-list">
-                {this.props.tagName && (
+                {this.props.tagName ? (
                     <div className="tag-header">
-                        <h3 className="label">stories about&nbsp;</h3>
+                        <h3 className="label">Articles about&nbsp;</h3>
                         <h3 className="name">{this.props.tagName}</h3>
+                    </div>
+                ) : (
+                    <div className="tag-header">
+                        <h3 className="label">Last updated&nbsp;</h3>
+                        <h3 className="name">{formattedDate}</h3>
                     </div>
                 )}
                 <>
-                    {_.map(posts, post => {
+                    {_.map(this.posts, post => {
                         // const title = _.get(post, 'node.frontmatter.title', '')
                         const { title, subtitle, date, image, metaTitle, /*tags, description,*/ author } = post.node.frontmatter
                         const resizedImage = `${image}-/scale_crop/375x200/center/-/format/auto/-/quality/lightest/`
@@ -38,7 +69,6 @@ class BlogPosts extends PureComponent {
 
                         const hoursDiff = now.diff(moment(date), 'hours')
                         const daysDiff = now.diff(moment(date), 'days')
-
 
 
                         if (hoursDiff < 24) {

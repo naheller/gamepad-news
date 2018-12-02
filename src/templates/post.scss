@@ -6,8 +6,12 @@ $serif: athelas,georgia,serif;
         color: black;
         font-size: 2.5rem;
         font-family: $sans-serif;
-        margin: 2rem 0 1.5rem 0;
+        margin: 0 0 1.5rem 0;
         letter-spacing: -0.025rem;
+
+        // @media (max-width: 768px) {
+        //     margin-top: 1.5rem;
+        // }
     }
     .subtitle {
         display: flex;
@@ -132,7 +136,7 @@ $serif: athelas,georgia,serif;
                     flex-flow: column nowrap;
 
                     .button {
-                        margin: 0 0 0.5rem 0;
+                        margin: 0 0 0.65rem 0;
                     }
                 }
             } 
