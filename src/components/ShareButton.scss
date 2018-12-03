@@ -41,5 +41,9 @@ $sans-serif: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,
         font-weight: 900;
         color: #333;
         transition: opacity 0.25s;
+
+        &.green {
+            color: #4cb69f;
+        }
     }
 }

@@ -10,7 +10,7 @@ class ShareButton extends PureComponent {
         this.attachRef = target => this.setState({ target });
 
         this.state = {
-            showCopyLinkOverlay: false
+            linkCopied: false
         }
 
         this.slug = props.slug
@@ -18,10 +18,10 @@ class ShareButton extends PureComponent {
     }
 
     componentDidUpdate() {
-        if (this.state.showCopyLinkOverlay) {
+        if (this.state.linkCopied) {
             setTimeout(() => {
                 this.setState({
-                    showCopyLinkOverlay: false
+                    linkCopied: false
                 })
             }, 2000);
         }
@@ -37,7 +37,7 @@ class ShareButton extends PureComponent {
         document.body.removeChild(textInput)
 
         this.setState({ 
-            showCopyLinkOverlay: true
+            linkCopied: true
         })
     };
 
@@ -110,7 +110,8 @@ class ShareButton extends PureComponent {
     )
 
     showCopyLink = () => {
-        // const opacity = this.state.showCopyLinkOverlay ? 'show' : ''
+        const color = this.state.linkCopied ? 'green' : ''
+        const copyText = this.state.linkCopied ? 'Copied link!' : 'Copy link'
 
         return (
             <div 
@@ -124,10 +125,7 @@ class ShareButton extends PureComponent {
                 <span className="icon">
                     <i className="icon-link-1" />
                 </span>
-                {this.props.text && <p className="text">Copy link</p>}
-                {/* <h6 className={`link-tooltip ${opacity}`}>
-                    Link copied
-                </h6> */}
+                {this.props.text && <p className={`text ${color}`}>{copyText}</p>}
             </div>
         )
     }
