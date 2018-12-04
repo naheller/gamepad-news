@@ -72,7 +72,7 @@ const PostTemplate = props => {
     )
 
     const renderTopShare = () => (
-        <div className="share-button-group top">
+        <div className="share-button-group">
             <ShareButton slug={slug} title={metaTitle} facebook />
             <ShareButton slug={slug} title={metaTitle} twitter />
             <ShareButton slug={slug} title={metaTitle} reddit />

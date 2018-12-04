@@ -62,16 +62,14 @@ $serif: athelas,georgia,serif;
         }
 
         .share-button-group {
-            display: inherit;
+            display: flex;
             flex-flow: row nowrap;
 
-            &.top {
-                .share-button {
-                    margin: 0;
+            .share-button {
+                margin: 0;
 
-                    .icon {
-                        font-size: 1.2rem;
-                    }
+                .icon {
+                    font-size: 1.2rem;
                 }
             }
         }
@@ -106,8 +104,20 @@ $serif: athelas,georgia,serif;
             margin: 1rem 2rem 0 0;
             
            .share {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
                 border-top: 2px solid black;
                 margin-bottom: 3rem;
+
+                @media (max-width: 768px) {
+                    justify-content: center;
+
+                    .header, .share-button-group {
+                        text-align: center;
+                        align-items: center;
+                    }
+                }
 
                 .header {
                     font-family: $sans-serif;
@@ -117,10 +127,27 @@ $serif: athelas,georgia,serif;
                     font-size: 0.75rem;
                     margin: 0.75rem 0 1.5rem 0;
                 }
+
+                .share-button-group {
+                    display: flex;
+                    flex-flow: column nowrap;
+
+                    .share-button {
+                        margin: 0 0 1rem 0;
+                    }
+                }
             } 
 
             .tags {
                 border-top: 2px solid black;
+
+                @media (max-width: 768px) {
+                    .header, .items {
+                        text-align: center;
+                        align-items: center;
+                    }
+                    
+                }
 
                 .header {
                     font-family: $sans-serif;
@@ -173,13 +200,28 @@ $serif: athelas,georgia,serif;
                 }
             }
 
+            .share-button-group {
+                display: flex;
+                flex-flow: row nowrap;
+    
+                .share-button {
+                    margin: 0;
+    
+                    .icon {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
             .button-row {
                 display: inherit;
                 flex-flow: row wrap;
                 margin: 2.5rem 0;
+
+                @media (max-width: 768px) {
+                    justify-content: center;
+                }
             }
         }
-
-       
     }
 }
