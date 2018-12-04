@@ -63,9 +63,8 @@ $serif: athelas,georgia,serif;
             flex-flow: column nowrap;
             justify-content: space-between;
             font-family: $sans-serif;
-            padding-right: 1rem;
             transition: opacity 0.25s;
-            padding: 1rem;
+            padding: 1rem 0;
 
             .title-subtitle {
                 .title {
