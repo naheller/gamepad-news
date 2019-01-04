@@ -18,14 +18,14 @@ $serif: athelas,georgia,serif;
         flex-flow: row nowrap;
         align-items: center;
         margin-bottom: 2.5rem;
-        letter-spacing: 0.025rem;
-        line-height: 1.75rem;
+        letter-spacing: 0.03rem;
 
         // .icon {
         // }
 
         .text {
             font-family: $sans-serif;
+            line-height: 2rem;
             font-weight: 200;
             font-size: 1.5rem;
             color: #4cb69f;
@@ -177,13 +177,16 @@ $serif: athelas,georgia,serif;
             .body {
                 font-family: $sans-serif;
                 font-size: 1.25rem;
-                font-weight: 300;
+                font-weight: 200;
                 line-height: 2rem;
+                letter-spacing: 0.025rem;
 
                 a {
                     color: black;
                     text-decoration: none;
                     border-bottom: 1px solid #4cb69f;
+                    // background-color: #EDF7F5;
+                    // padding: 0 0.2rem;
 
                     &:hover, &:active, &:focus {
                         color: #4cb69f;
@@ -191,9 +194,13 @@ $serif: athelas,georgia,serif;
                 }
 
                 p:first-of-type {
-                    letter-spacing: 0.025rem;
-                    font-weight: 500;
+                    font-weight: 300;
                 }
+
+                // p:nth-of-type(2) {
+                //     letter-spacing: 0.025rem;
+                //     font-weight: 300;
+                // }
 
                 ul {
                     list-style-type: circle;
